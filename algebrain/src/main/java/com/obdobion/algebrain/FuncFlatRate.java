@@ -24,7 +24,7 @@ public class FuncFlatRate extends Function
         if (values.size() < getParameterCount())
             throw new Exception("missing operands for " + toString());
 
-        final Stack<Object> ops = new Stack<Object>();
+        final Stack<Object> ops = new Stack<>();
 
         for (int p = 0; p < getParameterCount(); p++)
             ops.push(values.pop());

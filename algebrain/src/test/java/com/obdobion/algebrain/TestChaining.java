@@ -1,102 +1,98 @@
 package com.obdobion.algebrain;
 
+import org.junit.Assert;
+import org.junit.Test;
+
 /**
  * @author Chris DeGreef
  * 
  */
-public class TestChaining extends junit.framework.TestCase
+public class TestChaining
 {
-
-    public TestChaining(final String name)
-    {
-
-        super(name);
-    }
-
+    @Test
     public void testPresetVariables () throws Exception
     {
-
-        Equ.getInstance().setSupport(new DefaultEquationSupport());
+        Equ.getInstance(true);
         final Double result = (Double) Equ.getInstance().evaluate("a:=2; b:=a+1; c:=a*b");
-        assertEquals("result", 6D, result);
-        assertEquals("variable a", 2D, Equ.getInstance().getSupport().resolveVariable("a", null));
-        assertEquals("variable b", 3D, Equ.getInstance().getSupport().resolveVariable("b", null));
-        assertEquals("variable c", 6D, Equ.getInstance().getSupport().resolveVariable("c", null));
+        Assert.assertEquals("result", 6D, result, 0);
+        Assert.assertEquals("variable a", 2D, (double) Equ.getInstance().getSupport().resolveVariable("a", null), 0);
+        Assert.assertEquals("variable b", 3D, (double) Equ.getInstance().getSupport().resolveVariable("b", null), 0);
+        Assert.assertEquals("variable c", 6D, (double) Equ.getInstance().getSupport().resolveVariable("c", null), 0);
     }
 
+    @Test
     public void testTrailingChainMarker () throws Exception
     {
-
-        Equ.getInstance().setSupport(new DefaultEquationSupport());
+        Equ.getInstance(true);
         final Double result = (Double) Equ.getInstance().evaluate("a:=2;b:=a+1;c:=a*b;");
-        assertEquals("result", 6D, result);
-        assertEquals("variable a", 2D, Equ.getInstance().getSupport().resolveVariable("a", null));
-        assertEquals("variable b", 3D, Equ.getInstance().getSupport().resolveVariable("b", null));
-        assertEquals("variable c", 6D, Equ.getInstance().getSupport().resolveVariable("c", null));
+        Assert.assertEquals("result", 6D, result, 0);
+        Assert.assertEquals("variable a", 2D, (double) Equ.getInstance().getSupport().resolveVariable("a", null), 0);
+        Assert.assertEquals("variable b", 3D, (double) Equ.getInstance().getSupport().resolveVariable("b", null), 0);
+        Assert.assertEquals("variable c", 6D, (double) Equ.getInstance().getSupport().resolveVariable("c", null), 0);
     }
 
+    @Test
     public void testTrailingChainMarker2 () throws Exception
     {
-
-        Equ.getInstance().setSupport(new DefaultEquationSupport());
+        Equ.getInstance(true);
         final Double result = (Double) Equ.getInstance().evaluate("a:=2; b:=a+1; a*b;");
-        assertEquals("result", 6D, result);
-        assertEquals("variable a", 2D, Equ.getInstance().getSupport().resolveVariable("a", null));
-        assertEquals("variable b", 3D, Equ.getInstance().getSupport().resolveVariable("b", null));
-        assertNull("variable c", Equ.getInstance().getSupport().resolveVariable("c", null));
+        Assert.assertEquals("result", 6D, result, 0);
+        Assert.assertEquals("variable a", 2D, (double) Equ.getInstance().getSupport().resolveVariable("a", null), 0);
+        Assert.assertEquals("variable b", 3D, (double) Equ.getInstance().getSupport().resolveVariable("b", null), 0);
+        Assert.assertNull("variable c", Equ.getInstance().getSupport().resolveVariable("c", null));
     }
 
+    @Test
     public void testUnexpectedChaining () throws Exception
     {
-
-        Equ.getInstance().setSupport(new DefaultEquationSupport());
+        Equ.getInstance(true);
         final Double result = (Double) Equ.getInstance().evaluate("a:=2;*3");
-        assertEquals("result", 6D, result);
-        assertEquals("variable a", 2D, Equ.getInstance().getSupport().resolveVariable("a", null));
+        Assert.assertEquals("result", 6D, result, 0);
+        Assert.assertEquals("variable a", 2D, (double) Equ.getInstance().getSupport().resolveVariable("a", null), 0);
     }
 
+    @Test
     public void testChainingToOverridePrecedence () throws Exception
     {
-
-        Equ.getInstance().setSupport(new DefaultEquationSupport());
+        Equ.getInstance(true);
         final Double result = (Double) Equ.getInstance().evaluate("a:=2;+3;/4");
-        assertEquals("result", 1.25D, result);
-        assertEquals("variable a", 2D, Equ.getInstance().getSupport().resolveVariable("a", null));
+        Assert.assertEquals("result", 1.25D, result, 0);
+        Assert.assertEquals("variable a", 2D, (double) Equ.getInstance().getSupport().resolveVariable("a", null), 0);
     }
 
+    @Test
     public void testProofOfPrecedence () throws Exception
     {
-
-        Equ.getInstance().setSupport(new DefaultEquationSupport());
+        Equ.getInstance(true);
         final Double result = (Double) Equ.getInstance().evaluate("(a:=2)+3/4");
-        assertEquals("result", 2.75D, result);
-        assertEquals("variable a", 2D, Equ.getInstance().getSupport().resolveVariable("a", null));
+        Assert.assertEquals("result", 2.75D, result, 0);
+        Assert.assertEquals("variable a", 2D, (double) Equ.getInstance().getSupport().resolveVariable("a", null), 0);
     }
 
+    @Test
     public void testProofOfPrecedence2 () throws Exception
     {
-
-        Equ.getInstance().setSupport(new DefaultEquationSupport());
+        Equ.getInstance(true);
         final Double result = (Double) Equ.getInstance().evaluate("a:=2+3/4");
-        assertEquals("result", 2.75D, result);
-        assertEquals("variable a", 2.75D, Equ.getInstance().getSupport().resolveVariable("a", null));
+        Assert.assertEquals("result", 2.75D, result, 0);
+        Assert.assertEquals("variable a", 2.75D, (double) Equ.getInstance().getSupport().resolveVariable("a", null), 0);
     }
 
+    @Test
     public void testNothing1 () throws Exception
     {
-
-        Equ.getInstance().setSupport(new DefaultEquationSupport());
+        Equ.getInstance(true);
         final Double result = (Double) Equ.getInstance().evaluate("a:=2;;;");
-        assertEquals("result", 2D, result);
-        assertEquals("variable a", 2D, Equ.getInstance().getSupport().resolveVariable("a", null));
+        Assert.assertEquals("result", 2D, result, 0);
+        Assert.assertEquals("variable a", 2D, (double) Equ.getInstance().getSupport().resolveVariable("a", null), 0);
     }
 
+    @Test
     public void testNothing2 () throws Exception
     {
-
-        Equ.getInstance().setSupport(new DefaultEquationSupport());
+        Equ.getInstance(true);
         final Double result = (Double) Equ.getInstance().evaluate(";;;a:=2");
-        assertEquals("result", 2D, result);
-        assertEquals("variable a", 2D, Equ.getInstance().getSupport().resolveVariable("a", null));
+        Assert.assertEquals("result", 2D, result, 0);
+        Assert.assertEquals("variable a", 2D, (double) Equ.getInstance().getSupport().resolveVariable("a", null), 0);
     }
 }

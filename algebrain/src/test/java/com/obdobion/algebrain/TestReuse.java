@@ -1,19 +1,18 @@
 package com.obdobion.algebrain;
 
+import org.junit.Assert;
+import org.junit.Test;
+
 /**
  * @author Chris DeGreef
  * 
  */
-public class TestReuse extends junit.framework.TestCase {
-
-    public TestReuse(final String name) {
-
-        super(name);
-    }
-
+public class TestReuse
+{
+    @Test
     @SuppressWarnings("null")
-    public void testReuseEqu () throws Exception {
-
+    public void reuseEqu () throws Exception
+    {
         final Equ equ = Equ.getInstance();
 
         long start, dur;
@@ -25,7 +24,7 @@ public class TestReuse extends junit.framework.TestCase {
         }
         dur = System.currentTimeMillis() - start;
         System.out.println(dur);
-        assertEquals("ReuseEqu result1 ", 10D, result.doubleValue(), 0D);
+        Assert.assertEquals("ReuseEqu result1 ", 10D, result.doubleValue(), 0D);
 
         equ.getSupport().assignVariable("x", new Double(5));
         start = System.currentTimeMillis();
@@ -42,6 +41,6 @@ public class TestReuse extends junit.framework.TestCase {
         }
         dur = System.currentTimeMillis() - start;
         System.out.println(dur);
-        assertEquals("ReuseEqu result2 ", 800000D, result.doubleValue(), 0D);
+        Assert.assertEquals("ReuseEqu result2 ", 800000D, result.doubleValue(), 0D);
     }
 }

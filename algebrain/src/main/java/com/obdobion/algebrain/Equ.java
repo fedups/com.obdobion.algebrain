@@ -99,7 +99,7 @@ public class Equ
 
     public Object evaluate () throws Exception
     {
-        final Stack<Object> values = new Stack<Object>();
+        final Stack<Object> values = new Stack<>();
 
         if (rpn == null)
             return null;
@@ -146,7 +146,7 @@ public class Equ
     static public Set<String> gatherVariables (final Collection<EquPart> tokens)
     {
 
-        final Set<String> vars = new HashSet<String>();
+        final Set<String> vars = new HashSet<>();
         for (final EquPart token : tokens)
         {
             if (token instanceof TokVariable)
@@ -177,7 +177,7 @@ public class Equ
     protected void initialize () throws Exception
     {
 
-        functionMap = new Hashtable<String, Constructor<?>>();
+        functionMap = new Hashtable<>();
         registerFunction("if", FuncIf.class);
         registerFunction("rate", FuncFlatRate.class);
         registerFunction("bandedrate", FuncBandedRate.class);
@@ -196,9 +196,15 @@ public class Equ
         registerFunction("cos", FuncCos.class);
         registerFunction("deg", FuncRadsToDegrees.class);
         registerFunction("rad", FuncDegreesToRads.class);
+        registerFunction("root", FuncRoot.class);
         registerFunction("sqrt", FuncSqrt.class);
+        registerFunction("cbrt", FuncCubeRoot.class);
+        registerFunction("log", FuncLog.class);
+        registerFunction("log10", FuncLog10.class);
+        registerFunction("trunc", FuncTrunc.class);
+        registerFunction("not", FuncNot.class);
 
-        operatorMap = new Hashtable<String, Constructor<?>>();
+        operatorMap = new Hashtable<>();
         registerOperator("^", OpPower.class);
         registerOperator(",", OpComma.class);
         registerOperator(";", OpChain.class);
@@ -216,8 +222,10 @@ public class Equ
         registerOperator(">=", OpCompareNotLess.class);
         registerOperator(":=", OpAssignment.class);
         registerOperator("&&", OpAnd.class);
-        registerOperator("||", OpAnd.class);
+        registerOperator("!&", OpNand.class);
+        registerOperator("||", OpOr.class);
         registerOperator("%", OpMod.class);
+        registerOperator("!", OpFactorial.class);
     }
 
     protected void initializeSupport ()
@@ -226,6 +234,9 @@ public class Equ
         {
             getSupport().assignVariable("PI", Math.PI);
             getSupport().assignVariable("E", Math.E);
+            getSupport().assignVariable("true", new Boolean(true));
+            getSupport().assignVariable("false", new Boolean(false));
+
         } catch (final Exception e)
         {
             /*
@@ -268,7 +279,7 @@ public class Equ
             fixed[left] = equParts[right];
         }
 
-        final Collection<EquPart> tokens = new ArrayList<EquPart>();
+        final Collection<EquPart> tokens = new ArrayList<>();
 
         for (int i = 0; i < fixed.length; i++)
 
@@ -339,8 +350,8 @@ public class Equ
     protected Collection<EquPart> rpnize (final Collection<EquPart> oldTokens)
     {
 
-        final Collection<EquPart> _rpn = new Stack<EquPart>();
-        final Stack<EquPart> ops = new Stack<EquPart>();
+        final Collection<EquPart> _rpn = new Stack<>();
+        final Stack<EquPart> ops = new Stack<>();
         Operation leftOp;
         Operation rightOp;
 
@@ -445,7 +456,7 @@ public class Equ
          * break apart obvious tokens, realizing that some may need further
          * breakage and some may need to be merged back again
          */
-        final Collection<EquPart> tokens = new ArrayList<EquPart>();
+        final Collection<EquPart> tokens = new ArrayList<>();
         Token token = null;
         char c;
         int level = 0;

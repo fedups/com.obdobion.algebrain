@@ -26,7 +26,7 @@ public class DefaultEquationSupport implements EquationSupport
             final java.sql.Date baseDate,
             final double tableKey) throws Exception
     {
-        final Hashtable<Double, Double> rates = new Hashtable<Double, Double>();
+        final Hashtable<Double, Double> rates = new Hashtable<>();
         rates.put(new Double(0), new Double(1));
 
         return rates;

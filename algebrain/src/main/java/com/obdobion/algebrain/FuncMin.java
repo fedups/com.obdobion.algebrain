@@ -24,7 +24,7 @@ public class FuncMin extends Function
         if (values.size() < getParameterCount())
             throw new Exception("missing operands for " + toString());
 
-        final Stack<Double> ops = new Stack<Double>();
+        final Stack<Double> ops = new Stack<>();
 
         for (int p = 0; p < getParameterCount(); p++)
             ops.push(new Double(convertToDouble(values.pop())[0]));

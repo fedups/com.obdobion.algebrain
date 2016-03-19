@@ -26,7 +26,9 @@ public class TokOperator extends Token
             case '&':
                 return true;
             case '|':
-            return true;
+                return true;
+            default:
+                break;
         }
         return false;
     }

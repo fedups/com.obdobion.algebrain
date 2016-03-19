@@ -1,120 +1,148 @@
 package com.obdobion.algebrain;
 
+import org.junit.Assert;
+import org.junit.Test;
 
 /**
  * @author Chris DeGreef
  * 
  */
-public class TestAssignment extends junit.framework.TestCase {
-
-    public TestAssignment(final String name) {
-
-        super(name);
-    }
-
-    public void testConditionalAssignmentTarget () throws Exception {
-
-        Equ.getInstance().setSupport(new DefaultEquationSupport());
+public class TestAssignment
+{
+    @Test
+    public void conditionalAssignmentTarget () throws Exception
+    {
+        Equ.getInstance(true);
         final Double result = (Double) Equ.getInstance().evaluate("if (1=2, a, b) := 1");
-        assertEquals("result", 1D, result);
-        assertNull("unassigned variable", Equ.getInstance().getSupport().resolveVariable("a", null));
-        assertEquals("assigned variable", 1D, Equ.getInstance().getSupport().resolveVariable("b", null));
+        Assert.assertEquals("result", 1D, result, 0);
+        Assert.assertNull("unassigned variable", Equ.getInstance().getSupport().resolveVariable("a", null));
+        Assert.assertEquals("assigned variable", 1D, Equ.getInstance().getSupport().resolveVariable("b", null));
     }
 
-    public void testEqualsInsteadOfAssignment () throws Exception {
-
-        try {
-            Equ.getInstance().setSupport(new DefaultEquationSupport());
+    @Test
+    public void equalsInsteadOfAssignment () throws Exception
+    {
+        try
+        {
+            Equ.getInstance(true);
             Equ.getInstance().evaluate("max (a := 1, b=2)");
-            fail("expected exception");
-        } catch (final Exception e) {
-            assertEquals("exception", "invalid type for function(max-2); Boolean ", e.getMessage());
+            Assert.fail("expected exception");
+        } catch (final Exception e)
+        {
+            Assert.assertEquals("exception", "invalid type for function(max-2); Boolean ", e.getMessage());
         }
     }
 
-    public void testFinalized () throws Exception {
-
-        try {
-            Equ.getInstance().setSupport(new DefaultEquationSupport());
+    @Test
+    public void finalized () throws Exception
+    {
+        try
+        {
+            Equ.getInstance(true);
             Equ.getInstance().evaluate("max (a := 1, a :=2)");
-            fail("expected exception");
-        } catch (final Exception e) {
-            assertEquals("exception", "invalid assignment target: 1.0", e.getMessage());
+            Assert.fail("expected exception");
+        } catch (final Exception e)
+        {
+            Assert.assertEquals("exception", "invalid assignment target: 1.0", e.getMessage());
         }
     }
 
-    public void testInternalAssignments () throws Exception {
-
-        Equ.getInstance().setSupport(new DefaultEquationSupport());
+    @Test
+    public void internalAssignments () throws Exception
+    {
+        Equ.getInstance(true);
         final Double result = (Double) Equ.getInstance().evaluate("c:=max (a := 1, b :=2)");
-        assertEquals("result", 2D, result);
-        assertEquals("assigned variable", 1D, Equ.getInstance().getSupport().resolveVariable("a", null));
-        assertEquals("assigned variable", 2D, Equ.getInstance().getSupport().resolveVariable("b", null));
-        assertEquals("assigned variable", 2D, Equ.getInstance().getSupport().resolveVariable("c", null));
+        Assert.assertEquals("result", 2D, result, 0);
+        Assert.assertEquals(
+                "assigned variable",
+                1D,
+                (double) Equ.getInstance().getSupport().resolveVariable("a", null),
+                0);
+        Assert.assertEquals(
+                "assigned variable",
+                2D,
+                (double) Equ.getInstance().getSupport().resolveVariable("b", null),
+                0);
+        Assert.assertEquals(
+                "assigned variable",
+                2D,
+                (double) Equ.getInstance().getSupport().resolveVariable("c", null),
+                0);
     }
 
-    public void testInvalidTarget () throws Exception {
-
-        try {
-            Equ.getInstance().setSupport(new DefaultEquationSupport());
+    @Test
+    public void invalidTarget () throws Exception
+    {
+        try
+        {
+            Equ.getInstance(true);
             Equ.getInstance().evaluate("'target' :=2");
-            fail("expected exception");
-        } catch (final Exception e) {
-            assertEquals("exception", "invalid assignment target: target", e.getMessage());
+            Assert.fail("expected exception");
+        } catch (final Exception e)
+        {
+            Assert.assertEquals("exception", "invalid assignment target: target", e.getMessage());
         }
     }
 
-    public void testMultipleAssignments () throws Exception {
-
-        Equ.getInstance().setSupport(new DefaultEquationSupport());
+    @Test
+    public void multipleAssignments () throws Exception
+    {
+        Equ.getInstance(true);
         final Double result = (Double) Equ.getInstance().evaluate("a := (b := 3)");
-        assertEquals("result", 3D, result);
-        assertEquals("assigned variable", 3D, Equ.getInstance().getSupport().resolveVariable("a", null));
-        assertEquals("assigned variable", 3D, Equ.getInstance().getSupport().resolveVariable("b", null));
+        Assert.assertEquals("result", 3D, result, 0);
+        Assert.assertEquals("assigned variable", 3D, Equ.getInstance().getSupport().resolveVariable("a", null));
+        Assert.assertEquals("assigned variable", 3D, Equ.getInstance().getSupport().resolveVariable("b", null));
     }
 
-    public void testMultipleAssignments2 () throws Exception {
-
-        Equ.getInstance().setSupport(new DefaultEquationSupport());
+    @Test
+    public void multipleAssignments2 () throws Exception
+    {
+        Equ.getInstance(true);
         final Double result = (Double) Equ.getInstance().evaluate("a := b := 3");
-        assertEquals("result", 3D, result);
-        assertEquals("assigned variable", 3D, Equ.getInstance().getSupport().resolveVariable("a", null));
-        assertEquals("assigned variable", 3D, Equ.getInstance().getSupport().resolveVariable("b", null));
+        Assert.assertEquals("result", 3D, result, 0);
+        Assert.assertEquals("assigned variable", 3D, Equ.getInstance().getSupport().resolveVariable("a", null));
+        Assert.assertEquals("assigned variable", 3D, Equ.getInstance().getSupport().resolveVariable("b", null));
     }
 
-    public void testMultipleAssignments3 () throws Exception {
-
-        try {
-            Equ.getInstance().setSupport(new DefaultEquationSupport());
+    @Test
+    public void multipleAssignments3 () throws Exception
+    {
+        try
+        {
+            Equ.getInstance(true);
             Equ.getInstance().evaluate("a := 3 := b");
-            fail("expected exception");
-        } catch (final Exception e) {
-            assertEquals("exception", "invalid assignment value: var(b)", e.getMessage());
+            Assert.fail("expected exception");
+        } catch (final Exception e)
+        {
+            Assert.assertEquals("exception", "invalid assignment value: var(b)", e.getMessage());
         }
     }
 
-    public void testUnknownVariableInComparison () throws Exception {
-
-        Equ.getInstance().setSupport(new DefaultEquationSupport());
+    @Test
+    public void unknownVariableInComparison () throws Exception
+    {
+        Equ.getInstance(true);
         final Object result = Equ.getInstance().evaluate("b=2");
-        assertTrue("result type", result instanceof Boolean);
-        assertFalse("result", ((Boolean) result).booleanValue());
+        Assert.assertTrue("result type", result instanceof Boolean);
+        Assert.assertFalse("result", ((Boolean) result).booleanValue());
     }
 
-    public void testWithoutSupport () throws Exception {
-
+    @Test
+    public void withoutSupport () throws Exception
+    {
         Equ.getInstance().setSupport(null);
         final Double result = (Double) Equ.getInstance().evaluate("a := 1");
-        assertEquals("result", 1D, result);
-        assertEquals("variable", 1D, Equ.getInstance().getSupport().resolveVariable("a", null));
+        Assert.assertEquals("result", 1D, result, 0);
+        Assert.assertEquals("variable", 1D, Equ.getInstance().getSupport().resolveVariable("a", null));
 
     }
 
-    public void testWithSupport () throws Exception {
-
-        Equ.getInstance().setSupport(new DefaultEquationSupport());
+    @Test
+    public void withSupport () throws Exception
+    {
+        Equ.getInstance(true);
         final Double result = (Double) Equ.getInstance().evaluate("a := 1");
-        assertEquals("result", 1D, result);
-        assertEquals("variable", 1D, Equ.getInstance().getSupport().resolveVariable("a", null));
+        Assert.assertEquals("result", 1D, result, 0);
+        Assert.assertEquals("variable", 1D, Equ.getInstance().getSupport().resolveVariable("a", null));
     }
 }
