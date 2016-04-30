@@ -10,6 +10,14 @@ import org.junit.Test;
 public class TestTrig
 {
     @Test
+    public void usingSinTwice () throws Exception
+    {
+        final Equ equ = Equ.getInstance(true);
+        final Double result = (Double) equ.evaluate("sin(20) + sin(30)");
+        Assert.assertEquals("result", 0.842D, result.doubleValue(), 0.001D);
+    }
+
+    @Test
     public void web01 () throws Exception
     {
         final Equ equ = Equ.getInstance(true);

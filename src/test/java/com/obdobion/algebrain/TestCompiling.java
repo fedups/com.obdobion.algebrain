@@ -26,7 +26,7 @@ public class TestCompiling
         final Set<String> variableNames = Equ.getInstance().compile("rate(tablename, 'a', alpha(FacAmt))");
         Assert.assertEquals(2, variableNames.size());
         final String[] v = variableNames.toArray(new String[variableNames.size()]);
-        Assert.assertEquals("tablename", v[0]);
-        Assert.assertEquals("FacAmt", v[1]);
+        Assert.assertEquals("FacAmt", v[0]);
+        Assert.assertEquals("tablename", v[1]);
     }
 }

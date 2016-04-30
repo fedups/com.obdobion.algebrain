@@ -4,13 +4,13 @@
 	<groupId>obdobion</groupId>
 	<artifactId>algebrain</artifactId>
 	<packaging>jar</packaging>
-	<version>1.2.4</version>
+	<version>1.2.6</version>
 	<name>algebrain</name>
 	<url>http://maven.apache.org</url>
 
     <properties>
-        <java.target.version>1.7</java.target.version>
-        <java.source.version>1.7</java.source.version>
+        <java.target.version>1.8</java.target.version>
+        <java.source.version>1.8</java.source.version>
         <junit.version>4.8.1</junit.version>
         <project.build.sourceEncoding>Cp1252</project.build.sourceEncoding>
     </properties>

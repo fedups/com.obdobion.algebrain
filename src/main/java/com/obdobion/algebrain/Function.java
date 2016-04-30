@@ -43,7 +43,7 @@ public abstract class Function extends Operation
         {
             final EquPart part = equParts[p];
 
-            if (part.getLevel() < getLevel())
+            if (part.getLevel() <= getLevel())
                 break;
 
             if ((part.getLevel() == (getLevel() + 1)) && part instanceof OpComma)

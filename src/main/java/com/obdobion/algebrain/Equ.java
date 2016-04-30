@@ -203,6 +203,15 @@ public class Equ
         registerFunction("log10", FuncLog10.class);
         registerFunction("trunc", FuncTrunc.class);
         registerFunction("not", FuncNot.class);
+        registerFunction("match", FuncStringMatch.class);
+        registerFunction("empty", FuncStringEmpty.class);
+        registerFunction("cat", FuncStringCat.class);
+        registerFunction("length", FuncStringLength.class);
+        registerFunction("substr", FuncStringSubstr.class);
+        registerFunction("rtrim", FuncStringRTrim.class);
+        registerFunction("ltrim", FuncStringLTrim.class);
+        registerFunction("trim", FuncStringTrim.class);
+        registerFunction("indexOf", FuncStringIndexOf.class);
 
         operatorMap = new Hashtable<>();
         registerOperator("^", OpPower.class);
@@ -464,17 +473,21 @@ public class Equ
         for (int a = 0; a < equ.length(); a++)
         {
             c = equ.charAt(a);
+            boolean isWhitespace = Character.isWhitespace(c);
 
-            if (Character.isWhitespace(c))
-            {
-
-                if (token != null)
-                    token.addTo(tokens);
-
-                token = null;
-
-                continue;
-            }
+            if (isWhitespace)
+                if (!(token != null && token instanceof TokLiteral && token.accepts(c)))
+                {
+                    /*
+                     * spaces are allowed inside of literals
+                     */
+                    if (token != null)
+                    {
+                        token.addTo(tokens);
+                    }
+                    token = null;
+                    continue;
+                }
 
             if (c == '(')
                 level++;
@@ -519,5 +532,11 @@ public class Equ
         if (!operatorMap.containsKey(token))
             throw new Exception("unknown operator: " + token);
         operatorMap.remove(token);
+    }
+
+    @Override
+    public String toString ()
+    {
+        return equ;
     }
 }

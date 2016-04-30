@@ -177,6 +177,22 @@ public class TestEquations
     }
 
     @Test
+    public void twoMaxFunctions () throws Exception
+    {
+        final Equ equ = Equ.getInstance();
+        final Double result = (Double) equ.evaluate("max(1,0) + max(2,0)");
+        Assert.assertEquals("twoMaxFunctions", 3, result.doubleValue(), 0D);
+    }
+
+    @Test
+    public void maxAndMinFunctions () throws Exception
+    {
+        final Equ equ = Equ.getInstance();
+        final Double result = (Double) equ.evaluate("max(1,0) + min(2,0)");
+        Assert.assertEquals("maxAndMinFunctions", 1, result.doubleValue(), 0D);
+    }
+
+    @Test
     public void m8a () throws Exception
     {
         final Equ equ = Equ.getInstance();

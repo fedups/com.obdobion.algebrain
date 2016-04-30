@@ -29,7 +29,10 @@ public class TestAssignment
             Assert.fail("expected exception");
         } catch (final Exception e)
         {
-            Assert.assertEquals("exception", "invalid type for function(max-2); Boolean ", e.getMessage());
+            Assert.assertEquals(
+                    "exception",
+                    "\"=\" supports same type comparisons only, found TokVariable and Double",
+                    e.getMessage());
         }
     }
 
@@ -122,9 +125,16 @@ public class TestAssignment
     public void unknownVariableInComparison () throws Exception
     {
         Equ.getInstance(true);
-        final Object result = Equ.getInstance().evaluate("b=2");
-        Assert.assertTrue("result type", result instanceof Boolean);
-        Assert.assertFalse("result", ((Boolean) result).booleanValue());
+        try
+        {
+            final Object result = Equ.getInstance().evaluate("b=2");
+        } catch (final Exception e)
+        {
+            Assert.assertEquals(
+                    "exception",
+                    "\"=\" supports same type comparisons only, found TokVariable and Double",
+                    e.getMessage());
+        }
     }
 
     @Test
