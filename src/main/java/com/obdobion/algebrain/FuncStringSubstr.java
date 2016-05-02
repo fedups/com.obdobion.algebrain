@@ -21,7 +21,7 @@ public class FuncStringSubstr extends Function
     @Override
     public void resolve (final Stack<Object> values) throws Exception
     {
-        if (values.size() != 3)
+        if (values.size() < 3)
             throw new Exception("requires 3 parameters " + toString());
         if (values.size() < getParameterCount())
             throw new Exception("missing operands for " + toString());
