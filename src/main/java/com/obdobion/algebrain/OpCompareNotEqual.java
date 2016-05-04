@@ -6,7 +6,7 @@ import java.util.Stack;
  * @author Chris DeGreef
  * 
  */
-public class OpCompareNotEqual extends Operator
+public class OpCompareNotEqual extends OpCompareEqual
 {
     public OpCompareNotEqual()
     {
@@ -18,20 +18,12 @@ public class OpCompareNotEqual extends Operator
     }
 
     @Override
-    protected int precedence ()
-    {
-        return 8;
-    }
-
-    @Override
     public void resolve (final Stack<Object> values) throws Exception
     {
-        if (values.size() < 2)
-            throw new Exception("missing operands for " + toString());
+        super.resolve(values);
 
-        final Object op2 = values.pop();
         final Object op1 = values.pop();
-        values.push(new Boolean(!(op1.equals(op2))));
+        values.push(new Boolean(!(Boolean) op1));
 
         return;
     }

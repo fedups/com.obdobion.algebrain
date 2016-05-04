@@ -32,10 +32,6 @@ import java.util.Stack;
  */
 public class Equ
 {
-
-    private Map<String, Constructor<?>> functionMap;
-    private Map<String, Constructor<?>> operatorMap;
-
     private static Equ                  instance;
 
     public static Equ getInstance ()
@@ -60,6 +56,9 @@ public class Equ
         return instance;
     }
 
+    private Map<String, Constructor<?>> functionMap;
+    private Map<String, Constructor<?>> operatorMap;
+
     private java.sql.Date       baseDate;
     private EquationSupport     support;
     private String              equ;
@@ -67,13 +66,11 @@ public class Equ
 
     protected Equ()
     {
-
         super();
     }
 
     public Set<String> compile (final String _equ) throws Exception
     {
-
         this.equ = _equ;
         Collection<EquPart> tokens = tokenize();
         tokens = multiplize(tokens);
@@ -85,14 +82,11 @@ public class Equ
 
     void countParameters (final Collection<EquPart> oldTokens)
     {
-
         final EquPart[] equParts = oldTokens.toArray(new EquPart[0]);
-
         /*
          * ... func(p1, p2 ... ,pN) ... find out what N is
          */
         for (int f = 0; f < equParts.length; f++)
-
             if (equParts[f] instanceof Function)
                 ((Function) equParts[f]).updateParameterCount(equParts, f);
     }
@@ -106,7 +100,6 @@ public class Equ
 
         for (final Iterator<EquPart> parts = rpn.iterator(); parts.hasNext();)
         {
-
             final EquPart part = parts.next();
             part.setEqu(this);
             part.resolve(values);
@@ -119,14 +112,12 @@ public class Equ
 
     public Object evaluate (final String _equ) throws Exception
     {
-
         compile(_equ);
         return evaluate();
     }
 
     Function function (final TokVariable varTok) throws Exception
     {
-
         final String token = varTok.getValue().toString();
         final Constructor<?> constructor = functionMap.get(token.toLowerCase());
         if (constructor == null)
@@ -145,7 +136,6 @@ public class Equ
 
     static public Set<String> gatherVariables (final Collection<EquPart> tokens)
     {
-
         final Set<String> vars = new HashSet<>();
         for (final EquPart token : tokens)
         {
@@ -159,13 +149,11 @@ public class Equ
 
     java.sql.Date getBaseDate ()
     {
-
         return baseDate;
     }
 
     public EquationSupport getSupport ()
     {
-
         if (support == null)
         {
             setSupport(new DefaultEquationSupport());
@@ -176,7 +164,6 @@ public class Equ
 
     protected void initialize () throws Exception
     {
-
         functionMap = new Hashtable<>();
         registerFunction("if", FuncIf.class);
         registerFunction("rate", FuncFlatRate.class);
@@ -212,6 +199,8 @@ public class Equ
         registerFunction("ltrim", FuncStringLTrim.class);
         registerFunction("trim", FuncStringTrim.class);
         registerFunction("indexOf", FuncStringIndexOf.class);
+        registerFunction("date", FuncDate.class);
+        registerFunction("toString", FuncToString.class);
 
         operatorMap = new Hashtable<>();
         registerOperator("^", OpPower.class);
@@ -261,10 +250,8 @@ public class Equ
      */
     protected Collection<EquPart> multiplize (final Collection<EquPart> oldTokens)
     {
-
         final EquPart[] equParts = oldTokens.toArray(new EquPart[0]);
         final EquPart[] fixed = new EquPart[equParts.length * 2];
-
         /*
          * )(, operand (, operand operand, operand function, ) operand, )
          * function
@@ -276,7 +263,6 @@ public class Equ
 
         for (int right = 1; right < equParts.length; right++)
         {
-
             if (fixed[left].multiplize(equParts[right]))
             {
                 m = new OpMultiply(fixed[left]);
@@ -291,7 +277,6 @@ public class Equ
         final Collection<EquPart> tokens = new ArrayList<>();
 
         for (int i = 0; i < fixed.length; i++)
-
             if (fixed[i] != null)
                 tokens.add(fixed[i]);
 
@@ -300,7 +285,6 @@ public class Equ
 
     Operator operator (final Token tok) throws Exception
     {
-
         final String token = tok.getValue().toString();
         final Constructor<?> constructor = operatorMap.get(token);
         if (constructor == null)
@@ -319,7 +303,6 @@ public class Equ
 
     public void registerFunction (final String name, final Class<?> functionSubclass) throws Exception
     {
-
         final String token = name.toLowerCase();
         if (functionMap.containsKey(name))
             throw new Exception("duplicate function: " + token);
@@ -337,7 +320,6 @@ public class Equ
 
     public void registerOperator (final String name, final Class<?> operatorSubclass) throws Exception
     {
-
         final String token = name.toLowerCase();
         if (operatorMap.containsKey(name))
             throw new Exception("duplicate operator: " + token);
@@ -358,7 +340,6 @@ public class Equ
      */
     protected Collection<EquPart> rpnize (final Collection<EquPart> oldTokens)
     {
-
         final Collection<EquPart> _rpn = new Stack<>();
         final Stack<EquPart> ops = new Stack<>();
         Operation leftOp;
@@ -430,19 +411,16 @@ public class Equ
 
     public void setBaseDate (final java.sql.Date newBaseDate)
     {
-
         baseDate = newBaseDate;
     }
 
     public void setSupport (final EquationSupport newSupport)
     {
-
         support = newSupport;
     }
 
     public String showRPN () throws Exception
     {
-
         final StringBuilder sb = new StringBuilder();
         showRPN(sb);
         return sb.toString();
@@ -450,7 +428,6 @@ public class Equ
 
     public void showRPN (final StringBuilder sb) throws Exception
     {
-
         for (final EquPart part : rpn)
         {
             sb.append(part.toString());
@@ -460,7 +437,6 @@ public class Equ
 
     protected Collection<EquPart> tokenize () throws Exception
     {
-
         /*
          * break apart obvious tokens, realizing that some may need further
          * breakage and some may need to be merged back again
@@ -518,7 +494,6 @@ public class Equ
 
     public void unregisterFunction (final String name) throws Exception
     {
-
         final String token = name.toLowerCase();
         if (!functionMap.containsKey(token))
             throw new Exception("unknown function: " + token);
@@ -527,7 +502,6 @@ public class Equ
 
     public void unregisterOperator (final String name) throws Exception
     {
-
         final String token = name.toLowerCase();
         if (!operatorMap.containsKey(token))
             throw new Exception("unknown operator: " + token);

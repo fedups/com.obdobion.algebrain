@@ -4,7 +4,7 @@
 	<groupId>obdobion</groupId>
 	<artifactId>algebrain</artifactId>
 	<packaging>jar</packaging>
-	<version>1.2.7</version>
+	<version>1.3.0</version>
 	<name>algebrain</name>
 	<url>http://maven.apache.org</url>
 
@@ -13,6 +13,7 @@
         <java.source.version>1.8</java.source.version>
         <junit.version>4.8.1</junit.version>
         <project.build.sourceEncoding>Cp1252</project.build.sourceEncoding>
+        <calendar.version>1.0.0</calendar.version>
     </properties>
 
 
@@ -102,6 +103,11 @@
             <artifactId>junit</artifactId>
             <version>${junit.version}</version>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.obdobion</groupId>
+            <artifactId>calendar</artifactId>
+            <version>${calendar.version}</version>
         </dependency>
     </dependencies>
 </project>

@@ -1,5 +1,6 @@
 package com.obdobion.algebrain;
 
+import java.util.Calendar;
 import java.util.Stack;
 
 /**
@@ -28,7 +29,13 @@ public class OpCompareGreater extends Operator
     {
         if (values.size() < 2)
             throw new Exception("missing operands for " + toString());
-        final double[] data = convertToDouble(values.pop(), values.pop());
+        Object[] ops = ensureSameTypes(values.pop(), values.pop());
+        if (ops[0] instanceof Calendar)
+        {
+            values.push(new Boolean(((Calendar) ops[1]).compareTo((Calendar) ops[0]) > 0));
+            return;
+        }
+        final double[] data = convertToDouble(ops[0], ops[1]);
         values.push(new Boolean(data[1] > data[0]));
     }
 
