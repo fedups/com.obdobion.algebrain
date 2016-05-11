@@ -5,7 +5,7 @@ import org.junit.Test;
 
 /**
  * @author Chris DeGreef
- * 
+ *
  */
 public class TestAssignment
 {
@@ -30,9 +30,9 @@ public class TestAssignment
         } catch (final Exception e)
         {
             Assert.assertEquals(
-                    "exception",
-                    "\"=\" supports same type comparisons only, found TokVariable and Double",
-                    e.getMessage());
+                "exception",
+                "op(compare equal); supports same type comparisons only, found TokVariable and Double",
+                e.getMessage());
         }
     }
 
@@ -57,20 +57,20 @@ public class TestAssignment
         final Double result = (Double) Equ.getInstance().evaluate("c:=max (a := 1, b :=2)");
         Assert.assertEquals("result", 2D, result, 0);
         Assert.assertEquals(
-                "assigned variable",
-                1D,
-                (double) Equ.getInstance().getSupport().resolveVariable("a", null),
-                0);
+            "assigned variable",
+            1D,
+            (double) Equ.getInstance().getSupport().resolveVariable("a", null),
+            0);
         Assert.assertEquals(
-                "assigned variable",
-                2D,
-                (double) Equ.getInstance().getSupport().resolveVariable("b", null),
-                0);
+            "assigned variable",
+            2D,
+            (double) Equ.getInstance().getSupport().resolveVariable("b", null),
+            0);
         Assert.assertEquals(
-                "assigned variable",
-                2D,
-                (double) Equ.getInstance().getSupport().resolveVariable("c", null),
-                0);
+            "assigned variable",
+            2D,
+            (double) Equ.getInstance().getSupport().resolveVariable("c", null),
+            0);
     }
 
     @Test
@@ -131,9 +131,9 @@ public class TestAssignment
         } catch (final Exception e)
         {
             Assert.assertEquals(
-                    "exception",
-                    "\"=\" supports same type comparisons only, found TokVariable and Double",
-                    e.getMessage());
+                "exception",
+                "op(compare equal); supports same type comparisons only, found TokVariable and Double",
+                e.getMessage());
         }
     }
 

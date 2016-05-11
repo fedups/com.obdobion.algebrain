@@ -1,10 +1,10 @@
 package com.obdobion.algebrain;
 
-import java.util.Stack;
+import java.text.ParseException;
 
 /**
  * @author Chris DeGreef
- * 
+ *
  */
 public class FuncStringLength extends Function
 {
@@ -19,12 +19,18 @@ public class FuncStringLength extends Function
     }
 
     @Override
-    public void resolve (final Stack<Object> values) throws Exception
+    public void resolve (final ValueStack values) throws Exception
     {
         if (values.size() < getParameterCount())
             throw new Exception("missing operands for " + toString());
-
-        values.push(new Double(((String) values.pop()).length()));
+        try
+        {
+            values.push(new Double(values.popString().length()));
+        } catch (final ParseException e)
+        {
+            e.fillInStackTrace();
+            throw new Exception(toString() + "; " + e.getMessage(), e);
+        }
     }
 
     @Override

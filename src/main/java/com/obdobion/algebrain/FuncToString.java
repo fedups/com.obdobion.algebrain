@@ -1,10 +1,10 @@
 package com.obdobion.algebrain;
 
-import java.util.Stack;
+import java.text.ParseException;
 
 /**
  * @author Chris DeGreef
- * 
+ *
  */
 public class FuncToString extends Function
 {
@@ -19,37 +19,42 @@ public class FuncToString extends Function
     }
 
     @Override
-    public void resolve (final Stack<Object> values) throws Exception
+    public void resolve (final ValueStack values) throws Exception
     {
         if (values.size() < getParameterCount())
             throw new Exception("missing operands for " + toString());
-
-        String format = null;
-        if (getParameterCount() == 2)
-            format = ((String) values.pop());
-
-        Object op1 = values.pop();
-
-        if (op1 instanceof String)
-            values.push(op1);
-        else if (op1 instanceof Double)
+        try
         {
-            double op = ((Double) op1).doubleValue();
-            if (format != null)
-                values.push(String.format(format, op));
+            String format = null;
+            if (getParameterCount() == 2)
+                format = values.popString();
+
+            final Object op1 = values.popWhatever();
+
+            if (op1 instanceof String)
+                values.push(op1);
+            else if (op1 instanceof Double)
+            {
+                final double op = ((Double) op1).doubleValue();
+                if (format != null)
+                    values.push(String.format(format, op));
+                else
+                    values.push(Double.toString(op));
+            } else if (op1 instanceof Long)
+            {
+                final long op = ((Long) op1).longValue();
+                if (format != null)
+                    values.push(String.format(format, op));
+                else
+                    values.push(Long.toString(op));
+            }
             else
-                values.push(Double.toString(op));
-        } else
-        if (op1 instanceof Long)
+                values.push("");
+        } catch (final ParseException e)
         {
-            long op = ((Long) op1).longValue();
-            if (format != null)
-                values.push(String.format(format, op));
-            else
-                values.push(Long.toString(op));
+            e.fillInStackTrace();
+            throw new Exception(toString() + "; " + e.getMessage(), e);
         }
-        else
-            values.push("");
     }
 
     @Override

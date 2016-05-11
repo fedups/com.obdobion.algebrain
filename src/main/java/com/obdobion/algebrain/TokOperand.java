@@ -1,10 +1,9 @@
 package com.obdobion.algebrain;
 
-import java.util.Stack;
 
 /**
  * @author Chris DeGreef
- * 
+ *
  */
 public abstract class TokOperand extends Token
 {
@@ -20,7 +19,7 @@ public abstract class TokOperand extends Token
     }
 
     @Override
-    public void resolve (final Stack<Object> values) throws Exception
+    public void resolve (final ValueStack values) throws Exception
     {
         values.push(getValue());
     }

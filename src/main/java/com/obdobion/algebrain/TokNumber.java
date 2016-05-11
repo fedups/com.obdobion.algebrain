@@ -1,10 +1,9 @@
 package com.obdobion.algebrain;
 
-import java.util.Stack;
 
 /**
  * @author Chris DeGreef
- * 
+ *
  */
 public class TokNumber extends TokOperand
 {
@@ -32,7 +31,7 @@ public class TokNumber extends TokOperand
     }
 
     @Override
-    public void resolve (final Stack<Object> values) throws Exception
+    public void resolve (final ValueStack values) throws Exception
     {
         values.push(new Double(getValue().toString()));
     }

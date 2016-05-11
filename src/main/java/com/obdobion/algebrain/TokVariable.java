@@ -1,22 +1,33 @@
 package com.obdobion.algebrain;
 
-import java.util.Stack;
-
 /**
  * @author Chris DeGreef
- * 
+ *
  */
 public class TokVariable extends TokOperand
 {
+    boolean assignedByEquation;
+
     public TokVariable()
     {
         super();
+        assignedByEquation = false;
     }
 
     @Override
     public boolean accepts (final char s)
     {
         return Character.isLetter(s) || Character.isDigit(s) || s == '_' || s == '.';
+    }
+
+    public String getName ()
+    {
+        return super.toString();
+    }
+
+    public boolean isResetable ()
+    {
+        return assignedByEquation;
     }
 
     @Override
@@ -29,22 +40,24 @@ public class TokVariable extends TokOperand
     }
 
     @Override
-    public void resolve (final Stack<Object> values) throws Exception
+    public void resolve (final ValueStack values) throws Exception
     {
         if (getEqu().getSupport() == null)
             throw new Exception("variables require support");
 
         final Object obj = getEqu().getSupport().resolveVariable(
-                getValue().toString().toLowerCase(),
-                getEqu().getBaseDate());
+            getValue().toString().toLowerCase(),
+            getEqu().getBaseDate());
         if (obj == null)
+        {
             /*
              * The variable may not exist if it is the target of an assignment
              * operation. The variable will be created rather than resolved.
              * Further, variables are final.
              */
             values.push(this);
-        else
+            assignedByEquation = true;
+        } else
             values.push(obj);
     }
 

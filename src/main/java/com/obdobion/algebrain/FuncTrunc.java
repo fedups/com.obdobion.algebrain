@@ -1,36 +1,47 @@
 package com.obdobion.algebrain;
 
-import java.util.Stack;
+import java.text.ParseException;
 
 /**
  * @author Chris DeGreef
- * 
+ *
  */
-public class FuncTrunc extends Function {
+public class FuncTrunc extends Function
+{
 
-    public FuncTrunc() {
+    public FuncTrunc()
+    {
         super();
     }
 
-    public FuncTrunc(final TokVariable var) {
+    public FuncTrunc(final TokVariable var)
+    {
         super(var);
     }
 
     /**
      * The trunc function uses one operands.
-     * 
+     *
      * @see com.obdobion.algebrain.EquPart#resolve(java.util.Stack)
      */
     @Override
-    public void resolve (final Stack<Object> values) throws Exception {
+    public void resolve (final ValueStack values) throws Exception
+    {
         if (values.size() < 1)
             throw new Exception("missing operands for " + toString());
-        final double[] data = convertToDouble(values.pop());
-        values.push(new Double(Math.floor(data[0])));
+        try
+        {
+            values.push(new Double(Math.floor(values.popDouble())));
+        } catch (final ParseException e)
+        {
+            e.fillInStackTrace();
+            throw new Exception(toString() + "; " + e.getMessage(), e);
+        }
     }
 
     @Override
-    public String toString () {
+    public String toString ()
+    {
         return "function(round)";
     }
 }

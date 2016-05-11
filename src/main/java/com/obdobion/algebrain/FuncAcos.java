@@ -1,10 +1,10 @@
 package com.obdobion.algebrain;
 
-import java.util.Stack;
+import java.text.ParseException;
 
 /**
  * @author Chris DeGreef
- * 
+ *
  */
 public class FuncAcos extends Function
 {
@@ -19,12 +19,18 @@ public class FuncAcos extends Function
     }
 
     @Override
-    public void resolve (final Stack<Object> values) throws Exception
+    public void resolve (final ValueStack values) throws Exception
     {
         if (values.size() < 1)
             throw new Exception("missing operands for " + toString());
-        final double[] data = convertToDouble(values.pop());
-        values.push(new Double(Math.acos(data[0]) * 180 / Math.PI));
+        try
+        {
+            values.push(new Double(Math.acos(values.popDouble()) * 180 / Math.PI));
+        } catch (final ParseException e)
+        {
+            e.fillInStackTrace();
+            throw new Exception(toString() + "; " + e.getMessage(), e);
+        }
     }
 
     @Override

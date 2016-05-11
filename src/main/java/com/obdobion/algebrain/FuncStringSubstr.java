@@ -1,10 +1,10 @@
 package com.obdobion.algebrain;
 
-import java.util.Stack;
+import java.text.ParseException;
 
 /**
  * @author Chris DeGreef
- * 
+ *
  */
 public class FuncStringSubstr extends Function
 {
@@ -19,18 +19,24 @@ public class FuncStringSubstr extends Function
     }
 
     @Override
-    public void resolve (final Stack<Object> values) throws Exception
+    public void resolve (final ValueStack values) throws Exception
     {
         if (values.size() < 3)
             throw new Exception("requires 3 parameters " + toString());
         if (values.size() < getParameterCount())
             throw new Exception("missing operands for " + toString());
+        try
+        {
+            final Double length = values.popDouble();
+            final Double offset = values.popDouble();
+            final String target = values.popString();
 
-        Double length = (Double) values.pop();
-        Double offset = (Double) values.pop();
-        String target = (String) values.pop();
-
-        values.push(target.substring(offset.intValue(), offset.intValue() + length.intValue()));
+            values.push(target.substring(offset.intValue(), offset.intValue() + length.intValue()));
+        } catch (final ParseException e)
+        {
+            e.fillInStackTrace();
+            throw new Exception(toString() + "; " + e.getMessage(), e);
+        }
     }
 
     @Override

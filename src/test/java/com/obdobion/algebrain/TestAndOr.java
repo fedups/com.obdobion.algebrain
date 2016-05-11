@@ -114,4 +114,11 @@ public class TestAndOr
         Assert.assertEquals("result ", false, result.booleanValue());
     }
 
+    @Test
+    public void greaterAndLess () throws Exception
+    {
+        final Boolean result = (Boolean) Equ.getInstance(true).evaluate("a:=43;a>=40 && a<50");
+        Assert.assertEquals("result ", true, result.booleanValue());
+    }
+
 }

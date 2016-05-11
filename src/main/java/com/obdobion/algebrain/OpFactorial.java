@@ -1,10 +1,10 @@
 package com.obdobion.algebrain;
 
-import java.util.Stack;
+import java.text.ParseException;
 
 /**
  * @author Chris DeGreef
- * 
+ *
  */
 public class OpFactorial extends Operator
 {
@@ -25,23 +25,30 @@ public class OpFactorial extends Operator
     }
 
     @Override
-    public void resolve (final Stack<Object> values) throws Exception
+    public void resolve (final ValueStack values) throws Exception
     {
         if (values.size() < 1)
             throw new Exception("missing operand for " + toString());
-        final double[] data = convertToDouble(values.pop());
+        try
+        {
+            final double base = values.popDouble();
 
-        if (data[0] > 20)
-            throw new Exception("numeric overflow for " + toString());
+            if (base > 20)
+                throw new Exception(toString() + "; " + "numeric overflow");
 
-        if (data[0] < 0)
-            throw new Exception("negative numbers not allowed for " + toString());
+            if (base < 0)
+                throw new Exception(toString() + "; " + "negative numbers not allowed");
 
-        long factorial = 1;
-        for (int i = new Double(data[0]).intValue(); i > 1; i--)
-            factorial *= i;
+            long factorial = 1;
+            for (int i = new Double(base).intValue(); i > 1; i--)
+                factorial *= i;
 
-        values.push(new Double(factorial));
+            values.push(new Double(factorial));
+        } catch (final ParseException e)
+        {
+            e.fillInStackTrace();
+            throw new Exception(toString() + "; " + e.getMessage(), e);
+        }
     }
 
     @Override

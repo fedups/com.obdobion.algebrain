@@ -6,6 +6,7 @@ import java.util.Collection;
 import java.util.HashSet;
 import java.util.Hashtable;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.Stack;
@@ -27,12 +28,25 @@ import java.util.Stack;
  * will do what is necessary to come up with it. The test cases show a support
  * instance that maintains a local Map of variable name / value pairs. But a
  * database could be used as well, for instance.
- * 
+ *
  * @author Chris DeGreef
  */
 public class Equ
 {
-    private static Equ                  instance;
+    private static Equ instance;
+
+    static public Set<String> gatherVariables (final Collection<EquPart> tokens)
+    {
+        final Set<String> vars = new HashSet<>();
+        for (final EquPart token : tokens)
+        {
+            if (token instanceof TokVariable)
+            {
+                vars.add(((TokVariable) token).getValue().toString());
+            }
+        }
+        return vars;
+    }
 
     public static Equ getInstance ()
     {
@@ -43,7 +57,7 @@ public class Equ
     {
         if (instance == null || fresh)
         {
-            Equ newInstance = new Equ();
+            final Equ newInstance = new Equ();
             try
             {
                 newInstance.initialize();
@@ -57,12 +71,14 @@ public class Equ
     }
 
     private Map<String, Constructor<?>> functionMap;
-    private Map<String, Constructor<?>> operatorMap;
 
-    private java.sql.Date       baseDate;
-    private EquationSupport     support;
-    private String              equ;
-    private Collection<EquPart> rpn;
+    private Map<String, Constructor<?>> operatorMap;
+    private java.sql.Date               baseDate;
+    private EquationSupport             support;
+    private String                      equ;
+
+    private Collection<EquPart>         rpn;
+    List<String>                        variablesThatExistedBeforePreviousEvaluation;
 
     protected Equ()
     {
@@ -93,10 +109,23 @@ public class Equ
 
     public Object evaluate () throws Exception
     {
-        final Stack<Object> values = new Stack<>();
+        final ValueStack values = new ValueStack();
 
         if (rpn == null)
             return null;
+
+        if (variablesThatExistedBeforePreviousEvaluation != null)
+            for (final String varName : getSupport().getVariableNames())
+            {
+                if (variablesThatExistedBeforePreviousEvaluation.contains(varName))
+                    continue;
+                getSupport().removeVariable(varName);
+            }
+        /*
+         * Save variable names that exist before the equation. If the equation
+         * assigns values to variables then they will be new names.
+         */
+        variablesThatExistedBeforePreviousEvaluation = getSupport().getVariableNames();
 
         for (final Iterator<EquPart> parts = rpn.iterator(); parts.hasNext();)
         {
@@ -107,6 +136,7 @@ public class Equ
 
         final Object result = values.firstElement();
         values.clear();
+
         return result;
     }
 
@@ -126,25 +156,12 @@ public class Equ
         {
             return (Function) constructor.newInstance(new Object[]
             {
-                    varTok
+                varTok
             });
         } catch (final Exception e)
         {
             throw new Exception("function construction", e);
         }
-    }
-
-    static public Set<String> gatherVariables (final Collection<EquPart> tokens)
-    {
-        final Set<String> vars = new HashSet<>();
-        for (final EquPart token : tokens)
-        {
-            if (token instanceof TokVariable)
-            {
-                vars.add(((TokVariable) token).getValue().toString());
-            }
-        }
-        return vars;
     }
 
     java.sql.Date getBaseDate ()
@@ -293,7 +310,7 @@ public class Equ
         {
             return (Operator) constructor.newInstance(new Object[]
             {
-                    tok
+                tok
             });
         } catch (final Exception e)
         {
@@ -310,7 +327,7 @@ public class Equ
         {
             functionMap.put(token, functionSubclass.getConstructor(new Class<?>[]
             {
-                    TokVariable.class
+                TokVariable.class
             }));
         } catch (final Exception e)
         {
@@ -327,7 +344,7 @@ public class Equ
         {
             operatorMap.put(token, operatorSubclass.getConstructor(new Class<?>[]
             {
-                    EquPart.class
+                EquPart.class
             }));
         } catch (final Exception e)
         {
@@ -449,7 +466,7 @@ public class Equ
         for (int a = 0; a < equ.length(); a++)
         {
             c = equ.charAt(a);
-            boolean isWhitespace = Character.isWhitespace(c);
+            final boolean isWhitespace = Character.isWhitespace(c);
 
             if (isWhitespace)
                 if (!(token != null && token instanceof TokLiteral && token.accepts(c)))
@@ -492,6 +509,12 @@ public class Equ
         return tokens;
     }
 
+    @Override
+    public String toString ()
+    {
+        return equ;
+    }
+
     public void unregisterFunction (final String name) throws Exception
     {
         final String token = name.toLowerCase();
@@ -506,11 +529,5 @@ public class Equ
         if (!operatorMap.containsKey(token))
             throw new Exception("unknown operator: " + token);
         operatorMap.remove(token);
-    }
-
-    @Override
-    public String toString ()
-    {
-        return equ;
     }
 }

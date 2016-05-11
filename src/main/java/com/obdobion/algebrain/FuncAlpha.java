@@ -1,11 +1,11 @@
 package com.obdobion.algebrain;
 
+import java.text.ParseException;
 import java.util.Formatter;
-import java.util.Stack;
 
 /**
  * @author Chris DeGreef
- * 
+ *
  */
 public class FuncAlpha extends Function
 {
@@ -20,21 +20,27 @@ public class FuncAlpha extends Function
     }
 
     @Override
-    public void resolve (final Stack<Object> values) throws Exception
+    public void resolve (final ValueStack values) throws Exception
     {
         if (values.size() < 1)
             throw new Exception("missing operands for " + toString());
 
-        final double[] data = convertToDouble(values.pop());
-        final StringBuilder buf = new StringBuilder();
-        try (final Formatter fmt = new Formatter(buf))
+        try
         {
-            fmt.format("%d", new Object[]
+            final StringBuilder buf = new StringBuilder();
+            try (final Formatter fmt = new Formatter(buf))
             {
-                    (int) data[0]
-            });
+                fmt.format("%d", new Object[]
+                {
+                    (int) values.popDouble()
+                });
+            }
+            values.push(buf.toString());
+        } catch (final ParseException e)
+        {
+            e.fillInStackTrace();
+            throw new Exception(toString() + "; " + e.getMessage(), e);
         }
-        values.push(buf.toString());
     }
 
     @Override

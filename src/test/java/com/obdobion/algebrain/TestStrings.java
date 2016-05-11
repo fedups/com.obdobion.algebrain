@@ -5,96 +5,16 @@ import org.junit.Test;
 
 /**
  * @author Chris DeGreef
- * 
+ *
  */
 public class TestStrings
 {
-    @Test
-    public void stringNoSpaces () throws Exception
-    {
-        final Equ equ = Equ.getInstance();
-        final Boolean result = (Boolean) equ.evaluate("'TRIMMED'='TRIMMED'");
-        Assert.assertTrue(result.booleanValue());
-    }
-
-    @Test
-    public void stringLeadingSpaces () throws Exception
-    {
-        final Equ equ = Equ.getInstance();
-        final Boolean result = (Boolean) equ.evaluate("' TRIMMED'=' TRIMMED'");
-        Assert.assertTrue(result.booleanValue());
-    }
-
-    @Test
-    public void stringTrailingSpaces () throws Exception
-    {
-        final Equ equ = Equ.getInstance();
-        final Boolean result = (Boolean) equ.evaluate("'TRIMMED '='TRIMMED '");
-        Assert.assertTrue(result.booleanValue());
-    }
-
-    @Test
-    public void stringUntrimmed () throws Exception
-    {
-        final Equ equ = Equ.getInstance();
-        final Boolean result = (Boolean) equ.evaluate("' TRIMMED '=' TRIMMED '");
-        Assert.assertTrue(result.booleanValue());
-    }
-
-    @Test
-    public void stringMatches () throws Exception
-    {
-        final Equ equ = Equ.getInstance();
-        final String result = (String) equ.evaluate("match('ABC123XYZ', '.*123.*')");
-        Assert.assertEquals("ABC123XYZ", result);
-    }
-
-    @Test
-    public void stringMatchesPartial () throws Exception
-    {
-        final Equ equ = Equ.getInstance();
-        final String result = (String) equ.evaluate("match('ABC123XYZ', '123')");
-        Assert.assertEquals("123", result);
-    }
-
-    @Test
-    public void stringMatchesInitialGroup () throws Exception
-    {
-        final Equ equ = Equ.getInstance();
-        final String result = (String) equ.evaluate("match('ABC123XYZ', '.*(123).*')");
-        Assert.assertEquals("123", result);
-    }
-
-    @Test
-    public void stringEmpty () throws Exception
-    {
-        final Equ equ = Equ.getInstance();
-        final Boolean result = (Boolean) equ.evaluate("empty(match('ABC123XYZ', 'NOTHING'))");
-        Assert.assertTrue(result.booleanValue());
-    }
-
     @Test
     public void stringCaseInsensitive () throws Exception
     {
         final Equ equ = Equ.getInstance();
         final String result = (String) equ.evaluate("match('ABC123XYZ', 'abc', true)");
         Assert.assertEquals("ABC", result);
-    }
-
-    @Test
-    public void stringNotEmpty () throws Exception
-    {
-        final Equ equ = Equ.getInstance();
-        final Boolean result = (Boolean) equ.evaluate("not(empty(match('ABC123XYZ', '123')))");
-        Assert.assertTrue(result.booleanValue());
-    }
-
-    @Test
-    public void stringConcatinateOne () throws Exception
-    {
-        final Equ equ = Equ.getInstance();
-        final String result = (String) equ.evaluate("cat('1')");
-        Assert.assertEquals("1", result);
     }
 
     @Test
@@ -122,27 +42,35 @@ public class TestStrings
     }
 
     @Test
-    public void stringLength () throws Exception
+    public void stringConcatinateOne () throws Exception
     {
         final Equ equ = Equ.getInstance();
-        final Double result = (Double) equ.evaluate("length(match('ABC123XYZ', '[X-Z]+'))");
-        Assert.assertEquals(3, result, 0D);
+        final String result = (String) equ.evaluate("cat('1')");
+        Assert.assertEquals("1", result);
     }
 
     @Test
-    public void stringSubstring () throws Exception
+    public void stringEmpty () throws Exception
     {
         final Equ equ = Equ.getInstance();
-        final String result = (String) equ.evaluate("substr('ABC123XYZ', 2, 3)");
-        Assert.assertEquals("C12", result);
+        final Boolean result = (Boolean) equ.evaluate("empty(match('ABC123XYZ', 'NOTHING'))");
+        Assert.assertTrue(result.booleanValue());
     }
 
     @Test
-    public void stringRightTrim () throws Exception
+    public void stringIndexOf () throws Exception
     {
         final Equ equ = Equ.getInstance();
-        final String result = (String) equ.evaluate("rtrim(' ABC ')");
-        Assert.assertEquals(" ABC", result);
+        final Double result = (Double) equ.evaluate("indexOf(' ABC ', 'B')");
+        Assert.assertEquals(2, result, 0D);
+    }
+
+    @Test
+    public void stringLeadingSpaces () throws Exception
+    {
+        final Equ equ = Equ.getInstance();
+        final Boolean result = (Boolean) equ.evaluate("' TRIMMED'=' TRIMMED'");
+        Assert.assertTrue(result.booleanValue());
     }
 
     @Test
@@ -154,6 +82,78 @@ public class TestStrings
     }
 
     @Test
+    public void stringLength () throws Exception
+    {
+        final Equ equ = Equ.getInstance();
+        final Double result = (Double) equ.evaluate("length(match('ABC123XYZ', '[X-Z]+'))");
+        Assert.assertEquals(3, result, 0D);
+    }
+
+    @Test
+    public void stringMatches () throws Exception
+    {
+        final Equ equ = Equ.getInstance();
+        final String result = (String) equ.evaluate("match('ABC123XYZ', '.*123.*')");
+        Assert.assertEquals("ABC123XYZ", result);
+    }
+
+    @Test
+    public void stringMatchesInitialGroup () throws Exception
+    {
+        final Equ equ = Equ.getInstance();
+        final String result = (String) equ.evaluate("match('ABC123XYZ', '.*(123).*')");
+        Assert.assertEquals("123", result);
+    }
+
+    @Test
+    public void stringMatchesPartial () throws Exception
+    {
+        final Equ equ = Equ.getInstance();
+        final String result = (String) equ.evaluate("match('ABC123XYZ', '123')");
+        Assert.assertEquals("123", result);
+    }
+
+    @Test
+    public void stringNoSpaces () throws Exception
+    {
+        final Equ equ = Equ.getInstance();
+        final Boolean result = (Boolean) equ.evaluate("'TRIMMED'='TRIMMED'");
+        Assert.assertTrue(result.booleanValue());
+    }
+
+    @Test
+    public void stringNotEmpty () throws Exception
+    {
+        final Equ equ = Equ.getInstance();
+        final Boolean result = (Boolean) equ.evaluate("not(empty(match('ABC123XYZ', '123')))");
+        Assert.assertTrue(result.booleanValue());
+    }
+
+    @Test
+    public void stringRightTrim () throws Exception
+    {
+        final Equ equ = Equ.getInstance();
+        final String result = (String) equ.evaluate("rtrim(' ABC ')");
+        Assert.assertEquals(" ABC", result);
+    }
+
+    @Test
+    public void stringSubstring () throws Exception
+    {
+        final Equ equ = Equ.getInstance();
+        final String result = (String) equ.evaluate("substr('ABC123XYZ', 2, 3)");
+        Assert.assertEquals("C12", result);
+    }
+
+    @Test
+    public void stringTrailingSpaces () throws Exception
+    {
+        final Equ equ = Equ.getInstance();
+        final Boolean result = (Boolean) equ.evaluate("'TRIMMED '='TRIMMED '");
+        Assert.assertTrue(result.booleanValue());
+    }
+
+    @Test
     public void stringTrim () throws Exception
     {
         final Equ equ = Equ.getInstance();
@@ -162,10 +162,18 @@ public class TestStrings
     }
 
     @Test
-    public void stringIndexOf () throws Exception
+    public void stringUntrimmed () throws Exception
     {
         final Equ equ = Equ.getInstance();
-        final Double result = (Double) equ.evaluate("indexOf(' ABC ', 'B')");
-        Assert.assertEquals(2, result, 0D);
+        final Boolean result = (Boolean) equ.evaluate("' TRIMMED '=' TRIMMED '");
+        Assert.assertTrue(result.booleanValue());
+    }
+
+    @Test
+    public void unquotedLiteral () throws Exception
+    {
+        final Equ equ = Equ.getInstance();
+        final Boolean result = (Boolean) equ.evaluate("rtrim('Illinois') = Illinois");
+        Assert.assertTrue(result.booleanValue());
     }
 }

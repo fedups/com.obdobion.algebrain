@@ -1,10 +1,9 @@
 package com.obdobion.algebrain;
 
-import java.util.Stack;
 
 /**
  * @author Chris DeGreef
- * 
+ *
  */
 public abstract class EquPart extends Object
 {
@@ -35,7 +34,7 @@ public abstract class EquPart extends Object
         return false;
     }
 
-    public abstract void resolve (Stack<Object> values) throws Exception;
+    public abstract void resolve (ValueStack values) throws Exception;
 
     public void setEqu (final Equ newEqu)
     {

@@ -1,12 +1,12 @@
 package com.obdobion.algebrain;
 
-import java.util.Stack;
+import java.text.ParseException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
  * @author Chris DeGreef
- * 
+ *
  */
 public class FuncStringMatch extends Function
 {
@@ -21,30 +21,36 @@ public class FuncStringMatch extends Function
     }
 
     @Override
-    public void resolve (final Stack<Object> values) throws Exception
+    public void resolve (final ValueStack values) throws Exception
     {
         if (values.size() < getParameterCount())
             throw new Exception("missing operands for " + toString());
-
-        String target;
-        String pattern;
-        boolean ignoreCase = false;
-        if (getParameterCount() == 3)
-            ignoreCase = ((Boolean) values.pop()).booleanValue();
-        pattern = (String) values.pop();
-        target = (String) values.pop();
-
-        Matcher matcher = Pattern.compile(pattern, ignoreCase
-                ? Pattern.CASE_INSENSITIVE
-                : 0).matcher(target);
-        if (matcher.find())
+        try
         {
-            if (matcher.groupCount() > 0)
-                values.push(matcher.group(1));
-            else
-                values.push(matcher.group());
-        } else
-            values.push("");
+            String target;
+            String pattern;
+            boolean ignoreCase = false;
+            if (getParameterCount() == 3)
+                ignoreCase = values.popBoolean();
+            pattern = values.popString();
+            target = values.popString();
+
+            final Matcher matcher = Pattern.compile(pattern, ignoreCase
+                    ? Pattern.CASE_INSENSITIVE
+                    : 0).matcher(target);
+            if (matcher.find())
+            {
+                if (matcher.groupCount() > 0)
+                    values.push(matcher.group(1));
+                else
+                    values.push(matcher.group());
+            } else
+                values.push("");
+        } catch (final ParseException e)
+        {
+            e.fillInStackTrace();
+            throw new Exception(toString() + "; " + e.getMessage(), e);
+        }
     }
 
     @Override

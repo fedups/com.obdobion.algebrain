@@ -1,15 +1,15 @@
 package com.obdobion.algebrain;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.Stack;
 
 import com.obdobion.calendar.CalendarFactory;
 
 /**
  * @author Chris DeGreef
- * 
+ *
  */
 public class FuncDate extends Function
 {
@@ -25,56 +25,67 @@ public class FuncDate extends Function
     }
 
     @Override
-    public void resolve (final Stack<Object> values) throws Exception
+    public void resolve (final ValueStack values) throws Exception
     {
         if (values.size() < 1)
             throw new Exception("missing operands for " + toString());
 
-        String adjustments = "";
-        if (getParameterCount() == 3)
-            adjustments = (String) values.pop();
-
-        String dateFormat = "";
-        if (getParameterCount() > 1)
-            dateFormat = (String) values.pop();
-
-        final Object dateInput = values.pop();
-        boolean today = false;
-        boolean now = false;
-
-        Date convertedInputDate = null;
-        if (dateInput instanceof String)
+        try
         {
-            if (((String) dateInput).equalsIgnoreCase("today"))
-                today = true;
-            else if (((String) dateInput).equalsIgnoreCase("now"))
-                now = true;
-            else
-            {
-                SimpleDateFormat sdf = new SimpleDateFormat(dateFormat);
-                convertedInputDate = sdf.parse((String) dateInput);
-            }
-        } else if (dateInput instanceof Long)
-        {
-            convertedInputDate = new Date((Long) dateInput);
-        } else if (dateInput instanceof Double)
-        {
-            convertedInputDate = new Date(((Double) dateInput).longValue());
-        } else
-            convertedInputDate = ((Calendar) dateInput).getTime();
+            String adjustments = "";
+            String dateFormat = "";
 
-        if (today) {
+            if (getParameterCount() == 3)
+                adjustments = values.popString();
+
+            if (getParameterCount() > 1)
+                dateFormat = values.popString();
+
             /*
-             * format contains the adjustments for today and now.
+             * format contains the adjustments for everything except String
+             * input
              */
-            values.push(CalendarFactory.today(dateFormat));
-            return;
+
+            final Object dateInput = values.popWhatever();
+
+            Date convertedInputDate = null;
+            if (dateInput instanceof String)
+            {
+                if (((String) dateInput).equalsIgnoreCase("today"))
+                {
+                    adjustments = dateFormat;
+                    values.push(CalendarFactory.today(adjustments));
+
+                } else if (((String) dateInput).equalsIgnoreCase("now"))
+                {
+                    adjustments = dateFormat;
+                    values.push(CalendarFactory.now(adjustments));
+                } else
+                {
+                    final SimpleDateFormat sdf = new SimpleDateFormat(dateFormat);
+                    convertedInputDate = sdf.parse((String) dateInput);
+                    values.push(CalendarFactory.modify(convertedInputDate, adjustments));
+                }
+                return;
+            }
+
+            adjustments = dateFormat;
+            if (dateInput instanceof Long)
+            {
+                convertedInputDate = new Date((Long) dateInput);
+            } else if (dateInput instanceof Double)
+            {
+                convertedInputDate = new Date(((Double) dateInput).longValue());
+            } else
+                convertedInputDate = ((Calendar) dateInput).getTime();
+
+            values.push(CalendarFactory.modify(convertedInputDate, adjustments));
+
+        } catch (final ParseException e)
+        {
+            e.fillInStackTrace();
+            throw new Exception(toString() + "; " + e.getMessage(), e);
         }
-        if (now) {
-            values.push(CalendarFactory.now(dateFormat));
-            return;
-        }
-        values.push(CalendarFactory.modify(convertedInputDate, adjustments));
     }
 
     @Override

@@ -1,12 +1,12 @@
 package com.obdobion.algebrain;
 
+import java.text.ParseException;
 import java.util.Enumeration;
 import java.util.Hashtable;
-import java.util.Stack;
 
 /**
  * @author Chris DeGreef
- * 
+ *
  */
 public class FuncTieredRate extends Function
 {
@@ -21,15 +21,15 @@ public class FuncTieredRate extends Function
     }
 
     @Override
-    public void resolve (final Stack<Object> values) throws Exception
+    public void resolve (final ValueStack values) throws Exception
     {
         if (values.size() < 2)
             throw new Exception("missing operands for " + toString());
 
         try
         {
-            final String tableName = (String) values.pop();
-            final Double baseAmount = (Double) values.pop();
+            final String tableName = values.popString();
+            final Double baseAmount = values.popDouble();
 
             if (baseAmount.doubleValue() == 0)
             {
@@ -64,9 +64,10 @@ public class FuncTieredRate extends Function
                 blendedRate += (previousRate * ((baseAmount.doubleValue() - previousLimit) / baseAmount.doubleValue()));
 
             values.push(new Double(blendedRate));
-        } catch (final ClassCastException e)
+        } catch (final ParseException e)
         {
-            throw new Exception("invalid type for parameter in: " + toString());
+            e.fillInStackTrace();
+            throw new Exception(toString() + "; " + e.getMessage(), e);
         }
     }
 

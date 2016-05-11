@@ -1,10 +1,10 @@
 package com.obdobion.algebrain;
 
-import java.util.Stack;
+import java.text.ParseException;
 
 /**
  * @author Chris DeGreef
- * 
+ *
  */
 public class FuncRadsToDegrees extends Function
 {
@@ -19,14 +19,20 @@ public class FuncRadsToDegrees extends Function
     }
 
     @Override
-    public void resolve (final Stack<Object> values) throws Exception
+    public void resolve (final ValueStack values) throws Exception
     {
         if (values.size() < 1)
             throw new Exception("missing operands for " + toString());
-        final double[] data = convertToDouble(values.pop());
-        final double rads = data[0];
-        final double degrees = rads * (180 / Math.PI);
-        values.push(new Double(degrees));
+        try
+        {
+            final double rads = values.popDouble();
+            final double degrees = rads * (180 / Math.PI);
+            values.push(new Double(degrees));
+        } catch (final ParseException e)
+        {
+            e.fillInStackTrace();
+            throw new Exception(toString() + "; " + e.getMessage(), e);
+        }
     }
 
     @Override

@@ -5,56 +5,14 @@ import org.junit.Test;
 
 /**
  * @author Chris DeGreef
- * 
+ *
  */
 public class TestFactorial
 {
     @Test
-    public void fac1 () throws Exception
-    {
-        final Double result = (Double) Equ.getInstance().evaluate("3!");
-        Assert.assertEquals("factorial result ", 6, result.doubleValue(), 0D);
-    }
-
-    @Test
-    public void precedence () throws Exception
-    {
-        final Double result = (Double) Equ.getInstance().evaluate("3*2!");
-        Assert.assertEquals("factorial result ", 6, result.doubleValue(), 0D);
-    }
-
-    @Test
-    public void preliminaryResult () throws Exception
-    {
-        final Double result = (Double) Equ.getInstance().evaluate("(3*2)!");
-        Assert.assertEquals("factorial result ", 720, result.doubleValue(), 0D);
-    }
-
-    @Test
-    public void zero () throws Exception
-    {
-        final Double result = (Double) Equ.getInstance().evaluate("0!");
-        Assert.assertEquals("factorial result ", 1, result.doubleValue(), 0D);
-    }
-
-    @Test
-    public void fraction () throws Exception
-    {
-        final Double result = (Double) Equ.getInstance().evaluate("5.4!");
-        Assert.assertEquals("factorial result ", 120, result.doubleValue(), 0D);
-    }
-
-    @Test
-    public void veryLarge () throws Exception
-    {
-        final Double result = (Double) Equ.getInstance().evaluate("20!");
-        Assert.assertEquals("factorial result ", 2.43290200817664e18, result.doubleValue(), 0D);
-    }
-
-    @Test
     public void binomialCoefficient () throws Exception
     {
-        Equ.getInstance().getSupport().assignVariable("n", new Double(5));
+        Equ.getInstance(true).getSupport().assignVariable("n", new Double(5));
         Equ.getInstance().getSupport().assignVariable("k", new Double(6));
 
         final Double result = (Double) Equ.getInstance().evaluate("(n^k)/(k!)");
@@ -63,16 +21,17 @@ public class TestFactorial
     }
 
     @Test
-    public void tooLarge () throws Exception
+    public void fac1 () throws Exception
     {
-        try
-        {
-            Equ.getInstance().evaluate("21!");
-            Assert.fail("exception expected but not thrown");
-        } catch (Exception e)
-        {
-            Assert.assertEquals("tooLarge ", "numeric overflow for op(factorial)", e.getMessage());
-        }
+        final Double result = (Double) Equ.getInstance(true).evaluate("3!");
+        Assert.assertEquals("factorial result ", 6, result.doubleValue(), 0D);
+    }
+
+    @Test
+    public void fraction () throws Exception
+    {
+        final Double result = (Double) Equ.getInstance(true).evaluate("5.4!");
+        Assert.assertEquals("factorial result ", 120, result.doubleValue(), 0D);
     }
 
     @Test
@@ -80,11 +39,52 @@ public class TestFactorial
     {
         try
         {
-            Equ.getInstance().evaluate("-5!");
+            Equ.getInstance(true).evaluate("-5!");
             Assert.fail("exception expected but not thrown");
-        } catch (Exception e)
+        } catch (final Exception e)
         {
-            Assert.assertEquals("negative ", "negative numbers not allowed for op(factorial)", e.getMessage());
+            Assert.assertEquals("negative ", "op(factorial); negative numbers not allowed", e.getMessage());
         }
+    }
+
+    @Test
+    public void precedence () throws Exception
+    {
+        final Double result = (Double) Equ.getInstance(true).evaluate("3*2!");
+        Assert.assertEquals("factorial result ", 6, result.doubleValue(), 0D);
+    }
+
+    @Test
+    public void preliminaryResult () throws Exception
+    {
+        final Double result = (Double) Equ.getInstance(true).evaluate("(3*2)!");
+        Assert.assertEquals("factorial result ", 720, result.doubleValue(), 0D);
+    }
+
+    @Test
+    public void tooLarge () throws Exception
+    {
+        try
+        {
+            Equ.getInstance(true).evaluate("21!");
+            Assert.fail("exception expected but not thrown");
+        } catch (final Exception e)
+        {
+            Assert.assertEquals("tooLarge ", "op(factorial); numeric overflow", e.getMessage());
+        }
+    }
+
+    @Test
+    public void veryLarge () throws Exception
+    {
+        final Double result = (Double) Equ.getInstance(true).evaluate("20!");
+        Assert.assertEquals("factorial result ", 2.43290200817664e18, result.doubleValue(), 0D);
+    }
+
+    @Test
+    public void zero () throws Exception
+    {
+        final Double result = (Double) Equ.getInstance(true).evaluate("0!");
+        Assert.assertEquals("factorial result ", 1, result.doubleValue(), 0D);
     }
 }

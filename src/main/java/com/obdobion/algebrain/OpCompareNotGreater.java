@@ -1,10 +1,8 @@
 package com.obdobion.algebrain;
 
-import java.util.Stack;
-
 /**
  * @author Chris DeGreef
- * 
+ *
  */
 public class OpCompareNotGreater extends OpCompareGreater
 {
@@ -18,11 +16,10 @@ public class OpCompareNotGreater extends OpCompareGreater
     }
 
     @Override
-    public void resolve (final Stack<Object> values) throws Exception
+    public void resolve (final ValueStack values) throws Exception
     {
         super.resolve(values);
-        final Object op1 = values.pop();
-        values.push(new Boolean(!(Boolean) op1));
+        values.push(new Boolean(!values.popBoolean()));
     }
 
     @Override

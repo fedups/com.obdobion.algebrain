@@ -1,10 +1,8 @@
 package com.obdobion.algebrain;
 
-import java.util.Stack;
-
 /**
  * @author Chris DeGreef
- * 
+ *
  */
 public class FuncIf extends Function
 {
@@ -18,16 +16,16 @@ public class FuncIf extends Function
     }
 
     @Override
-    public void resolve (final Stack<Object> values) throws Exception
+    public void resolve (final ValueStack values) throws Exception
     {
         if (values.size() < 3)
             throw new Exception("missing operands for " + toString());
 
-        final Object op3 = values.pop();
-        final Object op2 = values.pop();
-        final boolean[] op1 = convertToBoolean(values.pop());
+        final Object op3 = values.popWhatever();
+        final Object op2 = values.popWhatever();
+        final boolean op1 = values.popBoolean();
 
-        values.push(op1[0]
+        values.push(op1
                 ? op2
                 : op3);
     }

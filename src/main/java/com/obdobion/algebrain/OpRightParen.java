@@ -1,10 +1,9 @@
 package com.obdobion.algebrain;
 
-import java.util.Stack;
 
 /**
  * @author Chris DeGreef
- * 
+ *
  */
 public class OpRightParen extends Operator
 {
@@ -37,7 +36,7 @@ public class OpRightParen extends Operator
     }
 
     @Override
-    public void resolve (final Stack<Object> values) throws Exception
+    public void resolve (final ValueStack values) throws Exception
     {
         throw new Exception("WHAT! " + toString());
     }

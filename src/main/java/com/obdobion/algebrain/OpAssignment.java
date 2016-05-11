@@ -1,10 +1,10 @@
 package com.obdobion.algebrain;
 
-import java.util.Stack;
+import java.text.ParseException;
 
 /**
  * @author Chris DeGreef
- * 
+ *
  */
 public class OpAssignment extends Operator
 {
@@ -38,34 +38,41 @@ public class OpAssignment extends Operator
     }
 
     @Override
-    public void resolve (final Stack<Object> values) throws Exception
+    public void resolve (final ValueStack values) throws Exception
     {
         if (values.size() < 2)
             throw new Exception("missing operands for " + toString());
-
-        final Object op2 = values.pop();
-        final Object op1 = values.pop();
-
-        if (op2 instanceof TokVariable)
+        try
         {
-            throw new Exception("invalid assignment value: " + op2.toString());
-        }
+            final Object op2 = values.popWhatever();
+            final Object op1 = values.popWhatever();
 
-        if (op1 instanceof TokVariable && !(op2 instanceof TokVariable))
+            if (op2 instanceof TokVariable)
+            {
+                throw new Exception("invalid assignment value: " + op2.toString());
+            }
+
+            if (op1 instanceof TokVariable && !(op2 instanceof TokVariable))
+            {
+                /*
+                 * Assign the value on the right side of the assignment to the
+                 * variable on the left.
+                 */
+                Equ.getInstance().getSupport().assignVariable(((TokVariable) op1).getValue().toString(), op2);
+                /*
+                 * leave the result (value of the assignment) on the stack.
+                 */
+                values.push(op2);
+                return;
+            }
+
+            throw new Exception("invalid assignment target: " + op1.toString());
+
+        } catch (final ParseException e)
         {
-            /*
-             * Assign the value on the right side of the assignment to the
-             * variable on the left.
-             */
-            Equ.getInstance().getSupport().assignVariable(((TokVariable) op1).getValue().toString(), op2);
-            /*
-             * leave the result (value of the assignment) on the stack.
-             */
-            values.push(op2);
-            return;
+            e.fillInStackTrace();
+            throw new Exception(toString() + "; " + e.getMessage(), e);
         }
-
-        throw new Exception("invalid assignment target: " + op1.toString());
     }
 
     @Override

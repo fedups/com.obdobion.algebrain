@@ -1,10 +1,9 @@
 package com.obdobion.algebrain;
 
-import java.util.Stack;
 
 /**
  * @author Chris DeGreef
- * 
+ *
  */
 public class TokOperator extends Token
 {
@@ -43,7 +42,7 @@ public class TokOperator extends Token
     }
 
     @Override
-    public void resolve (final Stack<Object> values) throws Exception
+    public void resolve (final ValueStack values) throws Exception
     {
         throw new Exception("Unknown token encountered in equation: " + getValue().toString());
     }

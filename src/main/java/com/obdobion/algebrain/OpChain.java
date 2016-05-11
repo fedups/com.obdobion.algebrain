@@ -1,10 +1,10 @@
 package com.obdobion.algebrain;
 
-import java.util.Stack;
+import java.text.ParseException;
 
 /**
  * @author Chris DeGreef
- * 
+ *
  */
 public class OpChain extends Operator
 {
@@ -35,15 +35,21 @@ public class OpChain extends Operator
      * Assign the value to a variable if you need access to it later.
      */
     @Override
-    public void resolve (final Stack<Object> values) throws Exception
+    public void resolve (final ValueStack values) throws Exception
     {
         if (values.size() < 2)
             return;
+        try
+        {
+            final Object op2 = values.popWhatever();
+            values.popWhatever();
 
-        Object op2 = values.pop();
-        values.pop();
-
-        values.push(op2);
+            values.push(op2);
+        } catch (final ParseException e)
+        {
+            e.fillInStackTrace();
+            throw new Exception(toString() + "; " + e.getMessage(), e);
+        }
     }
 
     @Override
