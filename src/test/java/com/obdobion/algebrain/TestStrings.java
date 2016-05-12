@@ -90,6 +90,14 @@ public class TestStrings
     }
 
     @Test
+    public void stringLowercase () throws Exception
+    {
+        final Equ equ = Equ.getInstance();
+        final String result = (String) equ.evaluate("lcase('abcDEF')");
+        Assert.assertEquals("abcdef", result);
+    }
+
+    @Test
     public void stringMatches () throws Exception
     {
         final Equ equ = Equ.getInstance();
@@ -111,6 +119,22 @@ public class TestStrings
         final Equ equ = Equ.getInstance();
         final String result = (String) equ.evaluate("match('ABC123XYZ', '123')");
         Assert.assertEquals("123", result);
+    }
+
+    @Test
+    public void stringMetaphone () throws Exception
+    {
+        final Equ equ = Equ.getInstance();
+        final String result = (String) equ.evaluate("metaphone('telephone')");
+        Assert.assertEquals("TLFN", result);
+    }
+
+    @Test
+    public void stringMetaphoneCompare () throws Exception
+    {
+        final Equ equ = Equ.getInstance();
+        final Boolean result = (Boolean) equ.evaluate("metaphone('telephone') = metaphone('telifon')");
+        Assert.assertTrue(result);
     }
 
     @Test
@@ -167,6 +191,14 @@ public class TestStrings
         final Equ equ = Equ.getInstance();
         final Boolean result = (Boolean) equ.evaluate("' TRIMMED '=' TRIMMED '");
         Assert.assertTrue(result.booleanValue());
+    }
+
+    @Test
+    public void stringUppercase () throws Exception
+    {
+        final Equ equ = Equ.getInstance();
+        final String result = (String) equ.evaluate("ucase('abcDEF')");
+        Assert.assertEquals("ABCDEF", result);
     }
 
     @Test

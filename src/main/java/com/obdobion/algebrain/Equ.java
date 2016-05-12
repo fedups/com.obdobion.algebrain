@@ -11,6 +11,8 @@ import java.util.Map;
 import java.util.Set;
 import java.util.Stack;
 
+import org.apache.commons.codec.language.Metaphone;
+
 /**
  * This is the main class for algebRain. Create an instance of this class and
  * send it an evaluate() message. The result is either a Double or a String
@@ -79,6 +81,8 @@ public class Equ
 
     private Collection<EquPart>         rpn;
     List<String>                        variablesThatExistedBeforePreviousEvaluation;
+
+    private Metaphone                   cachedMetaphone;
 
     protected Equ()
     {
@@ -169,6 +173,13 @@ public class Equ
         return baseDate;
     }
 
+    public Metaphone getMetaphone ()
+    {
+        if (cachedMetaphone == null)
+            cachedMetaphone = new Metaphone();
+        return cachedMetaphone;
+    }
+
     public EquationSupport getSupport ()
     {
         if (support == null)
@@ -218,6 +229,9 @@ public class Equ
         registerFunction("indexOf", FuncStringIndexOf.class);
         registerFunction("date", FuncDate.class);
         registerFunction("toString", FuncToString.class);
+        registerFunction("ucase", FuncStringUpCase.class);
+        registerFunction("lcase", FuncStringLowerCase.class);
+        registerFunction("metaphone", FuncStringMetaphone.class);
 
         operatorMap = new Hashtable<>();
         registerOperator("^", OpPower.class);
