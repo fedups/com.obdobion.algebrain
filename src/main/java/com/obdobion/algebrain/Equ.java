@@ -219,7 +219,9 @@ public class Equ
         registerFunction("trunc", FuncTrunc.class);
         registerFunction("not", FuncNot.class);
         registerFunction("match", FuncStringMatch.class);
+        registerFunction("matches", FuncStringMatch.class);
         registerFunction("empty", FuncStringEmpty.class);
+        registerFunction("isempty", FuncStringEmpty.class);
         registerFunction("cat", FuncStringCat.class);
         registerFunction("length", FuncStringLength.class);
         registerFunction("substr", FuncStringSubstr.class);

@@ -4,14 +4,14 @@ import java.util.Collection;
 
 /**
  * @author Chris DeGreef
- * 
+ *
  */
 public abstract class Token extends EquPart
 {
     public static Token instanceFor (final char c)
     {
-        if (c == '\'')
-            return new TokLiteral();
+        if (c == '\'' || c == '"')
+            return new TokLiteral(c);
 
         if (Character.isDigit(c) || c == '-' || c == '.')
             return new TokNumber();

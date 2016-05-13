@@ -1,17 +1,18 @@
 package com.obdobion.algebrain;
 
-
 /**
  * @author Chris DeGreef
  *
  */
 public class TokLiteral extends TokOperand
 {
-    private int delims;
+    final private char delimiter;
+    private int        delims;
 
-    public TokLiteral()
+    public TokLiteral(final char p_delimiter)
     {
         super();
+        this.delimiter = p_delimiter;
         setDelims(0);
     }
 
@@ -29,7 +30,7 @@ public class TokLiteral extends TokOperand
     @Override
     public void put (final char c)
     {
-        if (c != '\'')
+        if (c != delimiter)
             super.put(c);
         else
             setDelims(getDelims() + 1);
