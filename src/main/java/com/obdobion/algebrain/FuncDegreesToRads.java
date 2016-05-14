@@ -38,6 +38,6 @@ public class FuncDegreesToRads extends Function
     @Override
     public String toString ()
     {
-        return "function(sin)";
+        return "function(rad)";
     }
 }
