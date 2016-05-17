@@ -16,6 +16,7 @@
         <java.target.version>1.8</java.target.version>
         <java.source.version>1.8</java.source.version>
         <junit.version>4.8.1</junit.version>
+        <slf4j.version>1.7.13</slf4j.version>
         <project.build.sourceEncoding>Cp1252</project.build.sourceEncoding>
         <calendar.version>1.0.0</calendar.version>
         <commons-codec.version>1.9</commons-codec.version>
@@ -113,6 +114,11 @@
             <groupId>com.obdobion</groupId>
             <artifactId>calendar</artifactId>
             <version>${calendar.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j.version}</version>
         </dependency>
         <dependency>
             <groupId>commons-codec</groupId>
