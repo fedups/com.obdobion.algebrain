@@ -69,6 +69,18 @@ public class TestDates
     }
 
     @Test
+    public void modifyingCalendar () throws Exception
+    {
+        final Calendar result = (Calendar) Equ.getInstance(true)
+                .evaluate("date(date('196004090830', 'yyyyMMddHHmm', ''), '=10day =7h =31min'");
+        Assert.assertEquals("yyyy", 1960, result.get(Calendar.YEAR));
+        Assert.assertEquals("MM", Calendar.APRIL, result.get(Calendar.MONTH));
+        Assert.assertEquals("dd", 10, result.get(Calendar.DAY_OF_MONTH));
+        Assert.assertEquals("HH", 7, result.get(Calendar.HOUR_OF_DAY));
+        Assert.assertEquals("MIN", 31, result.get(Calendar.MINUTE));
+    }
+
+    @Test
     public void todayAndNow () throws Exception
     {
         final Boolean result = (Boolean) Equ.getInstance(true).evaluate(
