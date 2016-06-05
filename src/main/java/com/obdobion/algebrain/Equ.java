@@ -234,6 +234,8 @@ public class Equ
         registerFunction("ucase", FuncStringUpCase.class);
         registerFunction("lcase", FuncStringLowerCase.class);
         registerFunction("metaphone", FuncStringMetaphone.class);
+        registerFunction("toInt", FuncStringToInt.class);
+        registerFunction("toFloat", FuncStringToFloat.class);
 
         operatorMap = new Hashtable<>();
         registerOperator("^", OpPower.class);
