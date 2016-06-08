@@ -1,5 +1,6 @@
 package com.obdobion.algebrain;
 
+import java.io.UnsupportedEncodingException;
 import java.text.ParseException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -10,6 +11,19 @@ import java.util.regex.Pattern;
  */
 public class FuncStringMatch extends Function
 {
+    private static void pushAppropriateType (final ValueStack values, final Object whoKnowsWhat, final String result)
+        throws UnsupportedEncodingException
+    {
+        if (whoKnowsWhat instanceof String)
+        {
+            values.push(result);
+
+        } else if (whoKnowsWhat instanceof byte[])
+        {
+            values.push((result.getBytes("ISO-8859-1")));
+        }
+    }
+
     public FuncStringMatch()
     {
         super();
@@ -33,20 +47,31 @@ public class FuncStringMatch extends Function
             if (getParameterCount() == 3)
                 ignoreCase = values.popBoolean();
             pattern = values.popString();
-            target = values.popString();
+
+            final Object whoKnowsWhat = values.popStringOrByteArray();
+            if (whoKnowsWhat instanceof String)
+            {
+                target = (String) whoKnowsWhat;
+
+            } else
+            {
+                target = ValueStack.byteArrayAsString(whoKnowsWhat);
+            }
 
             final Matcher matcher = Pattern.compile(pattern, ignoreCase
                     ? Pattern.CASE_INSENSITIVE
                     : 0).matcher(target);
+
             if (matcher.find())
             {
                 if (matcher.groupCount() > 0)
-                    values.push(matcher.group(1));
+                    pushAppropriateType(values, whoKnowsWhat, matcher.group(1));
                 else
-                    values.push(matcher.group());
+                    pushAppropriateType(values, whoKnowsWhat, matcher.group());
             } else
-                values.push("");
-        } catch (final ParseException e)
+                pushAppropriateType(values, whoKnowsWhat, "");
+
+        } catch (final ParseException | UnsupportedEncodingException e)
         {
             e.fillInStackTrace();
             throw new Exception(toString() + "; " + e.getMessage(), e);

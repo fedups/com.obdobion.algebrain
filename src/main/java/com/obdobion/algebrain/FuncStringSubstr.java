@@ -1,6 +1,7 @@
 package com.obdobion.algebrain;
 
 import java.text.ParseException;
+import java.util.Arrays;
 
 /**
  * @author Chris DeGreef
@@ -29,9 +30,15 @@ public class FuncStringSubstr extends Function
         {
             final Double length = values.popDouble();
             final Double offset = values.popDouble();
-            final String target = values.popString();
+            final Object target = values.popStringOrByteArray();
 
-            values.push(target.substring(offset.intValue(), offset.intValue() + length.intValue()));
+            if (target instanceof String)
+                values.push(((String) target).substring(
+                    offset.intValue(), offset.intValue() + length.intValue()));
+            else
+                values.push(Arrays.copyOfRange((byte[]) target,
+                    offset.intValue(), offset.intValue() + length.intValue()));
+
         } catch (final ParseException e)
         {
             e.fillInStackTrace();

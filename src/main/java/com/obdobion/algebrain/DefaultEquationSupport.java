@@ -25,7 +25,7 @@ public class DefaultEquationSupport implements EquationSupport
 
     public List<String> getVariableNames ()
     {
-        final List<String> names = new ArrayList();
+        final List<String> names = new ArrayList<>();
 
         for (final String name : variables.keySet())
         {

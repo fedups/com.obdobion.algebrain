@@ -1,10 +1,24 @@
 package com.obdobion.algebrain;
 
+import java.io.UnsupportedEncodingException;
 import java.text.ParseException;
 import java.util.Stack;
 
 public class ValueStack extends Stack<Object>
 {
+    static String byteArrayAsString (final Object bytearray) throws ParseException
+    {
+        try
+        {
+            return new String((byte[]) bytearray, "ISO-8859-1");
+
+        } catch (final UnsupportedEncodingException e)
+        {
+            throw new ParseException("Literal required, " + e.getMessage(), 0);
+        }
+
+    }
+
     protected boolean convertToBoolean (final Object fromStack) throws ParseException
     {
         if (fromStack instanceof Number)
@@ -106,6 +120,15 @@ public class ValueStack extends Stack<Object>
         return convertToBoolean(super.pop());
     }
 
+    public byte[] popByteArray () throws ParseException
+    {
+        final Object popped = super.pop();
+        if (popped instanceof byte[])
+            return (byte[]) popped;
+
+        throw new ParseException("byte[] required, found " + popped.getClass().getSimpleName(), 0);
+    }
+
     public double popDouble () throws ParseException
     {
         return convertToDouble(super.pop());
@@ -123,6 +146,23 @@ public class ValueStack extends Stack<Object>
             return ((TokVariable) popped).getName();
 
         throw new ParseException("Literal required, found " + popped.getClass().getSimpleName(), 0);
+    }
+
+    public Object popStringOrByteArray () throws ParseException
+    {
+        final Object popped = super.pop();
+        if (popped instanceof String)
+            return popped;
+        /*
+         * This is probably an unquoted single word literal.
+         */
+        if (popped instanceof TokVariable)
+            return ((TokVariable) popped).getName();
+
+        if (popped instanceof byte[])
+            return popped;
+
+        throw new ParseException("Literal or byte[] required, found " + popped.getClass().getSimpleName(), 0);
     }
 
     @SuppressWarnings("unused")

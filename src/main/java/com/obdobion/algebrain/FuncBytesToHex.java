@@ -2,18 +2,20 @@ package com.obdobion.algebrain;
 
 import java.text.ParseException;
 
+import org.apache.commons.codec.binary.Hex;
+
 /**
  * @author Chris DeGreef
  *
  */
-public class FuncStringLength extends Function
+public class FuncBytesToHex extends Function
 {
-    public FuncStringLength()
+    public FuncBytesToHex()
     {
         super();
     }
 
-    public FuncStringLength(final TokVariable var)
+    public FuncBytesToHex(final TokVariable var)
     {
         super(var);
     }
@@ -25,12 +27,7 @@ public class FuncStringLength extends Function
             throw new Exception("missing operands for " + toString());
         try
         {
-            final Object target = values.popStringOrByteArray();
-
-            if (target instanceof String)
-                values.push(new Double(((String) target).length()));
-            else
-                values.push(new Double(((byte[]) target).length));
+            values.push(Hex.encodeHexString(values.popByteArray()));
 
         } catch (final ParseException e)
         {
@@ -42,6 +39,6 @@ public class FuncStringLength extends Function
     @Override
     public String toString ()
     {
-        return "function(length)";
+        return "function(toHex";
     }
 }

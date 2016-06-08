@@ -25,13 +25,21 @@ public class FuncStringEmpty extends Function
             throw new Exception("missing operands for " + toString());
         try
         {
-            String target;
-            target = values.popString();
+            boolean result;
+            final Object whoKnowsWhat = values.popStringOrByteArray();
+            if (whoKnowsWhat instanceof String)
+            {
+                final String target = (String) whoKnowsWhat;
+                result = target.trim().length() == 0;
 
-            if (target == null || target.trim().length() == 0)
-                values.push(new Boolean(true));
-            else
-                values.push(new Boolean(false));
+            } else
+            {
+                final byte[] target = (byte[]) whoKnowsWhat;
+                result = target == null || target.length == 0;
+            }
+
+            values.push(new Boolean(result));
+
         } catch (final ParseException e)
         {
             e.fillInStackTrace();
