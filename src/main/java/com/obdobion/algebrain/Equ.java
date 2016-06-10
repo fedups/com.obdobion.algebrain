@@ -237,6 +237,7 @@ public class Equ
         registerFunction("toInt", FuncStringToInt.class);
         registerFunction("toFloat", FuncStringToFloat.class);
         registerFunction("toHex", FuncBytesToHex.class);
+        registerFunction("replace", FuncStringReplace.class);
 
         operatorMap = new Hashtable<>();
         registerOperator("^", OpPower.class);

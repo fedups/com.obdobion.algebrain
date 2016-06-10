@@ -33,6 +33,8 @@ public class FuncToString extends Function
 
             if (op1 instanceof String)
                 values.push(op1);
+            else if (op1 instanceof byte[])
+                values.push(new String((byte[]) op1));
             else if (op1 instanceof Double)
             {
                 final double op = ((Double) op1).doubleValue();

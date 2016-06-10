@@ -170,4 +170,15 @@ public class ValueStack extends Stack<Object>
     {
         return super.pop();
     }
+
+    @Override
+    public Object push (final Object item)
+    {
+        if (item instanceof Integer)
+            return super.push(new Long((Integer) item));
+        if (item instanceof Float)
+            return super.push(new Double((Float) item));
+
+        return super.push(item);
+    }
 }

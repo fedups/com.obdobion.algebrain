@@ -154,6 +154,30 @@ public class TestStrings
     }
 
     @Test
+    public void stringReplaceWithEqual () throws Exception
+    {
+        final Equ equ = Equ.getInstance();
+        final String result = (String) equ.evaluate("replace('ABC123XYZ', '[0-9]', '#')");
+        Assert.assertEquals("ABC###XYZ", result);
+    }
+
+    @Test
+    public void stringReplaceWithLonger () throws Exception
+    {
+        final Equ equ = Equ.getInstance();
+        final String result = (String) equ.evaluate("replace('ABC123XYZ', '[0-9]', '(NUMBER)')");
+        Assert.assertEquals("ABC(NUMBER)(NUMBER)(NUMBER)XYZ", result);
+    }
+
+    @Test
+    public void stringReplaceWithShorter () throws Exception
+    {
+        final Equ equ = Equ.getInstance();
+        final String result = (String) equ.evaluate("replace('ABC123XYZ', '[0-9]{2}', '#')");
+        Assert.assertEquals("ABC#3XYZ", result);
+    }
+
+    @Test
     public void stringRightTrim () throws Exception
     {
         final Equ equ = Equ.getInstance();
