@@ -25,7 +25,7 @@ public class FuncStringToFloat extends Function
             throw new Exception("missing operands for " + toString());
         try
         {
-            final Object value = values.popString();
+            final Object value = values.popWhatever();
             if (value instanceof String)
             {
                 if (((String) value).trim().length() == 0)
@@ -33,8 +33,17 @@ public class FuncStringToFloat extends Function
                 else
                     values.push(Double.parseDouble((String) value));
                 return;
+
+            } else if (value instanceof Long)
+            {
+                values.push(new Double((Long) value));
+                return;
             }
-            values.push(value);
+            else if (value instanceof Double)
+            {
+                values.push(value);
+                return;
+            }
         } catch (final ParseException e)
         {
             e.fillInStackTrace();

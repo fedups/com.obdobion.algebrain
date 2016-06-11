@@ -25,13 +25,23 @@ public class FuncStringToInt extends Function
             throw new Exception("missing operands for " + toString());
         try
         {
-            final Object value = values.popString();
+            final Object value = values.popWhatever();
             if (value instanceof String)
             {
                 if (((String) value).trim().length() == 0)
                     values.push(new Long(0));
                 else
                     values.push(Long.parseLong((String) value));
+                return;
+
+            } else if (value instanceof Double)
+            {
+                values.push(new Long(((Double) value).longValue()));
+                return;
+
+            } else if (value instanceof Long)
+            {
+                values.push(value);
                 return;
             }
             values.push(value);
