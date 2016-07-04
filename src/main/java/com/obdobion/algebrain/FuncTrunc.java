@@ -21,8 +21,6 @@ public class FuncTrunc extends Function
 
     /**
      * The trunc function uses one operands.
-     *
-     * @see com.obdobion.algebrain.EquPart#resolve(java.util.Stack)
      */
     @Override
     public void resolve (final ValueStack values) throws Exception

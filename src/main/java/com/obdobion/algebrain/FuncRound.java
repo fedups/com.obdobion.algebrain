@@ -22,8 +22,6 @@ public class FuncRound extends Function
     /**
      * The round function uses two operands. The second one is the number of
      * decimal places in which to round to.
-     *
-     * @see com.obdobion.algebrain.EquPart#resolve(java.util.Stack)
      */
     @Override
     public void resolve (final ValueStack values) throws Exception
