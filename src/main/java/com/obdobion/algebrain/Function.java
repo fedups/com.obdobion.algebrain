@@ -1,5 +1,8 @@
 package com.obdobion.algebrain;
 
+import com.obdobion.algebrain.operator.OpComma;
+import com.obdobion.algebrain.token.TokVariable;
+
 /**
  * @author Chris DeGreef
  * 

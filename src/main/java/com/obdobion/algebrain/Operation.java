@@ -12,7 +12,7 @@ public abstract class Operation extends EquPart
     }
 
     @Deprecated
-    protected boolean[] convertToBoolean (final Object... fromStack) throws Exception
+    protected boolean[] convertToBoolean(final Object... fromStack) throws Exception
     {
         final boolean[] converted = new boolean[fromStack.length];
         for (int c = 0; c < fromStack.length; c++)
@@ -53,7 +53,7 @@ public abstract class Operation extends EquPart
     }
 
     @Deprecated
-    protected double[] convertToDouble (final Object... fromStack) throws Exception
+    protected double[] convertToDouble(final Object... fromStack) throws Exception
     {
         final double[] converted = new double[fromStack.length];
         for (int c = 0; c < fromStack.length; c++)
@@ -85,22 +85,22 @@ public abstract class Operation extends EquPart
         return converted;
     }
 
-    protected boolean includeInRpn ()
+    public boolean includeInRpn()
     {
         return true;
     }
 
-    protected abstract int precedence ();
+    protected abstract int precedence();
 
-    public boolean preceeds (final Operation rightOp)
+    public boolean preceeds(final Operation rightOp)
     {
-        if (this.getLevel() > rightOp.getLevel())
+        if (getLevel() > rightOp.getLevel())
             return true;
 
-        if (this.getLevel() < rightOp.getLevel())
+        if (getLevel() < rightOp.getLevel())
             return false;
 
-        if (this.precedence() <= rightOp.precedence())
+        if (precedence() <= rightOp.precedence())
             return true;
 
         return false;

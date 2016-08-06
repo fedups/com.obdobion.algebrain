@@ -3,6 +3,8 @@ package com.obdobion.algebrain;
 import org.junit.Assert;
 import org.junit.Test;
 
+import com.obdobion.algebrain.token.TokVariable;
+
 /**
  * @author Chris DeGreef
  * 

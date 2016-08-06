@@ -13,6 +13,76 @@ import java.util.Stack;
 
 import org.apache.commons.codec.language.Metaphone;
 
+import com.obdobion.algebrain.function.FuncAbs;
+import com.obdobion.algebrain.function.FuncAcos;
+import com.obdobion.algebrain.function.FuncAcotan;
+import com.obdobion.algebrain.function.FuncAlpha;
+import com.obdobion.algebrain.function.FuncAsin;
+import com.obdobion.algebrain.function.FuncAtan;
+import com.obdobion.algebrain.function.FuncBandedRate;
+import com.obdobion.algebrain.function.FuncBytesToHex;
+import com.obdobion.algebrain.function.FuncCos;
+import com.obdobion.algebrain.function.FuncCubeRoot;
+import com.obdobion.algebrain.function.FuncDate;
+import com.obdobion.algebrain.function.FuncDegreesToRads;
+import com.obdobion.algebrain.function.FuncFlatRate;
+import com.obdobion.algebrain.function.FuncIf;
+import com.obdobion.algebrain.function.FuncLog;
+import com.obdobion.algebrain.function.FuncLog10;
+import com.obdobion.algebrain.function.FuncMax;
+import com.obdobion.algebrain.function.FuncMin;
+import com.obdobion.algebrain.function.FuncNot;
+import com.obdobion.algebrain.function.FuncRadsToDegrees;
+import com.obdobion.algebrain.function.FuncRoot;
+import com.obdobion.algebrain.function.FuncRound;
+import com.obdobion.algebrain.function.FuncSin;
+import com.obdobion.algebrain.function.FuncSqrt;
+import com.obdobion.algebrain.function.FuncStringCat;
+import com.obdobion.algebrain.function.FuncStringEmpty;
+import com.obdobion.algebrain.function.FuncStringIndexOf;
+import com.obdobion.algebrain.function.FuncStringLTrim;
+import com.obdobion.algebrain.function.FuncStringLength;
+import com.obdobion.algebrain.function.FuncStringLowerCase;
+import com.obdobion.algebrain.function.FuncStringMatch;
+import com.obdobion.algebrain.function.FuncStringMetaphone;
+import com.obdobion.algebrain.function.FuncStringRTrim;
+import com.obdobion.algebrain.function.FuncStringReplace;
+import com.obdobion.algebrain.function.FuncStringSubstr;
+import com.obdobion.algebrain.function.FuncStringToFloat;
+import com.obdobion.algebrain.function.FuncStringToInt;
+import com.obdobion.algebrain.function.FuncStringTrim;
+import com.obdobion.algebrain.function.FuncStringUpCase;
+import com.obdobion.algebrain.function.FuncTan;
+import com.obdobion.algebrain.function.FuncTieredRate;
+import com.obdobion.algebrain.function.FuncToString;
+import com.obdobion.algebrain.function.FuncTrunc;
+import com.obdobion.algebrain.operator.OpAdd;
+import com.obdobion.algebrain.operator.OpAnd;
+import com.obdobion.algebrain.operator.OpAssignment;
+import com.obdobion.algebrain.operator.OpChain;
+import com.obdobion.algebrain.operator.OpComma;
+import com.obdobion.algebrain.operator.OpCompareEqual;
+import com.obdobion.algebrain.operator.OpCompareGreater;
+import com.obdobion.algebrain.operator.OpCompareLess;
+import com.obdobion.algebrain.operator.OpCompareNotEqual;
+import com.obdobion.algebrain.operator.OpCompareNotGreater;
+import com.obdobion.algebrain.operator.OpCompareNotLess;
+import com.obdobion.algebrain.operator.OpDivide;
+import com.obdobion.algebrain.operator.OpFactorial;
+import com.obdobion.algebrain.operator.OpLeftParen;
+import com.obdobion.algebrain.operator.OpMod;
+import com.obdobion.algebrain.operator.OpMultiply;
+import com.obdobion.algebrain.operator.OpNand;
+import com.obdobion.algebrain.operator.OpOr;
+import com.obdobion.algebrain.operator.OpPower;
+import com.obdobion.algebrain.operator.OpRightParen;
+import com.obdobion.algebrain.operator.OpSubtract;
+import com.obdobion.algebrain.support.DefaultEquationSupport;
+import com.obdobion.algebrain.support.EquationSupport;
+import com.obdobion.algebrain.token.TokLiteral;
+import com.obdobion.algebrain.token.TokVariable;
+import com.obdobion.algebrain.token.Token;
+
 /**
  * This is the main class for algebRain. Create an instance of this class and
  * send it an evaluate() message. The result is either a Double or a String
@@ -37,25 +107,21 @@ public class Equ
 {
     private static Equ instance;
 
-    static public Set<String> gatherVariables (final Collection<EquPart> tokens)
+    static public Set<String> gatherVariables(final Collection<EquPart> tokens)
     {
         final Set<String> vars = new HashSet<>();
         for (final EquPart token : tokens)
-        {
             if (token instanceof TokVariable)
-            {
                 vars.add(((TokVariable) token).getValue().toString());
-            }
-        }
         return vars;
     }
 
-    public static Equ getInstance ()
+    public static Equ getInstance()
     {
         return getInstance(false);
     }
 
-    public static Equ getInstance (final boolean fresh)
+    public static Equ getInstance(final boolean fresh)
     {
         if (instance == null || fresh)
         {
@@ -89,9 +155,9 @@ public class Equ
         super();
     }
 
-    public Set<String> compile (final String _equ) throws Exception
+    public Set<String> compile(final String _equ) throws Exception
     {
-        this.equ = _equ;
+        equ = _equ;
         Collection<EquPart> tokens = tokenize();
         tokens = multiplize(tokens);
         countParameters(tokens);
@@ -100,7 +166,7 @@ public class Equ
         return gatherVariables(tokens);
     }
 
-    void countParameters (final Collection<EquPart> oldTokens)
+    void countParameters(final Collection<EquPart> oldTokens)
     {
         final EquPart[] equParts = oldTokens.toArray(new EquPart[0]);
         /*
@@ -111,7 +177,7 @@ public class Equ
                 ((Function) equParts[f]).updateParameterCount(equParts, f);
     }
 
-    public Object evaluate () throws Exception
+    public Object evaluate() throws Exception
     {
         final ValueStack values = new ValueStack();
 
@@ -144,13 +210,13 @@ public class Equ
         return result;
     }
 
-    public Object evaluate (final String _equ) throws Exception
+    public Object evaluate(final String _equ) throws Exception
     {
         compile(_equ);
         return evaluate();
     }
 
-    Function function (final TokVariable varTok) throws Exception
+    public Function function(final TokVariable varTok) throws Exception
     {
         final String token = varTok.getValue().toString();
         final Constructor<?> constructor = functionMap.get(token.toLowerCase());
@@ -158,9 +224,8 @@ public class Equ
             return null;
         try
         {
-            return (Function) constructor.newInstance(new Object[]
-            {
-                varTok
+            return (Function) constructor.newInstance(new Object[] {
+                    varTok
             });
         } catch (final Exception e)
         {
@@ -168,19 +233,19 @@ public class Equ
         }
     }
 
-    java.sql.Date getBaseDate ()
+    public java.sql.Date getBaseDate()
     {
         return baseDate;
     }
 
-    public Metaphone getMetaphone ()
+    public Metaphone getMetaphone()
     {
         if (cachedMetaphone == null)
             cachedMetaphone = new Metaphone();
         return cachedMetaphone;
     }
 
-    public EquationSupport getSupport ()
+    public EquationSupport getSupport()
     {
         if (support == null)
         {
@@ -190,7 +255,7 @@ public class Equ
         return support;
     }
 
-    protected void initialize () throws Exception
+    protected void initialize() throws Exception
     {
         functionMap = new Hashtable<>();
         registerFunction("if", FuncIf.class);
@@ -263,7 +328,7 @@ public class Equ
         registerOperator("!", OpFactorial.class);
     }
 
-    protected void initializeSupport ()
+    protected void initializeSupport()
     {
         try
         {
@@ -285,7 +350,7 @@ public class Equ
     /**
      * put implied multipliers into the equation
      */
-    protected Collection<EquPart> multiplize (final Collection<EquPart> oldTokens)
+    protected Collection<EquPart> multiplize(final Collection<EquPart> oldTokens)
     {
         final EquPart[] equParts = oldTokens.toArray(new EquPart[0]);
         final EquPart[] fixed = new EquPart[equParts.length * 2];
@@ -320,7 +385,7 @@ public class Equ
         return tokens;
     }
 
-    Operator operator (final Token tok) throws Exception
+    public Operator operator(final Token tok) throws Exception
     {
         final String token = tok.getValue().toString();
         final Constructor<?> constructor = operatorMap.get(token);
@@ -328,9 +393,8 @@ public class Equ
             return null;
         try
         {
-            return (Operator) constructor.newInstance(new Object[]
-            {
-                tok
+            return (Operator) constructor.newInstance(new Object[] {
+                    tok
             });
         } catch (final Exception e)
         {
@@ -338,16 +402,15 @@ public class Equ
         }
     }
 
-    public void registerFunction (final String name, final Class<?> functionSubclass) throws Exception
+    public void registerFunction(final String name, final Class<?> functionSubclass) throws Exception
     {
         final String token = name.toLowerCase();
         if (functionMap.containsKey(name))
             throw new Exception("duplicate function: " + token);
         try
         {
-            functionMap.put(token, functionSubclass.getConstructor(new Class<?>[]
-            {
-                TokVariable.class
+            functionMap.put(token, functionSubclass.getConstructor(new Class<?>[] {
+                    TokVariable.class
             }));
         } catch (final Exception e)
         {
@@ -355,16 +418,15 @@ public class Equ
         }
     }
 
-    public void registerOperator (final String name, final Class<?> operatorSubclass) throws Exception
+    public void registerOperator(final String name, final Class<?> operatorSubclass) throws Exception
     {
         final String token = name.toLowerCase();
         if (operatorMap.containsKey(name))
             throw new Exception("duplicate operator: " + token);
         try
         {
-            operatorMap.put(token, operatorSubclass.getConstructor(new Class<?>[]
-            {
-                EquPart.class
+            operatorMap.put(token, operatorSubclass.getConstructor(new Class<?>[] {
+                    EquPart.class
             }));
         } catch (final Exception e)
         {
@@ -375,7 +437,7 @@ public class Equ
     /**
      * Create a reverse Polish notation form of the equation
      */
-    protected Collection<EquPart> rpnize (final Collection<EquPart> oldTokens)
+    protected Collection<EquPart> rpnize(final Collection<EquPart> oldTokens)
     {
         final Collection<EquPart> _rpn = new Stack<>();
         final Stack<EquPart> ops = new Stack<>();
@@ -383,8 +445,6 @@ public class Equ
         Operation rightOp;
 
         for (final EquPart token : oldTokens)
-        {
-
             if (token instanceof Token)
                 _rpn.add(token);
             else
@@ -438,7 +498,6 @@ public class Equ
                         ops.push(rightOp);
                 }
             }
-        }
 
         while (!ops.empty())
             _rpn.add(ops.pop());
@@ -446,24 +505,24 @@ public class Equ
         return _rpn;
     }
 
-    public void setBaseDate (final java.sql.Date newBaseDate)
+    public void setBaseDate(final java.sql.Date newBaseDate)
     {
         baseDate = newBaseDate;
     }
 
-    public void setSupport (final EquationSupport newSupport)
+    public void setSupport(final EquationSupport newSupport)
     {
         support = newSupport;
     }
 
-    public String showRPN () throws Exception
+    public String showRPN() throws Exception
     {
         final StringBuilder sb = new StringBuilder();
         showRPN(sb);
         return sb.toString();
     }
 
-    public void showRPN (final StringBuilder sb) throws Exception
+    public void showRPN(final StringBuilder sb) throws Exception
     {
         for (final EquPart part : rpn)
         {
@@ -472,7 +531,7 @@ public class Equ
         }
     }
 
-    protected Collection<EquPart> tokenize () throws Exception
+    protected Collection<EquPart> tokenize() throws Exception
     {
         /*
          * break apart obvious tokens, realizing that some may need further
@@ -495,9 +554,7 @@ public class Equ
                      * spaces are allowed inside of literals
                      */
                     if (token != null)
-                    {
                         token.addTo(tokens);
-                    }
                     token = null;
                     continue;
                 }
@@ -509,9 +566,8 @@ public class Equ
                 level--;
 
             if (token != null && token.accepts(c))
-            {
                 token.put(c);
-            } else
+            else
             {
 
                 if (token != null)
@@ -530,12 +586,12 @@ public class Equ
     }
 
     @Override
-    public String toString ()
+    public String toString()
     {
         return equ;
     }
 
-    public void unregisterFunction (final String name) throws Exception
+    public void unregisterFunction(final String name) throws Exception
     {
         final String token = name.toLowerCase();
         if (!functionMap.containsKey(token))
@@ -543,7 +599,7 @@ public class Equ
         functionMap.remove(token);
     }
 
-    public void unregisterOperator (final String name) throws Exception
+    public void unregisterOperator(final String name) throws Exception
     {
         final String token = name.toLowerCase();
         if (!operatorMap.containsKey(token))

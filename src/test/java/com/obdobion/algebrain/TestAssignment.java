@@ -10,7 +10,7 @@ import org.junit.Test;
 public class TestAssignment
 {
     @Test
-    public void conditionalAssignmentTarget () throws Exception
+    public void conditionalAssignmentTarget() throws Exception
     {
         Equ.getInstance(true);
         final Double result = (Double) Equ.getInstance().evaluate("if (1=2, a, b) := 1");
@@ -20,7 +20,7 @@ public class TestAssignment
     }
 
     @Test
-    public void equalsInsteadOfAssignment () throws Exception
+    public void equalsInsteadOfAssignment() throws Exception
     {
         try
         {
@@ -30,14 +30,14 @@ public class TestAssignment
         } catch (final Exception e)
         {
             Assert.assertEquals(
-                "exception",
-                "op(compare equal); supports same type comparisons only, found TokVariable and Double",
-                e.getMessage());
+                    "exception",
+                    "op(compare equal); supports same type comparisons only, found TokVariable and Double",
+                    e.getMessage());
         }
     }
 
     @Test
-    public void finalized () throws Exception
+    public void finalized() throws Exception
     {
         try
         {
@@ -51,30 +51,30 @@ public class TestAssignment
     }
 
     @Test
-    public void internalAssignments () throws Exception
+    public void internalAssignments() throws Exception
     {
         Equ.getInstance(true);
         final Double result = (Double) Equ.getInstance().evaluate("c:=max (a := 1, b :=2)");
         Assert.assertEquals("result", 2D, result, 0);
         Assert.assertEquals(
-            "assigned variable",
-            1D,
-            (double) Equ.getInstance().getSupport().resolveVariable("a", null),
-            0);
+                "assigned variable",
+                1D,
+                (double) Equ.getInstance().getSupport().resolveVariable("a", null),
+                0);
         Assert.assertEquals(
-            "assigned variable",
-            2D,
-            (double) Equ.getInstance().getSupport().resolveVariable("b", null),
-            0);
+                "assigned variable",
+                2D,
+                (double) Equ.getInstance().getSupport().resolveVariable("b", null),
+                0);
         Assert.assertEquals(
-            "assigned variable",
-            2D,
-            (double) Equ.getInstance().getSupport().resolveVariable("c", null),
-            0);
+                "assigned variable",
+                2D,
+                (double) Equ.getInstance().getSupport().resolveVariable("c", null),
+                0);
     }
 
     @Test
-    public void invalidTarget () throws Exception
+    public void invalidTarget() throws Exception
     {
         try
         {
@@ -88,7 +88,7 @@ public class TestAssignment
     }
 
     @Test
-    public void multipleAssignments () throws Exception
+    public void multipleAssignments() throws Exception
     {
         Equ.getInstance(true);
         final Double result = (Double) Equ.getInstance().evaluate("a := (b := 3)");
@@ -98,7 +98,7 @@ public class TestAssignment
     }
 
     @Test
-    public void multipleAssignments2 () throws Exception
+    public void multipleAssignments2() throws Exception
     {
         Equ.getInstance(true);
         final Double result = (Double) Equ.getInstance().evaluate("a := b := 3");
@@ -108,7 +108,7 @@ public class TestAssignment
     }
 
     @Test
-    public void multipleAssignments3 () throws Exception
+    public void multipleAssignments3() throws Exception
     {
         try
         {
@@ -122,23 +122,23 @@ public class TestAssignment
     }
 
     @Test
-    public void unknownVariableInComparison () throws Exception
+    public void unknownVariableInComparison() throws Exception
     {
         Equ.getInstance(true);
         try
         {
-            final Object result = Equ.getInstance().evaluate("b=2");
+            Equ.getInstance().evaluate("b=2");
         } catch (final Exception e)
         {
             Assert.assertEquals(
-                "exception",
-                "op(compare equal); supports same type comparisons only, found TokVariable and Double",
-                e.getMessage());
+                    "exception",
+                    "op(compare equal); supports same type comparisons only, found TokVariable and Double",
+                    e.getMessage());
         }
     }
 
     @Test
-    public void withoutSupport () throws Exception
+    public void withoutSupport() throws Exception
     {
         Equ.getInstance().setSupport(null);
         final Double result = (Double) Equ.getInstance().evaluate("a := 1");
@@ -148,7 +148,7 @@ public class TestAssignment
     }
 
     @Test
-    public void withSupport () throws Exception
+    public void withSupport() throws Exception
     {
         Equ.getInstance(true);
         final Double result = (Double) Equ.getInstance().evaluate("a := 1");

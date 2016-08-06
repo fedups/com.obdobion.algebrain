@@ -3,6 +3,8 @@ package com.obdobion.algebrain;
 import org.junit.Assert;
 import org.junit.Test;
 
+import com.obdobion.algebrain.function.FuncMin;
+
 /**
  * @author Chris DeGreef
  * 

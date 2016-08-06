@@ -4,9 +4,11 @@ import java.io.UnsupportedEncodingException;
 import java.text.ParseException;
 import java.util.Stack;
 
+import com.obdobion.algebrain.token.TokVariable;
+
 public class ValueStack extends Stack<Object>
 {
-    static String byteArrayAsString (final Object bytearray) throws ParseException
+    public static String byteArrayAsString(final Object bytearray) throws ParseException
     {
         try
         {
@@ -19,23 +21,17 @@ public class ValueStack extends Stack<Object>
 
     }
 
-    protected boolean convertToBoolean (final Object fromStack) throws ParseException
+    protected boolean convertToBoolean(final Object fromStack) throws ParseException
     {
         if (fromStack instanceof Number)
-        {
             /*
              * 0 is the only number that is false, all others are true.
              */
             return ((Number) fromStack).intValue() != 0;
-        }
         if (fromStack instanceof String)
-        {
             return Boolean.parseBoolean((String) fromStack);
-        }
         if (fromStack instanceof Boolean)
-        {
             return (Boolean) fromStack;
-        }
 
         final StringBuilder errMsg = new StringBuilder();
         errMsg.append("invalid type ");
@@ -43,16 +39,12 @@ public class ValueStack extends Stack<Object>
         throw new ParseException(errMsg.toString(), 0);
     }
 
-    protected double convertToDouble (final Object fromStack) throws ParseException
+    protected double convertToDouble(final Object fromStack) throws ParseException
     {
         if (fromStack instanceof Number)
-        {
             return ((Number) fromStack).doubleValue();
-        }
         if (fromStack instanceof String)
-        {
             return Double.parseDouble((String) fromStack);
-        }
 
         final StringBuilder errMsg = new StringBuilder();
         errMsg.append("invalid type ");
@@ -60,7 +52,7 @@ public class ValueStack extends Stack<Object>
         throw new ParseException(errMsg.toString(), 0);
     }
 
-    protected Object[] ensureSameTypes () throws ParseException
+    public Object[] ensureSameTypes() throws ParseException
     {
         final Object o1 = popWhatever();
         final Object o2 = popWhatever();
@@ -103,24 +95,24 @@ public class ValueStack extends Stack<Object>
         }
 
         throw new ParseException("supports same type comparisons only, found "
-            + o2.getClass().getSimpleName()
-            + " and "
-            + o1.getClass().getSimpleName(), 0);
+                + o2.getClass().getSimpleName()
+                + " and "
+                + o1.getClass().getSimpleName(), 0);
     }
 
     @Override
     @Deprecated
-    public synchronized Object pop ()
+    public synchronized Object pop()
     {
         return super.pop();
     }
 
-    public boolean popBoolean () throws ParseException
+    public boolean popBoolean() throws ParseException
     {
         return convertToBoolean(super.pop());
     }
 
-    public byte[] popByteArray () throws ParseException
+    public byte[] popByteArray() throws ParseException
     {
         final Object popped = super.pop();
         if (popped instanceof byte[])
@@ -129,12 +121,12 @@ public class ValueStack extends Stack<Object>
         throw new ParseException("byte[] required, found " + popped.getClass().getSimpleName(), 0);
     }
 
-    public double popDouble () throws ParseException
+    public double popDouble() throws ParseException
     {
         return convertToDouble(super.pop());
     }
 
-    public String popString () throws ParseException
+    public String popString() throws ParseException
     {
         final Object popped = super.pop();
         if (popped instanceof String)
@@ -148,7 +140,7 @@ public class ValueStack extends Stack<Object>
         throw new ParseException("Literal required, found " + popped.getClass().getSimpleName(), 0);
     }
 
-    public Object popStringOrByteArray () throws ParseException
+    public Object popStringOrByteArray() throws ParseException
     {
         final Object popped = super.pop();
         if (popped instanceof String)
@@ -166,13 +158,13 @@ public class ValueStack extends Stack<Object>
     }
 
     @SuppressWarnings("unused")
-    public Object popWhatever () throws ParseException
+    public Object popWhatever() throws ParseException
     {
         return super.pop();
     }
 
     @Override
-    public Object push (final Object item)
+    public Object push(final Object item)
     {
         if (item instanceof Integer)
             return super.push(new Long((Integer) item));
