@@ -6,11 +6,18 @@ import org.junit.Assert;
 import org.junit.Test;
 
 /**
- * @author Chris DeGreef
+ * <p>TestDates class.</p>
  *
+ * @author Chris DeGreef fedupforone@gmail.com
+ * @since 1.3.9
  */
 public class TestDates
 {
+    /**
+     * <p>compareEqualsFalse.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void compareEqualsFalse () throws Exception
     {
@@ -19,6 +26,11 @@ public class TestDates
         Assert.assertFalse(result);
     }
 
+    /**
+     * <p>compareEqualsTrue.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void compareEqualsTrue () throws Exception
     {
@@ -27,6 +39,11 @@ public class TestDates
         Assert.assertTrue(result);
     }
 
+    /**
+     * <p>compareEqualsTrueWithoutAdjustments.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void compareEqualsTrueWithoutAdjustments () throws Exception
     {
@@ -35,6 +52,11 @@ public class TestDates
         Assert.assertTrue(result);
     }
 
+    /**
+     * <p>compareEqualsWithLongValue.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void compareEqualsWithLongValue () throws Exception
     {
@@ -43,6 +65,11 @@ public class TestDates
         Assert.assertTrue(result);
     }
 
+    /**
+     * <p>compareGreaterLess.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void compareGreaterLess () throws Exception
     {
@@ -51,6 +78,11 @@ public class TestDates
         Assert.assertTrue(result);
     }
 
+    /**
+     * <p>compareGreaterTrue.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void compareGreaterTrue () throws Exception
     {
@@ -59,6 +91,11 @@ public class TestDates
         Assert.assertTrue(result);
     }
 
+    /**
+     * <p>createAndReturnADate.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void createAndReturnADate () throws Exception
     {
@@ -68,6 +105,11 @@ public class TestDates
         Assert.assertEquals("dd", 9, result.get(Calendar.DAY_OF_MONTH));
     }
 
+    /**
+     * <p>modifyingCalendar.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void modifyingCalendar () throws Exception
     {
@@ -80,6 +122,11 @@ public class TestDates
         Assert.assertEquals("MIN", 31, result.get(Calendar.MINUTE));
     }
 
+    /**
+     * <p>todayAndNow.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void todayAndNow () throws Exception
     {
@@ -88,6 +135,11 @@ public class TestDates
         Assert.assertTrue(result);
     }
 
+    /**
+     * <p>withAdjustments.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void withAdjustments () throws Exception
     {
@@ -96,6 +148,11 @@ public class TestDates
         Assert.assertTrue(result);
     }
 
+    /**
+     * <p>withAdjustmentsFromStringVariable.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void withAdjustmentsFromStringVariable () throws Exception
     {

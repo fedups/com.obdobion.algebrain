@@ -4,11 +4,18 @@ import org.junit.Assert;
 import org.junit.Test;
 
 /**
- * @author Chris DeGreef
- * 
+ * <p>TestAndOr class.</p>
+ *
+ * @author Chris DeGreef fedupforone@gmail.com
+ * @since 1.3.9
  */
 public class TestAndOr
 {
+    /**
+     * <p>conditionalAND1.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void conditionalAND1 () throws Exception
     {
@@ -16,6 +23,11 @@ public class TestAndOr
         Assert.assertEquals("result ", true, result.booleanValue());
     }
 
+    /**
+     * <p>conditionalAND2.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void conditionalAND2 () throws Exception
     {
@@ -23,6 +35,11 @@ public class TestAndOr
         Assert.assertEquals("result ", false, result.booleanValue());
     }
 
+    /**
+     * <p>conditionalAND3.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void conditionalAND3 () throws Exception
     {
@@ -30,6 +47,11 @@ public class TestAndOr
         Assert.assertEquals("result ", true, result.booleanValue());
     }
 
+    /**
+     * <p>conditionalAND4.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void conditionalAND4 () throws Exception
     {
@@ -37,6 +59,11 @@ public class TestAndOr
         Assert.assertEquals("result ", true, result.booleanValue());
     }
 
+    /**
+     * <p>conditionalAND5.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void conditionalAND5 () throws Exception
     {
@@ -44,6 +71,11 @@ public class TestAndOr
         Assert.assertEquals("result ", false, result.booleanValue());
     }
 
+    /**
+     * <p>conditionalPrecedence.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void conditionalPrecedence () throws Exception
     {
@@ -51,6 +83,11 @@ public class TestAndOr
         Assert.assertEquals("result ", false, result.booleanValue());
     }
 
+    /**
+     * <p>conditionalOR1.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void conditionalOR1 () throws Exception
     {
@@ -58,6 +95,11 @@ public class TestAndOr
         Assert.assertEquals("result ", true, result.booleanValue());
     }
 
+    /**
+     * <p>conditionalOR2.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void conditionalOR2 () throws Exception
     {
@@ -65,6 +107,11 @@ public class TestAndOr
         Assert.assertEquals("result ", true, result.booleanValue());
     }
 
+    /**
+     * <p>conditionalOR3.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void conditionalOR3 () throws Exception
     {
@@ -72,6 +119,11 @@ public class TestAndOr
         Assert.assertEquals("result ", true, result.booleanValue());
     }
 
+    /**
+     * <p>conditionalOR4.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void conditionalOR4 () throws Exception
     {
@@ -79,6 +131,11 @@ public class TestAndOr
         Assert.assertEquals("result ", false, result.booleanValue());
     }
 
+    /**
+     * <p>conditionalOR5.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void conditionalOR5 () throws Exception
     {
@@ -86,6 +143,11 @@ public class TestAndOr
         Assert.assertEquals("result ", false, result.booleanValue());
     }
 
+    /**
+     * <p>nand1.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void nand1 () throws Exception
     {
@@ -93,6 +155,11 @@ public class TestAndOr
         Assert.assertEquals("result ", true, result.booleanValue());
     }
 
+    /**
+     * <p>nand2.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void nand2 () throws Exception
     {
@@ -100,6 +167,11 @@ public class TestAndOr
         Assert.assertEquals("result ", false, result.booleanValue());
     }
 
+    /**
+     * <p>nand3.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void nand3 () throws Exception
     {
@@ -107,6 +179,11 @@ public class TestAndOr
         Assert.assertEquals("result ", true, result.booleanValue());
     }
 
+    /**
+     * <p>nand4.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void nand4 () throws Exception
     {
@@ -114,6 +191,11 @@ public class TestAndOr
         Assert.assertEquals("result ", false, result.booleanValue());
     }
 
+    /**
+     * <p>greaterAndLess.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void greaterAndLess () throws Exception
     {

@@ -5,16 +5,22 @@ import com.obdobion.algebrain.EquPart;
 import com.obdobion.algebrain.ValueStack;
 
 /**
- * @author Chris DeGreef
+ * <p>TokOperator class.</p>
  *
+ * @author Chris DeGreef fedupforone@gmail.com
+ * @since 1.3.9
  */
 public class TokOperator extends Token
 {
+    /**
+     * <p>Constructor for TokOperator.</p>
+     */
     public TokOperator()
     {
         super();
     }
 
+    /** {@inheritDoc} */
     @Override
     public boolean accepts(final char s)
     {
@@ -35,6 +41,7 @@ public class TokOperator extends Token
         return false;
     }
 
+    /** {@inheritDoc} */
     @Override
     public EquPart morph() throws Exception
     {
@@ -44,15 +51,14 @@ public class TokOperator extends Token
         return part;
     }
 
-    /**
-     * @param values
-     */
+    /** {@inheritDoc} */
     @Override
     public void resolve(final ValueStack values) throws Exception
     {
         throw new Exception("Unknown token encountered in equation: " + getValue().toString());
     }
 
+    /** {@inheritDoc} */
     @Override
     public String toString()
     {

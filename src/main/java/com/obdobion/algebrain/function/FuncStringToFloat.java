@@ -7,21 +7,32 @@ import com.obdobion.algebrain.ValueStack;
 import com.obdobion.algebrain.token.TokVariable;
 
 /**
- * @author Chris DeGreef
+ * <p>FuncStringToFloat class.</p>
  *
+ * @author Chris DeGreef fedupforone@gmail.com
+ * @since 1.3.9
  */
 public class FuncStringToFloat extends Function
 {
+    /**
+     * <p>Constructor for FuncStringToFloat.</p>
+     */
     public FuncStringToFloat()
     {
         super();
     }
 
+    /**
+     * <p>Constructor for FuncStringToFloat.</p>
+     *
+     * @param var a {@link com.obdobion.algebrain.token.TokVariable} object.
+     */
     public FuncStringToFloat(final TokVariable var)
     {
         super(var);
     }
 
+    /** {@inheritDoc} */
     @Override
     public void resolve (final ValueStack values) throws Exception
     {
@@ -55,6 +66,7 @@ public class FuncStringToFloat extends Function
         }
     }
 
+    /** {@inheritDoc} */
     @Override
     public String toString ()
     {

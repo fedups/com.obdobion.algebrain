@@ -4,11 +4,18 @@ import org.junit.Assert;
 import org.junit.Test;
 
 /**
- * @author Chris DeGreef
- * 
+ * <p>TestModulus class.</p>
+ *
+ * @author Chris DeGreef fedupforone@gmail.com
+ * @since 1.3.9
  */
 public class TestModulus
 {
+    /**
+     * <p>mod1.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void mod1 () throws Exception
     {
@@ -16,6 +23,11 @@ public class TestModulus
         Assert.assertEquals("testMod1 result ", 3, result.doubleValue(), 0D);
     }
 
+    /**
+     * <p>mod2.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void mod2 () throws Exception
     {
@@ -23,6 +35,11 @@ public class TestModulus
         Assert.assertEquals("testMod2 result ", 1.76, result.doubleValue(), 0D);
     }
 
+    /**
+     * <p>mod3.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void mod3 () throws Exception
     {

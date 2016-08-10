@@ -8,23 +8,41 @@ import com.obdobion.algebrain.ValueStack;
 import com.obdobion.algebrain.token.TokVariable;
 
 /**
- * @author Chris DeGreef
+ * <p>
+ * FuncAlpha class.
+ * </p>
  *
+ * @author Chris DeGreef fedupforone@gmail.com
+ * @since 1.3.9
  */
 public class FuncAlpha extends Function
 {
+    /**
+     * <p>
+     * Constructor for FuncAlpha.
+     * </p>
+     */
     public FuncAlpha()
     {
         super();
     }
 
+    /**
+     * <p>
+     * Constructor for FuncAlpha.
+     * </p>
+     *
+     * @param var
+     *            a {@link com.obdobion.algebrain.token.TokVariable} object.
+     */
     public FuncAlpha(final TokVariable var)
     {
         super(var);
     }
 
+    /** {@inheritDoc} */
     @Override
-    public void resolve (final ValueStack values) throws Exception
+    public void resolve(final ValueStack values) throws Exception
     {
         if (values.size() < 1)
             throw new Exception("missing operands for " + toString());
@@ -34,9 +52,8 @@ public class FuncAlpha extends Function
             final StringBuilder buf = new StringBuilder();
             try (final Formatter fmt = new Formatter(buf))
             {
-                fmt.format("%d", new Object[]
-                {
-                    (int) values.popDouble()
+                fmt.format("%d", new Object[] {
+                        (int) values.popDouble()
                 });
             }
             values.push(buf.toString());
@@ -47,8 +64,9 @@ public class FuncAlpha extends Function
         }
     }
 
+    /** {@inheritDoc} */
     @Override
-    public String toString ()
+    public String toString()
     {
         return "function(alpha)";
     }

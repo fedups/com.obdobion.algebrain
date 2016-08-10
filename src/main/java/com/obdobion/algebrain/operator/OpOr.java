@@ -7,26 +7,38 @@ import com.obdobion.algebrain.Operator;
 import com.obdobion.algebrain.ValueStack;
 
 /**
- * @author Chris DeGreef
+ * <p>OpOr class.</p>
  *
+ * @author Chris DeGreef fedupforone@gmail.com
+ * @since 1.3.9
  */
 public class OpOr extends Operator
 {
+    /**
+     * <p>Constructor for OpOr.</p>
+     */
     public OpOr()
     {
     }
 
+    /**
+     * <p>Constructor for OpOr.</p>
+     *
+     * @param opTok a {@link com.obdobion.algebrain.EquPart} object.
+     */
     public OpOr(final EquPart opTok)
     {
         super(opTok);
     }
 
+    /** {@inheritDoc} */
     @Override
     protected int precedence ()
     {
         return 9;
     }
 
+    /** {@inheritDoc} */
     @Override
     public void resolve (final ValueStack values) throws Exception
     {
@@ -44,6 +56,7 @@ public class OpOr extends Operator
         }
     }
 
+    /** {@inheritDoc} */
     @Override
     public String toString ()
     {

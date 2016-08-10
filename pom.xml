@@ -3,10 +3,10 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.obdobion</groupId>
 	<artifactId>algebrain</artifactId>
-    <description>Equation processing for Java</description>
+	<description>Equation processing for Java</description>
 	<packaging>jar</packaging>
-	<version>1.3.9</version>
-    <name>${project.groupId}:${project.artifactId}</name>
+	<version>1.3.10</version>
+	<name>${project.groupId}.${project.artifactId}</name>
 	<url>https://github.com/fedups/algebrain</url>
 	<organization>
 		<name>Obdobion</name>
@@ -18,23 +18,23 @@
 			<url>http://www.opensource.org/licenses/mit-license.php</url>
 		</license>
 	</licenses>
-    <developers>
-        <developer>
-            <name>Christopher DeGreef</name>
-            <email>fedupforone@gmail.com</email>
-            <organization>Obdobion</organization>
-            <organizationUrl>http://www.github.com/fedups</organizationUrl>
-        </developer>
-    </developers>
-    <scm>
-        <connection>scm:git:git@github.com:fedups/algebrain.git</connection>
-        <developerConnection>scm:git:git@github.com:fedups/algebrain.git</developerConnection>
-        <url>git@github.com:fedups/algebrain.git</url>
-    </scm>
+	<developers>
+		<developer>
+			<name>Christopher DeGreef</name>
+			<email>fedupforone@gmail.com</email>
+			<organization>Obdobion</organization>
+			<organizationUrl>http://www.github.com/fedups</organizationUrl>
+		</developer>
+	</developers>
+	<scm>
+		<connection>scm:git:git@github.com:fedups/algebrain.git</connection>
+		<developerConnection>scm:git:git@github.com:fedups/algebrain.git</developerConnection>
+		<url>git@github.com:fedups/algebrain.git</url>
+	</scm>
 
 	<properties>
-		<java.target.version>1.8</java.target.version>
-		<java.source.version>1.8</java.source.version>
+		<java.target.version>1.7</java.target.version>
+		<java.source.version>1.7</java.source.version>
 		<junit.version>4.8.1</junit.version>
 		<slf4j.version>1.7.13</slf4j.version>
 		<project.build.sourceEncoding>Cp1252</project.build.sourceEncoding>
@@ -86,12 +86,30 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-javadoc-plugin</artifactId>
 				<version>2.10.4</version>
+				<configuration>
+					<defaultAuthor>Chris DeGreef fedupforone@gmail.com</defaultAuthor>
+					<fixTags>author,since,param,return,throws,link</fixTags>
+				</configuration>
 				<executions>
 					<execution>
 						<id>javadoc-jar</id>
 						<phase>verify</phase>
 						<goals>
 							<goal>jar</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>javadoc-fix-main</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>fix</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>javadoc-fix-test</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>test-fix</goal>
 						</goals>
 					</execution>
 				</executions>

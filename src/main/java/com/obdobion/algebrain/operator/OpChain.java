@@ -7,27 +7,39 @@ import com.obdobion.algebrain.Operator;
 import com.obdobion.algebrain.ValueStack;
 
 /**
- * @author Chris DeGreef
+ * <p>OpChain class.</p>
  *
+ * @author Chris DeGreef fedupforone@gmail.com
+ * @since 1.3.9
  */
 public class OpChain extends Operator
 {
+    /**
+     * <p>Constructor for OpChain.</p>
+     */
     public OpChain()
     {
         super();
     }
 
+    /**
+     * <p>Constructor for OpChain.</p>
+     *
+     * @param opTok a {@link com.obdobion.algebrain.EquPart} object.
+     */
     public OpChain(final EquPart opTok)
     {
         super(opTok);
     }
 
+    /** {@inheritDoc} */
     @Override
     public boolean includeInRpn()
     {
         return true;
     }
 
+    /** {@inheritDoc} */
     @Override
     protected int precedence()
     {
@@ -35,6 +47,8 @@ public class OpChain extends Operator
     }
 
     /**
+     * {@inheritDoc}
+     *
      * This is an intermediate result. Its result is not directly returned.
      * Assign the value to a variable if you need access to it later.
      */
@@ -56,6 +70,7 @@ public class OpChain extends Operator
         }
     }
 
+    /** {@inheritDoc} */
     @Override
     public String toString()
     {

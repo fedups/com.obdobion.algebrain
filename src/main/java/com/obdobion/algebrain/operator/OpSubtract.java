@@ -7,27 +7,39 @@ import com.obdobion.algebrain.Operator;
 import com.obdobion.algebrain.ValueStack;
 
 /**
- * @author Chris DeGreef
+ * <p>OpSubtract class.</p>
  *
+ * @author Chris DeGreef fedupforone@gmail.com
+ * @since 1.3.9
  */
 public class OpSubtract extends Operator
 {
+    /**
+     * <p>Constructor for OpSubtract.</p>
+     */
     public OpSubtract()
     {
         super();
     }
 
+    /**
+     * <p>Constructor for OpSubtract.</p>
+     *
+     * @param opTok a {@link com.obdobion.algebrain.EquPart} object.
+     */
     public OpSubtract(final EquPart opTok)
     {
         super(opTok);
     }
 
+    /** {@inheritDoc} */
     @Override
     protected int precedence ()
     {
         return 6;
     }
 
+    /** {@inheritDoc} */
     @Override
     public void resolve (final ValueStack values) throws Exception
     {
@@ -45,6 +57,7 @@ public class OpSubtract extends Operator
         }
     }
 
+    /** {@inheritDoc} */
     @Override
     public String toString ()
     {

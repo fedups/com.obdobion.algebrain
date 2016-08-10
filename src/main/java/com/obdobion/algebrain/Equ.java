@@ -101,12 +101,18 @@ import com.obdobion.algebrain.token.Token;
  * instance that maintains a local Map of variable name / value pairs. But a
  * database could be used as well, for instance.
  *
- * @author Chris DeGreef
+ * @author Chris DeGreef fedupforone@gmail.com
  */
 public class Equ
 {
     private static Equ instance;
 
+    /**
+     * <p>gatherVariables.</p>
+     *
+     * @param tokens a {@link java.util.Collection} object.
+     * @return a {@link java.util.Set} object.
+     */
     static public Set<String> gatherVariables(final Collection<EquPart> tokens)
     {
         final Set<String> vars = new HashSet<>();
@@ -116,11 +122,22 @@ public class Equ
         return vars;
     }
 
+    /**
+     * <p>Getter for the field <code>instance</code>.</p>
+     *
+     * @return a {@link com.obdobion.algebrain.Equ} object.
+     */
     public static Equ getInstance()
     {
         return getInstance(false);
     }
 
+    /**
+     * <p>Getter for the field <code>instance</code>.</p>
+     *
+     * @param fresh a boolean.
+     * @return a {@link com.obdobion.algebrain.Equ} object.
+     */
     public static Equ getInstance(final boolean fresh)
     {
         if (instance == null || fresh)
@@ -150,11 +167,21 @@ public class Equ
 
     private Metaphone                   cachedMetaphone;
 
+    /**
+     * <p>Constructor for Equ.</p>
+     */
     protected Equ()
     {
         super();
     }
 
+    /**
+     * <p>compile.</p>
+     *
+     * @param _equ a {@link java.lang.String} object.
+     * @return a {@link java.util.Set} object.
+     * @throws java.lang.Exception if any.
+     */
     public Set<String> compile(final String _equ) throws Exception
     {
         equ = _equ;
@@ -177,6 +204,12 @@ public class Equ
                 ((Function) equParts[f]).updateParameterCount(equParts, f);
     }
 
+    /**
+     * <p>evaluate.</p>
+     *
+     * @return a {@link java.lang.Object} object.
+     * @throws java.lang.Exception if any.
+     */
     public Object evaluate() throws Exception
     {
         final ValueStack values = new ValueStack();
@@ -210,12 +243,26 @@ public class Equ
         return result;
     }
 
+    /**
+     * <p>evaluate.</p>
+     *
+     * @param _equ a {@link java.lang.String} object.
+     * @return a {@link java.lang.Object} object.
+     * @throws java.lang.Exception if any.
+     */
     public Object evaluate(final String _equ) throws Exception
     {
         compile(_equ);
         return evaluate();
     }
 
+    /**
+     * <p>function.</p>
+     *
+     * @param varTok a {@link com.obdobion.algebrain.token.TokVariable} object.
+     * @return a {@link com.obdobion.algebrain.Function} object.
+     * @throws java.lang.Exception if any.
+     */
     public Function function(final TokVariable varTok) throws Exception
     {
         final String token = varTok.getValue().toString();
@@ -233,11 +280,21 @@ public class Equ
         }
     }
 
+    /**
+     * <p>Getter for the field <code>baseDate</code>.</p>
+     *
+     * @return a {@link java.sql.Date} object.
+     */
     public java.sql.Date getBaseDate()
     {
         return baseDate;
     }
 
+    /**
+     * <p>getMetaphone.</p>
+     *
+     * @return a {@link org.apache.commons.codec.language.Metaphone} object.
+     */
     public Metaphone getMetaphone()
     {
         if (cachedMetaphone == null)
@@ -245,6 +302,11 @@ public class Equ
         return cachedMetaphone;
     }
 
+    /**
+     * <p>Getter for the field <code>support</code>.</p>
+     *
+     * @return a {@link com.obdobion.algebrain.support.EquationSupport} object.
+     */
     public EquationSupport getSupport()
     {
         if (support == null)
@@ -255,6 +317,11 @@ public class Equ
         return support;
     }
 
+    /**
+     * <p>initialize.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     protected void initialize() throws Exception
     {
         functionMap = new Hashtable<>();
@@ -328,6 +395,9 @@ public class Equ
         registerOperator("!", OpFactorial.class);
     }
 
+    /**
+     * <p>initializeSupport.</p>
+     */
     protected void initializeSupport()
     {
         try
@@ -349,6 +419,9 @@ public class Equ
 
     /**
      * put implied multipliers into the equation
+     *
+     * @param oldTokens a {@link java.util.Collection} object.
+     * @return a {@link java.util.Collection} object.
      */
     protected Collection<EquPart> multiplize(final Collection<EquPart> oldTokens)
     {
@@ -385,6 +458,13 @@ public class Equ
         return tokens;
     }
 
+    /**
+     * <p>operator.</p>
+     *
+     * @param tok a {@link com.obdobion.algebrain.token.Token} object.
+     * @return a {@link com.obdobion.algebrain.Operator} object.
+     * @throws java.lang.Exception if any.
+     */
     public Operator operator(final Token tok) throws Exception
     {
         final String token = tok.getValue().toString();
@@ -402,6 +482,13 @@ public class Equ
         }
     }
 
+    /**
+     * <p>registerFunction.</p>
+     *
+     * @param name a {@link java.lang.String} object.
+     * @param functionSubclass a {@link java.lang.Class} object.
+     * @throws java.lang.Exception if any.
+     */
     public void registerFunction(final String name, final Class<?> functionSubclass) throws Exception
     {
         final String token = name.toLowerCase();
@@ -418,6 +505,13 @@ public class Equ
         }
     }
 
+    /**
+     * <p>registerOperator.</p>
+     *
+     * @param name a {@link java.lang.String} object.
+     * @param operatorSubclass a {@link java.lang.Class} object.
+     * @throws java.lang.Exception if any.
+     */
     public void registerOperator(final String name, final Class<?> operatorSubclass) throws Exception
     {
         final String token = name.toLowerCase();
@@ -436,6 +530,9 @@ public class Equ
 
     /**
      * Create a reverse Polish notation form of the equation
+     *
+     * @param oldTokens a {@link java.util.Collection} object.
+     * @return a {@link java.util.Collection} object.
      */
     protected Collection<EquPart> rpnize(final Collection<EquPart> oldTokens)
     {
@@ -505,16 +602,32 @@ public class Equ
         return _rpn;
     }
 
+    /**
+     * <p>Setter for the field <code>baseDate</code>.</p>
+     *
+     * @param newBaseDate a {@link java.sql.Date} object.
+     */
     public void setBaseDate(final java.sql.Date newBaseDate)
     {
         baseDate = newBaseDate;
     }
 
+    /**
+     * <p>Setter for the field <code>support</code>.</p>
+     *
+     * @param newSupport a {@link com.obdobion.algebrain.support.EquationSupport} object.
+     */
     public void setSupport(final EquationSupport newSupport)
     {
         support = newSupport;
     }
 
+    /**
+     * <p>showRPN.</p>
+     *
+     * @return a {@link java.lang.String} object.
+     * @throws java.lang.Exception if any.
+     */
     public String showRPN() throws Exception
     {
         final StringBuilder sb = new StringBuilder();
@@ -522,6 +635,12 @@ public class Equ
         return sb.toString();
     }
 
+    /**
+     * <p>showRPN.</p>
+     *
+     * @param sb a {@link java.lang.StringBuilder} object.
+     * @throws java.lang.Exception if any.
+     */
     public void showRPN(final StringBuilder sb) throws Exception
     {
         for (final EquPart part : rpn)
@@ -531,6 +650,12 @@ public class Equ
         }
     }
 
+    /**
+     * <p>tokenize.</p>
+     *
+     * @return a {@link java.util.Collection} object.
+     * @throws java.lang.Exception if any.
+     */
     protected Collection<EquPart> tokenize() throws Exception
     {
         /*
@@ -585,12 +710,19 @@ public class Equ
         return tokens;
     }
 
+    /** {@inheritDoc} */
     @Override
     public String toString()
     {
         return equ;
     }
 
+    /**
+     * <p>unregisterFunction.</p>
+     *
+     * @param name a {@link java.lang.String} object.
+     * @throws java.lang.Exception if any.
+     */
     public void unregisterFunction(final String name) throws Exception
     {
         final String token = name.toLowerCase();
@@ -599,6 +731,12 @@ public class Equ
         functionMap.remove(token);
     }
 
+    /**
+     * <p>unregisterOperator.</p>
+     *
+     * @param name a {@link java.lang.String} object.
+     * @throws java.lang.Exception if any.
+     */
     public void unregisterOperator(final String name) throws Exception
     {
         final String token = name.toLowerCase();

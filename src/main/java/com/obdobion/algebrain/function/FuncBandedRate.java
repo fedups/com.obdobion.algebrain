@@ -10,21 +10,32 @@ import com.obdobion.algebrain.support.EquationSupport;
 import com.obdobion.algebrain.token.TokVariable;
 
 /**
- * @author Chris DeGreef
+ * <p>FuncBandedRate class.</p>
  *
+ * @author Chris DeGreef fedupforone@gmail.com
+ * @since 1.3.9
  */
 public class FuncBandedRate extends Function
 {
+    /**
+     * <p>Constructor for FuncBandedRate.</p>
+     */
     public FuncBandedRate()
     {
         super();
     }
 
+    /**
+     * <p>Constructor for FuncBandedRate.</p>
+     *
+     * @param var a {@link com.obdobion.algebrain.token.TokVariable} object.
+     */
     public FuncBandedRate(final TokVariable var)
     {
         super(var);
     }
 
+    /** {@inheritDoc} */
     @Override
     public void resolve (final ValueStack values) throws Exception
     {
@@ -58,6 +69,7 @@ public class FuncBandedRate extends Function
         }
     }
 
+    /** {@inheritDoc} */
     @Override
     public String toString ()
     {

@@ -1,16 +1,27 @@
 package com.obdobion.algebrain;
 
 /**
- * @author Chris DeGreef
+ * <p>Abstract Operation class.</p>
  *
+ * @author Chris DeGreef fedupforone@gmail.com
  */
 public abstract class Operation extends EquPart
 {
+    /**
+     * <p>Constructor for Operation.</p>
+     */
     public Operation()
     {
         super();
     }
 
+    /**
+     * <p>convertToBoolean.</p>
+     *
+     * @param fromStack a {@link java.lang.Object} object.
+     * @return an array of boolean.
+     * @throws java.lang.Exception if any.
+     */
     @Deprecated
     protected boolean[] convertToBoolean(final Object... fromStack) throws Exception
     {
@@ -52,6 +63,13 @@ public abstract class Operation extends EquPart
         return converted;
     }
 
+    /**
+     * <p>convertToDouble.</p>
+     *
+     * @param fromStack a {@link java.lang.Object} object.
+     * @return an array of double.
+     * @throws java.lang.Exception if any.
+     */
     @Deprecated
     protected double[] convertToDouble(final Object... fromStack) throws Exception
     {
@@ -85,13 +103,29 @@ public abstract class Operation extends EquPart
         return converted;
     }
 
+    /**
+     * <p>includeInRpn.</p>
+     *
+     * @return a boolean.
+     */
     public boolean includeInRpn()
     {
         return true;
     }
 
+    /**
+     * <p>precedence.</p>
+     *
+     * @return a int.
+     */
     protected abstract int precedence();
 
+    /**
+     * <p>preceeds.</p>
+     *
+     * @param rightOp a {@link com.obdobion.algebrain.Operation} object.
+     * @return a boolean.
+     */
     public boolean preceeds(final Operation rightOp)
     {
         if (getLevel() > rightOp.getLevel())

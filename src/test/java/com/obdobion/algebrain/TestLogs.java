@@ -4,11 +4,18 @@ import org.junit.Assert;
 import org.junit.Test;
 
 /**
- * @author Chris DeGreef
- * 
+ * <p>TestLogs class.</p>
+ *
+ * @author Chris DeGreef fedupforone@gmail.com
+ * @since 1.3.9
  */
 public class TestLogs
 {
+    /**
+     * <p>logOfe.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void logOfe () throws Exception
     {
@@ -16,6 +23,11 @@ public class TestLogs
         Assert.assertEquals("result ", 1, result.doubleValue(), 0D);
     }
 
+    /**
+     * <p>log.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void log () throws Exception
     {
@@ -23,6 +35,11 @@ public class TestLogs
         Assert.assertEquals("result ", 0, result.doubleValue(), 0D);
     }
 
+    /**
+     * <p>logESquared.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void logESquared () throws Exception
     {
@@ -30,6 +47,11 @@ public class TestLogs
         Assert.assertEquals("result ", 2, result.doubleValue(), 0D);
     }
 
+    /**
+     * <p>logEpow.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void logEpow () throws Exception
     {
@@ -37,6 +59,11 @@ public class TestLogs
         Assert.assertEquals("result ", 10, result.doubleValue(), 0D);
     }
 
+    /**
+     * <p>log10.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void log10 () throws Exception
     {
@@ -44,6 +71,11 @@ public class TestLogs
         Assert.assertEquals("result ", 2, result.doubleValue(), 0D);
     }
 
+    /**
+     * <p>log100.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void log100 () throws Exception
     {
@@ -51,6 +83,11 @@ public class TestLogs
         Assert.assertEquals("result ", Double.NEGATIVE_INFINITY, result.doubleValue(), 0D);
     }
 
+    /**
+     * <p>log101.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void log101 () throws Exception
     {
@@ -58,6 +95,11 @@ public class TestLogs
         Assert.assertEquals("result ", 0, result.doubleValue(), 0D);
     }
 
+    /**
+     * <p>log1010.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void log1010 () throws Exception
     {
@@ -65,6 +107,11 @@ public class TestLogs
         Assert.assertEquals("result ", 1, result.doubleValue(), 0D);
     }
 
+    /**
+     * <p>log10round.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void log10round () throws Exception
     {
@@ -72,6 +119,11 @@ public class TestLogs
         Assert.assertEquals("result ", 3, result.doubleValue(), 3D);
     }
 
+    /**
+     * <p>log10trunc.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void log10trunc () throws Exception
     {
@@ -79,6 +131,11 @@ public class TestLogs
         Assert.assertEquals("result ", 2, result.doubleValue(), 3D);
     }
 
+    /**
+     * <p>log10round3.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void log10round3 () throws Exception
     {
@@ -86,6 +143,11 @@ public class TestLogs
         Assert.assertEquals("result ", 3, result.doubleValue(), 3D);
     }
 
+    /**
+     * <p>log10round2.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void log10round2 () throws Exception
     {

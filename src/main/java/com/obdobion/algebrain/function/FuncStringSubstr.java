@@ -8,21 +8,32 @@ import com.obdobion.algebrain.ValueStack;
 import com.obdobion.algebrain.token.TokVariable;
 
 /**
- * @author Chris DeGreef
+ * <p>FuncStringSubstr class.</p>
  *
+ * @author Chris DeGreef fedupforone@gmail.com
+ * @since 1.3.9
  */
 public class FuncStringSubstr extends Function
 {
+    /**
+     * <p>Constructor for FuncStringSubstr.</p>
+     */
     public FuncStringSubstr()
     {
         super();
     }
 
+    /**
+     * <p>Constructor for FuncStringSubstr.</p>
+     *
+     * @param var a {@link com.obdobion.algebrain.token.TokVariable} object.
+     */
     public FuncStringSubstr(final TokVariable var)
     {
         super(var);
     }
 
+    /** {@inheritDoc} */
     @Override
     public void resolve (final ValueStack values) throws Exception
     {
@@ -50,6 +61,7 @@ public class FuncStringSubstr extends Function
         }
     }
 
+    /** {@inheritDoc} */
     @Override
     public String toString ()
     {

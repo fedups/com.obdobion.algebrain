@@ -4,11 +4,18 @@ import org.junit.Assert;
 import org.junit.Test;
 
 /**
- * @author Chris DeGreef
+ * <p>TestReuse class.</p>
  *
+ * @author Chris DeGreef fedupforone@gmail.com
+ * @since 1.3.9
  */
 public class TestReuse
 {
+    /**
+     * <p>reuseEqu.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     @SuppressWarnings("null")
     public void reuseEqu () throws Exception
@@ -47,6 +54,11 @@ public class TestReuse
         Assert.assertEquals("ReuseEqu result2 ", 800000D, result.doubleValue(), 0D);
     }
 
+    /**
+     * <p>reuseVarAssignment.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void reuseVarAssignment () throws Exception
     {

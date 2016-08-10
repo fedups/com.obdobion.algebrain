@@ -4,11 +4,18 @@ import org.junit.Assert;
 import org.junit.Test;
 
 /**
- * @author Chris DeGreef
+ * <p>TestVariableNames class.</p>
  *
+ * @author Chris DeGreef fedupforone@gmail.com
+ * @since 1.3.9
  */
 public class TestVariableNames
 {
+    /**
+     * <p>assignVariableFirst.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void assignVariableFirst () throws Exception
     {
@@ -18,6 +25,11 @@ public class TestVariableNames
         Assert.assertEquals(123D, Equ.getInstance().getSupport().resolveVariable("x", null));
     }
 
+    /**
+     * <p>assignVariableSecond.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void assignVariableSecond () throws Exception
     {
@@ -27,6 +39,11 @@ public class TestVariableNames
         Assert.assertEquals(123D, Equ.getInstance().getSupport().resolveVariable("x", null));
     }
 
+    /**
+     * <p>dots.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void dots () throws Exception
     {
@@ -35,6 +52,11 @@ public class TestVariableNames
         Assert.assertEquals(17.2D, Equ.getInstance().getSupport().resolveVariable("myvar.inc", null));
     }
 
+    /**
+     * <p>doubleAsStringError.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void doubleAsStringError () throws Exception
     {
@@ -48,6 +70,11 @@ public class TestVariableNames
         }
     }
 
+    /**
+     * <p>leadingDot.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void leadingDot () throws Exception
     {
@@ -56,6 +83,11 @@ public class TestVariableNames
         Assert.assertEquals(17.2D, Equ.getInstance().getSupport().resolveVariable("_inc", null));
     }
 
+    /**
+     * <p>leadingUnderbar.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void leadingUnderbar () throws Exception
     {
@@ -64,6 +96,11 @@ public class TestVariableNames
         Assert.assertEquals(17.2D, Equ.getInstance().getSupport().resolveVariable("_myvar.inc", null));
     }
 
+    /**
+     * <p>undefinedVariableAsString.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void undefinedVariableAsString () throws Exception
     {
@@ -71,6 +108,11 @@ public class TestVariableNames
         Assert.assertEquals(7D, result, 0);
     }
 
+    /**
+     * <p>unquotedPhraseError.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void unquotedPhraseError () throws Exception
     {

@@ -4,11 +4,18 @@ import org.junit.Assert;
 import org.junit.Test;
 
 /**
- * @author Chris DeGreef
+ * <p>TestAssignment class.</p>
  *
+ * @author Chris DeGreef fedupforone@gmail.com
+ * @since 1.3.9
  */
 public class TestAssignment
 {
+    /**
+     * <p>conditionalAssignmentTarget.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void conditionalAssignmentTarget() throws Exception
     {
@@ -19,6 +26,11 @@ public class TestAssignment
         Assert.assertEquals("assigned variable", 1D, Equ.getInstance().getSupport().resolveVariable("b", null));
     }
 
+    /**
+     * <p>equalsInsteadOfAssignment.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void equalsInsteadOfAssignment() throws Exception
     {
@@ -36,6 +48,11 @@ public class TestAssignment
         }
     }
 
+    /**
+     * <p>finalized.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void finalized() throws Exception
     {
@@ -50,6 +67,11 @@ public class TestAssignment
         }
     }
 
+    /**
+     * <p>internalAssignments.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void internalAssignments() throws Exception
     {
@@ -73,6 +95,11 @@ public class TestAssignment
                 0);
     }
 
+    /**
+     * <p>invalidTarget.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void invalidTarget() throws Exception
     {
@@ -87,6 +114,11 @@ public class TestAssignment
         }
     }
 
+    /**
+     * <p>multipleAssignments.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void multipleAssignments() throws Exception
     {
@@ -97,6 +129,11 @@ public class TestAssignment
         Assert.assertEquals("assigned variable", 3D, Equ.getInstance().getSupport().resolveVariable("b", null));
     }
 
+    /**
+     * <p>multipleAssignments2.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void multipleAssignments2() throws Exception
     {
@@ -107,6 +144,11 @@ public class TestAssignment
         Assert.assertEquals("assigned variable", 3D, Equ.getInstance().getSupport().resolveVariable("b", null));
     }
 
+    /**
+     * <p>multipleAssignments3.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void multipleAssignments3() throws Exception
     {
@@ -121,6 +163,11 @@ public class TestAssignment
         }
     }
 
+    /**
+     * <p>unknownVariableInComparison.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void unknownVariableInComparison() throws Exception
     {
@@ -137,6 +184,11 @@ public class TestAssignment
         }
     }
 
+    /**
+     * <p>withoutSupport.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void withoutSupport() throws Exception
     {
@@ -147,6 +199,11 @@ public class TestAssignment
 
     }
 
+    /**
+     * <p>withSupport.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void withSupport() throws Exception
     {

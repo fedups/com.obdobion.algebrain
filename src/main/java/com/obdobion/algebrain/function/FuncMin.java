@@ -8,21 +8,32 @@ import com.obdobion.algebrain.ValueStack;
 import com.obdobion.algebrain.token.TokVariable;
 
 /**
- * @author Chris DeGreef
+ * <p>FuncMin class.</p>
  *
+ * @author Chris DeGreef fedupforone@gmail.com
+ * @since 1.3.9
  */
 public class FuncMin extends Function
 {
+    /**
+     * <p>Constructor for FuncMin.</p>
+     */
     public FuncMin()
     {
         super();
     }
 
+    /**
+     * <p>Constructor for FuncMin.</p>
+     *
+     * @param var a {@link com.obdobion.algebrain.token.TokVariable} object.
+     */
     public FuncMin(final TokVariable var)
     {
         super(var);
     }
 
+    /** {@inheritDoc} */
     @Override
     public void resolve (final ValueStack values) throws Exception
     {
@@ -52,6 +63,7 @@ public class FuncMin extends Function
         }
     }
 
+    /** {@inheritDoc} */
     @Override
     public String toString ()
     {

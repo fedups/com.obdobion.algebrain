@@ -7,26 +7,38 @@ import com.obdobion.algebrain.Operator;
 import com.obdobion.algebrain.ValueStack;
 
 /**
- * @author Chris DeGreef
+ * <p>OpCompareEqual class.</p>
  *
+ * @author Chris DeGreef fedupforone@gmail.com
+ * @since 1.3.9
  */
 public class OpCompareEqual extends Operator
 {
+    /**
+     * <p>Constructor for OpCompareEqual.</p>
+     */
     public OpCompareEqual()
     {
     }
 
+    /**
+     * <p>Constructor for OpCompareEqual.</p>
+     *
+     * @param opTok a {@link com.obdobion.algebrain.EquPart} object.
+     */
     public OpCompareEqual(final EquPart opTok)
     {
         super(opTok);
     }
 
+    /** {@inheritDoc} */
     @Override
     protected int precedence ()
     {
         return 8;
     }
 
+    /** {@inheritDoc} */
     @Override
     public void resolve (final ValueStack values) throws Exception
     {
@@ -45,6 +57,7 @@ public class OpCompareEqual extends Operator
         return;
     }
 
+    /** {@inheritDoc} */
     @Override
     public String toString ()
     {

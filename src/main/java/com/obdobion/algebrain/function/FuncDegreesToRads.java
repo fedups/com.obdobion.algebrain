@@ -7,21 +7,32 @@ import com.obdobion.algebrain.ValueStack;
 import com.obdobion.algebrain.token.TokVariable;
 
 /**
- * @author Chris DeGreef
+ * <p>FuncDegreesToRads class.</p>
  *
+ * @author Chris DeGreef fedupforone@gmail.com
+ * @since 1.3.9
  */
 public class FuncDegreesToRads extends Function
 {
+    /**
+     * <p>Constructor for FuncDegreesToRads.</p>
+     */
     public FuncDegreesToRads()
     {
         super();
     }
 
+    /**
+     * <p>Constructor for FuncDegreesToRads.</p>
+     *
+     * @param var a {@link com.obdobion.algebrain.token.TokVariable} object.
+     */
     public FuncDegreesToRads(final TokVariable var)
     {
         super(var);
     }
 
+    /** {@inheritDoc} */
     @Override
     public void resolve (final ValueStack values) throws Exception
     {
@@ -39,6 +50,7 @@ public class FuncDegreesToRads extends Function
         }
     }
 
+    /** {@inheritDoc} */
     @Override
     public String toString ()
     {

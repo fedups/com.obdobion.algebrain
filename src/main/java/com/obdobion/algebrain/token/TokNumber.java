@@ -5,22 +5,29 @@ import com.obdobion.algebrain.EquPart;
 import com.obdobion.algebrain.ValueStack;
 
 /**
- * @author Chris DeGreef
+ * <p>TokNumber class.</p>
  *
+ * @author Chris DeGreef fedupforone@gmail.com
+ * @since 1.3.9
  */
 public class TokNumber extends TokOperand
 {
+    /**
+     * <p>Constructor for TokNumber.</p>
+     */
     public TokNumber()
     {
         super();
     }
 
+    /** {@inheritDoc} */
     @Override
     public boolean accepts (final char s)
     {
         return Character.isDigit(s) || s == '.';
     }
 
+    /** {@inheritDoc} */
     @Override
     public EquPart morph () throws Exception
     {
@@ -33,12 +40,14 @@ public class TokNumber extends TokOperand
         return this;
     }
 
+    /** {@inheritDoc} */
     @Override
     public void resolve (final ValueStack values) throws Exception
     {
         values.push(new Double(getValue().toString()));
     }
 
+    /** {@inheritDoc} */
     @Override
     public String toString ()
     {

@@ -4,11 +4,18 @@ import org.junit.Assert;
 import org.junit.Test;
 
 /**
- * @author Chris DeGreef
- * 
+ * <p>TestRoots class.</p>
+ *
+ * @author Chris DeGreef fedupforone@gmail.com
+ * @since 1.3.9
  */
 public class TestRoots
 {
+    /**
+     * <p>sqrt.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void sqrt () throws Exception
     {
@@ -16,6 +23,11 @@ public class TestRoots
         Assert.assertEquals("result ", 3, result.doubleValue(), 0D);
     }
 
+    /**
+     * <p>cbrt.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void cbrt () throws Exception
     {
@@ -23,6 +35,11 @@ public class TestRoots
         Assert.assertEquals("result ", 3, result.doubleValue(), 0D);
     }
 
+    /**
+     * <p>cbrt2.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void cbrt2 () throws Exception
     {
@@ -30,6 +47,11 @@ public class TestRoots
         Assert.assertEquals("result ", 9, result.doubleValue(), 0D);
     }
 
+    /**
+     * <p>sqrt2.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void sqrt2 () throws Exception
     {
@@ -37,6 +59,11 @@ public class TestRoots
         Assert.assertEquals("result ", 27, result.doubleValue(), 0D);
     }
 
+    /**
+     * <p>srootOFcroot.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void srootOFcroot () throws Exception
     {
@@ -44,6 +71,11 @@ public class TestRoots
         Assert.assertEquals("result ", 3, result.doubleValue(), 5D);
     }
 
+    /**
+     * <p>crootOFsroot.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void crootOFsroot () throws Exception
     {
@@ -51,6 +83,11 @@ public class TestRoots
         Assert.assertEquals("result ", 3, result.doubleValue(), 5D);
     }
 
+    /**
+     * <p>root2.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void root2 () throws Exception
     {
@@ -58,6 +95,11 @@ public class TestRoots
         Assert.assertEquals("result ", 4, result.doubleValue(), 0D);
     }
 
+    /**
+     * <p>root4.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void root4 () throws Exception
     {

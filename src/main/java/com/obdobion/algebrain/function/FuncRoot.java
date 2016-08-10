@@ -7,21 +7,32 @@ import com.obdobion.algebrain.ValueStack;
 import com.obdobion.algebrain.token.TokVariable;
 
 /**
- * @author Chris DeGreef
+ * <p>FuncRoot class.</p>
  *
+ * @author Chris DeGreef fedupforone@gmail.com
+ * @since 1.3.9
  */
 public class FuncRoot extends Function
 {
+    /**
+     * <p>Constructor for FuncRoot.</p>
+     */
     public FuncRoot()
     {
         super();
     }
 
+    /**
+     * <p>Constructor for FuncRoot.</p>
+     *
+     * @param var a {@link com.obdobion.algebrain.token.TokVariable} object.
+     */
     public FuncRoot(final TokVariable var)
     {
         super(var);
     }
 
+    /** {@inheritDoc} */
     @Override
     public void resolve (final ValueStack values) throws Exception
     {
@@ -39,6 +50,7 @@ public class FuncRoot extends Function
         }
     }
 
+    /** {@inheritDoc} */
     @Override
     public String toString ()
     {

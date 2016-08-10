@@ -7,23 +7,35 @@ import com.obdobion.algebrain.ValueStack;
 import com.obdobion.algebrain.token.TokVariable;
 
 /**
- * @author Chris DeGreef
+ * <p>FuncRound class.</p>
  *
+ * @author Chris DeGreef fedupforone@gmail.com
+ * @since 1.3.9
  */
 public class FuncRound extends Function
 {
 
+    /**
+     * <p>Constructor for FuncRound.</p>
+     */
     public FuncRound()
     {
         super();
     }
 
+    /**
+     * <p>Constructor for FuncRound.</p>
+     *
+     * @param var a {@link com.obdobion.algebrain.token.TokVariable} object.
+     */
     public FuncRound(final TokVariable var)
     {
         super(var);
     }
 
     /**
+     * {@inheritDoc}
+     *
      * The round function uses two operands. The second one is the number of
      * decimal places in which to round to.
      */
@@ -43,6 +55,7 @@ public class FuncRound extends Function
         }
     }
 
+    /** {@inheritDoc} */
     @Override
     public String toString ()
     {

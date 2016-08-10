@@ -6,11 +6,18 @@ import org.junit.Test;
 import com.obdobion.algebrain.function.FuncMin;
 
 /**
- * @author Chris DeGreef
- * 
+ * <p>TestRegisterFunction class.</p>
+ *
+ * @author Chris DeGreef fedupforone@gmail.com
+ * @since 1.3.9
  */
 public class TestRegisterFunction
 {
+    /**
+     * <p>myFunction.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void myFunction () throws Exception
     {

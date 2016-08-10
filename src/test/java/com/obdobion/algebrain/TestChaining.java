@@ -4,11 +4,18 @@ import org.junit.Assert;
 import org.junit.Test;
 
 /**
- * @author Chris DeGreef
- * 
+ * <p>TestChaining class.</p>
+ *
+ * @author Chris DeGreef fedupforone@gmail.com
+ * @since 1.3.9
  */
 public class TestChaining
 {
+    /**
+     * <p>testPresetVariables.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void testPresetVariables () throws Exception
     {
@@ -20,6 +27,11 @@ public class TestChaining
         Assert.assertEquals("variable c", 6D, (double) Equ.getInstance().getSupport().resolveVariable("c", null), 0);
     }
 
+    /**
+     * <p>testTrailingChainMarker.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void testTrailingChainMarker () throws Exception
     {
@@ -31,6 +43,11 @@ public class TestChaining
         Assert.assertEquals("variable c", 6D, (double) Equ.getInstance().getSupport().resolveVariable("c", null), 0);
     }
 
+    /**
+     * <p>testTrailingChainMarker2.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void testTrailingChainMarker2 () throws Exception
     {
@@ -42,6 +59,11 @@ public class TestChaining
         Assert.assertNull("variable c", Equ.getInstance().getSupport().resolveVariable("c", null));
     }
 
+    /**
+     * <p>testUnexpectedChaining.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void testUnexpectedChaining () throws Exception
     {
@@ -51,6 +73,11 @@ public class TestChaining
         Assert.assertEquals("variable a", 2D, (double) Equ.getInstance().getSupport().resolveVariable("a", null), 0);
     }
 
+    /**
+     * <p>testChainingToOverridePrecedence.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void testChainingToOverridePrecedence () throws Exception
     {
@@ -60,6 +87,11 @@ public class TestChaining
         Assert.assertEquals("variable a", 2D, (double) Equ.getInstance().getSupport().resolveVariable("a", null), 0);
     }
 
+    /**
+     * <p>testProofOfPrecedence.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void testProofOfPrecedence () throws Exception
     {
@@ -69,6 +101,11 @@ public class TestChaining
         Assert.assertEquals("variable a", 2D, (double) Equ.getInstance().getSupport().resolveVariable("a", null), 0);
     }
 
+    /**
+     * <p>testProofOfPrecedence2.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void testProofOfPrecedence2 () throws Exception
     {
@@ -78,6 +115,11 @@ public class TestChaining
         Assert.assertEquals("variable a", 2.75D, (double) Equ.getInstance().getSupport().resolveVariable("a", null), 0);
     }
 
+    /**
+     * <p>testNothing1.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void testNothing1 () throws Exception
     {
@@ -87,6 +129,11 @@ public class TestChaining
         Assert.assertEquals("variable a", 2D, (double) Equ.getInstance().getSupport().resolveVariable("a", null), 0);
     }
 
+    /**
+     * <p>testNothing2.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void testNothing2 () throws Exception
     {

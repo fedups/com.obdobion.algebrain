@@ -4,11 +4,18 @@ import org.junit.Assert;
 import org.junit.Test;
 
 /**
- * @author Chris DeGreef
+ * <p>TestStrings class.</p>
  *
+ * @author Chris DeGreef fedupforone@gmail.com
+ * @since 1.3.9
  */
 public class TestStrings
 {
+    /**
+     * <p>stringCaseInsensitive.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void stringCaseInsensitive () throws Exception
     {
@@ -17,6 +24,11 @@ public class TestStrings
         Assert.assertEquals("ABC", result);
     }
 
+    /**
+     * <p>stringConcatinateMany.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void stringConcatinateMany () throws Exception
     {
@@ -25,6 +37,11 @@ public class TestStrings
         Assert.assertEquals("1234", result);
     }
 
+    /**
+     * <p>stringConcatinateMatchResult.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void stringConcatinateMatchResult () throws Exception
     {
@@ -33,6 +50,11 @@ public class TestStrings
         Assert.assertEquals("123WHAT", result);
     }
 
+    /**
+     * <p>stringConcatinateMatchResults.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void stringConcatinateMatchResults () throws Exception
     {
@@ -41,6 +63,11 @@ public class TestStrings
         Assert.assertEquals("123XYZ", result);
     }
 
+    /**
+     * <p>stringConcatinateOne.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void stringConcatinateOne () throws Exception
     {
@@ -49,6 +76,11 @@ public class TestStrings
         Assert.assertEquals("1", result);
     }
 
+    /**
+     * <p>stringEmpty.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void stringEmpty () throws Exception
     {
@@ -57,6 +89,11 @@ public class TestStrings
         Assert.assertTrue(result.booleanValue());
     }
 
+    /**
+     * <p>stringIndexOf.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void stringIndexOf () throws Exception
     {
@@ -65,6 +102,11 @@ public class TestStrings
         Assert.assertEquals(2, result, 0D);
     }
 
+    /**
+     * <p>stringLeadingSpaces.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void stringLeadingSpaces () throws Exception
     {
@@ -73,6 +115,11 @@ public class TestStrings
         Assert.assertTrue(result.booleanValue());
     }
 
+    /**
+     * <p>stringLeftTrim.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void stringLeftTrim () throws Exception
     {
@@ -81,6 +128,11 @@ public class TestStrings
         Assert.assertEquals("ABC ", result);
     }
 
+    /**
+     * <p>stringLength.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void stringLength () throws Exception
     {
@@ -89,6 +141,11 @@ public class TestStrings
         Assert.assertEquals(3, result, 0D);
     }
 
+    /**
+     * <p>stringLowercase.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void stringLowercase () throws Exception
     {
@@ -97,6 +154,11 @@ public class TestStrings
         Assert.assertEquals("abcdef", result);
     }
 
+    /**
+     * <p>stringMatches.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void stringMatches () throws Exception
     {
@@ -105,6 +167,11 @@ public class TestStrings
         Assert.assertEquals("ABC123XYZ", result);
     }
 
+    /**
+     * <p>stringMatchesInitialGroup.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void stringMatchesInitialGroup () throws Exception
     {
@@ -113,6 +180,11 @@ public class TestStrings
         Assert.assertEquals("123", result);
     }
 
+    /**
+     * <p>stringMatchesPartial.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void stringMatchesPartial () throws Exception
     {
@@ -121,6 +193,11 @@ public class TestStrings
         Assert.assertEquals("123", result);
     }
 
+    /**
+     * <p>stringMetaphone.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void stringMetaphone () throws Exception
     {
@@ -129,6 +206,11 @@ public class TestStrings
         Assert.assertEquals("TLFN", result);
     }
 
+    /**
+     * <p>stringMetaphoneCompare.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void stringMetaphoneCompare () throws Exception
     {
@@ -137,6 +219,11 @@ public class TestStrings
         Assert.assertTrue(result);
     }
 
+    /**
+     * <p>stringNoSpaces.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void stringNoSpaces () throws Exception
     {
@@ -145,6 +232,11 @@ public class TestStrings
         Assert.assertTrue(result.booleanValue());
     }
 
+    /**
+     * <p>stringNotEmpty.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void stringNotEmpty () throws Exception
     {
@@ -153,6 +245,11 @@ public class TestStrings
         Assert.assertTrue(result.booleanValue());
     }
 
+    /**
+     * <p>stringReplaceWithEqual.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void stringReplaceWithEqual () throws Exception
     {
@@ -161,6 +258,11 @@ public class TestStrings
         Assert.assertEquals("ABC###XYZ", result);
     }
 
+    /**
+     * <p>stringReplaceWithLonger.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void stringReplaceWithLonger () throws Exception
     {
@@ -169,6 +271,11 @@ public class TestStrings
         Assert.assertEquals("ABC(NUMBER)(NUMBER)(NUMBER)XYZ", result);
     }
 
+    /**
+     * <p>stringReplaceWithShorter.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void stringReplaceWithShorter () throws Exception
     {
@@ -177,6 +284,11 @@ public class TestStrings
         Assert.assertEquals("ABC#3XYZ", result);
     }
 
+    /**
+     * <p>stringRightTrim.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void stringRightTrim () throws Exception
     {
@@ -185,6 +297,11 @@ public class TestStrings
         Assert.assertEquals(" ABC", result);
     }
 
+    /**
+     * <p>stringSubstring.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void stringSubstring () throws Exception
     {
@@ -193,6 +310,11 @@ public class TestStrings
         Assert.assertEquals("C12", result);
     }
 
+    /**
+     * <p>stringTrailingSpaces.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void stringTrailingSpaces () throws Exception
     {
@@ -201,6 +323,11 @@ public class TestStrings
         Assert.assertTrue(result.booleanValue());
     }
 
+    /**
+     * <p>stringTrim.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void stringTrim () throws Exception
     {
@@ -209,6 +336,11 @@ public class TestStrings
         Assert.assertEquals("ABC", result);
     }
 
+    /**
+     * <p>stringUntrimmed.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void stringUntrimmed () throws Exception
     {
@@ -217,6 +349,11 @@ public class TestStrings
         Assert.assertTrue(result.booleanValue());
     }
 
+    /**
+     * <p>stringUppercase.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void stringUppercase () throws Exception
     {
@@ -225,6 +362,11 @@ public class TestStrings
         Assert.assertEquals("ABCDEF", result);
     }
 
+    /**
+     * <p>unquotedLiteral.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void unquotedLiteral () throws Exception
     {

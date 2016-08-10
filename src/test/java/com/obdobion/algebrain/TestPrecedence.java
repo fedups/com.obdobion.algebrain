@@ -4,11 +4,18 @@ import org.junit.Assert;
 import org.junit.Test;
 
 /**
- * @author Chris DeGreef
- * 
+ * <p>TestPrecedence class.</p>
+ *
+ * @author Chris DeGreef fedupforone@gmail.com
+ * @since 1.3.9
  */
 public class TestPrecedence
 {
+    /**
+     * <p>mdas01.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void mdas01 () throws Exception
     {
@@ -17,6 +24,11 @@ public class TestPrecedence
         Assert.assertEquals("result", 0.5D, result.doubleValue(), 0D);
     }
 
+    /**
+     * <p>mdas02.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void mdas02 () throws Exception
     {
@@ -25,6 +37,11 @@ public class TestPrecedence
         Assert.assertEquals("result", 0.5D, result.doubleValue(), 0D);
     }
 
+    /**
+     * <p>mdas03.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void mdas03 () throws Exception
     {
@@ -33,6 +50,11 @@ public class TestPrecedence
         Assert.assertEquals("result", 2D, result.doubleValue(), 0D);
     }
 
+    /**
+     * <p>mdas04.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void mdas04 () throws Exception
     {
@@ -41,6 +63,11 @@ public class TestPrecedence
         Assert.assertEquals("result", 1.5D, result.doubleValue(), 0D);
     }
 
+    /**
+     * <p>mdas05.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void mdas05 () throws Exception
     {
@@ -49,6 +76,11 @@ public class TestPrecedence
         Assert.assertEquals("result", 1.5D, result.doubleValue(), 0D);
     }
 
+    /**
+     * <p>mdas06.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void mdas06 () throws Exception
     {
@@ -57,6 +89,11 @@ public class TestPrecedence
         Assert.assertEquals("result", 0.375D, result.doubleValue(), 0D);
     }
 
+    /**
+     * <p>mdas07.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void mdas07 () throws Exception
     {
@@ -65,6 +102,11 @@ public class TestPrecedence
         Assert.assertEquals("result", 1D, result.doubleValue(), 0D);
     }
 
+    /**
+     * <p>mdas08.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void mdas08 () throws Exception
     {
@@ -73,6 +115,11 @@ public class TestPrecedence
         Assert.assertEquals("result", 0.15D, result.doubleValue(), 0D);
     }
 
+    /**
+     * <p>mdas09.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void mdas09 () throws Exception
     {
@@ -81,6 +128,11 @@ public class TestPrecedence
         Assert.assertEquals("result", 1024D, result.doubleValue(), 0D);
     }
 
+    /**
+     * <p>mdas10.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void mdas10 () throws Exception
     {
@@ -89,6 +141,11 @@ public class TestPrecedence
         Assert.assertEquals("result", 37D, result.doubleValue(), 0D);
     }
 
+    /**
+     * <p>mdas11.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void mdas11 () throws Exception
     {
@@ -97,6 +154,11 @@ public class TestPrecedence
         Assert.assertEquals("result", 1024D, result.doubleValue(), 0D);
     }
 
+    /**
+     * <p>mdas12.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void mdas12 () throws Exception
     {
@@ -105,6 +167,11 @@ public class TestPrecedence
         Assert.assertEquals("result", 64D, result.doubleValue(), 0D);
     }
 
+    /**
+     * <p>mdas13.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void mdas13 () throws Exception
     {
@@ -113,6 +180,11 @@ public class TestPrecedence
         Assert.assertEquals("result", 1024D, result.doubleValue(), 0D);
     }
 
+    /**
+     * <p>mdas14.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void mdas14 () throws Exception
     {
@@ -121,6 +193,11 @@ public class TestPrecedence
         Assert.assertEquals("result", 50D, result.doubleValue(), 0D);
     }
 
+    /**
+     * <p>mdas15.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void mdas15 () throws Exception
     {
@@ -130,6 +207,11 @@ public class TestPrecedence
         Assert.assertEquals("result", 98D, result.doubleValue(), 0D);
     }
 
+    /**
+     * <p>mdas16.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void mdas16 () throws Exception
     {
@@ -139,6 +221,11 @@ public class TestPrecedence
         Assert.assertEquals("result", 32D, result.doubleValue(), 0D);
     }
 
+    /**
+     * <p>mdas17.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void mdas17 () throws Exception
     {
@@ -148,6 +235,11 @@ public class TestPrecedence
         Assert.assertEquals("result", 256D, result.doubleValue(), 0D);
     }
 
+    /**
+     * <p>mdas18.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void mdas18 () throws Exception
     {
@@ -157,6 +249,11 @@ public class TestPrecedence
         Assert.assertEquals("result", 2048D, result.doubleValue(), 0D);
     }
 
+    /**
+     * <p>mdas18b.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void mdas18b () throws Exception
     {
@@ -166,6 +263,11 @@ public class TestPrecedence
         Assert.assertEquals("result", 1024D, result.doubleValue(), 0D);
     }
 
+    /**
+     * <p>mdas18c.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void mdas18c () throws Exception
     {
@@ -175,6 +277,11 @@ public class TestPrecedence
         Assert.assertEquals("result", 13D, result.doubleValue(), 0D);
     }
 
+    /**
+     * <p>mdas19.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void mdas19 () throws Exception
     {
@@ -184,6 +291,11 @@ public class TestPrecedence
         Assert.assertEquals("result", 64D, result.doubleValue(), 0D);
     }
 
+    /**
+     * <p>mdas20.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void mdas20 () throws Exception
     {
@@ -193,6 +305,11 @@ public class TestPrecedence
         Assert.assertEquals("result", 512D, result.doubleValue(), 0D);
     }
 
+    /**
+     * <p>web01.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void web01 () throws Exception
     {
@@ -201,6 +318,11 @@ public class TestPrecedence
         Assert.assertEquals("result", 3D, result.doubleValue(), 0D);
     }
 
+    /**
+     * <p>web02.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void web02 () throws Exception
     {
@@ -209,6 +331,11 @@ public class TestPrecedence
         Assert.assertEquals("result", 4D, result.doubleValue(), 0D);
     }
 
+    /**
+     * <p>web03.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void web03 () throws Exception
     {
@@ -218,6 +345,11 @@ public class TestPrecedence
         Assert.assertEquals("result", 28.8D, result.doubleValue(), 0D);
     }
 
+    /**
+     * <p>web03ForcedDefaultAnyway.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void web03ForcedDefaultAnyway () throws Exception
     {
@@ -226,6 +358,11 @@ public class TestPrecedence
         Assert.assertEquals("result", 28.8D, result.doubleValue(), 0D);
     }
 
+    /**
+     * <p>web03ForcedWrong.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void web03ForcedWrong () throws Exception
     {
@@ -234,6 +371,11 @@ public class TestPrecedence
         Assert.assertEquals("result", 57.6D, result.doubleValue(), 0D);
     }
 
+    /**
+     * <p>web04.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void web04 () throws Exception
     {
@@ -242,6 +384,11 @@ public class TestPrecedence
         Assert.assertEquals("result", 30D, result.doubleValue(), 0D);
     }
 
+    /**
+     * <p>web05.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void web05 () throws Exception
     {

@@ -6,11 +6,18 @@ import org.junit.Test;
 import com.obdobion.algebrain.token.TokVariable;
 
 /**
- * @author Chris DeGreef
- * 
+ * <p>TestConstants class.</p>
+ *
+ * @author Chris DeGreef fedupforone@gmail.com
+ * @since 1.3.9
  */
 public class TestConstants
 {
+    /**
+     * <p>pi.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void pi () throws Exception
     {
@@ -18,6 +25,11 @@ public class TestConstants
         Assert.assertEquals("PI", Math.PI, result, 0D);
     }
 
+    /**
+     * <p>e.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void e () throws Exception
     {
@@ -25,6 +37,11 @@ public class TestConstants
         Assert.assertEquals("E", Math.E, result, 0D);
     }
 
+    /**
+     * <p>unknownConstant.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void unknownConstant () throws Exception
     {

@@ -8,21 +8,32 @@ import com.obdobion.algebrain.support.EquationSupport;
 import com.obdobion.algebrain.token.TokVariable;
 
 /**
- * @author Chris DeGreef
+ * <p>FuncFlatRate class.</p>
  *
+ * @author Chris DeGreef fedupforone@gmail.com
+ * @since 1.3.9
  */
 public class FuncFlatRate extends Function
 {
+    /**
+     * <p>Constructor for FuncFlatRate.</p>
+     */
     public FuncFlatRate()
     {
         super();
     }
 
+    /**
+     * <p>Constructor for FuncFlatRate.</p>
+     *
+     * @param var a {@link com.obdobion.algebrain.token.TokVariable} object.
+     */
     public FuncFlatRate(final TokVariable var)
     {
         super(var);
     }
 
+    /** {@inheritDoc} */
     @Override
     public void resolve (final ValueStack values) throws Exception
     {
@@ -48,6 +59,7 @@ public class FuncFlatRate extends Function
         }
     }
 
+    /** {@inheritDoc} */
     @Override
     public String toString ()
     {

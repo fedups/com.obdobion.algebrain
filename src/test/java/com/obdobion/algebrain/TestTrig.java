@@ -4,11 +4,18 @@ import org.junit.Assert;
 import org.junit.Test;
 
 /**
- * @author Chris DeGreef
- * 
+ * <p>TestTrig class.</p>
+ *
+ * @author Chris DeGreef fedupforone@gmail.com
+ * @since 1.3.9
  */
 public class TestTrig
 {
+    /**
+     * <p>usingSinTwice.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void usingSinTwice () throws Exception
     {
@@ -17,6 +24,11 @@ public class TestTrig
         Assert.assertEquals("result", 0.842D, result.doubleValue(), 0.001D);
     }
 
+    /**
+     * <p>web01.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void web01 () throws Exception
     {
@@ -25,6 +37,11 @@ public class TestTrig
         Assert.assertEquals("result", 5D, result.doubleValue(), 0.01D);
     }
 
+    /**
+     * <p>web01a.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void web01a () throws Exception
     {
@@ -33,6 +50,11 @@ public class TestTrig
         Assert.assertEquals("result", 5D, result.doubleValue(), 0.01D);
     }
 
+    /**
+     * <p>web01b.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void web01b () throws Exception
     {
@@ -41,6 +63,11 @@ public class TestTrig
         Assert.assertEquals("result", 0.866D, result.doubleValue(), 0.01D);
     }
 
+    /**
+     * <p>web02.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void web02 () throws Exception
     {
@@ -49,6 +76,11 @@ public class TestTrig
         Assert.assertEquals("result", 2.8D, result.doubleValue(), 0.01D);
     }
 
+    /**
+     * <p>web02a.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void web02a () throws Exception
     {
@@ -57,6 +89,11 @@ public class TestTrig
         Assert.assertEquals("result", 4.88D, result.doubleValue(), 0.01D);
     }
 
+    /**
+     * <p>web03.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void web03 () throws Exception
     {
@@ -66,6 +103,11 @@ public class TestTrig
         Assert.assertEquals("result", 48.6D, (Double) Equ.getInstance().getSupport().resolveVariable("b", null), 0.01D);
     }
 
+    /**
+     * <p>web04.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void web04 () throws Exception
     {
@@ -76,6 +118,11 @@ public class TestTrig
         Assert.assertEquals("result", 5.83D, (Double) Equ.getInstance().getSupport().resolveVariable("c", null), 0.01D);
     }
 
+    /**
+     * <p>web05.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void web05 () throws Exception
     {
@@ -85,6 +132,11 @@ public class TestTrig
         Assert.assertEquals("result", 22.66D, (Double) Equ.getInstance().getSupport().resolveVariable("h", null), 0.01D);
     }
 
+    /**
+     * <p>web06.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void web06 () throws Exception
     {

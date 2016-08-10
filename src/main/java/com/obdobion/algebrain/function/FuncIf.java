@@ -5,20 +5,31 @@ import com.obdobion.algebrain.ValueStack;
 import com.obdobion.algebrain.token.TokVariable;
 
 /**
- * @author Chris DeGreef
+ * <p>FuncIf class.</p>
  *
+ * @author Chris DeGreef fedupforone@gmail.com
+ * @since 1.3.9
  */
 public class FuncIf extends Function
 {
+    /**
+     * <p>Constructor for FuncIf.</p>
+     */
     public FuncIf()
     {
     }
 
+    /**
+     * <p>Constructor for FuncIf.</p>
+     *
+     * @param var a {@link com.obdobion.algebrain.token.TokVariable} object.
+     */
     public FuncIf(final TokVariable var)
     {
         super(var);
     }
 
+    /** {@inheritDoc} */
     @Override
     public void resolve (final ValueStack values) throws Exception
     {
@@ -34,6 +45,7 @@ public class FuncIf extends Function
                 : op3);
     }
 
+    /** {@inheritDoc} */
     @Override
     public String toString ()
     {

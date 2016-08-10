@@ -7,23 +7,35 @@ import com.obdobion.algebrain.ValueStack;
 import com.obdobion.algebrain.token.TokVariable;
 
 /**
- * @author Chris DeGreef
+ * <p>FuncTrunc class.</p>
  *
+ * @author Chris DeGreef fedupforone@gmail.com
+ * @since 1.3.9
  */
 public class FuncTrunc extends Function
 {
 
+    /**
+     * <p>Constructor for FuncTrunc.</p>
+     */
     public FuncTrunc()
     {
         super();
     }
 
+    /**
+     * <p>Constructor for FuncTrunc.</p>
+     *
+     * @param var a {@link com.obdobion.algebrain.token.TokVariable} object.
+     */
     public FuncTrunc(final TokVariable var)
     {
         super(var);
     }
 
     /**
+     * {@inheritDoc}
+     *
      * The trunc function uses one operands.
      */
     @Override
@@ -41,6 +53,7 @@ public class FuncTrunc extends Function
         }
     }
 
+    /** {@inheritDoc} */
     @Override
     public String toString ()
     {

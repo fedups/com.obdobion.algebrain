@@ -9,21 +9,32 @@ import com.obdobion.algebrain.ValueStack;
 import com.obdobion.algebrain.token.TokVariable;
 
 /**
- * @author Chris DeGreef
+ * <p>FuncBytesToHex class.</p>
  *
+ * @author Chris DeGreef fedupforone@gmail.com
+ * @since 1.3.9
  */
 public class FuncBytesToHex extends Function
 {
+    /**
+     * <p>Constructor for FuncBytesToHex.</p>
+     */
     public FuncBytesToHex()
     {
         super();
     }
 
+    /**
+     * <p>Constructor for FuncBytesToHex.</p>
+     *
+     * @param var a {@link com.obdobion.algebrain.token.TokVariable} object.
+     */
     public FuncBytesToHex(final TokVariable var)
     {
         super(var);
     }
 
+    /** {@inheritDoc} */
     @Override
     public void resolve (final ValueStack values) throws Exception
     {
@@ -40,6 +51,7 @@ public class FuncBytesToHex extends Function
         }
     }
 
+    /** {@inheritDoc} */
     @Override
     public String toString ()
     {

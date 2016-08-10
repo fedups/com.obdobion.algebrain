@@ -6,8 +6,20 @@ import java.util.Stack;
 
 import com.obdobion.algebrain.token.TokVariable;
 
+/**
+ * <p>ValueStack class.</p>
+ *
+ * @author Chris DeGreef fedupforone@gmail.com
+ */
 public class ValueStack extends Stack<Object>
 {
+    /**
+     * <p>byteArrayAsString.</p>
+     *
+     * @param bytearray a {@link java.lang.Object} object.
+     * @return a {@link java.lang.String} object.
+     * @throws java.text.ParseException if any.
+     */
     public static String byteArrayAsString(final Object bytearray) throws ParseException
     {
         try
@@ -21,6 +33,13 @@ public class ValueStack extends Stack<Object>
 
     }
 
+    /**
+     * <p>convertToBoolean.</p>
+     *
+     * @param fromStack a {@link java.lang.Object} object.
+     * @return a boolean.
+     * @throws java.text.ParseException if any.
+     */
     protected boolean convertToBoolean(final Object fromStack) throws ParseException
     {
         if (fromStack instanceof Number)
@@ -39,6 +58,13 @@ public class ValueStack extends Stack<Object>
         throw new ParseException(errMsg.toString(), 0);
     }
 
+    /**
+     * <p>convertToDouble.</p>
+     *
+     * @param fromStack a {@link java.lang.Object} object.
+     * @return a double.
+     * @throws java.text.ParseException if any.
+     */
     protected double convertToDouble(final Object fromStack) throws ParseException
     {
         if (fromStack instanceof Number)
@@ -52,6 +78,12 @@ public class ValueStack extends Stack<Object>
         throw new ParseException(errMsg.toString(), 0);
     }
 
+    /**
+     * <p>ensureSameTypes.</p>
+     *
+     * @return an array of {@link java.lang.Object} objects.
+     * @throws java.text.ParseException if any.
+     */
     public Object[] ensureSameTypes() throws ParseException
     {
         final Object o1 = popWhatever();
@@ -100,6 +132,7 @@ public class ValueStack extends Stack<Object>
                 + o1.getClass().getSimpleName(), 0);
     }
 
+    /** {@inheritDoc} */
     @Override
     @Deprecated
     public synchronized Object pop()
@@ -107,11 +140,23 @@ public class ValueStack extends Stack<Object>
         return super.pop();
     }
 
+    /**
+     * <p>popBoolean.</p>
+     *
+     * @return a boolean.
+     * @throws java.text.ParseException if any.
+     */
     public boolean popBoolean() throws ParseException
     {
         return convertToBoolean(super.pop());
     }
 
+    /**
+     * <p>popByteArray.</p>
+     *
+     * @return an array of byte.
+     * @throws java.text.ParseException if any.
+     */
     public byte[] popByteArray() throws ParseException
     {
         final Object popped = super.pop();
@@ -121,11 +166,23 @@ public class ValueStack extends Stack<Object>
         throw new ParseException("byte[] required, found " + popped.getClass().getSimpleName(), 0);
     }
 
+    /**
+     * <p>popDouble.</p>
+     *
+     * @return a double.
+     * @throws java.text.ParseException if any.
+     */
     public double popDouble() throws ParseException
     {
         return convertToDouble(super.pop());
     }
 
+    /**
+     * <p>popString.</p>
+     *
+     * @return a {@link java.lang.String} object.
+     * @throws java.text.ParseException if any.
+     */
     public String popString() throws ParseException
     {
         final Object popped = super.pop();
@@ -140,6 +197,12 @@ public class ValueStack extends Stack<Object>
         throw new ParseException("Literal required, found " + popped.getClass().getSimpleName(), 0);
     }
 
+    /**
+     * <p>popStringOrByteArray.</p>
+     *
+     * @return a {@link java.lang.Object} object.
+     * @throws java.text.ParseException if any.
+     */
     public Object popStringOrByteArray() throws ParseException
     {
         final Object popped = super.pop();
@@ -157,12 +220,19 @@ public class ValueStack extends Stack<Object>
         throw new ParseException("Literal or byte[] required, found " + popped.getClass().getSimpleName(), 0);
     }
 
+    /**
+     * <p>popWhatever.</p>
+     *
+     * @return a {@link java.lang.Object} object.
+     * @throws java.text.ParseException if any.
+     */
     @SuppressWarnings("unused")
     public Object popWhatever() throws ParseException
     {
         return super.pop();
     }
 
+    /** {@inheritDoc} */
     @Override
     public Object push(final Object item)
     {

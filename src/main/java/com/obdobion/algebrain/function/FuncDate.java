@@ -11,22 +11,33 @@ import com.obdobion.algebrain.token.TokVariable;
 import com.obdobion.calendar.CalendarFactory;
 
 /**
- * @author Chris DeGreef
+ * <p>FuncDate class.</p>
  *
+ * @author Chris DeGreef fedupforone@gmail.com
+ * @since 1.3.9
  */
 public class FuncDate extends Function
 {
 
+    /**
+     * <p>Constructor for FuncDate.</p>
+     */
     public FuncDate()
     {
         super();
     }
 
+    /**
+     * <p>Constructor for FuncDate.</p>
+     *
+     * @param var a {@link com.obdobion.algebrain.token.TokVariable} object.
+     */
     public FuncDate(final TokVariable var)
     {
         super(var);
     }
 
+    /** {@inheritDoc} */
     @Override
     public void resolve (final ValueStack values) throws Exception
     {
@@ -91,6 +102,7 @@ public class FuncDate extends Function
         }
     }
 
+    /** {@inheritDoc} */
     @Override
     public String toString ()
     {

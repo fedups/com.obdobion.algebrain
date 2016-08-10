@@ -5,25 +5,32 @@ import java.util.Hashtable;
 import java.util.List;
 
 /**
- * @author Chris DeGreef
+ * <p>DefaultEquationSupport class.</p>
  *
+ * @author Chris DeGreef fedupforone@gmail.com
+ * @since 1.3.9
  */
 public class DefaultEquationSupport implements EquationSupport
 {
     private Hashtable<String, Object> variables;
 
+    /**
+     * <p>Constructor for DefaultEquationSupport.</p>
+     */
     public DefaultEquationSupport()
     {
         super();
         setVariables(new Hashtable<String, Object>());
     }
 
+    /** {@inheritDoc} */
     @Override
     public void assignVariable(final String variableName, final Object value) throws Exception
     {
         getVariables().put(variableName.toLowerCase(), value);
     }
 
+    /** {@inheritDoc} */
     @Override
     public List<String> getVariableNames()
     {
@@ -39,17 +46,14 @@ public class DefaultEquationSupport implements EquationSupport
         return variables;
     }
 
+    /** {@inheritDoc} */
     @Override
     public void removeVariable(final String name)
     {
         getVariables().remove(name);
     }
 
-    /**
-     * @param tableName
-     * @param baseDate
-     * @param tableKey
-     */
+    /** {@inheritDoc} */
     @Override
     public Hashtable<Double, Double> resolveRate(
             final String tableName,
@@ -62,15 +66,7 @@ public class DefaultEquationSupport implements EquationSupport
         return rates;
     }
 
-    /**
-     * @param tableId
-     * @param effectiveDate
-     * @param key1
-     * @param key2
-     * @param key3
-     * @param key4
-     * @param key5
-     */
+    /** {@inheritDoc} */
     @Override
     public double resolveRate(
             final String tableId,
@@ -84,9 +80,7 @@ public class DefaultEquationSupport implements EquationSupport
         return 1D;
     }
 
-    /**
-     * @param baseDate
-     */
+    /** {@inheritDoc} */
     @Override
     public Object resolveVariable(final String variableName, final java.sql.Date baseDate) throws Exception
     {
@@ -95,6 +89,11 @@ public class DefaultEquationSupport implements EquationSupport
         return getVariables().get(variableName);
     }
 
+    /**
+     * <p>Setter for the field <code>variables</code>.</p>
+     *
+     * @param newVariables a {@link java.util.Hashtable} object.
+     */
     public void setVariables(final Hashtable<String, Object> newVariables)
     {
         variables = newVariables;

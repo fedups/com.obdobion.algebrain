@@ -10,27 +10,39 @@ import com.obdobion.algebrain.ValueStack;
 import com.obdobion.algebrain.token.TokVariable;
 
 /**
- * @author Chris DeGreef
+ * <p>OpAssignment class.</p>
  *
+ * @author Chris DeGreef fedupforone@gmail.com
+ * @since 1.3.9
  */
 public class OpAssignment extends Operator
 {
+    /**
+     * <p>Constructor for OpAssignment.</p>
+     */
     public OpAssignment()
     {
         super();
     }
 
+    /**
+     * <p>Constructor for OpAssignment.</p>
+     *
+     * @param opTok a {@link com.obdobion.algebrain.EquPart} object.
+     */
     public OpAssignment(final EquPart opTok)
     {
         super(opTok);
     }
 
+    /** {@inheritDoc} */
     @Override
     protected int precedence ()
     {
         return 990;
     }
 
+    /** {@inheritDoc} */
     @Override
     public boolean preceeds (final Operation rightOp)
     {
@@ -44,6 +56,7 @@ public class OpAssignment extends Operator
         return super.preceeds(rightOp);
     }
 
+    /** {@inheritDoc} */
     @Override
     public void resolve (final ValueStack values) throws Exception
     {
@@ -82,6 +95,7 @@ public class OpAssignment extends Operator
         }
     }
 
+    /** {@inheritDoc} */
     @Override
     public String toString ()
     {

@@ -4,11 +4,18 @@ import org.junit.Assert;
 import org.junit.Test;
 
 /**
- * @author Chris DeGreef
+ * <p>TestEquations class.</p>
  *
+ * @author Chris DeGreef fedupforone@gmail.com
+ * @since 1.3.9
  */
 public class TestEquations
 {
+    /**
+     * <p>booleanEqual.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void booleanEqual () throws Exception
     {
@@ -17,6 +24,11 @@ public class TestEquations
         Assert.assertFalse("result ", result.booleanValue());
     }
 
+    /**
+     * <p>booleanGreater.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void booleanGreater () throws Exception
     {
@@ -25,6 +37,11 @@ public class TestEquations
         Assert.assertFalse("result ", result.booleanValue());
     }
 
+    /**
+     * <p>booleanLess.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void booleanLess () throws Exception
     {
@@ -33,6 +50,11 @@ public class TestEquations
         Assert.assertTrue("result ", result.booleanValue());
     }
 
+    /**
+     * <p>booleanNotEqual.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void booleanNotEqual () throws Exception
     {
@@ -41,6 +63,11 @@ public class TestEquations
         Assert.assertTrue("result ", result.booleanValue());
     }
 
+    /**
+     * <p>booleanNotGreater.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void booleanNotGreater () throws Exception
     {
@@ -49,6 +76,11 @@ public class TestEquations
         Assert.assertTrue("result ", result.booleanValue());
     }
 
+    /**
+     * <p>booleanNotLess.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void booleanNotLess () throws Exception
     {
@@ -57,6 +89,11 @@ public class TestEquations
         Assert.assertFalse("result ", result.booleanValue());
     }
 
+    /**
+     * <p>m10a.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void m10a () throws Exception
     {
@@ -65,6 +102,11 @@ public class TestEquations
         Assert.assertEquals("M10a result ", 1D, result.doubleValue(), 0D);
     }
 
+    /**
+     * <p>m10b.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void m10b () throws Exception
     {
@@ -73,6 +115,11 @@ public class TestEquations
         Assert.assertEquals("M10b result ", 2D, result.doubleValue(), 0D);
     }
 
+    /**
+     * <p>m10c.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void m10c () throws Exception
     {
@@ -81,6 +128,11 @@ public class TestEquations
         Assert.assertEquals("M10c result ", 10D, result.doubleValue(), 0D);
     }
 
+    /**
+     * <p>m10d.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void m10d () throws Exception
     {
@@ -89,6 +141,11 @@ public class TestEquations
         Assert.assertEquals("M10d result ", 4D, result.doubleValue(), 0D);
     }
 
+    /**
+     * <p>m1a.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void m1a () throws Exception
     {
@@ -98,6 +155,11 @@ public class TestEquations
         Assert.assertEquals("M1a result ", 10D, result.doubleValue(), 0D);
     }
 
+    /**
+     * <p>m1b.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void m1b () throws Exception
     {
@@ -107,6 +169,11 @@ public class TestEquations
         Assert.assertEquals("M1b result ", 0.17497732705184801, result.doubleValue(), 0D);
     }
 
+    /**
+     * <p>m2.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void m2 () throws Exception
     {
@@ -116,6 +183,11 @@ public class TestEquations
         Assert.assertEquals("M2 result ", 16D, result.doubleValue(), 0D);
     }
 
+    /**
+     * <p>m3a.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void m3a () throws Exception
     {
@@ -125,6 +197,11 @@ public class TestEquations
         Assert.assertEquals("M3a result ", -15D, result.doubleValue(), 0D);
     }
 
+    /**
+     * <p>m3b.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void m3b () throws Exception
     {
@@ -135,6 +212,11 @@ public class TestEquations
         Assert.assertEquals("M3b result ", -0.2614672282429745, result.doubleValue(), 0D);
     }
 
+    /**
+     * <p>m4a.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void m4a () throws Exception
     {
@@ -144,6 +226,11 @@ public class TestEquations
         Assert.assertEquals("M4a result ", -18D, result.doubleValue(), 0D);
     }
 
+    /**
+     * <p>m4b.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void m4b () throws Exception
     {
@@ -153,6 +240,11 @@ public class TestEquations
         Assert.assertEquals("M4b result ", -0.2614672282429745, result.doubleValue(), 0D);
     }
 
+    /**
+     * <p>m5a.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void m5a () throws Exception
     {
@@ -162,6 +254,11 @@ public class TestEquations
         Assert.assertEquals("M5a result ", 30D, result.doubleValue(), 0D);
     }
 
+    /**
+     * <p>m5b.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void m5b () throws Exception
     {
@@ -171,6 +268,11 @@ public class TestEquations
         Assert.assertEquals("M5b result ", 4.564221286261709, result.doubleValue(), 0D);
     }
 
+    /**
+     * <p>m6a.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void m6a () throws Exception
     {
@@ -180,6 +282,11 @@ public class TestEquations
         Assert.assertEquals("M6a result ", 0.825, result.doubleValue(), 0D);
     }
 
+    /**
+     * <p>m6b.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void m6b () throws Exception
     {
@@ -189,6 +296,11 @@ public class TestEquations
         Assert.assertEquals("M5b result ", 20.625, result.doubleValue(), 0D);
     }
 
+    /**
+     * <p>m6c.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void m6c () throws Exception
     {
@@ -198,6 +310,11 @@ public class TestEquations
         Assert.assertEquals("M6c result ", 15.333333333333332, result.doubleValue(), 0D);
     }
 
+    /**
+     * <p>m7a.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void m7a () throws Exception
     {
@@ -206,6 +323,11 @@ public class TestEquations
         Assert.assertEquals("M7a result ", 3, result.doubleValue(), 0D);
     }
 
+    /**
+     * <p>m7b.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void m7b () throws Exception
     {
@@ -215,6 +337,11 @@ public class TestEquations
         Assert.assertEquals("M7b result ", 8, result.doubleValue(), 0D);
     }
 
+    /**
+     * <p>m7c.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void m7c () throws Exception
     {
@@ -224,6 +351,11 @@ public class TestEquations
         Assert.assertEquals("M7c result ", 7, result.doubleValue(), 0D);
     }
 
+    /**
+     * <p>m8a.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void m8a () throws Exception
     {
@@ -235,6 +367,11 @@ public class TestEquations
         Assert.assertEquals("M8a result ", 5670825.00, result.doubleValue(), 0D);
     }
 
+    /**
+     * <p>m8b.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void m8b () throws Exception
     {
@@ -246,6 +383,11 @@ public class TestEquations
         Assert.assertEquals("M8b result ", 510420825.00, result.doubleValue(), 0D);
     }
 
+    /**
+     * <p>m8c.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void m8c () throws Exception
     {
@@ -257,6 +399,11 @@ public class TestEquations
         Assert.assertEquals("M8c result ", 10768496.60, result.doubleValue(), 0D);
     }
 
+    /**
+     * <p>m9a.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void m9a () throws Exception
     {
@@ -266,6 +413,11 @@ public class TestEquations
         Assert.assertEquals("M9a result ", "1500001", result);
     }
 
+    /**
+     * <p>m9a2.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void m9a2 () throws Exception
     {
@@ -275,6 +427,11 @@ public class TestEquations
         Assert.assertEquals("M9a2 result ", "1500000", result);
     }
 
+    /**
+     * <p>m9b.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void m9b () throws Exception
     {
@@ -283,6 +440,11 @@ public class TestEquations
         Assert.assertEquals("M9b result ", 1D, result.doubleValue(), 0D);
     }
 
+    /**
+     * <p>m9c.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void m9c () throws Exception
     {
@@ -292,6 +454,11 @@ public class TestEquations
         Assert.assertEquals("M9c result ", 1D, result.doubleValue(), 0D);
     }
 
+    /**
+     * <p>maxAndMinFunctions.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void maxAndMinFunctions () throws Exception
     {
@@ -300,6 +467,11 @@ public class TestEquations
         Assert.assertEquals("maxAndMinFunctions", 1, result.doubleValue(), 0D);
     }
 
+    /**
+     * <p>min.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void min () throws Exception
     {
@@ -308,6 +480,11 @@ public class TestEquations
         Assert.assertEquals("result ", 1, result.doubleValue(), 0D);
     }
 
+    /**
+     * <p>round.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void round () throws Exception
     {
@@ -316,6 +493,11 @@ public class TestEquations
         Assert.assertEquals("round result ", 10.5D, result.doubleValue(), 0D);
     }
 
+    /**
+     * <p>twoMaxFunctions.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void twoMaxFunctions () throws Exception
     {

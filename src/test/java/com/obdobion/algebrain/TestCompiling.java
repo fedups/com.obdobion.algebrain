@@ -6,11 +6,18 @@ import org.junit.Assert;
 import org.junit.Test;
 
 /**
- * @author Chris DeGreef
- * 
+ * <p>TestCompiling class.</p>
+ *
+ * @author Chris DeGreef fedupforone@gmail.com
+ * @since 1.3.9
  */
 public class TestCompiling
 {
+    /**
+     * <p>duplicateVariablesAreReturnedOnce.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void duplicateVariablesAreReturnedOnce () throws Exception
     {
@@ -20,6 +27,11 @@ public class TestCompiling
         Assert.assertEquals("tablename", v[0]);
     }
 
+    /**
+     * <p>literalsAreNotInVariableReturns.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void literalsAreNotInVariableReturns () throws Exception
     {
