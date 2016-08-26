@@ -1,24 +1,22 @@
 package com.obdobion.algebrain.function;
 
 import java.text.ParseException;
-import java.util.Calendar;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import com.obdobion.algebrain.Function;
 import com.obdobion.algebrain.ValueStack;
 import com.obdobion.algebrain.token.TokVariable;
 import com.obdobion.calendar.CalendarFactory;
-import com.obdobion.calendar.TemporalHelper;
 
 /**
  * <p>
- * FuncDate class.
+ * FuncDateFmt class.
  * </p>
  *
  * @author Chris DeGreef fedupforone@gmail.com
- * @since 1.3.9
  */
-public class FuncDate extends Function
+public class FuncDateFmt extends Function
 {
 
     /**
@@ -26,20 +24,20 @@ public class FuncDate extends Function
      * Constructor for FuncDate.
      * </p>
      */
-    public FuncDate()
+    public FuncDateFmt()
     {
         super();
     }
 
     /**
      * <p>
-     * Constructor for FuncDate.
+     * Constructor for FuncDateFmt.
      * </p>
      *
      * @param var
      *            a {@link com.obdobion.algebrain.token.TokVariable} object.
      */
-    public FuncDate(final TokVariable var)
+    public FuncDateFmt(final TokVariable var)
     {
         super(var);
     }
@@ -48,31 +46,24 @@ public class FuncDate extends Function
     @Override
     public void resolve(final ValueStack values) throws Exception
     {
-        if (values.size() < 1)
+        if (values.size() < 2)
             throw new Exception("missing operands for " + toString());
 
         try
         {
             String adjustments = "";
-            if (getParameterCount() == 2)
+            String dateFormat = "";
+
+            if (getParameterCount() == 3)
                 adjustments = values.popString();
 
-            final Object dateInputObject = values.popWhatever();
+            if (getParameterCount() > 1)
+                dateFormat = values.popString();
+
+            final Double dateInput = values.popDouble();
             Date convertedInputDate = null;
-
-            if (dateInputObject instanceof String)
-                convertedInputDate = TemporalHelper.parseWithPredefinedParsers((String) dateInputObject);
-            else
-
-            if (dateInputObject instanceof TokVariable)
-                throw new Exception("unresolved variable: " + ((TokVariable) dateInputObject).getName());
-            else if (dateInputObject instanceof Long)
-                convertedInputDate = new Date((Long) dateInputObject);
-            else if (dateInputObject instanceof Double)
-                convertedInputDate = new Date(((Double) dateInputObject).longValue());
-            else
-                convertedInputDate = ((Calendar) dateInputObject).getTime();
-
+            final SimpleDateFormat sdf = new SimpleDateFormat(dateFormat);
+            convertedInputDate = sdf.parse("" + dateInput.longValue());
             values.push(CalendarFactory.modify(convertedInputDate, adjustments));
 
         } catch (final ParseException e)
@@ -86,6 +77,6 @@ public class FuncDate extends Function
     @Override
     public String toString()
     {
-        return "function(date)";
+        return "function(dateFmt)";
     }
 }

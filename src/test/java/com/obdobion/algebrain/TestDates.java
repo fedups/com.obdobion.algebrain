@@ -6,7 +6,9 @@ import org.junit.Assert;
 import org.junit.Test;
 
 /**
- * <p>TestDates class.</p>
+ * <p>
+ * TestDates class.
+ * </p>
  *
  * @author Chris DeGreef fedupforone@gmail.com
  * @since 1.3.9
@@ -14,107 +16,131 @@ import org.junit.Test;
 public class TestDates
 {
     /**
-     * <p>compareEqualsFalse.</p>
+     * <p>
+     * compareEqualsFalse.
+     * </p>
      *
-     * @throws java.lang.Exception if any.
+     * @throws java.lang.Exception
+     *             if any.
      */
     @Test
-    public void compareEqualsFalse () throws Exception
+    public void compareEqualsFalse() throws Exception
     {
         final Boolean result = (Boolean) Equ.getInstance(true).evaluate(
-            "date('19600409', 'yyyyMMdd', '') = date('19600408', 'yyyyMMdd', '')");
+                "datefmt('19600409', 'yyyyMMdd') = datefmt('19600408', 'yyyyMMdd')");
         Assert.assertFalse(result);
     }
 
     /**
-     * <p>compareEqualsTrue.</p>
+     * <p>
+     * compareEqualsTrue.
+     * </p>
      *
-     * @throws java.lang.Exception if any.
+     * @throws java.lang.Exception
+     *             if any.
      */
     @Test
-    public void compareEqualsTrue () throws Exception
+    public void compareEqualsTrue() throws Exception
     {
         final Boolean result = (Boolean) Equ.getInstance(true).evaluate(
-            "date('19600409', 'yyyyMMdd', '') = date('19600409', 'yyyyMMdd', '')");
+                "datefmt('19600409', 'yyyyMMdd', '') = datefmt('19600409', 'yyyyMMdd', '')");
         Assert.assertTrue(result);
     }
 
     /**
-     * <p>compareEqualsTrueWithoutAdjustments.</p>
+     * <p>
+     * compareEqualsTrueWithoutAdjustments.
+     * </p>
      *
-     * @throws java.lang.Exception if any.
+     * @throws java.lang.Exception
+     *             if any.
      */
     @Test
-    public void compareEqualsTrueWithoutAdjustments () throws Exception
+    public void compareEqualsTrueWithoutAdjustments() throws Exception
     {
         final Boolean result = (Boolean) Equ.getInstance(true).evaluate(
-            "date('19600409', 'yyyyMMdd') = date('19600409', 'yyyyMMdd')");
+                "date('1960-04-09') = date('1960/04/09')");
         Assert.assertTrue(result);
     }
 
     /**
-     * <p>compareEqualsWithLongValue.</p>
+     * <p>
+     * compareEqualsWithLongValue.
+     * </p>
      *
-     * @throws java.lang.Exception if any.
+     * @throws java.lang.Exception
+     *             if any.
      */
     @Test
-    public void compareEqualsWithLongValue () throws Exception
+    public void compareEqualsWithLongValue() throws Exception
     {
         final Boolean result = (Boolean) Equ.getInstance(true).evaluate(
-            "date(-307044000000, '=123milli') = date('19600409', 'yyyyMMdd', '=123milli')");
+                "date(-307044000000, '=123milli') = dateFmt('19600409', 'yyyyMMdd', '=123milli')");
         Assert.assertTrue(result);
     }
 
     /**
-     * <p>compareGreaterLess.</p>
+     * <p>
+     * compareGreaterLess.
+     * </p>
      *
-     * @throws java.lang.Exception if any.
+     * @throws java.lang.Exception
+     *             if any.
      */
     @Test
-    public void compareGreaterLess () throws Exception
+    public void compareGreaterLess() throws Exception
     {
         final Boolean result = (Boolean) Equ.getInstance(true).evaluate(
-            "date('19600408', 'yyyyMMdd', '') < date('19600409', 'yyyyMMdd', '')");
+                "datefmt('19600408', 'yyyyMMdd', '') < datefmt('19600409', 'yyyyMMdd', '')");
         Assert.assertTrue(result);
     }
 
     /**
-     * <p>compareGreaterTrue.</p>
+     * <p>
+     * compareGreaterTrue.
+     * </p>
      *
-     * @throws java.lang.Exception if any.
+     * @throws java.lang.Exception
+     *             if any.
      */
     @Test
-    public void compareGreaterTrue () throws Exception
+    public void compareGreaterTrue() throws Exception
     {
         final Boolean result = (Boolean) Equ.getInstance(true).evaluate(
-            "date('19600409', 'yyyyMMdd', '') > date('19600408', 'yyyyMMdd', '')");
+                "dateFmt('19600409', 'yyyyMMdd', '') > dateFmt('19600408', 'yyyyMMdd', '')");
         Assert.assertTrue(result);
     }
 
     /**
-     * <p>createAndReturnADate.</p>
+     * <p>
+     * createAndReturnADate.
+     * </p>
      *
-     * @throws java.lang.Exception if any.
+     * @throws java.lang.Exception
+     *             if any.
      */
     @Test
-    public void createAndReturnADate () throws Exception
+    public void createAndReturnADate() throws Exception
     {
-        final Calendar result = (Calendar) Equ.getInstance(true).evaluate("date('19600409', 'yyyyMMdd', '')");
+        final Calendar result = (Calendar) Equ.getInstance(true).evaluate("dateFmt('19600409', 'yyyyMMdd', '')");
         Assert.assertEquals("yyyy", 1960, result.get(Calendar.YEAR));
         Assert.assertEquals("MM", Calendar.APRIL, result.get(Calendar.MONTH));
         Assert.assertEquals("dd", 9, result.get(Calendar.DAY_OF_MONTH));
     }
 
     /**
-     * <p>modifyingCalendar.</p>
+     * <p>
+     * modifyingCalendar.
+     * </p>
      *
-     * @throws java.lang.Exception if any.
+     * @throws java.lang.Exception
+     *             if any.
      */
     @Test
-    public void modifyingCalendar () throws Exception
+    public void modifyingCalendar() throws Exception
     {
         final Calendar result = (Calendar) Equ.getInstance(true)
-                .evaluate("date(date('196004090830', 'yyyyMMddHHmm', ''), '=10day =7h =31min'");
+                .evaluate("date(dateFmt('196004090830', 'yyyyMMddHHmm', ''), '=10day =7h =31min'");
         Assert.assertEquals("yyyy", 1960, result.get(Calendar.YEAR));
         Assert.assertEquals("MM", Calendar.APRIL, result.get(Calendar.MONTH));
         Assert.assertEquals("dd", 10, result.get(Calendar.DAY_OF_MONTH));
@@ -123,43 +149,52 @@ public class TestDates
     }
 
     /**
-     * <p>todayAndNow.</p>
+     * <p>
+     * todayAndNow.
+     * </p>
      *
-     * @throws java.lang.Exception if any.
+     * @throws java.lang.Exception
+     *             if any.
      */
     @Test
-    public void todayAndNow () throws Exception
+    public void todayAndNow() throws Exception
     {
         final Boolean result = (Boolean) Equ.getInstance(true).evaluate(
-            "date('today') = date('now', '=0ho =0min =0sec =0milli')");
+                "date('today') = date('now', '=0ho =0min =0sec =0milli')");
         Assert.assertTrue(result);
     }
 
     /**
-     * <p>withAdjustments.</p>
+     * <p>
+     * withAdjustments.
+     * </p>
      *
-     * @throws java.lang.Exception if any.
+     * @throws java.lang.Exception
+     *             if any.
      */
     @Test
-    public void withAdjustments () throws Exception
+    public void withAdjustments() throws Exception
     {
         final Boolean result = (Boolean) Equ.getInstance(true).evaluate(
-            "date('19600409', 'yyyyMMdd', '-1day') < date('19600409', 'yyyyMMdd', '')");
+                "date('1960-04-09', '-1day') < date('1960/04/09')");
         Assert.assertTrue(result);
     }
 
     /**
-     * <p>withAdjustmentsFromStringVariable.</p>
+     * <p>
+     * withAdjustmentsFromStringVariable.
+     * </p>
      *
-     * @throws java.lang.Exception if any.
+     * @throws java.lang.Exception
+     *             if any.
      */
     @Test
-    public void withAdjustmentsFromStringVariable () throws Exception
+    public void withAdjustmentsFromStringVariable() throws Exception
     {
         final Boolean result = (Boolean) Equ
                 .getInstance(true)
                 .evaluate(
-                    "DayNumber:=-1;date('19600409', 'yyyyMMdd', cat(toString(DayNumber, '%+1.0f'), 'day')) < date('19600409', 'yyyyMMdd', '')");
+                        "DayNumber:=-1;dateFmt('19600409', 'yyyyMMdd', cat(toString(DayNumber, '%+1.0f'), 'day')) < date('1960-04-09')");
         Assert.assertTrue(result);
     }
 }

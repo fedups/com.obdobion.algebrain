@@ -2,6 +2,7 @@ package com.obdobion.algebrain;
 
 import java.io.UnsupportedEncodingException;
 import java.text.ParseException;
+import java.util.Calendar;
 import java.util.Stack;
 
 import com.obdobion.algebrain.token.TokVariable;
@@ -85,6 +86,8 @@ public class ValueStack extends Stack<Object>
             return ((Number) fromStack).doubleValue();
         if (fromStack instanceof String)
             return Double.parseDouble((String) fromStack);
+        if (fromStack instanceof Calendar)
+            return ((Calendar) fromStack).getTime().getTime();
 
         final StringBuilder errMsg = new StringBuilder();
         errMsg.append("invalid type ");
@@ -129,19 +132,28 @@ public class ValueStack extends Stack<Object>
             return sameTypes;
         }
 
+        /*
+         * This code previously allowed for specifying a string as an unquoted
+         * literal. Not worth the little bit of convenience for the odd
+         * exception this seems to create. For instance, rather than giving the
+         * user a reasonable error like "variable with a value" it would compare
+         * is a String and just say false (or true), probably a mistake on their
+         * part and the reasonable error would make it easier to fix.
+         */
+        /*-
         if (o1 instanceof String && o2 instanceof TokVariable)
         {
             sameTypes[0] = o1;
             sameTypes[1] = ((TokVariable) o2).getName();
             return sameTypes;
         }
-
         if (o1 instanceof TokVariable && o2 instanceof String)
         {
             sameTypes[0] = ((TokVariable) o1).getName();
             sameTypes[1] = o2;
             return sameTypes;
         }
+        */
 
         throw new ParseException("supports same type comparisons only, found "
                 + o2.getClass().getSimpleName()

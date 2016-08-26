@@ -4,23 +4,32 @@ import java.util.ArrayList;
 import java.util.Hashtable;
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
- * <p>DefaultEquationSupport class.</p>
+ * <p>
+ * DefaultEquationSupport class.
+ * </p>
  *
  * @author Chris DeGreef fedupforone@gmail.com
  * @since 1.3.9
  */
 public class DefaultEquationSupport implements EquationSupport
 {
+    private final static Logger       logger = LoggerFactory.getLogger(DefaultEquationSupport.class.getName());
     private Hashtable<String, Object> variables;
 
     /**
-     * <p>Constructor for DefaultEquationSupport.</p>
+     * <p>
+     * Constructor for DefaultEquationSupport.
+     * </p>
      */
     public DefaultEquationSupport()
     {
         super();
         setVariables(new Hashtable<String, Object>());
+        initializeWellKnownVariables();
     }
 
     /** {@inheritDoc} */
@@ -44,6 +53,23 @@ public class DefaultEquationSupport implements EquationSupport
     private Hashtable<String, Object> getVariables()
     {
         return variables;
+    }
+
+    void initializeWellKnownVariables()
+    {
+        try
+        {
+            assignVariable("PI", Math.PI);
+            assignVariable("E", Math.E);
+            assignVariable("true", new Boolean(true));
+            assignVariable("false", new Boolean(false));
+            assignVariable("now", "now");
+            assignVariable("today", "today");
+
+        } catch (final Exception e)
+        {
+            logger.error("failed to initialize some well known variables: {}", e.getMessage(), e);
+        }
     }
 
     /** {@inheritDoc} */
@@ -90,9 +116,12 @@ public class DefaultEquationSupport implements EquationSupport
     }
 
     /**
-     * <p>Setter for the field <code>variables</code>.</p>
+     * <p>
+     * Setter for the field <code>variables</code>.
+     * </p>
      *
-     * @param newVariables a {@link java.util.Hashtable} object.
+     * @param newVariables
+     *            a {@link java.util.Hashtable} object.
      */
     public void setVariables(final Hashtable<String, Object> newVariables)
     {

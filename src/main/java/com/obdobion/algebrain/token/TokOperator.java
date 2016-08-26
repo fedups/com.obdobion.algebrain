@@ -5,7 +5,9 @@ import com.obdobion.algebrain.EquPart;
 import com.obdobion.algebrain.ValueStack;
 
 /**
- * <p>TokOperator class.</p>
+ * <p>
+ * TokOperator class.
+ * </p>
  *
  * @author Chris DeGreef fedupforone@gmail.com
  * @since 1.3.9
@@ -13,7 +15,9 @@ import com.obdobion.algebrain.ValueStack;
 public class TokOperator extends Token
 {
     /**
-     * <p>Constructor for TokOperator.</p>
+     * <p>
+     * Constructor for TokOperator.
+     * </p>
      */
     public TokOperator()
     {
@@ -34,6 +38,8 @@ public class TokOperator extends Token
         case '&':
             return true;
         case '|':
+            return true;
+        case '~':
             return true;
         default:
             break;

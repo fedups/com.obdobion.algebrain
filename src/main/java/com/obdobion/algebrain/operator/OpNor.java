@@ -8,32 +8,32 @@ import com.obdobion.algebrain.ValueStack;
 
 /**
  * <p>
- * OpNand class.
+ * OpOr class.
  * </p>
  *
  * @author Chris DeGreef fedupforone@gmail.com
  * @since 1.3.9
  */
-public class OpNand extends Operator
+public class OpNor extends Operator
 {
     /**
      * <p>
-     * Constructor for OpNand.
+     * Constructor for OpOr.
      * </p>
      */
-    public OpNand()
+    public OpNor()
     {
     }
 
     /**
      * <p>
-     * Constructor for OpNand.
+     * Constructor for OpOr.
      * </p>
      *
      * @param opTok
      *            a {@link com.obdobion.algebrain.EquPart} object.
      */
-    public OpNand(final EquPart opTok)
+    public OpNor(final EquPart opTok)
     {
         super(opTok);
     }
@@ -55,7 +55,7 @@ public class OpNand extends Operator
         {
             final boolean b0 = values.popBoolean();
             final boolean b1 = values.popBoolean();
-            values.push(new Boolean(!(b1 && b0)));
+            values.push(new Boolean(!(b1 || b0)));
         } catch (final ParseException e)
         {
             e.fillInStackTrace();
@@ -67,6 +67,6 @@ public class OpNand extends Operator
     @Override
     public String toString()
     {
-        return "op(nand)";
+        return "op(nor)";
     }
 }

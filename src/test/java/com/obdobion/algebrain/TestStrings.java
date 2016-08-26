@@ -4,7 +4,9 @@ import org.junit.Assert;
 import org.junit.Test;
 
 /**
- * <p>TestStrings class.</p>
+ * <p>
+ * TestStrings class.
+ * </p>
  *
  * @author Chris DeGreef fedupforone@gmail.com
  * @since 1.3.9
@@ -12,12 +14,15 @@ import org.junit.Test;
 public class TestStrings
 {
     /**
-     * <p>stringCaseInsensitive.</p>
+     * <p>
+     * stringCaseInsensitive.
+     * </p>
      *
-     * @throws java.lang.Exception if any.
+     * @throws java.lang.Exception
+     *             if any.
      */
     @Test
-    public void stringCaseInsensitive () throws Exception
+    public void stringCaseInsensitive() throws Exception
     {
         final Equ equ = Equ.getInstance();
         final String result = (String) equ.evaluate("match('ABC123XYZ', 'abc', true)");
@@ -25,12 +30,15 @@ public class TestStrings
     }
 
     /**
-     * <p>stringConcatinateMany.</p>
+     * <p>
+     * stringConcatinateMany.
+     * </p>
      *
-     * @throws java.lang.Exception if any.
+     * @throws java.lang.Exception
+     *             if any.
      */
     @Test
-    public void stringConcatinateMany () throws Exception
+    public void stringConcatinateMany() throws Exception
     {
         final Equ equ = Equ.getInstance();
         final String result = (String) equ.evaluate("cat('1','2','3','4')");
@@ -38,12 +46,15 @@ public class TestStrings
     }
 
     /**
-     * <p>stringConcatinateMatchResult.</p>
+     * <p>
+     * stringConcatinateMatchResult.
+     * </p>
      *
-     * @throws java.lang.Exception if any.
+     * @throws java.lang.Exception
+     *             if any.
      */
     @Test
-    public void stringConcatinateMatchResult () throws Exception
+    public void stringConcatinateMatchResult() throws Exception
     {
         final Equ equ = Equ.getInstance();
         final String result = (String) equ.evaluate("cat(match('ABC123XYZ', '123'), 'WHAT')");
@@ -51,12 +62,15 @@ public class TestStrings
     }
 
     /**
-     * <p>stringConcatinateMatchResults.</p>
+     * <p>
+     * stringConcatinateMatchResults.
+     * </p>
      *
-     * @throws java.lang.Exception if any.
+     * @throws java.lang.Exception
+     *             if any.
      */
     @Test
-    public void stringConcatinateMatchResults () throws Exception
+    public void stringConcatinateMatchResults() throws Exception
     {
         final Equ equ = Equ.getInstance();
         final String result = (String) equ.evaluate("cat(match('ABC123XYZ', '123'), match('ABC123XYZ', 'XYZ'))");
@@ -64,12 +78,15 @@ public class TestStrings
     }
 
     /**
-     * <p>stringConcatinateOne.</p>
+     * <p>
+     * stringConcatinateOne.
+     * </p>
      *
-     * @throws java.lang.Exception if any.
+     * @throws java.lang.Exception
+     *             if any.
      */
     @Test
-    public void stringConcatinateOne () throws Exception
+    public void stringConcatinateOne() throws Exception
     {
         final Equ equ = Equ.getInstance();
         final String result = (String) equ.evaluate("cat('1')");
@@ -77,12 +94,15 @@ public class TestStrings
     }
 
     /**
-     * <p>stringEmpty.</p>
+     * <p>
+     * stringEmpty.
+     * </p>
      *
-     * @throws java.lang.Exception if any.
+     * @throws java.lang.Exception
+     *             if any.
      */
     @Test
-    public void stringEmpty () throws Exception
+    public void stringEmpty() throws Exception
     {
         final Equ equ = Equ.getInstance();
         final Boolean result = (Boolean) equ.evaluate("empty(match('ABC123XYZ', 'NOTHING'))");
@@ -90,12 +110,15 @@ public class TestStrings
     }
 
     /**
-     * <p>stringIndexOf.</p>
+     * <p>
+     * stringIndexOf.
+     * </p>
      *
-     * @throws java.lang.Exception if any.
+     * @throws java.lang.Exception
+     *             if any.
      */
     @Test
-    public void stringIndexOf () throws Exception
+    public void stringIndexOf() throws Exception
     {
         final Equ equ = Equ.getInstance();
         final Double result = (Double) equ.evaluate("indexOf(' ABC ', 'B')");
@@ -103,12 +126,15 @@ public class TestStrings
     }
 
     /**
-     * <p>stringLeadingSpaces.</p>
+     * <p>
+     * stringLeadingSpaces.
+     * </p>
      *
-     * @throws java.lang.Exception if any.
+     * @throws java.lang.Exception
+     *             if any.
      */
     @Test
-    public void stringLeadingSpaces () throws Exception
+    public void stringLeadingSpaces() throws Exception
     {
         final Equ equ = Equ.getInstance();
         final Boolean result = (Boolean) equ.evaluate("' TRIMMED'=' TRIMMED'");
@@ -116,12 +142,15 @@ public class TestStrings
     }
 
     /**
-     * <p>stringLeftTrim.</p>
+     * <p>
+     * stringLeftTrim.
+     * </p>
      *
-     * @throws java.lang.Exception if any.
+     * @throws java.lang.Exception
+     *             if any.
      */
     @Test
-    public void stringLeftTrim () throws Exception
+    public void stringLeftTrim() throws Exception
     {
         final Equ equ = Equ.getInstance();
         final String result = (String) equ.evaluate("ltrim(' ABC ')");
@@ -129,12 +158,15 @@ public class TestStrings
     }
 
     /**
-     * <p>stringLength.</p>
+     * <p>
+     * stringLength.
+     * </p>
      *
-     * @throws java.lang.Exception if any.
+     * @throws java.lang.Exception
+     *             if any.
      */
     @Test
-    public void stringLength () throws Exception
+    public void stringLength() throws Exception
     {
         final Equ equ = Equ.getInstance();
         final Double result = (Double) equ.evaluate("length(match('ABC123XYZ', '[X-Z]+'))");
@@ -142,12 +174,15 @@ public class TestStrings
     }
 
     /**
-     * <p>stringLowercase.</p>
+     * <p>
+     * stringLowercase.
+     * </p>
      *
-     * @throws java.lang.Exception if any.
+     * @throws java.lang.Exception
+     *             if any.
      */
     @Test
-    public void stringLowercase () throws Exception
+    public void stringLowercase() throws Exception
     {
         final Equ equ = Equ.getInstance();
         final String result = (String) equ.evaluate("lcase('abcDEF')");
@@ -155,12 +190,15 @@ public class TestStrings
     }
 
     /**
-     * <p>stringMatches.</p>
+     * <p>
+     * stringMatches.
+     * </p>
      *
-     * @throws java.lang.Exception if any.
+     * @throws java.lang.Exception
+     *             if any.
      */
     @Test
-    public void stringMatches () throws Exception
+    public void stringMatches() throws Exception
     {
         final Equ equ = Equ.getInstance();
         final String result = (String) equ.evaluate("match('ABC123XYZ', '.*123.*')");
@@ -168,12 +206,15 @@ public class TestStrings
     }
 
     /**
-     * <p>stringMatchesInitialGroup.</p>
+     * <p>
+     * stringMatchesInitialGroup.
+     * </p>
      *
-     * @throws java.lang.Exception if any.
+     * @throws java.lang.Exception
+     *             if any.
      */
     @Test
-    public void stringMatchesInitialGroup () throws Exception
+    public void stringMatchesInitialGroup() throws Exception
     {
         final Equ equ = Equ.getInstance();
         final String result = (String) equ.evaluate("match('ABC123XYZ', '.*(123).*')");
@@ -181,12 +222,15 @@ public class TestStrings
     }
 
     /**
-     * <p>stringMatchesPartial.</p>
+     * <p>
+     * stringMatchesPartial.
+     * </p>
      *
-     * @throws java.lang.Exception if any.
+     * @throws java.lang.Exception
+     *             if any.
      */
     @Test
-    public void stringMatchesPartial () throws Exception
+    public void stringMatchesPartial() throws Exception
     {
         final Equ equ = Equ.getInstance();
         final String result = (String) equ.evaluate("match('ABC123XYZ', '123')");
@@ -194,12 +238,15 @@ public class TestStrings
     }
 
     /**
-     * <p>stringMetaphone.</p>
+     * <p>
+     * stringMetaphone.
+     * </p>
      *
-     * @throws java.lang.Exception if any.
+     * @throws java.lang.Exception
+     *             if any.
      */
     @Test
-    public void stringMetaphone () throws Exception
+    public void stringMetaphone() throws Exception
     {
         final Equ equ = Equ.getInstance();
         final String result = (String) equ.evaluate("metaphone('telephone')");
@@ -207,12 +254,15 @@ public class TestStrings
     }
 
     /**
-     * <p>stringMetaphoneCompare.</p>
+     * <p>
+     * stringMetaphoneCompare.
+     * </p>
      *
-     * @throws java.lang.Exception if any.
+     * @throws java.lang.Exception
+     *             if any.
      */
     @Test
-    public void stringMetaphoneCompare () throws Exception
+    public void stringMetaphoneCompare() throws Exception
     {
         final Equ equ = Equ.getInstance();
         final Boolean result = (Boolean) equ.evaluate("metaphone('telephone') = metaphone('telifon')");
@@ -220,12 +270,15 @@ public class TestStrings
     }
 
     /**
-     * <p>stringNoSpaces.</p>
+     * <p>
+     * stringNoSpaces.
+     * </p>
      *
-     * @throws java.lang.Exception if any.
+     * @throws java.lang.Exception
+     *             if any.
      */
     @Test
-    public void stringNoSpaces () throws Exception
+    public void stringNoSpaces() throws Exception
     {
         final Equ equ = Equ.getInstance();
         final Boolean result = (Boolean) equ.evaluate("'TRIMMED'='TRIMMED'");
@@ -233,12 +286,15 @@ public class TestStrings
     }
 
     /**
-     * <p>stringNotEmpty.</p>
+     * <p>
+     * stringNotEmpty.
+     * </p>
      *
-     * @throws java.lang.Exception if any.
+     * @throws java.lang.Exception
+     *             if any.
      */
     @Test
-    public void stringNotEmpty () throws Exception
+    public void stringNotEmpty() throws Exception
     {
         final Equ equ = Equ.getInstance();
         final Boolean result = (Boolean) equ.evaluate("not(empty(match('ABC123XYZ', '123')))");
@@ -246,12 +302,15 @@ public class TestStrings
     }
 
     /**
-     * <p>stringReplaceWithEqual.</p>
+     * <p>
+     * stringReplaceWithEqual.
+     * </p>
      *
-     * @throws java.lang.Exception if any.
+     * @throws java.lang.Exception
+     *             if any.
      */
     @Test
-    public void stringReplaceWithEqual () throws Exception
+    public void stringReplaceWithEqual() throws Exception
     {
         final Equ equ = Equ.getInstance();
         final String result = (String) equ.evaluate("replace('ABC123XYZ', '[0-9]', '#')");
@@ -259,12 +318,15 @@ public class TestStrings
     }
 
     /**
-     * <p>stringReplaceWithLonger.</p>
+     * <p>
+     * stringReplaceWithLonger.
+     * </p>
      *
-     * @throws java.lang.Exception if any.
+     * @throws java.lang.Exception
+     *             if any.
      */
     @Test
-    public void stringReplaceWithLonger () throws Exception
+    public void stringReplaceWithLonger() throws Exception
     {
         final Equ equ = Equ.getInstance();
         final String result = (String) equ.evaluate("replace('ABC123XYZ', '[0-9]', '(NUMBER)')");
@@ -272,12 +334,15 @@ public class TestStrings
     }
 
     /**
-     * <p>stringReplaceWithShorter.</p>
+     * <p>
+     * stringReplaceWithShorter.
+     * </p>
      *
-     * @throws java.lang.Exception if any.
+     * @throws java.lang.Exception
+     *             if any.
      */
     @Test
-    public void stringReplaceWithShorter () throws Exception
+    public void stringReplaceWithShorter() throws Exception
     {
         final Equ equ = Equ.getInstance();
         final String result = (String) equ.evaluate("replace('ABC123XYZ', '[0-9]{2}', '#')");
@@ -285,12 +350,15 @@ public class TestStrings
     }
 
     /**
-     * <p>stringRightTrim.</p>
+     * <p>
+     * stringRightTrim.
+     * </p>
      *
-     * @throws java.lang.Exception if any.
+     * @throws java.lang.Exception
+     *             if any.
      */
     @Test
-    public void stringRightTrim () throws Exception
+    public void stringRightTrim() throws Exception
     {
         final Equ equ = Equ.getInstance();
         final String result = (String) equ.evaluate("rtrim(' ABC ')");
@@ -298,12 +366,15 @@ public class TestStrings
     }
 
     /**
-     * <p>stringSubstring.</p>
+     * <p>
+     * stringSubstring.
+     * </p>
      *
-     * @throws java.lang.Exception if any.
+     * @throws java.lang.Exception
+     *             if any.
      */
     @Test
-    public void stringSubstring () throws Exception
+    public void stringSubstring() throws Exception
     {
         final Equ equ = Equ.getInstance();
         final String result = (String) equ.evaluate("substr('ABC123XYZ', 2, 3)");
@@ -311,12 +382,15 @@ public class TestStrings
     }
 
     /**
-     * <p>stringTrailingSpaces.</p>
+     * <p>
+     * stringTrailingSpaces.
+     * </p>
      *
-     * @throws java.lang.Exception if any.
+     * @throws java.lang.Exception
+     *             if any.
      */
     @Test
-    public void stringTrailingSpaces () throws Exception
+    public void stringTrailingSpaces() throws Exception
     {
         final Equ equ = Equ.getInstance();
         final Boolean result = (Boolean) equ.evaluate("'TRIMMED '='TRIMMED '");
@@ -324,12 +398,15 @@ public class TestStrings
     }
 
     /**
-     * <p>stringTrim.</p>
+     * <p>
+     * stringTrim.
+     * </p>
      *
-     * @throws java.lang.Exception if any.
+     * @throws java.lang.Exception
+     *             if any.
      */
     @Test
-    public void stringTrim () throws Exception
+    public void stringTrim() throws Exception
     {
         final Equ equ = Equ.getInstance();
         final String result = (String) equ.evaluate("trim(' ABC ')");
@@ -337,12 +414,15 @@ public class TestStrings
     }
 
     /**
-     * <p>stringUntrimmed.</p>
+     * <p>
+     * stringUntrimmed.
+     * </p>
      *
-     * @throws java.lang.Exception if any.
+     * @throws java.lang.Exception
+     *             if any.
      */
     @Test
-    public void stringUntrimmed () throws Exception
+    public void stringUntrimmed() throws Exception
     {
         final Equ equ = Equ.getInstance();
         final Boolean result = (Boolean) equ.evaluate("' TRIMMED '=' TRIMMED '");
@@ -350,12 +430,15 @@ public class TestStrings
     }
 
     /**
-     * <p>stringUppercase.</p>
+     * <p>
+     * stringUppercase.
+     * </p>
      *
-     * @throws java.lang.Exception if any.
+     * @throws java.lang.Exception
+     *             if any.
      */
     @Test
-    public void stringUppercase () throws Exception
+    public void stringUppercase() throws Exception
     {
         final Equ equ = Equ.getInstance();
         final String result = (String) equ.evaluate("ucase('abcDEF')");
@@ -363,15 +446,18 @@ public class TestStrings
     }
 
     /**
-     * <p>unquotedLiteral.</p>
+     * <p>
+     * unquotedLiteral.
+     * </p>
      *
-     * @throws java.lang.Exception if any.
+     * @throws java.lang.Exception
+     *             if any.
      */
     @Test
-    public void unquotedLiteral () throws Exception
+    public void unquotedLiteral() throws Exception
     {
         final Equ equ = Equ.getInstance();
-        final Boolean result = (Boolean) equ.evaluate("rtrim('Illinois') = Illinois");
+        final Boolean result = (Boolean) equ.evaluate("Illinois:='Illinois';rtrim('Illinois') = Illinois");
         Assert.assertTrue(result.booleanValue());
     }
 }
