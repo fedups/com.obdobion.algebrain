@@ -4,7 +4,9 @@ import org.junit.Assert;
 import org.junit.Test;
 
 /**
- * <p>TestVariableNames class.</p>
+ * <p>
+ * TestVariableNames class.
+ * </p>
  *
  * @author Chris DeGreef fedupforone@gmail.com
  * @since 1.3.9
@@ -12,12 +14,15 @@ import org.junit.Test;
 public class TestVariableNames
 {
     /**
-     * <p>assignVariableFirst.</p>
+     * <p>
+     * assignVariableFirst.
+     * </p>
      *
-     * @throws java.lang.Exception if any.
+     * @throws java.lang.Exception
+     *             if any.
      */
     @Test
-    public void assignVariableFirst () throws Exception
+    public void assignVariableFirst() throws Exception
     {
         Equ.getInstance(true).getSupport().assignVariable("x", 123D);
         final Double result = (Double) Equ.getInstance().evaluate("x * 2");
@@ -26,12 +31,15 @@ public class TestVariableNames
     }
 
     /**
-     * <p>assignVariableSecond.</p>
+     * <p>
+     * assignVariableSecond.
+     * </p>
      *
-     * @throws java.lang.Exception if any.
+     * @throws java.lang.Exception
+     *             if any.
      */
     @Test
-    public void assignVariableSecond () throws Exception
+    public void assignVariableSecond() throws Exception
     {
         Equ.getInstance(true).getSupport().assignVariable("x", 123D);
         final Double result = (Double) Equ.getInstance().evaluate("2 * x");
@@ -40,12 +48,15 @@ public class TestVariableNames
     }
 
     /**
-     * <p>dots.</p>
+     * <p>
+     * dots.
+     * </p>
      *
-     * @throws java.lang.Exception if any.
+     * @throws java.lang.Exception
+     *             if any.
      */
     @Test
-    public void dots () throws Exception
+    public void dots() throws Exception
     {
         final Double result = (Double) Equ.getInstance(true).evaluate("myvar.inc:=17.2");
         Assert.assertEquals(17.2D, result, 0);
@@ -53,12 +64,15 @@ public class TestVariableNames
     }
 
     /**
-     * <p>doubleAsStringError.</p>
+     * <p>
+     * doubleAsStringError.
+     * </p>
      *
-     * @throws java.lang.Exception if any.
+     * @throws java.lang.Exception
+     *             if any.
      */
     @Test
-    public void doubleAsStringError () throws Exception
+    public void doubleAsStringError() throws Exception
     {
         try
         {
@@ -66,17 +80,20 @@ public class TestVariableNames
             Assert.fail("should have failed");
         } catch (final Exception e)
         {
-            Assert.assertEquals("function(trim); Literal required, found Double", e.getMessage());
+            Assert.assertEquals("function(trim); Literal required, found Long", e.getMessage());
         }
     }
 
     /**
-     * <p>leadingDot.</p>
+     * <p>
+     * leadingDot.
+     * </p>
      *
-     * @throws java.lang.Exception if any.
+     * @throws java.lang.Exception
+     *             if any.
      */
     @Test
-    public void leadingDot () throws Exception
+    public void leadingDot() throws Exception
     {
         final Double result = (Double) Equ.getInstance(true).evaluate("0.5*(_inc:=17.2)");
         Assert.assertEquals(8.6D, result, 0);
@@ -84,12 +101,15 @@ public class TestVariableNames
     }
 
     /**
-     * <p>leadingUnderbar.</p>
+     * <p>
+     * leadingUnderbar.
+     * </p>
      *
-     * @throws java.lang.Exception if any.
+     * @throws java.lang.Exception
+     *             if any.
      */
     @Test
-    public void leadingUnderbar () throws Exception
+    public void leadingUnderbar() throws Exception
     {
         final Double result = (Double) Equ.getInstance(true).evaluate("_myvar.inc:=17.2");
         Assert.assertEquals(17.2D, result, 0);
@@ -97,24 +117,30 @@ public class TestVariableNames
     }
 
     /**
-     * <p>undefinedVariableAsString.</p>
+     * <p>
+     * undefinedVariableAsString.
+     * </p>
      *
-     * @throws java.lang.Exception if any.
+     * @throws java.lang.Exception
+     *             if any.
      */
     @Test
-    public void undefinedVariableAsString () throws Exception
+    public void undefinedVariableAsString() throws Exception
     {
         final Double result = (Double) Equ.getInstance(true).evaluate("length(trim(unknown))");
         Assert.assertEquals(7D, result, 0);
     }
 
     /**
-     * <p>unquotedPhraseError.</p>
+     * <p>
+     * unquotedPhraseError.
+     * </p>
      *
-     * @throws java.lang.Exception if any.
+     * @throws java.lang.Exception
+     *             if any.
      */
     @Test
-    public void unquotedPhraseError () throws Exception
+    public void unquotedPhraseError() throws Exception
     {
         try
         {
@@ -122,7 +148,7 @@ public class TestVariableNames
             Assert.fail("should have failed");
         } catch (final Exception e)
         {
-            Assert.assertEquals("op(multiply); invalid type TokVariable", e.getMessage());
+            Assert.assertEquals("op(multiply); \"phrase\" is unassigned", e.getMessage());
         }
     }
 }

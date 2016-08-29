@@ -7,7 +7,9 @@ import com.obdobion.algebrain.Operator;
 import com.obdobion.algebrain.ValueStack;
 
 /**
- * <p>OpPower class.</p>
+ * <p>
+ * OpPower class.
+ * </p>
  *
  * @author Chris DeGreef fedupforone@gmail.com
  * @since 1.3.9
@@ -15,7 +17,9 @@ import com.obdobion.algebrain.ValueStack;
 public class OpPower extends Operator
 {
     /**
-     * <p>Constructor for OpPower.</p>
+     * <p>
+     * Constructor for OpPower.
+     * </p>
      */
     public OpPower()
     {
@@ -23,9 +27,12 @@ public class OpPower extends Operator
     }
 
     /**
-     * <p>Constructor for OpPower.</p>
+     * <p>
+     * Constructor for OpPower.
+     * </p>
      *
-     * @param opTok a {@link com.obdobion.algebrain.EquPart} object.
+     * @param opTok
+     *            a {@link com.obdobion.algebrain.EquPart} object.
      */
     public OpPower(final EquPart opTok)
     {
@@ -34,22 +41,25 @@ public class OpPower extends Operator
 
     /** {@inheritDoc} */
     @Override
-    protected int precedence ()
+    protected int precedence()
     {
         return 3;
     }
 
     /** {@inheritDoc} */
     @Override
-    public void resolve (final ValueStack values) throws Exception
+    public void resolve(final ValueStack values) throws Exception
     {
         if (values.size() < 2)
             throw new Exception("missing operands for " + toString());
         try
         {
-            final double d0 = values.popDouble();
-            final double d1 = values.popDouble();
-            values.push(new Double(Math.pow(d1, d0)));
+            final Object[] value = values.ensureSameTypes();
+            if (value[0] instanceof Long)
+                values.push(new Long((long) Math.pow((Long) value[1], (Long) value[0])));
+            else
+                values.push(new Double(Math.pow((Double) value[1], (Double) value[0])));
+
         } catch (final ParseException e)
         {
             e.fillInStackTrace();
@@ -59,7 +69,7 @@ public class OpPower extends Operator
 
     /** {@inheritDoc} */
     @Override
-    public String toString ()
+    public String toString()
     {
         return "op(power)";
     }

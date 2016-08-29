@@ -19,7 +19,7 @@ import com.obdobion.calendar.TemporalHelper;
  * @author Chris DeGreef fedupforone@gmail.com
  * @since 1.3.9
  */
-public class FuncDate extends Function
+public class FuncTime extends Function
 {
 
     /**
@@ -27,7 +27,7 @@ public class FuncDate extends Function
      * Constructor for FuncDate.
      * </p>
      */
-    public FuncDate()
+    public FuncTime()
     {
         super();
     }
@@ -40,7 +40,7 @@ public class FuncDate extends Function
      * @param var
      *            a {@link com.obdobion.algebrain.token.TokVariable} object.
      */
-    public FuncDate(final TokVariable var)
+    public FuncTime(final TokVariable var)
     {
         super(var);
     }
@@ -59,24 +59,24 @@ public class FuncDate extends Function
                 adjustments = values.popString();
 
             final Object dateInputObject = values.popWhatever();
-            LocalDate convertedInputDate = null;
+            LocalTime convertedInputDate = null;
 
             if (dateInputObject instanceof String)
-                convertedInputDate = TemporalHelper.parseWithPredefinedParsers((String) dateInputObject).toLocalDate();
+                convertedInputDate = TemporalHelper.parseWithPredefinedParsers((String) dateInputObject).toLocalTime();
             else
 
             if (dateInputObject instanceof TokVariable)
                 throw new Exception("unresolved variable: " + ((TokVariable) dateInputObject).getName());
             else if (dateInputObject instanceof Long)
-                convertedInputDate = CalendarFactory.at((Long) dateInputObject).toLocalDate();
+                convertedInputDate = CalendarFactory.at((Long) dateInputObject).toLocalTime();
             else if (dateInputObject instanceof Double)
-                convertedInputDate = CalendarFactory.at(((Double) dateInputObject).longValue()).toLocalDate();
+                convertedInputDate = CalendarFactory.at(((Double) dateInputObject).longValue()).toLocalTime();
             else
-                convertedInputDate = ((LocalDateTime) dateInputObject).toLocalDate();
+                convertedInputDate = ((LocalDateTime) dateInputObject).toLocalTime();
 
             final LocalDateTime adjLdt = CalendarFactory.modify(convertedInputDate, adjustments);
-            if (adjLdt.toLocalTime() != LocalTime.MIN)
-                throw new ParseException("Adjustments to time are not allowed", 0);
+            if (adjLdt.toLocalDate() != LocalDate.MIN)
+                throw new ParseException("Adjustments to date are not allowed", 0);
             values.push(adjLdt);
 
         } catch (final ParseException e)
@@ -90,6 +90,6 @@ public class FuncDate extends Function
     @Override
     public String toString()
     {
-        return "function(date)";
+        return "function(time)";
     }
 }

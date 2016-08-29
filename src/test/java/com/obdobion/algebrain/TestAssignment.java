@@ -4,7 +4,9 @@ import org.junit.Assert;
 import org.junit.Test;
 
 /**
- * <p>TestAssignment class.</p>
+ * <p>
+ * TestAssignment class.
+ * </p>
  *
  * @author Chris DeGreef fedupforone@gmail.com
  * @since 1.3.9
@@ -12,24 +14,31 @@ import org.junit.Test;
 public class TestAssignment
 {
     /**
-     * <p>conditionalAssignmentTarget.</p>
+     * <p>
+     * conditionalAssignmentTarget.
+     * </p>
      *
-     * @throws java.lang.Exception if any.
+     * @throws java.lang.Exception
+     *             if any.
      */
     @Test
     public void conditionalAssignmentTarget() throws Exception
     {
         Equ.getInstance(true);
-        final Double result = (Double) Equ.getInstance().evaluate("if (1=2, a, b) := 1");
-        Assert.assertEquals("result", 1D, result, 0);
+        final Long result = (Long) Equ.getInstance().evaluate("if (1=2, a, b) := 1");
+        Assert.assertEquals("result", 1, result.intValue());
         Assert.assertNull("unassigned variable", Equ.getInstance().getSupport().resolveVariable("a", null));
-        Assert.assertEquals("assigned variable", 1D, Equ.getInstance().getSupport().resolveVariable("b", null));
+        Assert.assertEquals("assigned variable", new Long(1),
+                Equ.getInstance().getSupport().resolveVariable("b", null));
     }
 
     /**
-     * <p>equalsInsteadOfAssignment.</p>
+     * <p>
+     * equalsInsteadOfAssignment.
+     * </p>
      *
-     * @throws java.lang.Exception if any.
+     * @throws java.lang.Exception
+     *             if any.
      */
     @Test
     public void equalsInsteadOfAssignment() throws Exception
@@ -43,15 +52,18 @@ public class TestAssignment
         {
             Assert.assertEquals(
                     "exception",
-                    "op(compare equal); supports same type comparisons only, found TokVariable and Double",
+                    "op(compare equal); \"b\" is unassigned",
                     e.getMessage());
         }
     }
 
     /**
-     * <p>finalized.</p>
+     * <p>
+     * finalized.
+     * </p>
      *
-     * @throws java.lang.Exception if any.
+     * @throws java.lang.Exception
+     *             if any.
      */
     @Test
     public void finalized() throws Exception
@@ -63,42 +75,39 @@ public class TestAssignment
             Assert.fail("expected exception");
         } catch (final Exception e)
         {
-            Assert.assertEquals("exception", "invalid assignment target: 1.0", e.getMessage());
+            Assert.assertEquals("exception", "invalid assignment target: 1", e.getMessage());
         }
     }
 
     /**
-     * <p>internalAssignments.</p>
+     * <p>
+     * internalAssignments.
+     * </p>
      *
-     * @throws java.lang.Exception if any.
+     * @throws java.lang.Exception
+     *             if any.
      */
     @Test
     public void internalAssignments() throws Exception
     {
         Equ.getInstance(true);
-        final Double result = (Double) Equ.getInstance().evaluate("c:=max (a := 1, b :=2)");
-        Assert.assertEquals("result", 2D, result, 0);
-        Assert.assertEquals(
-                "assigned variable",
-                1D,
-                (double) Equ.getInstance().getSupport().resolveVariable("a", null),
-                0);
-        Assert.assertEquals(
-                "assigned variable",
-                2D,
-                (double) Equ.getInstance().getSupport().resolveVariable("b", null),
-                0);
-        Assert.assertEquals(
-                "assigned variable",
-                2D,
-                (double) Equ.getInstance().getSupport().resolveVariable("c", null),
-                0);
+        final Long result = (Long) Equ.getInstance().evaluate("c:=max (a := 1, b :=2)");
+        Assert.assertEquals("result", 2, result.intValue());
+        Assert.assertEquals("assigned variable", new Long(1),
+                Equ.getInstance().getSupport().resolveVariable("a", null));
+        Assert.assertEquals("assigned variable", new Long(2),
+                Equ.getInstance().getSupport().resolveVariable("b", null));
+        Assert.assertEquals("assigned variable", new Long(2),
+                Equ.getInstance().getSupport().resolveVariable("c", null));
     }
 
     /**
-     * <p>invalidTarget.</p>
+     * <p>
+     * invalidTarget.
+     * </p>
      *
-     * @throws java.lang.Exception if any.
+     * @throws java.lang.Exception
+     *             if any.
      */
     @Test
     public void invalidTarget() throws Exception
@@ -115,39 +124,52 @@ public class TestAssignment
     }
 
     /**
-     * <p>multipleAssignments.</p>
+     * <p>
+     * multipleAssignments.
+     * </p>
      *
-     * @throws java.lang.Exception if any.
+     * @throws java.lang.Exception
+     *             if any.
      */
     @Test
     public void multipleAssignments() throws Exception
     {
         Equ.getInstance(true);
-        final Double result = (Double) Equ.getInstance().evaluate("a := (b := 3)");
-        Assert.assertEquals("result", 3D, result, 0);
-        Assert.assertEquals("assigned variable", 3D, Equ.getInstance().getSupport().resolveVariable("a", null));
-        Assert.assertEquals("assigned variable", 3D, Equ.getInstance().getSupport().resolveVariable("b", null));
+        final Long result = (Long) Equ.getInstance().evaluate("a := (b := 3)");
+        Assert.assertEquals("result", 3, result.intValue());
+        Assert.assertEquals("assigned variable", new Long(3),
+                Equ.getInstance().getSupport().resolveVariable("a", null));
+        Assert.assertEquals("assigned variable", new Long(3),
+                Equ.getInstance().getSupport().resolveVariable("b", null));
     }
 
     /**
-     * <p>multipleAssignments2.</p>
+     * <p>
+     * multipleAssignments2.
+     * </p>
      *
-     * @throws java.lang.Exception if any.
+     * @throws java.lang.Exception
+     *             if any.
      */
     @Test
     public void multipleAssignments2() throws Exception
     {
         Equ.getInstance(true);
-        final Double result = (Double) Equ.getInstance().evaluate("a := b := 3");
-        Assert.assertEquals("result", 3D, result, 0);
-        Assert.assertEquals("assigned variable", 3D, Equ.getInstance().getSupport().resolveVariable("a", null));
-        Assert.assertEquals("assigned variable", 3D, Equ.getInstance().getSupport().resolveVariable("b", null));
+        final Long result = (Long) Equ.getInstance().evaluate("a := b := 3");
+        Assert.assertEquals("result", 3, result.intValue());
+        Assert.assertEquals("assigned variable", new Long(3),
+                Equ.getInstance().getSupport().resolveVariable("a", null));
+        Assert.assertEquals("assigned variable", new Long(3),
+                Equ.getInstance().getSupport().resolveVariable("b", null));
     }
 
     /**
-     * <p>multipleAssignments3.</p>
+     * <p>
+     * multipleAssignments3.
+     * </p>
      *
-     * @throws java.lang.Exception if any.
+     * @throws java.lang.Exception
+     *             if any.
      */
     @Test
     public void multipleAssignments3() throws Exception
@@ -164,9 +186,12 @@ public class TestAssignment
     }
 
     /**
-     * <p>unknownVariableInComparison.</p>
+     * <p>
+     * unknownVariableInComparison.
+     * </p>
      *
-     * @throws java.lang.Exception if any.
+     * @throws java.lang.Exception
+     *             if any.
      */
     @Test
     public void unknownVariableInComparison() throws Exception
@@ -179,37 +204,43 @@ public class TestAssignment
         {
             Assert.assertEquals(
                     "exception",
-                    "op(compare equal); supports same type comparisons only, found TokVariable and Double",
+                    "op(compare equal); \"b\" is unassigned",
                     e.getMessage());
         }
     }
 
     /**
-     * <p>withoutSupport.</p>
+     * <p>
+     * withoutSupport.
+     * </p>
      *
-     * @throws java.lang.Exception if any.
+     * @throws java.lang.Exception
+     *             if any.
      */
     @Test
     public void withoutSupport() throws Exception
     {
         Equ.getInstance().setSupport(null);
-        final Double result = (Double) Equ.getInstance().evaluate("a := 1");
-        Assert.assertEquals("result", 1D, result, 0);
-        Assert.assertEquals("variable", 1D, Equ.getInstance().getSupport().resolveVariable("a", null));
+        final Long result = (Long) Equ.getInstance().evaluate("a := 1");
+        Assert.assertEquals("result", 1, result.intValue());
+        Assert.assertEquals("variable", new Long(1), Equ.getInstance().getSupport().resolveVariable("a", null));
 
     }
 
     /**
-     * <p>withSupport.</p>
+     * <p>
+     * withSupport.
+     * </p>
      *
-     * @throws java.lang.Exception if any.
+     * @throws java.lang.Exception
+     *             if any.
      */
     @Test
     public void withSupport() throws Exception
     {
         Equ.getInstance(true);
-        final Double result = (Double) Equ.getInstance().evaluate("a := 1");
-        Assert.assertEquals("result", 1D, result, 0);
-        Assert.assertEquals("variable", 1D, Equ.getInstance().getSupport().resolveVariable("a", null));
+        final Long result = (Long) Equ.getInstance().evaluate("a := 1");
+        Assert.assertEquals("result", 1, result.intValue());
+        Assert.assertEquals("variable", new Long(1), Equ.getInstance().getSupport().resolveVariable("a", null));
     }
 }

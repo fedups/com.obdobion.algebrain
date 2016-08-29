@@ -7,7 +7,9 @@ import com.obdobion.algebrain.Operator;
 import com.obdobion.algebrain.ValueStack;
 
 /**
- * <p>OpAdd class.</p>
+ * <p>
+ * OpAdd class.
+ * </p>
  *
  * @author Chris DeGreef fedupforone@gmail.com
  * @since 1.3.9
@@ -15,7 +17,9 @@ import com.obdobion.algebrain.ValueStack;
 public class OpAdd extends Operator
 {
     /**
-     * <p>Constructor for OpAdd.</p>
+     * <p>
+     * Constructor for OpAdd.
+     * </p>
      */
     public OpAdd()
     {
@@ -23,9 +27,12 @@ public class OpAdd extends Operator
     }
 
     /**
-     * <p>Constructor for OpAdd.</p>
+     * <p>
+     * Constructor for OpAdd.
+     * </p>
      *
-     * @param opTok a {@link com.obdobion.algebrain.EquPart} object.
+     * @param opTok
+     *            a {@link com.obdobion.algebrain.EquPart} object.
      */
     public OpAdd(final EquPart opTok)
     {
@@ -34,20 +41,24 @@ public class OpAdd extends Operator
 
     /** {@inheritDoc} */
     @Override
-    protected int precedence ()
+    protected int precedence()
     {
         return 6;
     }
 
     /** {@inheritDoc} */
     @Override
-    public void resolve (final ValueStack values) throws Exception
+    public void resolve(final ValueStack values) throws Exception
     {
         if (values.size() < 2)
             throw new Exception("missing operands for " + toString());
         try
         {
-            values.push(new Double(values.popDouble() + values.popDouble()));
+            final Object[] value = values.ensureSameTypes();
+            if (value[0] instanceof Long)
+                values.push(new Long((Long) value[1] + (Long) value[0]));
+            else
+                values.push(new Double((Double) value[1] + (Double) value[0]));
         } catch (final ParseException e)
         {
             e.fillInStackTrace();
@@ -57,7 +68,7 @@ public class OpAdd extends Operator
 
     /** {@inheritDoc} */
     @Override
-    public String toString ()
+    public String toString()
     {
         return "op(add)";
     }

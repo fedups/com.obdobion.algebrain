@@ -7,7 +7,9 @@ import com.obdobion.algebrain.Operator;
 import com.obdobion.algebrain.ValueStack;
 
 /**
- * <p>OpDivide class.</p>
+ * <p>
+ * OpDivide class.
+ * </p>
  *
  * @author Chris DeGreef fedupforone@gmail.com
  * @since 1.3.9
@@ -15,7 +17,9 @@ import com.obdobion.algebrain.ValueStack;
 public class OpDivide extends Operator
 {
     /**
-     * <p>Constructor for OpDivide.</p>
+     * <p>
+     * Constructor for OpDivide.
+     * </p>
      */
     public OpDivide()
     {
@@ -23,9 +27,12 @@ public class OpDivide extends Operator
     }
 
     /**
-     * <p>Constructor for OpDivide.</p>
+     * <p>
+     * Constructor for OpDivide.
+     * </p>
      *
-     * @param opTok a {@link com.obdobion.algebrain.EquPart} object.
+     * @param opTok
+     *            a {@link com.obdobion.algebrain.EquPart} object.
      */
     public OpDivide(final EquPart opTok)
     {
@@ -34,22 +41,24 @@ public class OpDivide extends Operator
 
     /** {@inheritDoc} */
     @Override
-    protected int precedence ()
+    protected int precedence()
     {
         return 4;
     }
 
     /** {@inheritDoc} */
     @Override
-    public void resolve (final ValueStack values) throws Exception
+    public void resolve(final ValueStack values) throws Exception
     {
         if (values.size() < 2)
             throw new Exception("missing operands for " + toString());
         try
         {
-            final double d0 = values.popDouble();
-            final double d1 = values.popDouble();
-            values.push(new Double(d1 / d0));
+            final Object[] value = values.ensureSameTypes();
+            if (value[0] instanceof Long)
+                values.push(new Double(((Long) value[1]).doubleValue() / ((Long) value[0]).doubleValue()));
+            else
+                values.push(new Double((Double) value[1] / (Double) value[0]));
         } catch (final ParseException e)
         {
             e.fillInStackTrace();
@@ -59,7 +68,7 @@ public class OpDivide extends Operator
 
     /** {@inheritDoc} */
     @Override
-    public String toString ()
+    public String toString()
     {
         return "op(divide)";
     }

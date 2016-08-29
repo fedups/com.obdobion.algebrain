@@ -1,14 +1,16 @@
 package com.obdobion.algebrain.operator;
 
 import java.text.ParseException;
-import java.util.Calendar;
+import java.time.LocalDateTime;
 
 import com.obdobion.algebrain.EquPart;
 import com.obdobion.algebrain.Operator;
 import com.obdobion.algebrain.ValueStack;
 
 /**
- * <p>OpCompareLess class.</p>
+ * <p>
+ * OpCompareLess class.
+ * </p>
  *
  * @author Chris DeGreef fedupforone@gmail.com
  * @since 1.3.9
@@ -16,16 +18,21 @@ import com.obdobion.algebrain.ValueStack;
 public class OpCompareLess extends Operator
 {
     /**
-     * <p>Constructor for OpCompareLess.</p>
+     * <p>
+     * Constructor for OpCompareLess.
+     * </p>
      */
     public OpCompareLess()
     {
     }
 
     /**
-     * <p>Constructor for OpCompareLess.</p>
+     * <p>
+     * Constructor for OpCompareLess.
+     * </p>
      *
-     * @param opTok a {@link com.obdobion.algebrain.EquPart} object.
+     * @param opTok
+     *            a {@link com.obdobion.algebrain.EquPart} object.
      */
     public OpCompareLess(final EquPart opTok)
     {
@@ -34,28 +41,33 @@ public class OpCompareLess extends Operator
 
     /** {@inheritDoc} */
     @Override
-    protected int precedence ()
+    protected int precedence()
     {
         return 8;
     }
 
     /** {@inheritDoc} */
     @Override
-    public void resolve (final ValueStack values) throws Exception
+    public void resolve(final ValueStack values) throws Exception
     {
         if (values.size() < 2)
             throw new Exception("missing operands for " + toString());
         try
         {
             final Object[] ops = values.ensureSameTypes();
-            if (ops[0] instanceof Calendar)
+            if (ops[0] instanceof LocalDateTime)
             {
-                values.push(new Boolean(((Calendar) ops[1]).compareTo((Calendar) ops[0]) < 0));
+                values.push(new Boolean(((LocalDateTime) ops[1]).compareTo((LocalDateTime) ops[0]) < 0));
                 return;
             }
             if (ops[0] instanceof Double)
             {
                 values.push(new Boolean((Double) ops[1] < (Double) ops[0]));
+                return;
+            }
+            if (ops[0] instanceof Long)
+            {
+                values.push(new Boolean((Long) ops[1] < (Long) ops[0]));
                 return;
             }
             throw new Exception(toString() + "; invalid type, found " + ops[0].getClass().getSimpleName());
@@ -68,7 +80,7 @@ public class OpCompareLess extends Operator
 
     /** {@inheritDoc} */
     @Override
-    public String toString ()
+    public String toString()
     {
         return "op(compare less)";
     }

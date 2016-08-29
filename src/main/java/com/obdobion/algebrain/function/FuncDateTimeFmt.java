@@ -1,9 +1,7 @@
 package com.obdobion.algebrain.function;
 
 import java.text.ParseException;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 
 import com.obdobion.algebrain.Function;
@@ -18,7 +16,7 @@ import com.obdobion.calendar.CalendarFactory;
  *
  * @author Chris DeGreef fedupforone@gmail.com
  */
-public class FuncDateFmt extends Function
+public class FuncDateTimeFmt extends Function
 {
 
     /**
@@ -26,7 +24,7 @@ public class FuncDateFmt extends Function
      * Constructor for FuncDate.
      * </p>
      */
-    public FuncDateFmt()
+    public FuncDateTimeFmt()
     {
         super();
     }
@@ -39,7 +37,7 @@ public class FuncDateFmt extends Function
      * @param var
      *            a {@link com.obdobion.algebrain.token.TokVariable} object.
      */
-    public FuncDateFmt(final TokVariable var)
+    public FuncDateTimeFmt(final TokVariable var)
     {
         super(var);
     }
@@ -61,12 +59,9 @@ public class FuncDateFmt extends Function
             final DateTimeFormatter dtf = DateTimeFormatter.ofPattern(values.popString());
 
             final String dateInputObject = values.popString();
-            final LocalDate convertedInputDate = LocalDate.parse(dateInputObject, dtf);
+            final LocalDateTime convertedInputDate = LocalDateTime.parse(dateInputObject, dtf);
 
-            final LocalDateTime adjLdt = CalendarFactory.modify(convertedInputDate, adjustments);
-            if (adjLdt.toLocalTime() != LocalTime.MIN)
-                throw new ParseException("Adjustments to time are not allowed", 0);
-            values.push(adjLdt);
+            values.push(CalendarFactory.modify(convertedInputDate, adjustments));
 
         } catch (final ParseException e)
         {
@@ -79,6 +74,6 @@ public class FuncDateFmt extends Function
     @Override
     public String toString()
     {
-        return "function(dateFmt)";
+        return "function(dateTimeFmt)";
     }
 }

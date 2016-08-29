@@ -2,10 +2,11 @@ package com.obdobion.algebrain;
 
 import java.io.UnsupportedEncodingException;
 import java.text.ParseException;
-import java.util.Calendar;
+import java.time.LocalDateTime;
 import java.util.Stack;
 
 import com.obdobion.algebrain.token.TokVariable;
+import com.obdobion.calendar.CalendarFactory;
 
 /**
  * <p>
@@ -86,8 +87,34 @@ public class ValueStack extends Stack<Object>
             return ((Number) fromStack).doubleValue();
         if (fromStack instanceof String)
             return Double.parseDouble((String) fromStack);
-        if (fromStack instanceof Calendar)
-            return ((Calendar) fromStack).getTime().getTime();
+        if (fromStack instanceof LocalDateTime)
+            return CalendarFactory.asDateLong((LocalDateTime) fromStack);
+
+        final StringBuilder errMsg = new StringBuilder();
+        errMsg.append("invalid type ");
+        errMsg.append(fromStack.getClass().getSimpleName());
+        throw new ParseException(errMsg.toString(), 0);
+    }
+
+    /**
+     * <p>
+     * convertToDouble.
+     * </p>
+     *
+     * @param fromStack
+     *            a {@link java.lang.Object} object.
+     * @return a double.
+     * @throws java.text.ParseException
+     *             if any.
+     */
+    protected long convertToLong(final Object fromStack) throws ParseException
+    {
+        if (fromStack instanceof Number)
+            return ((Number) fromStack).longValue();
+        if (fromStack instanceof String)
+            return Long.parseLong((String) fromStack);
+        if (fromStack instanceof LocalDateTime)
+            return CalendarFactory.asDateLong((LocalDateTime) fromStack);
 
         final StringBuilder errMsg = new StringBuilder();
         errMsg.append("invalid type ");
@@ -106,59 +133,58 @@ public class ValueStack extends Stack<Object>
      */
     public Object[] ensureSameTypes() throws ParseException
     {
-        final Object o1 = popWhatever();
-        final Object o2 = popWhatever();
+        return ensureSameTypes(2);
+    }
 
-        final Object[] sameTypes = new Object[2];
+    /**
+     * <p>
+     * ensureSameTypes.
+     * </p>
+     *
+     * @return an array of {@link java.lang.Object} objects.
+     * @throws java.text.ParseException
+     *             if any.
+     */
+    public Object[] ensureSameTypes(final int count) throws ParseException
+    {
+        boolean foundLong = false;
+        boolean foundDouble = false;
+        boolean foundAllSame = true;
 
-        if (o1.getClass() == o2.getClass())
+        Object firstFound = null;
+        final Stack<Object> ops = new Stack<>();
+        for (int p = 0; p < count; p++)
         {
-            sameTypes[0] = o1;
-            sameTypes[1] = o2;
-            return sameTypes;
-        }
+            final Object currentFound = popWhatever();
 
-        if (o1 instanceof Double && o2 instanceof Long)
-        {
-            sameTypes[0] = o1;
-            sameTypes[1] = new Double(((Long) o2).doubleValue());
-            return sameTypes;
-        }
+            if (currentFound instanceof TokVariable)
+                throw new ParseException(
+                        "\"" + ((TokVariable) currentFound).getName() + "\" is unassigned", 0);
 
-        if (o1 instanceof Long && o2 instanceof Double)
-        {
-            sameTypes[0] = new Double(((Long) o1).doubleValue());
-            sameTypes[1] = o2;
-            return sameTypes;
+            ops.push(currentFound);
+            if (firstFound == null)
+                firstFound = currentFound;
+            if (!firstFound.getClass().equals(currentFound.getClass()))
+                foundAllSame = false;
+            if (currentFound instanceof Long)
+                foundLong = true;
+            else if (currentFound instanceof Double)
+                foundDouble = true;
         }
-
-        /*
-         * This code previously allowed for specifying a string as an unquoted
-         * literal. Not worth the little bit of convenience for the odd
-         * exception this seems to create. For instance, rather than giving the
-         * user a reasonable error like "variable with a value" it would compare
-         * is a String and just say false (or true), probably a mistake on their
-         * part and the reasonable error would make it easier to fix.
-         */
-        /*-
-        if (o1 instanceof String && o2 instanceof TokVariable)
+        final Object[] found = new Object[ops.size()];
+        for (int x = ops.size() - 1; x >= 0; x--)
         {
-            sameTypes[0] = o1;
-            sameTypes[1] = ((TokVariable) o2).getName();
-            return sameTypes;
+            final Object oneFound = ops.pop();
+            if (foundAllSame)
+                found[x] = oneFound;
+            else if (foundDouble)
+                found[x] = convertToDouble(oneFound);
+            else if (foundLong)
+                found[x] = convertToLong(oneFound);
+            else
+                throw new ParseException("invalid type: " + oneFound.getClass().getSimpleName(), 0);
         }
-        if (o1 instanceof TokVariable && o2 instanceof String)
-        {
-            sameTypes[0] = ((TokVariable) o1).getName();
-            sameTypes[1] = o2;
-            return sameTypes;
-        }
-        */
-
-        throw new ParseException("supports same type comparisons only, found "
-                + o2.getClass().getSimpleName()
-                + " and "
-                + o1.getClass().getSimpleName(), 0);
+        return found;
     }
 
     /** {@inheritDoc} */
@@ -213,6 +239,20 @@ public class ValueStack extends Stack<Object>
     public double popDouble() throws ParseException
     {
         return convertToDouble(super.pop());
+    }
+
+    /**
+     * <p>
+     * popLong.
+     * </p>
+     *
+     * @return a long.
+     * @throws java.text.ParseException
+     *             if any.
+     */
+    public long popLong() throws ParseException
+    {
+        return convertToLong(super.pop());
     }
 
     /**

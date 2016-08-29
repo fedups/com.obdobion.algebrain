@@ -5,15 +5,19 @@ import com.obdobion.algebrain.Operator;
 import com.obdobion.algebrain.ValueStack;
 
 /**
- * <p>OpEquals class.</p>
+ * <p>
+ * OpEquals class.
+ * </p>
  *
  * @author Chris DeGreef fedupforone@gmail.com
  * @since 1.3.9
  */
-public class OpEquals extends Operator
+abstract public class OpEquals extends Operator
 {
     /**
-     * <p>Constructor for OpEquals.</p>
+     * <p>
+     * Constructor for OpEquals.
+     * </p>
      */
     public OpEquals()
     {
@@ -21,9 +25,12 @@ public class OpEquals extends Operator
     }
 
     /**
-     * <p>Constructor for OpEquals.</p>
+     * <p>
+     * Constructor for OpEquals.
+     * </p>
      *
-     * @param opTok a {@link com.obdobion.algebrain.EquPart} object.
+     * @param opTok
+     *            a {@link com.obdobion.algebrain.EquPart} object.
      */
     public OpEquals(final EquPart opTok)
     {
@@ -32,14 +39,14 @@ public class OpEquals extends Operator
 
     /** {@inheritDoc} */
     @Override
-    protected int precedence ()
+    protected int precedence()
     {
         return 999;
     }
 
     /** {@inheritDoc} */
     @Override
-    public void resolve (final ValueStack values) throws Exception
+    public void resolve(final ValueStack values) throws Exception
     {
         if (values.size() != 1)
             throw new Exception("Wrong number of operands " + toString());
@@ -47,7 +54,7 @@ public class OpEquals extends Operator
 
     /** {@inheritDoc} */
     @Override
-    public String toString ()
+    public String toString()
     {
         return "op(assignment)";
     }

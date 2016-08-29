@@ -7,7 +7,9 @@ import com.obdobion.algebrain.Operator;
 import com.obdobion.algebrain.ValueStack;
 
 /**
- * <p>OpFactorial class.</p>
+ * <p>
+ * OpFactorial class.
+ * </p>
  *
  * @author Chris DeGreef fedupforone@gmail.com
  * @since 1.3.9
@@ -15,7 +17,9 @@ import com.obdobion.algebrain.ValueStack;
 public class OpFactorial extends Operator
 {
     /**
-     * <p>Constructor for OpFactorial.</p>
+     * <p>
+     * Constructor for OpFactorial.
+     * </p>
      */
     public OpFactorial()
     {
@@ -23,9 +27,12 @@ public class OpFactorial extends Operator
     }
 
     /**
-     * <p>Constructor for OpFactorial.</p>
+     * <p>
+     * Constructor for OpFactorial.
+     * </p>
      *
-     * @param opTok a {@link com.obdobion.algebrain.EquPart} object.
+     * @param opTok
+     *            a {@link com.obdobion.algebrain.EquPart} object.
      */
     public OpFactorial(final EquPart opTok)
     {
@@ -34,20 +41,20 @@ public class OpFactorial extends Operator
 
     /** {@inheritDoc} */
     @Override
-    protected int precedence ()
+    protected int precedence()
     {
         return 3;
     }
 
     /** {@inheritDoc} */
     @Override
-    public void resolve (final ValueStack values) throws Exception
+    public void resolve(final ValueStack values) throws Exception
     {
         if (values.size() < 1)
             throw new Exception("missing operand for " + toString());
         try
         {
-            final double base = values.popDouble();
+            final long base = values.popLong();
 
             if (base > 20)
                 throw new Exception(toString() + "; " + "numeric overflow");
@@ -56,10 +63,10 @@ public class OpFactorial extends Operator
                 throw new Exception(toString() + "; " + "negative numbers not allowed");
 
             long factorial = 1;
-            for (int i = new Double(base).intValue(); i > 1; i--)
+            for (int i = (int) base; i > 1; i--)
                 factorial *= i;
 
-            values.push(new Double(factorial));
+            values.push(new Long(factorial));
         } catch (final ParseException e)
         {
             e.fillInStackTrace();
@@ -69,7 +76,7 @@ public class OpFactorial extends Operator
 
     /** {@inheritDoc} */
     @Override
-    public String toString ()
+    public String toString()
     {
         return "op(factorial)";
     }

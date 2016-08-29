@@ -1,14 +1,15 @@
 package com.obdobion.algebrain.function;
 
 import java.text.ParseException;
-import java.util.Stack;
 
 import com.obdobion.algebrain.Function;
 import com.obdobion.algebrain.ValueStack;
 import com.obdobion.algebrain.token.TokVariable;
 
 /**
- * <p>FuncMin class.</p>
+ * <p>
+ * FuncMin class.
+ * </p>
  *
  * @author Chris DeGreef fedupforone@gmail.com
  * @since 1.3.9
@@ -16,7 +17,9 @@ import com.obdobion.algebrain.token.TokVariable;
 public class FuncMin extends Function
 {
     /**
-     * <p>Constructor for FuncMin.</p>
+     * <p>
+     * Constructor for FuncMin.
+     * </p>
      */
     public FuncMin()
     {
@@ -24,9 +27,12 @@ public class FuncMin extends Function
     }
 
     /**
-     * <p>Constructor for FuncMin.</p>
+     * <p>
+     * Constructor for FuncMin.
+     * </p>
      *
-     * @param var a {@link com.obdobion.algebrain.token.TokVariable} object.
+     * @param var
+     *            a {@link com.obdobion.algebrain.token.TokVariable} object.
      */
     public FuncMin(final TokVariable var)
     {
@@ -35,27 +41,26 @@ public class FuncMin extends Function
 
     /** {@inheritDoc} */
     @Override
-    public void resolve (final ValueStack values) throws Exception
+    public void resolve(final ValueStack values) throws Exception
     {
         if (values.size() < getParameterCount())
             throw new Exception("missing operands for " + toString());
         try
         {
-            final Stack<Double> ops = new Stack<>();
-
-            for (int p = 0; p < getParameterCount(); p++)
-                ops.push(new Double(values.popDouble()));
-
-            Double op1;
-            Double op2;
-            op1 = ops.pop();
-
-            while (!ops.empty())
+            final Object[] value = values.ensureSameTypes(getParameterCount());
+            if (value[0] instanceof Long)
             {
-                op2 = ops.pop();
-                op1 = new Double(Math.min(op1.doubleValue(), op2.doubleValue()));
+                long bestSoFar = (Long) value[0];
+                for (int x = 1; x < value.length; x++)
+                    bestSoFar = new Long(Math.min(bestSoFar, (Long) value[x]));
+                values.push(new Long(bestSoFar));
+            } else if (value[0] instanceof Double)
+            {
+                double bestSoFar = (Double) value[0];
+                for (int x = 1; x < value.length; x++)
+                    bestSoFar = new Double(Math.min(bestSoFar, (Double) value[x]));
+                values.push(new Double(bestSoFar));
             }
-            values.push(op1);
         } catch (final ParseException e)
         {
             e.fillInStackTrace();
@@ -65,7 +70,7 @@ public class FuncMin extends Function
 
     /** {@inheritDoc} */
     @Override
-    public String toString ()
+    public String toString()
     {
         return "function(min-" + getParameterCount() + ")";
     }

@@ -1,11 +1,15 @@
 package com.obdobion.algebrain.support;
 
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.Hashtable;
 import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import com.obdobion.calendar.CalendarFactory;
 
 /**
  * <p>
@@ -36,7 +40,15 @@ public class DefaultEquationSupport implements EquationSupport
     @Override
     public void assignVariable(final String variableName, final Object value) throws Exception
     {
-        getVariables().put(variableName.toLowerCase(), value);
+        /*
+         * Only store supported types in the stack.
+         */
+        if (value instanceof Date)
+            getVariables().put(variableName.toLowerCase(), CalendarFactory.convert((Date) value));
+        else if (value instanceof Calendar)
+            getVariables().put(variableName.toLowerCase(), CalendarFactory.convert((Calendar) value));
+        else
+            getVariables().put(variableName.toLowerCase(), value);
     }
 
     /** {@inheritDoc} */

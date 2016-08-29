@@ -5,7 +5,9 @@ import com.obdobion.algebrain.EquPart;
 import com.obdobion.algebrain.ValueStack;
 
 /**
- * <p>TokNumber class.</p>
+ * <p>
+ * TokNumber class.
+ * </p>
  *
  * @author Chris DeGreef fedupforone@gmail.com
  * @since 1.3.9
@@ -13,7 +15,9 @@ import com.obdobion.algebrain.ValueStack;
 public class TokNumber extends TokOperand
 {
     /**
-     * <p>Constructor for TokNumber.</p>
+     * <p>
+     * Constructor for TokNumber.
+     * </p>
      */
     public TokNumber()
     {
@@ -22,14 +26,14 @@ public class TokNumber extends TokOperand
 
     /** {@inheritDoc} */
     @Override
-    public boolean accepts (final char s)
+    public boolean accepts(final char s)
     {
         return Character.isDigit(s) || s == '.';
     }
 
     /** {@inheritDoc} */
     @Override
-    public EquPart morph () throws Exception
+    public EquPart morph() throws Exception
     {
         if (getValue().length() == 1 && getValue().charAt(0) == '-')
         {
@@ -42,14 +46,18 @@ public class TokNumber extends TokOperand
 
     /** {@inheritDoc} */
     @Override
-    public void resolve (final ValueStack values) throws Exception
+    public void resolve(final ValueStack values) throws Exception
     {
-        values.push(new Double(getValue().toString()));
+        final String valueToBeParsed = getValue().toString();
+        if (valueToBeParsed.indexOf('.') == -1)
+            values.push(new Long(valueToBeParsed));
+        else
+            values.push(new Double(valueToBeParsed));
     }
 
     /** {@inheritDoc} */
     @Override
-    public String toString ()
+    public String toString()
     {
         return "num(" + super.toString() + ")";
     }

@@ -253,6 +253,11 @@ public class TestAndOr
         Assert.assertEquals("result ", true, result.booleanValue());
     }
 
+    /**
+     * <p>nor1.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void nor1() throws Exception
     {
@@ -260,6 +265,11 @@ public class TestAndOr
         Assert.assertEquals("result ", true, result.booleanValue());
     }
 
+    /**
+     * <p>nor2.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void nor2() throws Exception
     {
@@ -267,6 +277,11 @@ public class TestAndOr
         Assert.assertEquals("result ", false, result.booleanValue());
     }
 
+    /**
+     * <p>nor3.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void nor3() throws Exception
     {
@@ -274,6 +289,11 @@ public class TestAndOr
         Assert.assertEquals("result ", false, result.booleanValue());
     }
 
+    /**
+     * <p>nor4.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void nor4() throws Exception
     {
@@ -281,6 +301,11 @@ public class TestAndOr
         Assert.assertEquals("result ", false, result.booleanValue());
     }
 
+    /**
+     * <p>xnor1.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void xnor1() throws Exception
     {
@@ -288,6 +313,11 @@ public class TestAndOr
         Assert.assertEquals("result ", true, result.booleanValue());
     }
 
+    /**
+     * <p>xnor2.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void xnor2() throws Exception
     {
@@ -295,6 +325,11 @@ public class TestAndOr
         Assert.assertEquals("result ", false, result.booleanValue());
     }
 
+    /**
+     * <p>xnor3.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void xnor3() throws Exception
     {
@@ -302,6 +337,11 @@ public class TestAndOr
         Assert.assertEquals("result ", false, result.booleanValue());
     }
 
+    /**
+     * <p>xnor4.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void xnor4() throws Exception
     {
@@ -309,6 +349,11 @@ public class TestAndOr
         Assert.assertEquals("result ", true, result.booleanValue());
     }
 
+    /**
+     * <p>xor1.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void xor1() throws Exception
     {
@@ -316,6 +361,11 @@ public class TestAndOr
         Assert.assertEquals("result ", false, result.booleanValue());
     }
 
+    /**
+     * <p>xor2.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void xor2() throws Exception
     {
@@ -323,6 +373,11 @@ public class TestAndOr
         Assert.assertEquals("result ", true, result.booleanValue());
     }
 
+    /**
+     * <p>xor3.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void xor3() throws Exception
     {
@@ -330,6 +385,11 @@ public class TestAndOr
         Assert.assertEquals("result ", true, result.booleanValue());
     }
 
+    /**
+     * <p>xor4.</p>
+     *
+     * @throws java.lang.Exception if any.
+     */
     @Test
     public void xor4() throws Exception
     {

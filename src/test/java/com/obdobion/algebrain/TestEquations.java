@@ -4,7 +4,9 @@ import org.junit.Assert;
 import org.junit.Test;
 
 /**
- * <p>TestEquations class.</p>
+ * <p>
+ * TestEquations class.
+ * </p>
  *
  * @author Chris DeGreef fedupforone@gmail.com
  * @since 1.3.9
@@ -12,12 +14,15 @@ import org.junit.Test;
 public class TestEquations
 {
     /**
-     * <p>booleanEqual.</p>
+     * <p>
+     * booleanEqual.
+     * </p>
      *
-     * @throws java.lang.Exception if any.
+     * @throws java.lang.Exception
+     *             if any.
      */
     @Test
-    public void booleanEqual () throws Exception
+    public void booleanEqual() throws Exception
     {
         final Equ equ = Equ.getInstance(true);
         final Boolean result = (Boolean) equ.evaluate("1 = 2");
@@ -25,12 +30,15 @@ public class TestEquations
     }
 
     /**
-     * <p>booleanGreater.</p>
+     * <p>
+     * booleanGreater.
+     * </p>
      *
-     * @throws java.lang.Exception if any.
+     * @throws java.lang.Exception
+     *             if any.
      */
     @Test
-    public void booleanGreater () throws Exception
+    public void booleanGreater() throws Exception
     {
         final Equ equ = Equ.getInstance(true);
         final Boolean result = (Boolean) equ.evaluate("1 > 2");
@@ -38,12 +46,15 @@ public class TestEquations
     }
 
     /**
-     * <p>booleanLess.</p>
+     * <p>
+     * booleanLess.
+     * </p>
      *
-     * @throws java.lang.Exception if any.
+     * @throws java.lang.Exception
+     *             if any.
      */
     @Test
-    public void booleanLess () throws Exception
+    public void booleanLess() throws Exception
     {
         final Equ equ = Equ.getInstance(true);
         final Boolean result = (Boolean) equ.evaluate("1 < 2");
@@ -51,12 +62,15 @@ public class TestEquations
     }
 
     /**
-     * <p>booleanNotEqual.</p>
+     * <p>
+     * booleanNotEqual.
+     * </p>
      *
-     * @throws java.lang.Exception if any.
+     * @throws java.lang.Exception
+     *             if any.
      */
     @Test
-    public void booleanNotEqual () throws Exception
+    public void booleanNotEqual() throws Exception
     {
         final Equ equ = Equ.getInstance(true);
         final Boolean result = (Boolean) equ.evaluate("1 != 2");
@@ -64,12 +78,15 @@ public class TestEquations
     }
 
     /**
-     * <p>booleanNotGreater.</p>
+     * <p>
+     * booleanNotGreater.
+     * </p>
      *
-     * @throws java.lang.Exception if any.
+     * @throws java.lang.Exception
+     *             if any.
      */
     @Test
-    public void booleanNotGreater () throws Exception
+    public void booleanNotGreater() throws Exception
     {
         final Equ equ = Equ.getInstance(true);
         final Boolean result = (Boolean) equ.evaluate("1 <= 2");
@@ -77,12 +94,15 @@ public class TestEquations
     }
 
     /**
-     * <p>booleanNotLess.</p>
+     * <p>
+     * booleanNotLess.
+     * </p>
      *
-     * @throws java.lang.Exception if any.
+     * @throws java.lang.Exception
+     *             if any.
      */
     @Test
-    public void booleanNotLess () throws Exception
+    public void booleanNotLess() throws Exception
     {
         final Equ equ = Equ.getInstance(true);
         final Boolean result = (Boolean) equ.evaluate("1 >= 2");
@@ -90,64 +110,79 @@ public class TestEquations
     }
 
     /**
-     * <p>m10a.</p>
+     * <p>
+     * m10a.
+     * </p>
      *
-     * @throws java.lang.Exception if any.
+     * @throws java.lang.Exception
+     *             if any.
      */
     @Test
-    public void m10a () throws Exception
+    public void m10a() throws Exception
     {
         final Equ equ = Equ.getInstance(true);
-        final Double result = (Double) equ.evaluate("if (1=1,1,2)");
-        Assert.assertEquals("M10a result ", 1D, result.doubleValue(), 0D);
+        final Long result = (Long) equ.evaluate("if (1=1,1,2.5)");
+        Assert.assertEquals("M10a result ", 1, result.longValue());
     }
 
     /**
-     * <p>m10b.</p>
+     * <p>
+     * m10b.
+     * </p>
      *
-     * @throws java.lang.Exception if any.
+     * @throws java.lang.Exception
+     *             if any.
      */
     @Test
-    public void m10b () throws Exception
+    public void m10b() throws Exception
     {
         final Equ equ = Equ.getInstance(true);
-        final Double result = (Double) equ.evaluate("if (1=3,1,2)");
-        Assert.assertEquals("M10b result ", 2D, result.doubleValue(), 0D);
+        final Double result = (Double) equ.evaluate("if (1=3,1,2.5)");
+        Assert.assertEquals("M10b result ", 2.5D, result.doubleValue(), 0D);
     }
 
     /**
-     * <p>m10c.</p>
+     * <p>
+     * m10c.
+     * </p>
      *
-     * @throws java.lang.Exception if any.
+     * @throws java.lang.Exception
+     *             if any.
      */
     @Test
-    public void m10c () throws Exception
+    public void m10c() throws Exception
     {
         final Equ equ = Equ.getInstance(true);
-        final Double result = (Double) equ.evaluate("5 * if (1=3,1,2)");
+        final Double result = (Double) equ.evaluate("5 * if (1=3,1,2.0)");
         Assert.assertEquals("M10c result ", 10D, result.doubleValue(), 0D);
     }
 
     /**
-     * <p>m10d.</p>
+     * <p>
+     * m10d.
+     * </p>
      *
-     * @throws java.lang.Exception if any.
+     * @throws java.lang.Exception
+     *             if any.
      */
     @Test
-    public void m10d () throws Exception
+    public void m10d() throws Exception
     {
         final Equ equ = Equ.getInstance(true);
-        final Double result = (Double) equ.evaluate("if (1=3,1,if (10 - 9 = 11 - 10,4,5))");
-        Assert.assertEquals("M10d result ", 4D, result.doubleValue(), 0D);
+        final Long result = (Long) equ.evaluate("if (1=3,1,if (10 - 9 = 11 - 10,4,5))");
+        Assert.assertEquals("M10d result ", 4, result.longValue());
     }
 
     /**
-     * <p>m1a.</p>
+     * <p>
+     * m1a.
+     * </p>
      *
-     * @throws java.lang.Exception if any.
+     * @throws java.lang.Exception
+     *             if any.
      */
     @Test
-    public void m1a () throws Exception
+    public void m1a() throws Exception
     {
         final Equ equ = Equ.getInstance(true);
         equ.getSupport().assignVariable("x", new Double(5));
@@ -156,12 +191,15 @@ public class TestEquations
     }
 
     /**
-     * <p>m1b.</p>
+     * <p>
+     * m1b.
+     * </p>
      *
-     * @throws java.lang.Exception if any.
+     * @throws java.lang.Exception
+     *             if any.
      */
     @Test
-    public void m1b () throws Exception
+    public void m1b() throws Exception
     {
         final Equ equ = Equ.getInstance(true);
         equ.getSupport().assignVariable("x", new Double(5));
@@ -170,12 +208,15 @@ public class TestEquations
     }
 
     /**
-     * <p>m2.</p>
+     * <p>
+     * m2.
+     * </p>
      *
-     * @throws java.lang.Exception if any.
+     * @throws java.lang.Exception
+     *             if any.
      */
     @Test
-    public void m2 () throws Exception
+    public void m2() throws Exception
     {
         final Equ equ = Equ.getInstance(true);
         equ.getSupport().assignVariable("x", new Double(5));
@@ -184,12 +225,15 @@ public class TestEquations
     }
 
     /**
-     * <p>m3a.</p>
+     * <p>
+     * m3a.
+     * </p>
      *
-     * @throws java.lang.Exception if any.
+     * @throws java.lang.Exception
+     *             if any.
      */
     @Test
-    public void m3a () throws Exception
+    public void m3a() throws Exception
     {
         final Equ equ = Equ.getInstance(true);
         equ.getSupport().assignVariable("x", new Double(5));
@@ -198,12 +242,15 @@ public class TestEquations
     }
 
     /**
-     * <p>m3b.</p>
+     * <p>
+     * m3b.
+     * </p>
      *
-     * @throws java.lang.Exception if any.
+     * @throws java.lang.Exception
+     *             if any.
      */
     @Test
-    public void m3b () throws Exception
+    public void m3b() throws Exception
     {
         final Equ equ = Equ.getInstance(true);
         equ.getSupport().assignVariable("x", new Double(5));
@@ -213,12 +260,15 @@ public class TestEquations
     }
 
     /**
-     * <p>m4a.</p>
+     * <p>
+     * m4a.
+     * </p>
      *
-     * @throws java.lang.Exception if any.
+     * @throws java.lang.Exception
+     *             if any.
      */
     @Test
-    public void m4a () throws Exception
+    public void m4a() throws Exception
     {
         final Equ equ = Equ.getInstance(true);
         equ.getSupport().assignVariable("x", new Double(5));
@@ -227,12 +277,15 @@ public class TestEquations
     }
 
     /**
-     * <p>m4b.</p>
+     * <p>
+     * m4b.
+     * </p>
      *
-     * @throws java.lang.Exception if any.
+     * @throws java.lang.Exception
+     *             if any.
      */
     @Test
-    public void m4b () throws Exception
+    public void m4b() throws Exception
     {
         final Equ equ = Equ.getInstance(true);
         equ.getSupport().assignVariable("x", new Double(5));
@@ -241,12 +294,15 @@ public class TestEquations
     }
 
     /**
-     * <p>m5a.</p>
+     * <p>
+     * m5a.
+     * </p>
      *
-     * @throws java.lang.Exception if any.
+     * @throws java.lang.Exception
+     *             if any.
      */
     @Test
-    public void m5a () throws Exception
+    public void m5a() throws Exception
     {
         final Equ equ = Equ.getInstance(true);
         equ.getSupport().assignVariable("x", new Double(5));
@@ -255,12 +311,15 @@ public class TestEquations
     }
 
     /**
-     * <p>m5b.</p>
+     * <p>
+     * m5b.
+     * </p>
      *
-     * @throws java.lang.Exception if any.
+     * @throws java.lang.Exception
+     *             if any.
      */
     @Test
-    public void m5b () throws Exception
+    public void m5b() throws Exception
     {
         final Equ equ = Equ.getInstance(true);
         equ.getSupport().assignVariable("x", new Double(5));
@@ -269,12 +328,15 @@ public class TestEquations
     }
 
     /**
-     * <p>m6a.</p>
+     * <p>
+     * m6a.
+     * </p>
      *
-     * @throws java.lang.Exception if any.
+     * @throws java.lang.Exception
+     *             if any.
      */
     @Test
-    public void m6a () throws Exception
+    public void m6a() throws Exception
     {
         final Equ equ = Equ.getInstance(true);
         equ.getSupport().assignVariable("x", new Double(5));
@@ -283,12 +345,15 @@ public class TestEquations
     }
 
     /**
-     * <p>m6b.</p>
+     * <p>
+     * m6b.
+     * </p>
      *
-     * @throws java.lang.Exception if any.
+     * @throws java.lang.Exception
+     *             if any.
      */
     @Test
-    public void m6b () throws Exception
+    public void m6b() throws Exception
     {
         final Equ equ = Equ.getInstance(true);
         equ.getSupport().assignVariable("x", new Double(5));
@@ -297,12 +362,15 @@ public class TestEquations
     }
 
     /**
-     * <p>m6c.</p>
+     * <p>
+     * m6c.
+     * </p>
      *
-     * @throws java.lang.Exception if any.
+     * @throws java.lang.Exception
+     *             if any.
      */
     @Test
-    public void m6c () throws Exception
+    public void m6c() throws Exception
     {
         final Equ equ = Equ.getInstance(true);
         equ.getSupport().assignVariable("x", new Double(5));
@@ -311,25 +379,31 @@ public class TestEquations
     }
 
     /**
-     * <p>m7a.</p>
+     * <p>
+     * m7a.
+     * </p>
      *
-     * @throws java.lang.Exception if any.
+     * @throws java.lang.Exception
+     *             if any.
      */
     @Test
-    public void m7a () throws Exception
+    public void m7a() throws Exception
     {
         final Equ equ = Equ.getInstance(true);
-        final Double result = (Double) equ.evaluate("max(1,2,3)");
-        Assert.assertEquals("M7a result ", 3, result.doubleValue(), 0D);
+        final Long result = (Long) equ.evaluate("max(1,2,3)");
+        Assert.assertEquals("M7a result ", 3, result.intValue());
     }
 
     /**
-     * <p>m7b.</p>
+     * <p>
+     * m7b.
+     * </p>
      *
-     * @throws java.lang.Exception if any.
+     * @throws java.lang.Exception
+     *             if any.
      */
     @Test
-    public void m7b () throws Exception
+    public void m7b() throws Exception
     {
         final Equ equ = Equ.getInstance(true);
         equ.getSupport().assignVariable("x", new Double(5));
@@ -338,12 +412,15 @@ public class TestEquations
     }
 
     /**
-     * <p>m7c.</p>
+     * <p>
+     * m7c.
+     * </p>
      *
-     * @throws java.lang.Exception if any.
+     * @throws java.lang.Exception
+     *             if any.
      */
     @Test
-    public void m7c () throws Exception
+    public void m7c() throws Exception
     {
         final Equ equ = Equ.getInstance(true);
         equ.getSupport().assignVariable("x", new Double(5));
@@ -352,12 +429,15 @@ public class TestEquations
     }
 
     /**
-     * <p>m8a.</p>
+     * <p>
+     * m8a.
+     * </p>
      *
-     * @throws java.lang.Exception if any.
+     * @throws java.lang.Exception
+     *             if any.
      */
     @Test
-    public void m8a () throws Exception
+    public void m8a() throws Exception
     {
         final Equ equ = Equ.getInstance(true);
         equ.getSupport().assignVariable("FacAmt", new Double(1500000));
@@ -368,12 +448,15 @@ public class TestEquations
     }
 
     /**
-     * <p>m8b.</p>
+     * <p>
+     * m8b.
+     * </p>
      *
-     * @throws java.lang.Exception if any.
+     * @throws java.lang.Exception
+     *             if any.
      */
     @Test
-    public void m8b () throws Exception
+    public void m8b() throws Exception
     {
         final Equ equ = Equ.getInstance(true);
         equ.getSupport().assignVariable("FacAmt", new Double(1500000));
@@ -384,12 +467,15 @@ public class TestEquations
     }
 
     /**
-     * <p>m8c.</p>
+     * <p>
+     * m8c.
+     * </p>
      *
-     * @throws java.lang.Exception if any.
+     * @throws java.lang.Exception
+     *             if any.
      */
     @Test
-    public void m8c () throws Exception
+    public void m8c() throws Exception
     {
         final Equ equ = Equ.getInstance(true);
         equ.getSupport().assignVariable("FacAmt", new Double(1500000));
@@ -400,12 +486,15 @@ public class TestEquations
     }
 
     /**
-     * <p>m9a.</p>
+     * <p>
+     * m9a.
+     * </p>
      *
-     * @throws java.lang.Exception if any.
+     * @throws java.lang.Exception
+     *             if any.
      */
     @Test
-    public void m9a () throws Exception
+    public void m9a() throws Exception
     {
         final Equ equ = Equ.getInstance(true);
         equ.getSupport().assignVariable("FacAmt", new Double(1500000.99));
@@ -414,12 +503,15 @@ public class TestEquations
     }
 
     /**
-     * <p>m9a2.</p>
+     * <p>
+     * m9a2.
+     * </p>
      *
-     * @throws java.lang.Exception if any.
+     * @throws java.lang.Exception
+     *             if any.
      */
     @Test
-    public void m9a2 () throws Exception
+    public void m9a2() throws Exception
     {
         final Equ equ = Equ.getInstance(true);
         equ.getSupport().assignVariable("FacAmt", new Double(1500000.99));
@@ -428,12 +520,15 @@ public class TestEquations
     }
 
     /**
-     * <p>m9b.</p>
+     * <p>
+     * m9b.
+     * </p>
      *
-     * @throws java.lang.Exception if any.
+     * @throws java.lang.Exception
+     *             if any.
      */
     @Test
-    public void m9b () throws Exception
+    public void m9b() throws Exception
     {
         final Equ equ = Equ.getInstance(true);
         final Double result = (Double) equ.evaluate("rate('tablename', 'a', 'b')");
@@ -441,12 +536,15 @@ public class TestEquations
     }
 
     /**
-     * <p>m9c.</p>
+     * <p>
+     * m9c.
+     * </p>
      *
-     * @throws java.lang.Exception if any.
+     * @throws java.lang.Exception
+     *             if any.
      */
     @Test
-    public void m9c () throws Exception
+    public void m9c() throws Exception
     {
         final Equ equ = Equ.getInstance(true);
         equ.getSupport().assignVariable("FacAmt", new Double(1500000));
@@ -455,38 +553,47 @@ public class TestEquations
     }
 
     /**
-     * <p>maxAndMinFunctions.</p>
+     * <p>
+     * maxAndMinFunctions.
+     * </p>
      *
-     * @throws java.lang.Exception if any.
+     * @throws java.lang.Exception
+     *             if any.
      */
     @Test
-    public void maxAndMinFunctions () throws Exception
+    public void maxAndMinFunctions() throws Exception
     {
         final Equ equ = Equ.getInstance(true);
-        final Double result = (Double) equ.evaluate("max(1,0) + min(2,0)");
-        Assert.assertEquals("maxAndMinFunctions", 1, result.doubleValue(), 0D);
+        final Long result = (Long) equ.evaluate("max(1,0) + min(2,0)");
+        Assert.assertEquals("maxAndMinFunctions", 1, result.intValue());
     }
 
     /**
-     * <p>min.</p>
+     * <p>
+     * min.
+     * </p>
      *
-     * @throws java.lang.Exception if any.
+     * @throws java.lang.Exception
+     *             if any.
      */
     @Test
-    public void min () throws Exception
+    public void min() throws Exception
     {
         final Equ equ = Equ.getInstance(true);
-        final Double result = (Double) equ.evaluate("min(1,2,3)");
+        final Double result = (Double) equ.evaluate("min(1,2.0,3)");
         Assert.assertEquals("result ", 1, result.doubleValue(), 0D);
     }
 
     /**
-     * <p>round.</p>
+     * <p>
+     * round.
+     * </p>
      *
-     * @throws java.lang.Exception if any.
+     * @throws java.lang.Exception
+     *             if any.
      */
     @Test
-    public void round () throws Exception
+    public void round() throws Exception
     {
         final Equ equ = Equ.getInstance(true);
         final Double result = (Double) equ.evaluate("round(10.495,1)");
@@ -494,15 +601,34 @@ public class TestEquations
     }
 
     /**
-     * <p>twoMaxFunctions.</p>
+     * <p>
+     * twoMaxFunctions.
+     * </p>
      *
-     * @throws java.lang.Exception if any.
+     * @throws java.lang.Exception
+     *             if any.
      */
     @Test
-    public void twoMaxFunctions () throws Exception
+    public void twoMaxDoubleFunctions() throws Exception
     {
         final Equ equ = Equ.getInstance(true);
-        final Double result = (Double) equ.evaluate("max(1,0) + max(2,0)");
-        Assert.assertEquals("twoMaxFunctions", 3, result.doubleValue(), 0D);
+        final Double result = (Double) equ.evaluate("max(1,2.25) + max(2,0)");
+        Assert.assertEquals("twoMaxFunctions", 4.25, result.doubleValue(), 0);
+    }
+
+    /**
+     * <p>
+     * twoMaxFunctions.
+     * </p>
+     *
+     * @throws java.lang.Exception
+     *             if any.
+     */
+    @Test
+    public void twoMaxFunctions() throws Exception
+    {
+        final Equ equ = Equ.getInstance(true);
+        final Long result = (Long) equ.evaluate("max(1,0) + max(2,0)");
+        Assert.assertEquals("twoMaxFunctions", 3, result.intValue());
     }
 }

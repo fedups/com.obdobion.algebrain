@@ -1,6 +1,7 @@
 package com.obdobion.algebrain;
 
-import java.util.Calendar;
+import java.time.LocalDateTime;
+import java.time.Month;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -75,7 +76,7 @@ public class TestDates
     public void compareEqualsWithLongValue() throws Exception
     {
         final Boolean result = (Boolean) Equ.getInstance(true).evaluate(
-                "date(-307044000000, '=123milli') = dateFmt('19600409', 'yyyyMMdd', '=123milli')");
+                "date(-307044000000) = dateFmt('19600409', 'yyyyMMdd')");
         Assert.assertTrue(result);
     }
 
@@ -122,10 +123,26 @@ public class TestDates
     @Test
     public void createAndReturnADate() throws Exception
     {
-        final Calendar result = (Calendar) Equ.getInstance(true).evaluate("dateFmt('19600409', 'yyyyMMdd', '')");
-        Assert.assertEquals("yyyy", 1960, result.get(Calendar.YEAR));
-        Assert.assertEquals("MM", Calendar.APRIL, result.get(Calendar.MONTH));
-        Assert.assertEquals("dd", 9, result.get(Calendar.DAY_OF_MONTH));
+        final LocalDateTime result = (LocalDateTime) Equ.getInstance(true)
+                .evaluate("dateFmt('19600409', 'yyyyMMdd', '')");
+        Assert.assertEquals("yyyy", 1960, result.getYear());
+        Assert.assertEquals("MM", Month.APRIL, result.getMonth());
+        Assert.assertEquals("dd", 9, result.getDayOfMonth());
+    }
+
+    /**
+     * <p>
+     * createAndReturnADate.
+     * </p>
+     *
+     * @throws java.lang.Exception
+     *             if any.
+     */
+    @Test
+    public void createAndReturnADate2() throws Exception
+    {
+        final LocalDateTime result = (LocalDateTime) Equ.getInstance(true).evaluate("(date('1960-04-09'))");
+        Assert.assertEquals("1960-04-09T00:00", result.toString());
     }
 
     /**
@@ -137,15 +154,36 @@ public class TestDates
      *             if any.
      */
     @Test
-    public void modifyingCalendar() throws Exception
+    public void modifyingCalendar2() throws Exception
     {
-        final Calendar result = (Calendar) Equ.getInstance(true)
-                .evaluate("date(dateFmt('196004090830', 'yyyyMMddHHmm', ''), '=10day =7h =31min'");
-        Assert.assertEquals("yyyy", 1960, result.get(Calendar.YEAR));
-        Assert.assertEquals("MM", Calendar.APRIL, result.get(Calendar.MONTH));
-        Assert.assertEquals("dd", 10, result.get(Calendar.DAY_OF_MONTH));
-        Assert.assertEquals("HH", 7, result.get(Calendar.HOUR_OF_DAY));
-        Assert.assertEquals("MIN", 31, result.get(Calendar.MINUTE));
+        final LocalDateTime result = (LocalDateTime) Equ.getInstance(true)
+                .evaluate("dateTime(dateTimeFmt('196004090830', 'yyyyMMddHHmm', ''), '=10day =7h =31min'");
+        Assert.assertEquals("yyyy", 1960, result.getYear());
+        Assert.assertEquals("MM", Month.APRIL, result.getMonth());
+        Assert.assertEquals("dd", 10, result.getDayOfMonth());
+        Assert.assertEquals("HH", 7, result.getHour());
+        Assert.assertEquals("MIN", 31, result.getMinute());
+    }
+
+    /**
+     * <p>
+     * modifyingCalendar.
+     * </p>
+     *
+     * @throws java.lang.Exception
+     *             if any.
+     */
+    @Test
+    public void modifyingCalendarWithoutTime() throws Exception
+    {
+        try
+        {
+            Equ.getInstance(true).evaluate("date(dateFmt('196004090830', 'yyyyMMddHHmm', ''), '=10day =7h =31min'");
+            Assert.fail("expected exception");
+        } catch (final Exception e)
+        {
+            Assert.assertEquals("function(date); Adjustments to time are not allowed", e.getMessage());
+        }
     }
 
     /**
@@ -194,7 +232,7 @@ public class TestDates
         final Boolean result = (Boolean) Equ
                 .getInstance(true)
                 .evaluate(
-                        "DayNumber:=-1;dateFmt('19600409', 'yyyyMMdd', cat(toString(DayNumber, '%+1.0f'), 'day')) < date('1960-04-09')");
+                        "DayNumber:=-1;dateFmt('19600409', 'yyyyMMdd', cat(toString(DayNumber, '%+1d'), 'day')) < date('1960-04-09')");
         Assert.assertTrue(result);
     }
 }
