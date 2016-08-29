@@ -1,6 +1,7 @@
 package com.obdobion.algebrain;
 
-import java.util.Calendar;
+import java.time.LocalDateTime;
+import java.time.Month;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -122,10 +123,11 @@ public class TestDates
     @Test
     public void createAndReturnADate() throws Exception
     {
-        final Calendar result = (Calendar) Equ.getInstance(true).evaluate("dateFmt('19600409', 'yyyyMMdd', '')");
-        Assert.assertEquals("yyyy", 1960, result.get(Calendar.YEAR));
-        Assert.assertEquals("MM", Calendar.APRIL, result.get(Calendar.MONTH));
-        Assert.assertEquals("dd", 9, result.get(Calendar.DAY_OF_MONTH));
+        final LocalDateTime result = (LocalDateTime) Equ.getInstance(true)
+                .evaluate("dateFmt('19600409', 'yyyyMMdd', '')");
+        Assert.assertEquals("yyyy", 1960, result.getYear());
+        Assert.assertEquals("MM", Month.APRIL, result.getMonth());
+        Assert.assertEquals("dd", 9, result.getDayOfMonth());
     }
 
     /**
@@ -139,13 +141,13 @@ public class TestDates
     @Test
     public void modifyingCalendar() throws Exception
     {
-        final Calendar result = (Calendar) Equ.getInstance(true)
+        final LocalDateTime result = (LocalDateTime) Equ.getInstance(true)
                 .evaluate("date(dateFmt('196004090830', 'yyyyMMddHHmm', ''), '=10day =7h =31min'");
-        Assert.assertEquals("yyyy", 1960, result.get(Calendar.YEAR));
-        Assert.assertEquals("MM", Calendar.APRIL, result.get(Calendar.MONTH));
-        Assert.assertEquals("dd", 10, result.get(Calendar.DAY_OF_MONTH));
-        Assert.assertEquals("HH", 7, result.get(Calendar.HOUR_OF_DAY));
-        Assert.assertEquals("MIN", 31, result.get(Calendar.MINUTE));
+        Assert.assertEquals("yyyy", 1960, result.getYear());
+        Assert.assertEquals("MM", Month.APRIL, result.getMonth());
+        Assert.assertEquals("dd", 10, result.getDayOfMonth());
+        Assert.assertEquals("HH", 7, result.getHour());
+        Assert.assertEquals("MIN", 31, result.getMinute());
     }
 
     /**

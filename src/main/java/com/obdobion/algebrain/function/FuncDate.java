@@ -1,8 +1,7 @@
 package com.obdobion.algebrain.function;
 
 import java.text.ParseException;
-import java.util.Calendar;
-import java.util.Date;
+import java.time.LocalDateTime;
 
 import com.obdobion.algebrain.Function;
 import com.obdobion.algebrain.ValueStack;
@@ -58,7 +57,7 @@ public class FuncDate extends Function
                 adjustments = values.popString();
 
             final Object dateInputObject = values.popWhatever();
-            Date convertedInputDate = null;
+            LocalDateTime convertedInputDate = null;
 
             if (dateInputObject instanceof String)
                 convertedInputDate = TemporalHelper.parseWithPredefinedParsers((String) dateInputObject);
@@ -67,11 +66,11 @@ public class FuncDate extends Function
             if (dateInputObject instanceof TokVariable)
                 throw new Exception("unresolved variable: " + ((TokVariable) dateInputObject).getName());
             else if (dateInputObject instanceof Long)
-                convertedInputDate = new Date((Long) dateInputObject);
+                convertedInputDate = CalendarFactory.at((Long) dateInputObject);
             else if (dateInputObject instanceof Double)
-                convertedInputDate = new Date(((Double) dateInputObject).longValue());
+                convertedInputDate = CalendarFactory.at(((Double) dateInputObject).longValue());
             else
-                convertedInputDate = ((Calendar) dateInputObject).getTime();
+                convertedInputDate = (LocalDateTime) dateInputObject;
 
             values.push(CalendarFactory.modify(convertedInputDate, adjustments));
 

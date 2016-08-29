@@ -2,10 +2,11 @@ package com.obdobion.algebrain;
 
 import java.io.UnsupportedEncodingException;
 import java.text.ParseException;
-import java.util.Calendar;
+import java.time.LocalDateTime;
 import java.util.Stack;
 
 import com.obdobion.algebrain.token.TokVariable;
+import com.obdobion.calendar.CalendarFactory;
 
 /**
  * <p>
@@ -86,8 +87,8 @@ public class ValueStack extends Stack<Object>
             return ((Number) fromStack).doubleValue();
         if (fromStack instanceof String)
             return Double.parseDouble((String) fromStack);
-        if (fromStack instanceof Calendar)
-            return ((Calendar) fromStack).getTime().getTime();
+        if (fromStack instanceof LocalDateTime)
+            return CalendarFactory.asDateLong((LocalDateTime) fromStack);
 
         final StringBuilder errMsg = new StringBuilder();
         errMsg.append("invalid type ");
