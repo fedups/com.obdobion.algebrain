@@ -30,7 +30,8 @@ public class OpCompareLess extends Operator
      * Constructor for OpCompareLess.
      * </p>
      *
-     * @param opTok a {@link com.obdobion.algebrain.EquPart} object.
+     * @param opTok
+     *            a {@link com.obdobion.algebrain.EquPart} object.
      */
     public OpCompareLess(final EquPart opTok)
     {
