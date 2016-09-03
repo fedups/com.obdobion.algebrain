@@ -31,8 +31,7 @@ public class OpMod extends Operator
      * Constructor for OpMod.
      * </p>
      *
-     * @param opTok
-     *            a {@link com.obdobion.algebrain.EquPart} object.
+     * @param opTok a {@link com.obdobion.algebrain.EquPart} object.
      */
     public OpMod(final EquPart opTok)
     {

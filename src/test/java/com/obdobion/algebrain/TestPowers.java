@@ -18,8 +18,7 @@ public class TestPowers
      * power1.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void power1() throws Exception
@@ -33,8 +32,7 @@ public class TestPowers
      * power2.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void power2() throws Exception
@@ -48,8 +46,7 @@ public class TestPowers
      * power3.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void power3() throws Exception
@@ -63,8 +60,7 @@ public class TestPowers
      * power4.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void power4() throws Exception
@@ -78,8 +74,7 @@ public class TestPowers
      * power5.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void power5() throws Exception
@@ -93,8 +88,7 @@ public class TestPowers
      * powerFloat.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void powerFloat() throws Exception

@@ -37,8 +37,7 @@ public class FuncDate extends Function
      * Constructor for FuncDate.
      * </p>
      *
-     * @param var
-     *            a {@link com.obdobion.algebrain.token.TokVariable} object.
+     * @param var a {@link com.obdobion.algebrain.token.TokVariable} object.
      */
     public FuncDate(final TokVariable var)
     {

@@ -132,8 +132,7 @@ public class DefaultEquationSupport implements EquationSupport
      * Setter for the field <code>variables</code>.
      * </p>
      *
-     * @param newVariables
-     *            a {@link java.util.Hashtable} object.
+     * @param newVariables a {@link java.util.Hashtable} object.
      */
     public void setVariables(final Hashtable<String, Object> newVariables)
     {

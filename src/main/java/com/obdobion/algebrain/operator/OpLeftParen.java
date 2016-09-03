@@ -5,7 +5,9 @@ import com.obdobion.algebrain.Operator;
 import com.obdobion.algebrain.ValueStack;
 
 /**
- * <p>OpLeftParen class.</p>
+ * <p>
+ * OpLeftParen class.
+ * </p>
  *
  * @author Chris DeGreef fedupforone@gmail.com
  * @since 1.3.9
@@ -13,7 +15,9 @@ import com.obdobion.algebrain.ValueStack;
 public class OpLeftParen extends Operator
 {
     /**
-     * <p>Constructor for OpLeftParen.</p>
+     * <p>
+     * Constructor for OpLeftParen.
+     * </p>
      */
     public OpLeftParen()
     {
@@ -21,7 +25,9 @@ public class OpLeftParen extends Operator
     }
 
     /**
-     * <p>Constructor for OpLeftParen.</p>
+     * <p>
+     * Constructor for OpLeftParen.
+     * </p>
      *
      * @param opTok a {@link com.obdobion.algebrain.EquPart} object.
      */

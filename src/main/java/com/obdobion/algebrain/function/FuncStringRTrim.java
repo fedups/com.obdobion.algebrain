@@ -7,7 +7,9 @@ import com.obdobion.algebrain.ValueStack;
 import com.obdobion.algebrain.token.TokVariable;
 
 /**
- * <p>FuncStringRTrim class.</p>
+ * <p>
+ * FuncStringRTrim class.
+ * </p>
  *
  * @author Chris DeGreef fedupforone@gmail.com
  * @since 1.3.9
@@ -15,7 +17,9 @@ import com.obdobion.algebrain.token.TokVariable;
 public class FuncStringRTrim extends Function
 {
     /**
-     * <p>Constructor for FuncStringRTrim.</p>
+     * <p>
+     * Constructor for FuncStringRTrim.
+     * </p>
      */
     public FuncStringRTrim()
     {
@@ -23,7 +27,9 @@ public class FuncStringRTrim extends Function
     }
 
     /**
-     * <p>Constructor for FuncStringRTrim.</p>
+     * <p>
+     * Constructor for FuncStringRTrim.
+     * </p>
      *
      * @param var a {@link com.obdobion.algebrain.token.TokVariable} object.
      */
@@ -34,7 +40,7 @@ public class FuncStringRTrim extends Function
 
     /** {@inheritDoc} */
     @Override
-    public void resolve (final ValueStack values) throws Exception
+    public void resolve(final ValueStack values) throws Exception
     {
         if (values.size() < getParameterCount())
             throw new Exception("missing operands for " + toString());
@@ -58,7 +64,7 @@ public class FuncStringRTrim extends Function
 
     /** {@inheritDoc} */
     @Override
-    public String toString ()
+    public String toString()
     {
         return "function(rtrim)";
     }

@@ -7,7 +7,9 @@ import com.obdobion.algebrain.Operator;
 import com.obdobion.algebrain.ValueStack;
 
 /**
- * <p>OpCompareEqual class.</p>
+ * <p>
+ * OpCompareEqual class.
+ * </p>
  *
  * @author Chris DeGreef fedupforone@gmail.com
  * @since 1.3.9
@@ -15,14 +17,17 @@ import com.obdobion.algebrain.ValueStack;
 public class OpCompareEqual extends Operator
 {
     /**
-     * <p>Constructor for OpCompareEqual.</p>
+     * <p>
+     * Constructor for OpCompareEqual.
+     * </p>
      */
     public OpCompareEqual()
-    {
-    }
+    {}
 
     /**
-     * <p>Constructor for OpCompareEqual.</p>
+     * <p>
+     * Constructor for OpCompareEqual.
+     * </p>
      *
      * @param opTok a {@link com.obdobion.algebrain.EquPart} object.
      */
@@ -33,14 +38,14 @@ public class OpCompareEqual extends Operator
 
     /** {@inheritDoc} */
     @Override
-    protected int precedence ()
+    protected int precedence()
     {
         return 8;
     }
 
     /** {@inheritDoc} */
     @Override
-    public void resolve (final ValueStack values) throws Exception
+    public void resolve(final ValueStack values) throws Exception
     {
         if (values.size() < 2)
             throw new Exception("missing operands for " + toString());
@@ -59,7 +64,7 @@ public class OpCompareEqual extends Operator
 
     /** {@inheritDoc} */
     @Override
-    public String toString ()
+    public String toString()
     {
         return "op(compare equal)";
     }

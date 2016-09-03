@@ -10,7 +10,9 @@ import com.obdobion.algebrain.ValueStack;
 import com.obdobion.algebrain.token.TokVariable;
 
 /**
- * <p>OpAssignment class.</p>
+ * <p>
+ * OpAssignment class.
+ * </p>
  *
  * @author Chris DeGreef fedupforone@gmail.com
  * @since 1.3.9
@@ -18,7 +20,9 @@ import com.obdobion.algebrain.token.TokVariable;
 public class OpAssignment extends Operator
 {
     /**
-     * <p>Constructor for OpAssignment.</p>
+     * <p>
+     * Constructor for OpAssignment.
+     * </p>
      */
     public OpAssignment()
     {
@@ -26,7 +30,9 @@ public class OpAssignment extends Operator
     }
 
     /**
-     * <p>Constructor for OpAssignment.</p>
+     * <p>
+     * Constructor for OpAssignment.
+     * </p>
      *
      * @param opTok a {@link com.obdobion.algebrain.EquPart} object.
      */
@@ -37,14 +43,14 @@ public class OpAssignment extends Operator
 
     /** {@inheritDoc} */
     @Override
-    protected int precedence ()
+    protected int precedence()
     {
         return 990;
     }
 
     /** {@inheritDoc} */
     @Override
-    public boolean preceeds (final Operation rightOp)
+    public boolean preceeds(final Operation rightOp)
     {
         /*
          * This allows for assigning the same value to multiple variables. <br>
@@ -58,7 +64,7 @@ public class OpAssignment extends Operator
 
     /** {@inheritDoc} */
     @Override
-    public void resolve (final ValueStack values) throws Exception
+    public void resolve(final ValueStack values) throws Exception
     {
         if (values.size() < 2)
             throw new Exception("missing operands for " + toString());
@@ -67,10 +73,7 @@ public class OpAssignment extends Operator
             final Object op2 = values.popWhatever();
             final Object op1 = values.popWhatever();
 
-            if (op2 instanceof TokVariable)
-            {
-                throw new Exception("invalid assignment value: " + op2.toString());
-            }
+            if (op2 instanceof TokVariable) { throw new Exception("invalid assignment value: " + op2.toString()); }
 
             if (op1 instanceof TokVariable && !(op2 instanceof TokVariable))
             {
@@ -97,7 +100,7 @@ public class OpAssignment extends Operator
 
     /** {@inheritDoc} */
     @Override
-    public String toString ()
+    public String toString()
     {
         return "op(assignment)";
     }

@@ -4,7 +4,9 @@ import java.util.Hashtable;
 import java.util.List;
 
 /**
- * <p>EquationSupport interface.</p>
+ * <p>
+ * EquationSupport interface.
+ * </p>
  *
  * @author Chris DeGreef fedupforone@gmail.com
  * @since 1.3.9
@@ -13,30 +15,38 @@ public interface EquationSupport
 {
 
     /**
-     * <p>assignVariable.</p>
+     * <p>
+     * assignVariable.
+     * </p>
      *
      * @param variableName a {@link java.lang.String} object.
      * @param value a {@link java.lang.Object} object.
      * @throws java.lang.Exception if any.
      */
-    void assignVariable (String variableName, Object value) throws Exception;
+    void assignVariable(String variableName, Object value) throws Exception;
 
     /**
-     * <p>getVariableNames.</p>
+     * <p>
+     * getVariableNames.
+     * </p>
      *
      * @return a {@link java.util.List} object.
      */
-    List<String> getVariableNames ();
+    List<String> getVariableNames();
 
     /**
-     * <p>removeVariable.</p>
+     * <p>
+     * removeVariable.
+     * </p>
      *
      * @param varName a {@link java.lang.String} object.
      */
-    void removeVariable (String varName);
+    void removeVariable(String varName);
 
     /**
-     * <p>resolveRate.</p>
+     * <p>
+     * resolveRate.
+     * </p>
      *
      * @param tableName a {@link java.lang.String} object.
      * @param baseDate a {@link java.sql.Date} object.
@@ -44,10 +54,12 @@ public interface EquationSupport
      * @return a {@link java.util.Hashtable} object.
      * @throws java.lang.Exception if any.
      */
-    Hashtable<Double, Double> resolveRate (String tableName, java.sql.Date baseDate, double tableKey) throws Exception;
+    Hashtable<Double, Double> resolveRate(String tableName, java.sql.Date baseDate, double tableKey) throws Exception;
 
     /**
-     * <p>resolveRate.</p>
+     * <p>
+     * resolveRate.
+     * </p>
      *
      * @param tableName a {@link java.lang.String} object.
      * @param baseDate a {@link java.sql.Date} object.
@@ -59,22 +71,24 @@ public interface EquationSupport
      * @return a double.
      * @throws java.lang.Exception if any.
      */
-    double resolveRate (
-        String tableName,
-        java.sql.Date baseDate,
-        String key1,
-        String key2,
-        String key3,
-        String key4,
-        String key5) throws Exception;
+    double resolveRate(
+            String tableName,
+            java.sql.Date baseDate,
+            String key1,
+            String key2,
+            String key3,
+            String key4,
+            String key5) throws Exception;
 
     /**
-     * <p>resolveVariable.</p>
+     * <p>
+     * resolveVariable.
+     * </p>
      *
      * @param variableName a {@link java.lang.String} object.
      * @param baseDate a {@link java.sql.Date} object.
      * @return a {@link java.lang.Object} object.
      * @throws java.lang.Exception if any.
      */
-    Object resolveVariable (String variableName, java.sql.Date baseDate) throws Exception;
+    Object resolveVariable(String variableName, java.sql.Date baseDate) throws Exception;
 }

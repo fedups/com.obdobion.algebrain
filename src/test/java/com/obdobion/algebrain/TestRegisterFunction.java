@@ -20,8 +20,7 @@ public class TestRegisterFunction
      * myFunction.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void myFunction() throws Exception

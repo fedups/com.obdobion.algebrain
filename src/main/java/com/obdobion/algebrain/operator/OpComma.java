@@ -5,7 +5,9 @@ import com.obdobion.algebrain.Operator;
 import com.obdobion.algebrain.ValueStack;
 
 /**
- * <p>OpComma class.</p>
+ * <p>
+ * OpComma class.
+ * </p>
  *
  * @author Chris DeGreef fedupforone@gmail.com
  * @since 1.3.9
@@ -13,7 +15,9 @@ import com.obdobion.algebrain.ValueStack;
 public class OpComma extends Operator
 {
     /**
-     * <p>Constructor for OpComma.</p>
+     * <p>
+     * Constructor for OpComma.
+     * </p>
      */
     public OpComma()
     {
@@ -21,7 +25,9 @@ public class OpComma extends Operator
     }
 
     /**
-     * <p>Constructor for OpComma.</p>
+     * <p>
+     * Constructor for OpComma.
+     * </p>
      *
      * @param opTok a {@link com.obdobion.algebrain.EquPart} object.
      */

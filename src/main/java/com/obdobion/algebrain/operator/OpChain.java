@@ -7,7 +7,9 @@ import com.obdobion.algebrain.Operator;
 import com.obdobion.algebrain.ValueStack;
 
 /**
- * <p>OpChain class.</p>
+ * <p>
+ * OpChain class.
+ * </p>
  *
  * @author Chris DeGreef fedupforone@gmail.com
  * @since 1.3.9
@@ -15,7 +17,9 @@ import com.obdobion.algebrain.ValueStack;
 public class OpChain extends Operator
 {
     /**
-     * <p>Constructor for OpChain.</p>
+     * <p>
+     * Constructor for OpChain.
+     * </p>
      */
     public OpChain()
     {
@@ -23,7 +27,9 @@ public class OpChain extends Operator
     }
 
     /**
-     * <p>Constructor for OpChain.</p>
+     * <p>
+     * Constructor for OpChain.
+     * </p>
      *
      * @param opTok a {@link com.obdobion.algebrain.EquPart} object.
      */

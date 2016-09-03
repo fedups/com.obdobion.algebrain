@@ -7,7 +7,9 @@ import com.obdobion.algebrain.ValueStack;
 import com.obdobion.algebrain.token.TokVariable;
 
 /**
- * <p>FuncStringUpCase class.</p>
+ * <p>
+ * FuncStringUpCase class.
+ * </p>
  *
  * @author Chris DeGreef fedupforone@gmail.com
  * @since 1.3.9
@@ -15,7 +17,9 @@ import com.obdobion.algebrain.token.TokVariable;
 public class FuncStringUpCase extends Function
 {
     /**
-     * <p>Constructor for FuncStringUpCase.</p>
+     * <p>
+     * Constructor for FuncStringUpCase.
+     * </p>
      */
     public FuncStringUpCase()
     {
@@ -23,7 +27,9 @@ public class FuncStringUpCase extends Function
     }
 
     /**
-     * <p>Constructor for FuncStringUpCase.</p>
+     * <p>
+     * Constructor for FuncStringUpCase.
+     * </p>
      *
      * @param var a {@link com.obdobion.algebrain.token.TokVariable} object.
      */
@@ -34,7 +40,7 @@ public class FuncStringUpCase extends Function
 
     /** {@inheritDoc} */
     @Override
-    public void resolve (final ValueStack values) throws Exception
+    public void resolve(final ValueStack values) throws Exception
     {
         if (values.size() < getParameterCount())
             throw new Exception("missing operands for " + toString());
@@ -52,7 +58,7 @@ public class FuncStringUpCase extends Function
 
     /** {@inheritDoc} */
     @Override
-    public String toString ()
+    public String toString()
     {
         return "function(ucase)";
     }

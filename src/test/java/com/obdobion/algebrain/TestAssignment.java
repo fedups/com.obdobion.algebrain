@@ -18,8 +18,7 @@ public class TestAssignment
      * conditionalAssignmentTarget.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void conditionalAssignmentTarget() throws Exception
@@ -37,8 +36,7 @@ public class TestAssignment
      * equalsInsteadOfAssignment.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void equalsInsteadOfAssignment() throws Exception
@@ -62,8 +60,7 @@ public class TestAssignment
      * finalized.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void finalized() throws Exception
@@ -84,8 +81,7 @@ public class TestAssignment
      * internalAssignments.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void internalAssignments() throws Exception
@@ -106,8 +102,7 @@ public class TestAssignment
      * invalidTarget.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void invalidTarget() throws Exception
@@ -128,8 +123,7 @@ public class TestAssignment
      * multipleAssignments.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void multipleAssignments() throws Exception
@@ -148,8 +142,7 @@ public class TestAssignment
      * multipleAssignments2.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void multipleAssignments2() throws Exception
@@ -168,8 +161,7 @@ public class TestAssignment
      * multipleAssignments3.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void multipleAssignments3() throws Exception
@@ -190,8 +182,7 @@ public class TestAssignment
      * unknownVariableInComparison.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void unknownVariableInComparison() throws Exception
@@ -214,8 +205,7 @@ public class TestAssignment
      * withoutSupport.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void withoutSupport() throws Exception
@@ -232,8 +222,7 @@ public class TestAssignment
      * withSupport.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void withSupport() throws Exception

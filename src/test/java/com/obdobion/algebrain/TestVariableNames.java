@@ -18,8 +18,7 @@ public class TestVariableNames
      * assignVariableFirst.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void assignVariableFirst() throws Exception
@@ -35,8 +34,7 @@ public class TestVariableNames
      * assignVariableSecond.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void assignVariableSecond() throws Exception
@@ -52,8 +50,7 @@ public class TestVariableNames
      * dots.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void dots() throws Exception
@@ -68,8 +65,7 @@ public class TestVariableNames
      * doubleAsStringError.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void doubleAsStringError() throws Exception
@@ -89,8 +85,7 @@ public class TestVariableNames
      * leadingDot.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void leadingDot() throws Exception
@@ -105,8 +100,7 @@ public class TestVariableNames
      * leadingUnderbar.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void leadingUnderbar() throws Exception
@@ -121,8 +115,7 @@ public class TestVariableNames
      * undefinedVariableAsString.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void undefinedVariableAsString() throws Exception
@@ -136,8 +129,7 @@ public class TestVariableNames
      * unquotedPhraseError.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void unquotedPhraseError() throws Exception

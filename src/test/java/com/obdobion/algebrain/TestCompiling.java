@@ -6,7 +6,9 @@ import org.junit.Assert;
 import org.junit.Test;
 
 /**
- * <p>TestCompiling class.</p>
+ * <p>
+ * TestCompiling class.
+ * </p>
  *
  * @author Chris DeGreef fedupforone@gmail.com
  * @since 1.3.9
@@ -14,12 +16,14 @@ import org.junit.Test;
 public class TestCompiling
 {
     /**
-     * <p>duplicateVariablesAreReturnedOnce.</p>
+     * <p>
+     * duplicateVariablesAreReturnedOnce.
+     * </p>
      *
      * @throws java.lang.Exception if any.
      */
     @Test
-    public void duplicateVariablesAreReturnedOnce () throws Exception
+    public void duplicateVariablesAreReturnedOnce() throws Exception
     {
         final Set<String> variableNames = Equ.getInstance().compile("rate(tablename, 'a', alpha(tablename))");
         Assert.assertEquals(1, variableNames.size());
@@ -28,12 +32,14 @@ public class TestCompiling
     }
 
     /**
-     * <p>literalsAreNotInVariableReturns.</p>
+     * <p>
+     * literalsAreNotInVariableReturns.
+     * </p>
      *
      * @throws java.lang.Exception if any.
      */
     @Test
-    public void literalsAreNotInVariableReturns () throws Exception
+    public void literalsAreNotInVariableReturns() throws Exception
     {
         final Set<String> variableNames = Equ.getInstance().compile("rate(tablename, 'a', alpha(FacAmt))");
         Assert.assertEquals(2, variableNames.size());

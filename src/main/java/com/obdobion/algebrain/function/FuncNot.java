@@ -7,7 +7,9 @@ import com.obdobion.algebrain.ValueStack;
 import com.obdobion.algebrain.token.TokVariable;
 
 /**
- * <p>FuncNot class.</p>
+ * <p>
+ * FuncNot class.
+ * </p>
  *
  * @author Chris DeGreef fedupforone@gmail.com
  * @since 1.3.9
@@ -15,7 +17,9 @@ import com.obdobion.algebrain.token.TokVariable;
 public class FuncNot extends Function
 {
     /**
-     * <p>Constructor for FuncNot.</p>
+     * <p>
+     * Constructor for FuncNot.
+     * </p>
      */
     public FuncNot()
     {
@@ -23,7 +27,9 @@ public class FuncNot extends Function
     }
 
     /**
-     * <p>Constructor for FuncNot.</p>
+     * <p>
+     * Constructor for FuncNot.
+     * </p>
      *
      * @param var a {@link com.obdobion.algebrain.token.TokVariable} object.
      */
@@ -34,7 +40,7 @@ public class FuncNot extends Function
 
     /** {@inheritDoc} */
     @Override
-    public void resolve (final ValueStack values) throws Exception
+    public void resolve(final ValueStack values) throws Exception
     {
         if (values.size() < 1)
             throw new Exception("missing operand for " + toString());
@@ -50,7 +56,7 @@ public class FuncNot extends Function
 
     /** {@inheritDoc} */
     @Override
-    public String toString ()
+    public String toString()
     {
         return "function(not)";
     }

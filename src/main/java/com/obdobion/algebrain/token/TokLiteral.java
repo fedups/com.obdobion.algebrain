@@ -3,7 +3,9 @@ package com.obdobion.algebrain.token;
 import com.obdobion.algebrain.ValueStack;
 
 /**
- * <p>TokLiteral class.</p>
+ * <p>
+ * TokLiteral class.
+ * </p>
  *
  * @author Chris DeGreef fedupforone@gmail.com
  * @since 1.3.9
@@ -14,7 +16,9 @@ public class TokLiteral extends TokOperand
     private int        delims;
 
     /**
-     * <p>Constructor for TokLiteral.</p>
+     * <p>
+     * Constructor for TokLiteral.
+     * </p>
      *
      * @param p_delimiter a char.
      */
@@ -33,7 +37,9 @@ public class TokLiteral extends TokOperand
     }
 
     /**
-     * <p>Getter for the field <code>delims</code>.</p>
+     * <p>
+     * Getter for the field <code>delims</code>.
+     * </p>
      *
      * @return a int.
      */
@@ -60,7 +66,9 @@ public class TokLiteral extends TokOperand
     }
 
     /**
-     * <p>Setter for the field <code>delims</code>.</p>
+     * <p>
+     * Setter for the field <code>delims</code>.
+     * </p>
      *
      * @param newDelims a int.
      */

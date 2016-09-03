@@ -18,8 +18,7 @@ public class TestReuse
      * reuseEqu.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     @SuppressWarnings("null")
@@ -52,8 +51,7 @@ public class TestReuse
      * reuseVarAssignment.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void reuseVarAssignment() throws Exception

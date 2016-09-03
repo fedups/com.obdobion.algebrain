@@ -18,8 +18,7 @@ public class TestAndOr
      * conditionalAND1.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void conditionalAND1() throws Exception
@@ -33,8 +32,7 @@ public class TestAndOr
      * conditionalAND2.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void conditionalAND2() throws Exception
@@ -48,8 +46,7 @@ public class TestAndOr
      * conditionalAND3.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void conditionalAND3() throws Exception
@@ -63,8 +60,7 @@ public class TestAndOr
      * conditionalAND4.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void conditionalAND4() throws Exception
@@ -78,8 +74,7 @@ public class TestAndOr
      * conditionalAND5.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void conditionalAND5() throws Exception
@@ -93,8 +88,7 @@ public class TestAndOr
      * conditionalOR1.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void conditionalOR1() throws Exception
@@ -108,8 +102,7 @@ public class TestAndOr
      * conditionalOR2.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void conditionalOR2() throws Exception
@@ -123,8 +116,7 @@ public class TestAndOr
      * conditionalOR3.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void conditionalOR3() throws Exception
@@ -138,8 +130,7 @@ public class TestAndOr
      * conditionalOR4.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void conditionalOR4() throws Exception
@@ -153,8 +144,7 @@ public class TestAndOr
      * conditionalOR5.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void conditionalOR5() throws Exception
@@ -168,8 +158,7 @@ public class TestAndOr
      * conditionalPrecedence.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void conditionalPrecedence() throws Exception
@@ -183,8 +172,7 @@ public class TestAndOr
      * greaterAndLess.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void greaterAndLess() throws Exception
@@ -198,8 +186,7 @@ public class TestAndOr
      * nand1.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void nand1() throws Exception
@@ -213,8 +200,7 @@ public class TestAndOr
      * nand2.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void nand2() throws Exception
@@ -228,8 +214,7 @@ public class TestAndOr
      * nand3.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void nand3() throws Exception
@@ -243,8 +228,7 @@ public class TestAndOr
      * nand4.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void nand4() throws Exception
@@ -254,7 +238,9 @@ public class TestAndOr
     }
 
     /**
-     * <p>nor1.</p>
+     * <p>
+     * nor1.
+     * </p>
      *
      * @throws java.lang.Exception if any.
      */
@@ -266,7 +252,9 @@ public class TestAndOr
     }
 
     /**
-     * <p>nor2.</p>
+     * <p>
+     * nor2.
+     * </p>
      *
      * @throws java.lang.Exception if any.
      */
@@ -278,7 +266,9 @@ public class TestAndOr
     }
 
     /**
-     * <p>nor3.</p>
+     * <p>
+     * nor3.
+     * </p>
      *
      * @throws java.lang.Exception if any.
      */
@@ -290,7 +280,9 @@ public class TestAndOr
     }
 
     /**
-     * <p>nor4.</p>
+     * <p>
+     * nor4.
+     * </p>
      *
      * @throws java.lang.Exception if any.
      */
@@ -302,7 +294,9 @@ public class TestAndOr
     }
 
     /**
-     * <p>xnor1.</p>
+     * <p>
+     * xnor1.
+     * </p>
      *
      * @throws java.lang.Exception if any.
      */
@@ -314,7 +308,9 @@ public class TestAndOr
     }
 
     /**
-     * <p>xnor2.</p>
+     * <p>
+     * xnor2.
+     * </p>
      *
      * @throws java.lang.Exception if any.
      */
@@ -326,7 +322,9 @@ public class TestAndOr
     }
 
     /**
-     * <p>xnor3.</p>
+     * <p>
+     * xnor3.
+     * </p>
      *
      * @throws java.lang.Exception if any.
      */
@@ -338,7 +336,9 @@ public class TestAndOr
     }
 
     /**
-     * <p>xnor4.</p>
+     * <p>
+     * xnor4.
+     * </p>
      *
      * @throws java.lang.Exception if any.
      */
@@ -350,7 +350,9 @@ public class TestAndOr
     }
 
     /**
-     * <p>xor1.</p>
+     * <p>
+     * xor1.
+     * </p>
      *
      * @throws java.lang.Exception if any.
      */
@@ -362,7 +364,9 @@ public class TestAndOr
     }
 
     /**
-     * <p>xor2.</p>
+     * <p>
+     * xor2.
+     * </p>
      *
      * @throws java.lang.Exception if any.
      */
@@ -374,7 +378,9 @@ public class TestAndOr
     }
 
     /**
-     * <p>xor3.</p>
+     * <p>
+     * xor3.
+     * </p>
      *
      * @throws java.lang.Exception if any.
      */
@@ -386,7 +392,9 @@ public class TestAndOr
     }
 
     /**
-     * <p>xor4.</p>
+     * <p>
+     * xor4.
+     * </p>
      *
      * @throws java.lang.Exception if any.
      */

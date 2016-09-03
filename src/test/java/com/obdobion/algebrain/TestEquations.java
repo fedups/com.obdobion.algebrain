@@ -18,8 +18,7 @@ public class TestEquations
      * booleanEqual.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void booleanEqual() throws Exception
@@ -34,8 +33,7 @@ public class TestEquations
      * booleanGreater.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void booleanGreater() throws Exception
@@ -50,8 +48,7 @@ public class TestEquations
      * booleanLess.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void booleanLess() throws Exception
@@ -66,8 +63,7 @@ public class TestEquations
      * booleanNotEqual.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void booleanNotEqual() throws Exception
@@ -82,8 +78,7 @@ public class TestEquations
      * booleanNotGreater.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void booleanNotGreater() throws Exception
@@ -98,8 +93,7 @@ public class TestEquations
      * booleanNotLess.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void booleanNotLess() throws Exception
@@ -114,8 +108,7 @@ public class TestEquations
      * m10a.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void m10a() throws Exception
@@ -130,8 +123,7 @@ public class TestEquations
      * m10b.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void m10b() throws Exception
@@ -146,8 +138,7 @@ public class TestEquations
      * m10c.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void m10c() throws Exception
@@ -162,8 +153,7 @@ public class TestEquations
      * m10d.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void m10d() throws Exception
@@ -178,8 +168,7 @@ public class TestEquations
      * m1a.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void m1a() throws Exception
@@ -195,8 +184,7 @@ public class TestEquations
      * m1b.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void m1b() throws Exception
@@ -212,8 +200,7 @@ public class TestEquations
      * m2.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void m2() throws Exception
@@ -229,8 +216,7 @@ public class TestEquations
      * m3a.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void m3a() throws Exception
@@ -246,8 +232,7 @@ public class TestEquations
      * m3b.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void m3b() throws Exception
@@ -264,8 +249,7 @@ public class TestEquations
      * m4a.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void m4a() throws Exception
@@ -281,8 +265,7 @@ public class TestEquations
      * m4b.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void m4b() throws Exception
@@ -298,8 +281,7 @@ public class TestEquations
      * m5a.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void m5a() throws Exception
@@ -315,8 +297,7 @@ public class TestEquations
      * m5b.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void m5b() throws Exception
@@ -332,8 +313,7 @@ public class TestEquations
      * m6a.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void m6a() throws Exception
@@ -349,8 +329,7 @@ public class TestEquations
      * m6b.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void m6b() throws Exception
@@ -366,8 +345,7 @@ public class TestEquations
      * m6c.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void m6c() throws Exception
@@ -383,8 +361,7 @@ public class TestEquations
      * m7a.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void m7a() throws Exception
@@ -399,8 +376,7 @@ public class TestEquations
      * m7b.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void m7b() throws Exception
@@ -416,8 +392,7 @@ public class TestEquations
      * m7c.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void m7c() throws Exception
@@ -433,8 +408,7 @@ public class TestEquations
      * m8a.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void m8a() throws Exception
@@ -452,8 +426,7 @@ public class TestEquations
      * m8b.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void m8b() throws Exception
@@ -471,8 +444,7 @@ public class TestEquations
      * m8c.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void m8c() throws Exception
@@ -490,8 +462,7 @@ public class TestEquations
      * m9a.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void m9a() throws Exception
@@ -507,8 +478,7 @@ public class TestEquations
      * m9a2.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void m9a2() throws Exception
@@ -524,8 +494,7 @@ public class TestEquations
      * m9b.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void m9b() throws Exception
@@ -540,8 +509,7 @@ public class TestEquations
      * m9c.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void m9c() throws Exception
@@ -557,8 +525,7 @@ public class TestEquations
      * maxAndMinFunctions.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void maxAndMinFunctions() throws Exception
@@ -573,8 +540,7 @@ public class TestEquations
      * min.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void min() throws Exception
@@ -589,8 +555,7 @@ public class TestEquations
      * round.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void round() throws Exception
@@ -605,8 +570,7 @@ public class TestEquations
      * twoMaxFunctions.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void twoMaxDoubleFunctions() throws Exception
@@ -621,8 +585,7 @@ public class TestEquations
      * twoMaxFunctions.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void twoMaxFunctions() throws Exception

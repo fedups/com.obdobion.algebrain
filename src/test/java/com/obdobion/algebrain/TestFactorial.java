@@ -18,8 +18,7 @@ public class TestFactorial
      * binomialCoefficient.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void binomialCoefficient() throws Exception
@@ -37,8 +36,7 @@ public class TestFactorial
      * fac1.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void fac1() throws Exception
@@ -52,8 +50,7 @@ public class TestFactorial
      * fraction.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void fraction() throws Exception
@@ -67,8 +64,7 @@ public class TestFactorial
      * negative.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void negative() throws Exception
@@ -88,8 +84,7 @@ public class TestFactorial
      * precedence.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void precedence() throws Exception
@@ -103,8 +98,7 @@ public class TestFactorial
      * preliminaryResult.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void preliminaryResult() throws Exception
@@ -118,8 +112,7 @@ public class TestFactorial
      * tooLarge.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void tooLarge() throws Exception
@@ -139,8 +132,7 @@ public class TestFactorial
      * veryLarge.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void veryLarge() throws Exception
@@ -154,8 +146,7 @@ public class TestFactorial
      * zero.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void zero() throws Exception

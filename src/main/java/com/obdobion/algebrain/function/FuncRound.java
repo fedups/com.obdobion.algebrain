@@ -7,7 +7,9 @@ import com.obdobion.algebrain.ValueStack;
 import com.obdobion.algebrain.token.TokVariable;
 
 /**
- * <p>FuncRound class.</p>
+ * <p>
+ * FuncRound class.
+ * </p>
  *
  * @author Chris DeGreef fedupforone@gmail.com
  * @since 1.3.9
@@ -16,7 +18,9 @@ public class FuncRound extends Function
 {
 
     /**
-     * <p>Constructor for FuncRound.</p>
+     * <p>
+     * Constructor for FuncRound.
+     * </p>
      */
     public FuncRound()
     {
@@ -24,7 +28,9 @@ public class FuncRound extends Function
     }
 
     /**
-     * <p>Constructor for FuncRound.</p>
+     * <p>
+     * Constructor for FuncRound.
+     * </p>
      *
      * @param var a {@link com.obdobion.algebrain.token.TokVariable} object.
      */
@@ -40,7 +46,7 @@ public class FuncRound extends Function
      * decimal places in which to round to.
      */
     @Override
-    public void resolve (final ValueStack values) throws Exception
+    public void resolve(final ValueStack values) throws Exception
     {
         if (values.size() < 2)
             throw new Exception("missing operands for " + toString());
@@ -57,7 +63,7 @@ public class FuncRound extends Function
 
     /** {@inheritDoc} */
     @Override
-    public String toString ()
+    public String toString()
     {
         return "function(round)";
     }

@@ -8,7 +8,9 @@ import com.obdobion.algebrain.ValueStack;
 import com.obdobion.algebrain.token.TokVariable;
 
 /**
- * <p>FuncStringSubstr class.</p>
+ * <p>
+ * FuncStringSubstr class.
+ * </p>
  *
  * @author Chris DeGreef fedupforone@gmail.com
  * @since 1.3.9
@@ -16,7 +18,9 @@ import com.obdobion.algebrain.token.TokVariable;
 public class FuncStringSubstr extends Function
 {
     /**
-     * <p>Constructor for FuncStringSubstr.</p>
+     * <p>
+     * Constructor for FuncStringSubstr.
+     * </p>
      */
     public FuncStringSubstr()
     {
@@ -24,7 +28,9 @@ public class FuncStringSubstr extends Function
     }
 
     /**
-     * <p>Constructor for FuncStringSubstr.</p>
+     * <p>
+     * Constructor for FuncStringSubstr.
+     * </p>
      *
      * @param var a {@link com.obdobion.algebrain.token.TokVariable} object.
      */
@@ -35,7 +41,7 @@ public class FuncStringSubstr extends Function
 
     /** {@inheritDoc} */
     @Override
-    public void resolve (final ValueStack values) throws Exception
+    public void resolve(final ValueStack values) throws Exception
     {
         if (values.size() < 3)
             throw new Exception("requires 3 parameters " + toString());
@@ -49,10 +55,10 @@ public class FuncStringSubstr extends Function
 
             if (target instanceof String)
                 values.push(((String) target).substring(
-                    offset.intValue(), offset.intValue() + length.intValue()));
+                        offset.intValue(), offset.intValue() + length.intValue()));
             else
                 values.push(Arrays.copyOfRange((byte[]) target,
-                    offset.intValue(), offset.intValue() + length.intValue()));
+                        offset.intValue(), offset.intValue() + length.intValue()));
 
         } catch (final ParseException e)
         {
@@ -63,7 +69,7 @@ public class FuncStringSubstr extends Function
 
     /** {@inheritDoc} */
     @Override
-    public String toString ()
+    public String toString()
     {
         return "function(substr)";
     }

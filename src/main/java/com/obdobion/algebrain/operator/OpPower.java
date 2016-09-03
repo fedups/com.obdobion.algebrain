@@ -31,8 +31,7 @@ public class OpPower extends Operator
      * Constructor for OpPower.
      * </p>
      *
-     * @param opTok
-     *            a {@link com.obdobion.algebrain.EquPart} object.
+     * @param opTok a {@link com.obdobion.algebrain.EquPart} object.
      */
     public OpPower(final EquPart opTok)
     {

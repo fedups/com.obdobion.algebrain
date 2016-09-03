@@ -32,8 +32,7 @@ public class FuncAlpha extends Function
      * Constructor for FuncAlpha.
      * </p>
      *
-     * @param var
-     *            a {@link com.obdobion.algebrain.token.TokVariable} object.
+     * @param var a {@link com.obdobion.algebrain.token.TokVariable} object.
      */
     public FuncAlpha(final TokVariable var)
     {

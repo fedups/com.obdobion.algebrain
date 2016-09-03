@@ -33,16 +33,16 @@ public class TokOperator extends Token
          */
         switch (s)
         {
-        case '=':
-            return true;
-        case '&':
-            return true;
-        case '|':
-            return true;
-        case '~':
-            return true;
-        default:
-            break;
+            case '=':
+                return true;
+            case '&':
+                return true;
+            case '|':
+                return true;
+            case '~':
+                return true;
+            default:
+                break;
         }
         return false;
     }

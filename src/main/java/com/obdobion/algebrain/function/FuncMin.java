@@ -31,8 +31,7 @@ public class FuncMin extends Function
      * Constructor for FuncMin.
      * </p>
      *
-     * @param var
-     *            a {@link com.obdobion.algebrain.token.TokVariable} object.
+     * @param var a {@link com.obdobion.algebrain.token.TokVariable} object.
      */
     public FuncMin(final TokVariable var)
     {

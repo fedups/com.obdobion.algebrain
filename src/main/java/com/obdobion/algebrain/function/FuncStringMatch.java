@@ -10,15 +10,17 @@ import com.obdobion.algebrain.ValueStack;
 import com.obdobion.algebrain.token.TokVariable;
 
 /**
- * <p>FuncStringMatch class.</p>
+ * <p>
+ * FuncStringMatch class.
+ * </p>
  *
  * @author Chris DeGreef fedupforone@gmail.com
  * @since 1.3.9
  */
 public class FuncStringMatch extends Function
 {
-    private static void pushAppropriateType (final ValueStack values, final Object whoKnowsWhat, final String result)
-        throws UnsupportedEncodingException
+    private static void pushAppropriateType(final ValueStack values, final Object whoKnowsWhat, final String result)
+            throws UnsupportedEncodingException
     {
         if (whoKnowsWhat instanceof String)
         {
@@ -31,7 +33,9 @@ public class FuncStringMatch extends Function
     }
 
     /**
-     * <p>Constructor for FuncStringMatch.</p>
+     * <p>
+     * Constructor for FuncStringMatch.
+     * </p>
      */
     public FuncStringMatch()
     {
@@ -39,7 +43,9 @@ public class FuncStringMatch extends Function
     }
 
     /**
-     * <p>Constructor for FuncStringMatch.</p>
+     * <p>
+     * Constructor for FuncStringMatch.
+     * </p>
      *
      * @param var a {@link com.obdobion.algebrain.token.TokVariable} object.
      */
@@ -50,7 +56,7 @@ public class FuncStringMatch extends Function
 
     /** {@inheritDoc} */
     @Override
-    public void resolve (final ValueStack values) throws Exception
+    public void resolve(final ValueStack values) throws Exception
     {
         if (values.size() < getParameterCount())
             throw new Exception("missing operands for " + toString());
@@ -95,7 +101,7 @@ public class FuncStringMatch extends Function
 
     /** {@inheritDoc} */
     @Override
-    public String toString ()
+    public String toString()
     {
         return "function(match-" + getParameterCount() + ")";
     }

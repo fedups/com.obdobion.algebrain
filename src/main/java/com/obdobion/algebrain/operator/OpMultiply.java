@@ -31,8 +31,7 @@ public class OpMultiply extends Operator
      * Constructor for OpMultiply.
      * </p>
      *
-     * @param opTok
-     *            a {@link com.obdobion.algebrain.EquPart} object.
+     * @param opTok a {@link com.obdobion.algebrain.EquPart} object.
      */
     public OpMultiply(final EquPart opTok)
     {

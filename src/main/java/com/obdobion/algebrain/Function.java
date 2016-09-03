@@ -4,7 +4,9 @@ import com.obdobion.algebrain.operator.OpComma;
 import com.obdobion.algebrain.token.TokVariable;
 
 /**
- * <p>Abstract Function class.</p>
+ * <p>
+ * Abstract Function class.
+ * </p>
  *
  * @author Chris DeGreef fedupforone@gmail.com
  */
@@ -13,7 +15,9 @@ public abstract class Function extends Operation
     private int parameterCount;
 
     /**
-     * <p>Constructor for Function.</p>
+     * <p>
+     * Constructor for Function.
+     * </p>
      */
     public Function()
     {
@@ -21,7 +25,9 @@ public abstract class Function extends Operation
     }
 
     /**
-     * <p>Constructor for Function.</p>
+     * <p>
+     * Constructor for Function.
+     * </p>
      *
      * @param var a {@link com.obdobion.algebrain.token.TokVariable} object.
      */
@@ -32,39 +38,46 @@ public abstract class Function extends Operation
     }
 
     /**
-     * <p>Getter for the field <code>parameterCount</code>.</p>
+     * <p>
+     * Getter for the field <code>parameterCount</code>.
+     * </p>
      *
      * @return a int.
      */
-    public int getParameterCount ()
+    public int getParameterCount()
     {
         return parameterCount;
     }
 
     /** {@inheritDoc} */
     @Override
-    protected int precedence ()
+    protected int precedence()
     {
         return 2;
     }
 
     /**
-     * <p>Setter for the field <code>parameterCount</code>.</p>
+     * <p>
+     * Setter for the field <code>parameterCount</code>.
+     * </p>
      *
      * @param newParameterCount a int.
      */
-    public void setParameterCount (final int newParameterCount)
+    public void setParameterCount(final int newParameterCount)
     {
         parameterCount = newParameterCount;
     }
 
     /**
-     * <p>updateParameterCount.</p>
+     * <p>
+     * updateParameterCount.
+     * </p>
      *
-     * @param equParts an array of {@link com.obdobion.algebrain.EquPart} objects.
+     * @param equParts an array of {@link com.obdobion.algebrain.EquPart}
+     *            objects.
      * @param myLocInArray a int.
      */
-    public void updateParameterCount (final EquPart[] equParts, final int myLocInArray)
+    public void updateParameterCount(final EquPart[] equParts, final int myLocInArray)
     {
         setParameterCount(0);
 

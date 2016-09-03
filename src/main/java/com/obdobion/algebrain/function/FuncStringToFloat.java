@@ -7,7 +7,9 @@ import com.obdobion.algebrain.ValueStack;
 import com.obdobion.algebrain.token.TokVariable;
 
 /**
- * <p>FuncStringToFloat class.</p>
+ * <p>
+ * FuncStringToFloat class.
+ * </p>
  *
  * @author Chris DeGreef fedupforone@gmail.com
  * @since 1.3.9
@@ -15,7 +17,9 @@ import com.obdobion.algebrain.token.TokVariable;
 public class FuncStringToFloat extends Function
 {
     /**
-     * <p>Constructor for FuncStringToFloat.</p>
+     * <p>
+     * Constructor for FuncStringToFloat.
+     * </p>
      */
     public FuncStringToFloat()
     {
@@ -23,7 +27,9 @@ public class FuncStringToFloat extends Function
     }
 
     /**
-     * <p>Constructor for FuncStringToFloat.</p>
+     * <p>
+     * Constructor for FuncStringToFloat.
+     * </p>
      *
      * @param var a {@link com.obdobion.algebrain.token.TokVariable} object.
      */
@@ -34,7 +40,7 @@ public class FuncStringToFloat extends Function
 
     /** {@inheritDoc} */
     @Override
-    public void resolve (final ValueStack values) throws Exception
+    public void resolve(final ValueStack values) throws Exception
     {
         if (values.size() < getParameterCount())
             throw new Exception("missing operands for " + toString());
@@ -53,8 +59,7 @@ public class FuncStringToFloat extends Function
             {
                 values.push(new Double((Long) value));
                 return;
-            }
-            else if (value instanceof Double)
+            } else if (value instanceof Double)
             {
                 values.push(value);
                 return;
@@ -68,7 +73,7 @@ public class FuncStringToFloat extends Function
 
     /** {@inheritDoc} */
     @Override
-    public String toString ()
+    public String toString()
     {
         return "function(toFloat)";
     }

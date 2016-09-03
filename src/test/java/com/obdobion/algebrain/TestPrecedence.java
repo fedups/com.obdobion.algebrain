@@ -18,8 +18,7 @@ public class TestPrecedence
      * mdas01.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void mdas01() throws Exception
@@ -34,8 +33,7 @@ public class TestPrecedence
      * mdas02.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void mdas02() throws Exception
@@ -50,8 +48,7 @@ public class TestPrecedence
      * mdas03.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void mdas03() throws Exception
@@ -66,8 +63,7 @@ public class TestPrecedence
      * mdas04.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void mdas04() throws Exception
@@ -82,8 +78,7 @@ public class TestPrecedence
      * mdas05.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void mdas05() throws Exception
@@ -98,8 +93,7 @@ public class TestPrecedence
      * mdas06.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void mdas06() throws Exception
@@ -114,8 +108,7 @@ public class TestPrecedence
      * mdas07.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void mdas07() throws Exception
@@ -130,8 +123,7 @@ public class TestPrecedence
      * mdas08.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void mdas08() throws Exception
@@ -146,8 +138,7 @@ public class TestPrecedence
      * mdas09.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void mdas09() throws Exception
@@ -162,8 +153,7 @@ public class TestPrecedence
      * mdas10.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void mdas10() throws Exception
@@ -178,8 +168,7 @@ public class TestPrecedence
      * mdas11.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void mdas11() throws Exception
@@ -194,8 +183,7 @@ public class TestPrecedence
      * mdas12.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void mdas12() throws Exception
@@ -210,8 +198,7 @@ public class TestPrecedence
      * mdas13.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void mdas13() throws Exception
@@ -226,8 +213,7 @@ public class TestPrecedence
      * mdas14.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void mdas14() throws Exception
@@ -242,8 +228,7 @@ public class TestPrecedence
      * mdas15.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void mdas15() throws Exception
@@ -258,8 +243,7 @@ public class TestPrecedence
      * mdas16.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void mdas16() throws Exception
@@ -274,8 +258,7 @@ public class TestPrecedence
      * mdas17.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void mdas17() throws Exception
@@ -290,8 +273,7 @@ public class TestPrecedence
      * mdas18.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void mdas18() throws Exception
@@ -306,8 +288,7 @@ public class TestPrecedence
      * mdas18b.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void mdas18b() throws Exception
@@ -322,8 +303,7 @@ public class TestPrecedence
      * mdas18c.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void mdas18c() throws Exception
@@ -338,8 +318,7 @@ public class TestPrecedence
      * mdas19.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void mdas19() throws Exception
@@ -354,8 +333,7 @@ public class TestPrecedence
      * mdas20.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void mdas20() throws Exception
@@ -370,8 +348,7 @@ public class TestPrecedence
      * web01.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void web01() throws Exception
@@ -386,8 +363,7 @@ public class TestPrecedence
      * web02.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void web02() throws Exception
@@ -402,8 +378,7 @@ public class TestPrecedence
      * web03.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void web03() throws Exception
@@ -418,8 +393,7 @@ public class TestPrecedence
      * web03ForcedDefaultAnyway.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void web03ForcedDefaultAnyway() throws Exception
@@ -434,8 +408,7 @@ public class TestPrecedence
      * web03ForcedWrong.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void web03ForcedWrong() throws Exception
@@ -450,8 +423,7 @@ public class TestPrecedence
      * web04.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void web04() throws Exception
@@ -466,8 +438,7 @@ public class TestPrecedence
      * web05.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void web05() throws Exception

@@ -18,8 +18,7 @@ public class TestChaining
      * testChainingToOverridePrecedence.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void testChainingToOverridePrecedence() throws Exception
@@ -35,8 +34,7 @@ public class TestChaining
      * testNothing1.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void testNothing1() throws Exception
@@ -52,8 +50,7 @@ public class TestChaining
      * testNothing2.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void testNothing2() throws Exception
@@ -69,8 +66,7 @@ public class TestChaining
      * testPresetVariables.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void testPresetVariables() throws Exception
@@ -88,8 +84,7 @@ public class TestChaining
      * testProofOfPrecedence.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void testProofOfPrecedence() throws Exception
@@ -105,8 +100,7 @@ public class TestChaining
      * testProofOfPrecedence2.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void testProofOfPrecedence2() throws Exception
@@ -122,8 +116,7 @@ public class TestChaining
      * testTrailingChainMarker.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void testTrailingChainMarker() throws Exception
@@ -141,8 +134,7 @@ public class TestChaining
      * testTrailingChainMarker2.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void testTrailingChainMarker2() throws Exception
@@ -160,8 +152,7 @@ public class TestChaining
      * testUnexpectedChaining.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void testUnexpectedChaining() throws Exception

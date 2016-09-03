@@ -31,8 +31,7 @@ public class FuncMax extends Function
      * Constructor for FuncMax.
      * </p>
      *
-     * @param var
-     *            a {@link com.obdobion.algebrain.token.TokVariable} object.
+     * @param var a {@link com.obdobion.algebrain.token.TokVariable} object.
      */
     public FuncMax(final TokVariable var)
     {

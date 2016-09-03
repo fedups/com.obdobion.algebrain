@@ -7,7 +7,9 @@ import com.obdobion.algebrain.ValueStack;
 import com.obdobion.algebrain.token.TokVariable;
 
 /**
- * <p>FuncStringLength class.</p>
+ * <p>
+ * FuncStringLength class.
+ * </p>
  *
  * @author Chris DeGreef fedupforone@gmail.com
  * @since 1.3.9
@@ -15,7 +17,9 @@ import com.obdobion.algebrain.token.TokVariable;
 public class FuncStringLength extends Function
 {
     /**
-     * <p>Constructor for FuncStringLength.</p>
+     * <p>
+     * Constructor for FuncStringLength.
+     * </p>
      */
     public FuncStringLength()
     {
@@ -23,7 +27,9 @@ public class FuncStringLength extends Function
     }
 
     /**
-     * <p>Constructor for FuncStringLength.</p>
+     * <p>
+     * Constructor for FuncStringLength.
+     * </p>
      *
      * @param var a {@link com.obdobion.algebrain.token.TokVariable} object.
      */
@@ -34,7 +40,7 @@ public class FuncStringLength extends Function
 
     /** {@inheritDoc} */
     @Override
-    public void resolve (final ValueStack values) throws Exception
+    public void resolve(final ValueStack values) throws Exception
     {
         if (values.size() < getParameterCount())
             throw new Exception("missing operands for " + toString());
@@ -56,7 +62,7 @@ public class FuncStringLength extends Function
 
     /** {@inheritDoc} */
     @Override
-    public String toString ()
+    public String toString()
     {
         return "function(length)";
     }

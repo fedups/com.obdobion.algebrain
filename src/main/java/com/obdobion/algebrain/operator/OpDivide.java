@@ -31,8 +31,7 @@ public class OpDivide extends Operator
      * Constructor for OpDivide.
      * </p>
      *
-     * @param opTok
-     *            a {@link com.obdobion.algebrain.EquPart} object.
+     * @param opTok a {@link com.obdobion.algebrain.EquPart} object.
      */
     public OpDivide(final EquPart opTok)
     {

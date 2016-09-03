@@ -18,8 +18,7 @@ public class TestModulus
      * mod1.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void mod1() throws Exception
@@ -33,8 +32,7 @@ public class TestModulus
      * mod2.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void mod2() throws Exception
@@ -48,8 +46,7 @@ public class TestModulus
      * mod3.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void mod3() throws Exception

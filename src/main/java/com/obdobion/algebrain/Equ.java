@@ -120,8 +120,7 @@ public class Equ
      * gatherVariables.
      * </p>
      *
-     * @param tokens
-     *            a {@link java.util.Collection} object.
+     * @param tokens a {@link java.util.Collection} object.
      * @return a {@link java.util.Set} object.
      */
     static public Set<String> gatherVariables(final Collection<EquPart> tokens)
@@ -150,8 +149,7 @@ public class Equ
      * Getter for the field <code>instance</code>.
      * </p>
      *
-     * @param fresh
-     *            a boolean.
+     * @param fresh a boolean.
      * @return a {@link com.obdobion.algebrain.Equ} object.
      */
     public static Equ getInstance(final boolean fresh)
@@ -198,11 +196,9 @@ public class Equ
      * compile.
      * </p>
      *
-     * @param _equ
-     *            a {@link java.lang.String} object.
+     * @param _equ a {@link java.lang.String} object.
      * @return a {@link java.util.Set} object.
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     public Set<String> compile(final String _equ) throws Exception
     {
@@ -232,8 +228,7 @@ public class Equ
      * </p>
      *
      * @return a {@link java.lang.Object} object.
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     public Object evaluate() throws Exception
     {
@@ -273,11 +268,9 @@ public class Equ
      * evaluate.
      * </p>
      *
-     * @param _equ
-     *            a {@link java.lang.String} object.
+     * @param _equ a {@link java.lang.String} object.
      * @return a {@link java.lang.Object} object.
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     public Object evaluate(final String _equ) throws Exception
     {
@@ -290,11 +283,9 @@ public class Equ
      * function.
      * </p>
      *
-     * @param varTok
-     *            a {@link com.obdobion.algebrain.token.TokVariable} object.
+     * @param varTok a {@link com.obdobion.algebrain.token.TokVariable} object.
      * @return a {@link com.obdobion.algebrain.Function} object.
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     public Function function(final TokVariable varTok) throws Exception
     {
@@ -361,8 +352,7 @@ public class Equ
      * initialize.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     protected void initialize() throws Exception
     {
@@ -469,8 +459,7 @@ public class Equ
     /**
      * put implied multipliers into the equation
      *
-     * @param oldTokens
-     *            a {@link java.util.Collection} object.
+     * @param oldTokens a {@link java.util.Collection} object.
      * @return a {@link java.util.Collection} object.
      */
     protected Collection<EquPart> multiplize(final Collection<EquPart> oldTokens)
@@ -513,11 +502,9 @@ public class Equ
      * operator.
      * </p>
      *
-     * @param tok
-     *            a {@link com.obdobion.algebrain.token.Token} object.
+     * @param tok a {@link com.obdobion.algebrain.token.Token} object.
      * @return a {@link com.obdobion.algebrain.Operator} object.
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     public Operator operator(final Token tok) throws Exception
     {
@@ -541,12 +528,9 @@ public class Equ
      * registerFunction.
      * </p>
      *
-     * @param name
-     *            a {@link java.lang.String} object.
-     * @param functionSubclass
-     *            a {@link java.lang.Class} object.
-     * @throws java.lang.Exception
-     *             if any.
+     * @param name a {@link java.lang.String} object.
+     * @param functionSubclass a {@link java.lang.Class} object.
+     * @throws java.lang.Exception if any.
      */
     public void registerFunction(final String name, final Class<?> functionSubclass) throws Exception
     {
@@ -569,12 +553,9 @@ public class Equ
      * registerOperator.
      * </p>
      *
-     * @param name
-     *            a {@link java.lang.String} object.
-     * @param operatorSubclass
-     *            a {@link java.lang.Class} object.
-     * @throws java.lang.Exception
-     *             if any.
+     * @param name a {@link java.lang.String} object.
+     * @param operatorSubclass a {@link java.lang.Class} object.
+     * @throws java.lang.Exception if any.
      */
     public void registerOperator(final String name, final Class<?> operatorSubclass) throws Exception
     {
@@ -595,8 +576,7 @@ public class Equ
     /**
      * Create a reverse Polish notation form of the equation
      *
-     * @param oldTokens
-     *            a {@link java.util.Collection} object.
+     * @param oldTokens a {@link java.util.Collection} object.
      * @return a {@link java.util.Collection} object.
      */
     protected Collection<EquPart> rpnize(final Collection<EquPart> oldTokens)
@@ -672,8 +652,7 @@ public class Equ
      * Setter for the field <code>baseDate</code>.
      * </p>
      *
-     * @param newBaseDate
-     *            a {@link java.sql.Date} object.
+     * @param newBaseDate a {@link java.sql.Date} object.
      */
     public void setBaseDate(final java.sql.Date newBaseDate)
     {
@@ -685,9 +664,8 @@ public class Equ
      * Setter for the field <code>support</code>.
      * </p>
      *
-     * @param newSupport
-     *            a {@link com.obdobion.algebrain.support.EquationSupport}
-     *            object.
+     * @param newSupport a
+     *            {@link com.obdobion.algebrain.support.EquationSupport} object.
      */
     public void setSupport(final EquationSupport newSupport)
     {
@@ -700,8 +678,7 @@ public class Equ
      * </p>
      *
      * @return a {@link java.lang.String} object.
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     public String showRPN() throws Exception
     {
@@ -715,10 +692,8 @@ public class Equ
      * showRPN.
      * </p>
      *
-     * @param sb
-     *            a {@link java.lang.StringBuilder} object.
-     * @throws java.lang.Exception
-     *             if any.
+     * @param sb a {@link java.lang.StringBuilder} object.
+     * @throws java.lang.Exception if any.
      */
     public void showRPN(final StringBuilder sb) throws Exception
     {
@@ -735,8 +710,7 @@ public class Equ
      * </p>
      *
      * @return a {@link java.util.Collection} object.
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     protected Collection<EquPart> tokenize() throws Exception
     {
@@ -804,10 +778,8 @@ public class Equ
      * unregisterFunction.
      * </p>
      *
-     * @param name
-     *            a {@link java.lang.String} object.
-     * @throws java.lang.Exception
-     *             if any.
+     * @param name a {@link java.lang.String} object.
+     * @throws java.lang.Exception if any.
      */
     public void unregisterFunction(final String name) throws Exception
     {
@@ -822,10 +794,8 @@ public class Equ
      * unregisterOperator.
      * </p>
      *
-     * @param name
-     *            a {@link java.lang.String} object.
-     * @throws java.lang.Exception
-     *             if any.
+     * @param name a {@link java.lang.String} object.
+     * @throws java.lang.Exception if any.
      */
     public void unregisterOperator(final String name) throws Exception
     {

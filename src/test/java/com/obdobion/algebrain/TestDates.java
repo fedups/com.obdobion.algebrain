@@ -21,8 +21,7 @@ public class TestDates
      * compareEqualsFalse.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void compareEqualsFalse() throws Exception
@@ -37,8 +36,7 @@ public class TestDates
      * compareEqualsTrue.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void compareEqualsTrue() throws Exception
@@ -53,8 +51,7 @@ public class TestDates
      * compareEqualsTrueWithoutAdjustments.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void compareEqualsTrueWithoutAdjustments() throws Exception
@@ -69,8 +66,7 @@ public class TestDates
      * compareEqualsWithLongValue.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void compareEqualsWithLongValue() throws Exception
@@ -85,8 +81,7 @@ public class TestDates
      * compareGreaterLess.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void compareGreaterLess() throws Exception
@@ -101,8 +96,7 @@ public class TestDates
      * compareGreaterTrue.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void compareGreaterTrue() throws Exception
@@ -117,8 +111,7 @@ public class TestDates
      * createAndReturnADate.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void createAndReturnADate() throws Exception
@@ -135,8 +128,7 @@ public class TestDates
      * createAndReturnADate.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void createAndReturnADate2() throws Exception
@@ -150,8 +142,7 @@ public class TestDates
      * modifyingCalendar.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void modifyingCalendar2() throws Exception
@@ -170,8 +161,7 @@ public class TestDates
      * modifyingCalendar.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void modifyingCalendarWithoutTime() throws Exception
@@ -191,8 +181,7 @@ public class TestDates
      * todayAndNow.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void todayAndNow() throws Exception
@@ -207,8 +196,7 @@ public class TestDates
      * withAdjustments.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void withAdjustments() throws Exception
@@ -223,8 +211,7 @@ public class TestDates
      * withAdjustmentsFromStringVariable.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void withAdjustmentsFromStringVariable() throws Exception

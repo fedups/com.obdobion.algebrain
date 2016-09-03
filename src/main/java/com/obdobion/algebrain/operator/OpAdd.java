@@ -31,8 +31,7 @@ public class OpAdd extends Operator
      * Constructor for OpAdd.
      * </p>
      *
-     * @param opTok
-     *            a {@link com.obdobion.algebrain.EquPart} object.
+     * @param opTok a {@link com.obdobion.algebrain.EquPart} object.
      */
     public OpAdd(final EquPart opTok)
     {

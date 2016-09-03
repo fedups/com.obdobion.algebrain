@@ -10,7 +10,9 @@ import com.obdobion.algebrain.support.EquationSupport;
 import com.obdobion.algebrain.token.TokVariable;
 
 /**
- * <p>FuncTieredRate class.</p>
+ * <p>
+ * FuncTieredRate class.
+ * </p>
  *
  * @author Chris DeGreef fedupforone@gmail.com
  * @since 1.3.9
@@ -18,7 +20,9 @@ import com.obdobion.algebrain.token.TokVariable;
 public class FuncTieredRate extends Function
 {
     /**
-     * <p>Constructor for FuncTieredRate.</p>
+     * <p>
+     * Constructor for FuncTieredRate.
+     * </p>
      */
     public FuncTieredRate()
     {
@@ -26,7 +30,9 @@ public class FuncTieredRate extends Function
     }
 
     /**
-     * <p>Constructor for FuncTieredRate.</p>
+     * <p>
+     * Constructor for FuncTieredRate.
+     * </p>
      *
      * @param var a {@link com.obdobion.algebrain.token.TokVariable} object.
      */
@@ -37,7 +43,7 @@ public class FuncTieredRate extends Function
 
     /** {@inheritDoc} */
     @Override
-    public void resolve (final ValueStack values) throws Exception
+    public void resolve(final ValueStack values) throws Exception
     {
         if (values.size() < 2)
             throw new Exception("missing operands for " + toString());
@@ -89,7 +95,7 @@ public class FuncTieredRate extends Function
 
     /** {@inheritDoc} */
     @Override
-    public String toString ()
+    public String toString()
     {
         return "function(tieredrate)";
     }

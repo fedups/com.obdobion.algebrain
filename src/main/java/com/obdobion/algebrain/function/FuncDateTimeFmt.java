@@ -34,8 +34,7 @@ public class FuncDateTimeFmt extends Function
      * Constructor for FuncDateTimeFmt.
      * </p>
      *
-     * @param var
-     *            a {@link com.obdobion.algebrain.token.TokVariable} object.
+     * @param var a {@link com.obdobion.algebrain.token.TokVariable} object.
      */
     public FuncDateTimeFmt(final TokVariable var)
     {

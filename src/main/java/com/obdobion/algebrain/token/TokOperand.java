@@ -6,7 +6,9 @@ import com.obdobion.algebrain.ValueStack;
 import com.obdobion.algebrain.operator.OpLeftParen;
 
 /**
- * <p>Abstract TokOperand class.</p>
+ * <p>
+ * Abstract TokOperand class.
+ * </p>
  *
  * @author Chris DeGreef fedupforone@gmail.com
  * @since 1.3.9
@@ -14,7 +16,9 @@ import com.obdobion.algebrain.operator.OpLeftParen;
 public abstract class TokOperand extends Token
 {
     /**
-     * <p>Constructor for TokOperand.</p>
+     * <p>
+     * Constructor for TokOperand.
+     * </p>
      */
     public TokOperand()
     {
@@ -23,14 +27,14 @@ public abstract class TokOperand extends Token
 
     /** {@inheritDoc} */
     @Override
-    public boolean multiplize (final EquPart rightSide)
+    public boolean multiplize(final EquPart rightSide)
     {
         return (rightSide instanceof OpLeftParen || rightSide instanceof TokOperand || rightSide instanceof Function);
     }
 
     /** {@inheritDoc} */
     @Override
-    public void resolve (final ValueStack values) throws Exception
+    public void resolve(final ValueStack values) throws Exception
     {
         values.push(getValue());
     }

@@ -22,16 +22,14 @@ public class OpNor extends Operator
      * </p>
      */
     public OpNor()
-    {
-    }
+    {}
 
     /**
      * <p>
      * Constructor for OpOr.
      * </p>
      *
-     * @param opTok
-     *            a {@link com.obdobion.algebrain.EquPart} object.
+     * @param opTok a {@link com.obdobion.algebrain.EquPart} object.
      */
     public OpNor(final EquPart opTok)
     {

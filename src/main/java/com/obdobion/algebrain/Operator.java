@@ -1,14 +1,18 @@
 package com.obdobion.algebrain;
 
 /**
- * <p>Abstract Operator class.</p>
+ * <p>
+ * Abstract Operator class.
+ * </p>
  *
  * @author Chris DeGreef fedupforone@gmail.com
  */
 public abstract class Operator extends Operation
 {
     /**
-     * <p>Constructor for Operator.</p>
+     * <p>
+     * Constructor for Operator.
+     * </p>
      */
     public Operator()
     {
@@ -16,7 +20,9 @@ public abstract class Operator extends Operation
     }
 
     /**
-     * <p>Constructor for Operator.</p>
+     * <p>
+     * Constructor for Operator.
+     * </p>
      *
      * @param opTok a {@link com.obdobion.algebrain.EquPart} object.
      */
@@ -28,7 +34,7 @@ public abstract class Operator extends Operation
 
     /** {@inheritDoc} */
     @Override
-    protected int precedence ()
+    protected int precedence()
     {
         return 999;
     }

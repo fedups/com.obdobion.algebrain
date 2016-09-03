@@ -7,7 +7,9 @@ import com.obdobion.algebrain.ValueStack;
 import com.obdobion.algebrain.token.TokVariable;
 
 /**
- * <p>FuncStringMetaphone class.</p>
+ * <p>
+ * FuncStringMetaphone class.
+ * </p>
  *
  * @author Chris DeGreef fedupforone@gmail.com
  * @since 1.3.9
@@ -15,7 +17,9 @@ import com.obdobion.algebrain.token.TokVariable;
 public class FuncStringMetaphone extends Function
 {
     /**
-     * <p>Constructor for FuncStringMetaphone.</p>
+     * <p>
+     * Constructor for FuncStringMetaphone.
+     * </p>
      */
     public FuncStringMetaphone()
     {
@@ -23,7 +27,9 @@ public class FuncStringMetaphone extends Function
     }
 
     /**
-     * <p>Constructor for FuncStringMetaphone.</p>
+     * <p>
+     * Constructor for FuncStringMetaphone.
+     * </p>
      *
      * @param var a {@link com.obdobion.algebrain.token.TokVariable} object.
      */
@@ -34,7 +40,7 @@ public class FuncStringMetaphone extends Function
 
     /** {@inheritDoc} */
     @Override
-    public void resolve (final ValueStack values) throws Exception
+    public void resolve(final ValueStack values) throws Exception
     {
         if (values.size() < getParameterCount())
             throw new Exception("missing operands for " + toString());
@@ -52,7 +58,7 @@ public class FuncStringMetaphone extends Function
 
     /** {@inheritDoc} */
     @Override
-    public String toString ()
+    public String toString()
     {
         return "function(metaphone)";
     }

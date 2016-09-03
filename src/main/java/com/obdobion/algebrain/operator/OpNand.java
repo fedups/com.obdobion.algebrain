@@ -22,16 +22,14 @@ public class OpNand extends Operator
      * </p>
      */
     public OpNand()
-    {
-    }
+    {}
 
     /**
      * <p>
      * Constructor for OpNand.
      * </p>
      *
-     * @param opTok
-     *            a {@link com.obdobion.algebrain.EquPart} object.
+     * @param opTok a {@link com.obdobion.algebrain.EquPart} object.
      */
     public OpNand(final EquPart opTok)
     {

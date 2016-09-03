@@ -18,8 +18,7 @@ public class TestStrings
      * stringCaseInsensitive.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void stringCaseInsensitive() throws Exception
@@ -34,8 +33,7 @@ public class TestStrings
      * stringConcatinateMany.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void stringConcatinateMany() throws Exception
@@ -50,8 +48,7 @@ public class TestStrings
      * stringConcatinateMatchResult.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void stringConcatinateMatchResult() throws Exception
@@ -66,8 +63,7 @@ public class TestStrings
      * stringConcatinateMatchResults.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void stringConcatinateMatchResults() throws Exception
@@ -82,8 +78,7 @@ public class TestStrings
      * stringConcatinateOne.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void stringConcatinateOne() throws Exception
@@ -98,8 +93,7 @@ public class TestStrings
      * stringEmpty.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void stringEmpty() throws Exception
@@ -114,8 +108,7 @@ public class TestStrings
      * stringIndexOf.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void stringIndexOf() throws Exception
@@ -130,8 +123,7 @@ public class TestStrings
      * stringLeadingSpaces.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void stringLeadingSpaces() throws Exception
@@ -146,8 +138,7 @@ public class TestStrings
      * stringLeftTrim.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void stringLeftTrim() throws Exception
@@ -162,8 +153,7 @@ public class TestStrings
      * stringLength.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void stringLength() throws Exception
@@ -178,8 +168,7 @@ public class TestStrings
      * stringLowercase.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void stringLowercase() throws Exception
@@ -194,8 +183,7 @@ public class TestStrings
      * stringMatches.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void stringMatches() throws Exception
@@ -210,8 +198,7 @@ public class TestStrings
      * stringMatchesInitialGroup.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void stringMatchesInitialGroup() throws Exception
@@ -226,8 +213,7 @@ public class TestStrings
      * stringMatchesPartial.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void stringMatchesPartial() throws Exception
@@ -242,8 +228,7 @@ public class TestStrings
      * stringMetaphone.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void stringMetaphone() throws Exception
@@ -258,8 +243,7 @@ public class TestStrings
      * stringMetaphoneCompare.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void stringMetaphoneCompare() throws Exception
@@ -274,8 +258,7 @@ public class TestStrings
      * stringNoSpaces.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void stringNoSpaces() throws Exception
@@ -290,8 +273,7 @@ public class TestStrings
      * stringNotEmpty.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void stringNotEmpty() throws Exception
@@ -306,8 +288,7 @@ public class TestStrings
      * stringReplaceWithEqual.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void stringReplaceWithEqual() throws Exception
@@ -322,8 +303,7 @@ public class TestStrings
      * stringReplaceWithLonger.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void stringReplaceWithLonger() throws Exception
@@ -338,8 +318,7 @@ public class TestStrings
      * stringReplaceWithShorter.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void stringReplaceWithShorter() throws Exception
@@ -354,8 +333,7 @@ public class TestStrings
      * stringRightTrim.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void stringRightTrim() throws Exception
@@ -370,8 +348,7 @@ public class TestStrings
      * stringSubstring.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void stringSubstring() throws Exception
@@ -386,8 +363,7 @@ public class TestStrings
      * stringTrailingSpaces.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void stringTrailingSpaces() throws Exception
@@ -402,8 +378,7 @@ public class TestStrings
      * stringTrim.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void stringTrim() throws Exception
@@ -418,8 +393,7 @@ public class TestStrings
      * stringUntrimmed.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void stringUntrimmed() throws Exception
@@ -434,8 +408,7 @@ public class TestStrings
      * stringUppercase.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void stringUppercase() throws Exception
@@ -450,8 +423,7 @@ public class TestStrings
      * unquotedLiteral.
      * </p>
      *
-     * @throws java.lang.Exception
-     *             if any.
+     * @throws java.lang.Exception if any.
      */
     @Test
     public void unquotedLiteral() throws Exception

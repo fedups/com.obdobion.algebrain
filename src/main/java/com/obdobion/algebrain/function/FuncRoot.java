@@ -7,7 +7,9 @@ import com.obdobion.algebrain.ValueStack;
 import com.obdobion.algebrain.token.TokVariable;
 
 /**
- * <p>FuncRoot class.</p>
+ * <p>
+ * FuncRoot class.
+ * </p>
  *
  * @author Chris DeGreef fedupforone@gmail.com
  * @since 1.3.9
@@ -15,7 +17,9 @@ import com.obdobion.algebrain.token.TokVariable;
 public class FuncRoot extends Function
 {
     /**
-     * <p>Constructor for FuncRoot.</p>
+     * <p>
+     * Constructor for FuncRoot.
+     * </p>
      */
     public FuncRoot()
     {
@@ -23,7 +27,9 @@ public class FuncRoot extends Function
     }
 
     /**
-     * <p>Constructor for FuncRoot.</p>
+     * <p>
+     * Constructor for FuncRoot.
+     * </p>
      *
      * @param var a {@link com.obdobion.algebrain.token.TokVariable} object.
      */
@@ -34,7 +40,7 @@ public class FuncRoot extends Function
 
     /** {@inheritDoc} */
     @Override
-    public void resolve (final ValueStack values) throws Exception
+    public void resolve(final ValueStack values) throws Exception
     {
         if (values.size() < 2)
             throw new Exception("missing operands for " + toString());
@@ -52,7 +58,7 @@ public class FuncRoot extends Function
 
     /** {@inheritDoc} */
     @Override
-    public String toString ()
+    public String toString()
     {
         return "function(root)";
     }

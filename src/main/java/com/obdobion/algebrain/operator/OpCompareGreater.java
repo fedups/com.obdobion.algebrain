@@ -23,16 +23,14 @@ public class OpCompareGreater extends Operator
      * </p>
      */
     public OpCompareGreater()
-    {
-    }
+    {}
 
     /**
      * <p>
      * Constructor for OpCompareGreater.
      * </p>
      *
-     * @param opTok
-     *            a {@link com.obdobion.algebrain.EquPart} object.
+     * @param opTok a {@link com.obdobion.algebrain.EquPart} object.
      */
     public OpCompareGreater(final EquPart opTok)
     {

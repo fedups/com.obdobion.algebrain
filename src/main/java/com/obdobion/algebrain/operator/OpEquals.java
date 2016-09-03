@@ -29,8 +29,7 @@ abstract public class OpEquals extends Operator
      * Constructor for OpEquals.
      * </p>
      *
-     * @param opTok
-     *            a {@link com.obdobion.algebrain.EquPart} object.
+     * @param opTok a {@link com.obdobion.algebrain.EquPart} object.
      */
     public OpEquals(final EquPart opTok)
     {

@@ -33,8 +33,7 @@ public class OpSubtract extends Operator
      * Constructor for OpSubtract.
      * </p>
      *
-     * @param opTok
-     *            a {@link com.obdobion.algebrain.EquPart} object.
+     * @param opTok a {@link com.obdobion.algebrain.EquPart} object.
      */
     public OpSubtract(final EquPart opTok)
     {

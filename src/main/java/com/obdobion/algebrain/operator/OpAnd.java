@@ -7,7 +7,9 @@ import com.obdobion.algebrain.Operator;
 import com.obdobion.algebrain.ValueStack;
 
 /**
- * <p>OpAnd class.</p>
+ * <p>
+ * OpAnd class.
+ * </p>
  *
  * @author Chris DeGreef fedupforone@gmail.com
  * @since 1.3.9
@@ -15,14 +17,17 @@ import com.obdobion.algebrain.ValueStack;
 public class OpAnd extends Operator
 {
     /**
-     * <p>Constructor for OpAnd.</p>
+     * <p>
+     * Constructor for OpAnd.
+     * </p>
      */
     public OpAnd()
-    {
-    }
+    {}
 
     /**
-     * <p>Constructor for OpAnd.</p>
+     * <p>
+     * Constructor for OpAnd.
+     * </p>
      *
      * @param opTok a {@link com.obdobion.algebrain.EquPart} object.
      */
@@ -33,14 +38,14 @@ public class OpAnd extends Operator
 
     /** {@inheritDoc} */
     @Override
-    protected int precedence ()
+    protected int precedence()
     {
         return 9;
     }
 
     /** {@inheritDoc} */
     @Override
-    public void resolve (final ValueStack values) throws Exception
+    public void resolve(final ValueStack values) throws Exception
     {
         if (values.size() < 2)
             throw new Exception("missing operands for " + toString());
@@ -58,7 +63,7 @@ public class OpAnd extends Operator
 
     /** {@inheritDoc} */
     @Override
-    public String toString ()
+    public String toString()
     {
         return "op(and)";
     }

@@ -1,14 +1,18 @@
 package com.obdobion.algebrain;
 
 /**
- * <p>Abstract Operation class.</p>
+ * <p>
+ * Abstract Operation class.
+ * </p>
  *
  * @author Chris DeGreef fedupforone@gmail.com
  */
 public abstract class Operation extends EquPart
 {
     /**
-     * <p>Constructor for Operation.</p>
+     * <p>
+     * Constructor for Operation.
+     * </p>
      */
     public Operation()
     {
@@ -16,7 +20,9 @@ public abstract class Operation extends EquPart
     }
 
     /**
-     * <p>convertToBoolean.</p>
+     * <p>
+     * convertToBoolean.
+     * </p>
      *
      * @param fromStack a {@link java.lang.Object} object.
      * @return an array of boolean.
@@ -64,7 +70,9 @@ public abstract class Operation extends EquPart
     }
 
     /**
-     * <p>convertToDouble.</p>
+     * <p>
+     * convertToDouble.
+     * </p>
      *
      * @param fromStack a {@link java.lang.Object} object.
      * @return an array of double.
@@ -104,7 +112,9 @@ public abstract class Operation extends EquPart
     }
 
     /**
-     * <p>includeInRpn.</p>
+     * <p>
+     * includeInRpn.
+     * </p>
      *
      * @return a boolean.
      */
@@ -114,14 +124,18 @@ public abstract class Operation extends EquPart
     }
 
     /**
-     * <p>precedence.</p>
+     * <p>
+     * precedence.
+     * </p>
      *
      * @return a int.
      */
     protected abstract int precedence();
 
     /**
-     * <p>preceeds.</p>
+     * <p>
+     * preceeds.
+     * </p>
      *
      * @param rightOp a {@link com.obdobion.algebrain.Operation} object.
      * @return a boolean.

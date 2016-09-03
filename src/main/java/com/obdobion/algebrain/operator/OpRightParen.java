@@ -7,7 +7,9 @@ import com.obdobion.algebrain.ValueStack;
 import com.obdobion.algebrain.token.TokOperand;
 
 /**
- * <p>OpRightParen class.</p>
+ * <p>
+ * OpRightParen class.
+ * </p>
  *
  * @author Chris DeGreef fedupforone@gmail.com
  * @since 1.3.9
@@ -15,7 +17,9 @@ import com.obdobion.algebrain.token.TokOperand;
 public class OpRightParen extends Operator
 {
     /**
-     * <p>Constructor for OpRightParen.</p>
+     * <p>
+     * Constructor for OpRightParen.
+     * </p>
      */
     public OpRightParen()
     {
@@ -23,7 +27,9 @@ public class OpRightParen extends Operator
     }
 
     /**
-     * <p>Constructor for OpRightParen.</p>
+     * <p>
+     * Constructor for OpRightParen.
+     * </p>
      *
      * @param opTok a {@link com.obdobion.algebrain.EquPart} object.
      */

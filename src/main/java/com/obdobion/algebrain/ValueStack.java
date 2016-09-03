@@ -22,11 +22,9 @@ public class ValueStack extends Stack<Object>
      * byteArrayAsString.
      * </p>
      *
-     * @param bytearray
-     *            a {@link java.lang.Object} object.
+     * @param bytearray a {@link java.lang.Object} object.
      * @return a {@link java.lang.String} object.
-     * @throws java.text.ParseException
-     *             if any.
+     * @throws java.text.ParseException if any.
      */
     public static String byteArrayAsString(final Object bytearray) throws ParseException
     {
@@ -46,11 +44,9 @@ public class ValueStack extends Stack<Object>
      * convertToBoolean.
      * </p>
      *
-     * @param fromStack
-     *            a {@link java.lang.Object} object.
+     * @param fromStack a {@link java.lang.Object} object.
      * @return a boolean.
-     * @throws java.text.ParseException
-     *             if any.
+     * @throws java.text.ParseException if any.
      */
     protected boolean convertToBoolean(final Object fromStack) throws ParseException
     {
@@ -75,11 +71,9 @@ public class ValueStack extends Stack<Object>
      * convertToDouble.
      * </p>
      *
-     * @param fromStack
-     *            a {@link java.lang.Object} object.
+     * @param fromStack a {@link java.lang.Object} object.
      * @return a double.
-     * @throws java.text.ParseException
-     *             if any.
+     * @throws java.text.ParseException if any.
      */
     protected double convertToDouble(final Object fromStack) throws ParseException
     {
@@ -101,11 +95,9 @@ public class ValueStack extends Stack<Object>
      * convertToDouble.
      * </p>
      *
-     * @param fromStack
-     *            a {@link java.lang.Object} object.
+     * @param fromStack a {@link java.lang.Object} object.
      * @return a double.
-     * @throws java.text.ParseException
-     *             if any.
+     * @throws java.text.ParseException if any.
      */
     protected long convertToLong(final Object fromStack) throws ParseException
     {
@@ -128,8 +120,7 @@ public class ValueStack extends Stack<Object>
      * </p>
      *
      * @return an array of {@link java.lang.Object} objects.
-     * @throws java.text.ParseException
-     *             if any.
+     * @throws java.text.ParseException if any.
      */
     public Object[] ensureSameTypes() throws ParseException
     {
@@ -142,8 +133,7 @@ public class ValueStack extends Stack<Object>
      * </p>
      *
      * @return an array of {@link java.lang.Object} objects.
-     * @throws java.text.ParseException
-     *             if any.
+     * @throws java.text.ParseException if any.
      */
     public Object[] ensureSameTypes(final int count) throws ParseException
     {
@@ -201,8 +191,7 @@ public class ValueStack extends Stack<Object>
      * </p>
      *
      * @return a boolean.
-     * @throws java.text.ParseException
-     *             if any.
+     * @throws java.text.ParseException if any.
      */
     public boolean popBoolean() throws ParseException
     {
@@ -215,8 +204,7 @@ public class ValueStack extends Stack<Object>
      * </p>
      *
      * @return an array of byte.
-     * @throws java.text.ParseException
-     *             if any.
+     * @throws java.text.ParseException if any.
      */
     public byte[] popByteArray() throws ParseException
     {
@@ -233,8 +221,7 @@ public class ValueStack extends Stack<Object>
      * </p>
      *
      * @return a double.
-     * @throws java.text.ParseException
-     *             if any.
+     * @throws java.text.ParseException if any.
      */
     public double popDouble() throws ParseException
     {
@@ -247,8 +234,7 @@ public class ValueStack extends Stack<Object>
      * </p>
      *
      * @return a long.
-     * @throws java.text.ParseException
-     *             if any.
+     * @throws java.text.ParseException if any.
      */
     public long popLong() throws ParseException
     {
@@ -261,8 +247,7 @@ public class ValueStack extends Stack<Object>
      * </p>
      *
      * @return a {@link java.lang.String} object.
-     * @throws java.text.ParseException
-     *             if any.
+     * @throws java.text.ParseException if any.
      */
     public String popString() throws ParseException
     {
@@ -284,8 +269,7 @@ public class ValueStack extends Stack<Object>
      * </p>
      *
      * @return a {@link java.lang.Object} object.
-     * @throws java.text.ParseException
-     *             if any.
+     * @throws java.text.ParseException if any.
      */
     public Object popStringOrByteArray() throws ParseException
     {
@@ -310,8 +294,7 @@ public class ValueStack extends Stack<Object>
      * </p>
      *
      * @return a {@link java.lang.Object} object.
-     * @throws java.text.ParseException
-     *             if any.
+     * @throws java.text.ParseException if any.
      */
     public Object popWhatever() throws ParseException
     {
