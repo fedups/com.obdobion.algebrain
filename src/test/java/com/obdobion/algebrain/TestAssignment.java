@@ -24,8 +24,8 @@ public class TestAssignment
     public void conditionalAssignmentTarget() throws Exception
     {
         Equ.getInstance(true);
-        final Long result = (Long) Equ.getInstance().evaluate("if (1=2, a, b) := 1");
-        Assert.assertEquals("result", 1, result.intValue());
+        final long result = (long) Equ.getInstance().evaluate("if (1=2, a, b) := 1");
+        Assert.assertEquals("result", 1, result);
         Assert.assertNull("unassigned variable", Equ.getInstance().getSupport().resolveVariable("a", null));
         Assert.assertEquals("assigned variable", new Long(1),
                 Equ.getInstance().getSupport().resolveVariable("b", null));
