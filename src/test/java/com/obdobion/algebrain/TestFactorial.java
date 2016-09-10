@@ -87,10 +87,24 @@ public class TestFactorial
      * @throws java.lang.Exception if any.
      */
     @Test
-    public void precedence() throws Exception
+    public void precedence1() throws Exception
     {
         final Long result = (Long) Equ.getInstance(true).evaluate("3*2!");
         Assert.assertEquals("factorial result ", 6, result.longValue(), 0D);
+    }
+
+    /**
+     * <p>
+     * precedence.
+     * </p>
+     *
+     * @throws java.lang.Exception if any.
+     */
+    @Test
+    public void precedence2() throws Exception
+    {
+        final Long result = (Long) Equ.getInstance(true).evaluate("3!*-2");
+        Assert.assertEquals("factorial result ", -12, result.longValue(), 0D);
     }
 
     /**

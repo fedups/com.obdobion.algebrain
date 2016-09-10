@@ -20,6 +20,7 @@ import org.junit.runners.Suite.SuiteClasses;
         TestCompiling.class,
         TestConstants.class,
         TestDates.class,
+        TestImpliedMultiply.class,
         TestEquations.class,
         TestFactorial.class,
         TestLogs.class,

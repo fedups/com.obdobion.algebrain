@@ -18,7 +18,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -194,20 +194,26 @@ extends <a href="../../../../com/obdobion/algebrain/Operator.html" title="class 
 </td>
 </tr>
 <tr id="i2" class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/obdobion/algebrain/operator/OpRightParen.html#negatize-com.obdobion.algebrain.EquPart-">negatize</a></span>(<a href="../../../../com/obdobion/algebrain/EquPart.html" title="class in com.obdobion.algebrain">EquPart</a>&nbsp;rightSide)</code>
+<div class="block">A close parent followed by a minus sign is always subtraction</div>
+</td>
+</tr>
+<tr id="i3" class="rowColor">
 <td class="colFirst"><code>protected int</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/obdobion/algebrain/operator/OpRightParen.html#precedence--">precedence</a></span>()</code>
 <div class="block">
  precedence.</div>
 </td>
 </tr>
-<tr id="i3" class="rowColor">
+<tr id="i4" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/obdobion/algebrain/operator/OpRightParen.html#resolve-com.obdobion.algebrain.ValueStack-">resolve</a></span>(<a href="../../../../com/obdobion/algebrain/ValueStack.html" title="class in com.obdobion.algebrain">ValueStack</a>&nbsp;values)</code>
 <div class="block">
  resolve.</div>
 </td>
 </tr>
-<tr id="i4" class="altColor">
+<tr id="i5" class="rowColor">
 <td class="colFirst"><code><a href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/obdobion/algebrain/operator/OpRightParen.html#toString--">toString</a></span>()</code></td>
 </tr>
@@ -314,6 +320,24 @@ extends <a href="../../../../com/obdobion/algebrain/Operator.html" title="class 
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="../../../../com/obdobion/algebrain/EquPart.html#multiplize-com.obdobion.algebrain.EquPart-">multiplize</a></code>&nbsp;in class&nbsp;<code><a href="../../../../com/obdobion/algebrain/EquPart.html" title="class in com.obdobion.algebrain">EquPart</a></code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>rightSide</code> - is not used</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a boolean.</dd>
+</dl>
+</li>
+</ul>
+<a name="negatize-com.obdobion.algebrain.EquPart-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>negatize</h4>
+<pre>public&nbsp;boolean&nbsp;negatize(<a href="../../../../com/obdobion/algebrain/EquPart.html" title="class in com.obdobion.algebrain">EquPart</a>&nbsp;rightSide)</pre>
+<div class="block">A close parent followed by a minus sign is always subtraction</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code><a href="../../../../com/obdobion/algebrain/Operator.html#negatize-com.obdobion.algebrain.EquPart-">negatize</a></code>&nbsp;in class&nbsp;<code><a href="../../../../com/obdobion/algebrain/Operator.html" title="class in com.obdobion.algebrain">Operator</a></code></dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>rightSide</code> - is not used</dd>
 <dt><span class="returnLabel">Returns:</span></dt>

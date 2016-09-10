@@ -52,6 +52,17 @@ public class OpRightParen extends Operator
         return rightSide instanceof OpLeftParen || rightSide instanceof TokOperand || rightSide instanceof Function;
     }
 
+    /**
+     * A close paren followed by a minus sign is always subtraction
+     *
+     * @param rightSide is not used
+     */
+    @Override
+    public boolean negatize(final EquPart rightSide)
+    {
+        return false;
+    }
+
     /** {@inheritDoc} */
     @Override
     protected int precedence()

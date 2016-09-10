@@ -45,6 +45,18 @@ public class OpChain extends Operator
         return true;
     }
 
+    /**
+     * {@inheritDoc}
+     *
+     * This is just to the left of a subtraction meaning that the minus sign is
+     * the first thing in an equation. That makes it a negation.
+     */
+    @Override
+    public boolean negatize(final EquPart rightSide)
+    {
+        return true;
+    }
+
     /** {@inheritDoc} */
     @Override
     protected int precedence()
@@ -62,13 +74,14 @@ public class OpChain extends Operator
     public void resolve(final ValueStack values) throws Exception
     {
         if (values.size() < 2)
-            return;
+            throw new ParseException("missing operand", 0);
+
         try
         {
-            final Object op2 = values.popWhatever();
+            final Object rightSideResult = values.popWhatever();
             values.popWhatever();
 
-            values.push(op2);
+            values.push(rightSideResult);
         } catch (final ParseException e)
         {
             e.fillInStackTrace();

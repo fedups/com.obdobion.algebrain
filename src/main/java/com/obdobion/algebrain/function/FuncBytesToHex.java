@@ -61,6 +61,6 @@ public class FuncBytesToHex extends Function
     @Override
     public String toString()
     {
-        return "function(toHex";
+        return "function(toHex)";
     }
 }

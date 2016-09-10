@@ -38,6 +38,32 @@ public class OpFactorial extends Operator
         super(opTok);
     }
 
+    /**
+     * <p>
+     * multiplize.
+     * </p>
+     *
+     * @param rightSide is not used
+     * @return a boolean.
+     */
+    @Override
+    public boolean multiplize(final EquPart rightSide)
+    {
+        return !(rightSide instanceof Operator);
+    }
+
+    /**
+     * factorial followed by a minus sign is always subtraction.
+     *
+     * @param rightSide is not used
+     * @return a boolean.
+     */
+    @Override
+    public boolean negatize(final EquPart rightSide)
+    {
+        return false;
+    }
+
     /** {@inheritDoc} */
     @Override
     protected int precedence()

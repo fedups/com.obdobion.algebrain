@@ -27,12 +27,41 @@ public interface EquationSupport
 
     /**
      * <p>
+     * assignVariable.
+     * </p>
+     *
+     * @param variableName a {@link java.lang.String} object.
+     * @param value a {@link java.lang.Object} object.
+     * @param systemGenerated If true these variables can not be cleared.
+     * @throws java.lang.Exception if any.
+     */
+    void assignVariable(String variableName, Object value, boolean systemGenerated) throws Exception;
+
+    /**
+     * <p>
+     * Removes all variables except system generated ones.
+     * </p>
+     */
+    void clear();
+
+    /**
+     * <p>
      * getVariableNames.
      * </p>
      *
      * @return a {@link java.util.List} object.
      */
     List<String> getVariableNames();
+
+    /**
+     * <p>
+     * getVariableNames.
+     * </p>
+     *
+     * @param includeSystemGenerated a boolean.
+     * @return a {@link java.util.List} object.
+     */
+    List<String> getVariableNames(boolean includeSystemGenerated);
 
     /**
      * <p>
@@ -49,12 +78,12 @@ public interface EquationSupport
      * </p>
      *
      * @param tableName a {@link java.lang.String} object.
-     * @param baseDate a {@link java.sql.Date} object.
+     * @param baseDate a {@link java.util.Date} object.
      * @param tableKey a double.
      * @return a {@link java.util.Hashtable} object.
      * @throws java.lang.Exception if any.
      */
-    Hashtable<Double, Double> resolveRate(String tableName, java.sql.Date baseDate, double tableKey) throws Exception;
+    Hashtable<Double, Double> resolveRate(String tableName, java.util.Date baseDate, double tableKey) throws Exception;
 
     /**
      * <p>
@@ -62,7 +91,7 @@ public interface EquationSupport
      * </p>
      *
      * @param tableName a {@link java.lang.String} object.
-     * @param baseDate a {@link java.sql.Date} object.
+     * @param baseDate a {@link java.util.Date} object.
      * @param key1 a {@link java.lang.String} object.
      * @param key2 a {@link java.lang.String} object.
      * @param key3 a {@link java.lang.String} object.
@@ -73,7 +102,7 @@ public interface EquationSupport
      */
     double resolveRate(
             String tableName,
-            java.sql.Date baseDate,
+            java.util.Date baseDate,
             String key1,
             String key2,
             String key3,
@@ -86,9 +115,20 @@ public interface EquationSupport
      * </p>
      *
      * @param variableName a {@link java.lang.String} object.
+     * @return a {@link java.lang.Object} object.
+     * @throws java.lang.Exception if any.
+     */
+    Object resolveVariable(String variableName) throws Exception;
+
+    /**
+     * <p>
+     * resolveVariable.
+     * </p>
+     *
+     * @param variableName a {@link java.lang.String} object.
      * @param baseDate a {@link java.sql.Date} object.
      * @return a {@link java.lang.Object} object.
      * @throws java.lang.Exception if any.
      */
-    Object resolveVariable(String variableName, java.sql.Date baseDate) throws Exception;
+    Object resolveVariable(String variableName, java.util.Date baseDate) throws Exception;
 }

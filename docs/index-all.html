@@ -69,7 +69,7 @@
 <!--   -->
 </a></div>
 <!-- ========= END OF TOP NAVBAR ========= -->
-<div class="contentContainer"><a href="#I:A">A</a>&nbsp;<a href="#I:B">B</a>&nbsp;<a href="#I:C">C</a>&nbsp;<a href="#I:D">D</a>&nbsp;<a href="#I:E">E</a>&nbsp;<a href="#I:F">F</a>&nbsp;<a href="#I:G">G</a>&nbsp;<a href="#I:I">I</a>&nbsp;<a href="#I:M">M</a>&nbsp;<a href="#I:O">O</a>&nbsp;<a href="#I:P">P</a>&nbsp;<a href="#I:R">R</a>&nbsp;<a href="#I:S">S</a>&nbsp;<a href="#I:T">T</a>&nbsp;<a href="#I:U">U</a>&nbsp;<a href="#I:V">V</a>&nbsp;<a name="I:A">
+<div class="contentContainer"><a href="#I:A">A</a>&nbsp;<a href="#I:B">B</a>&nbsp;<a href="#I:C">C</a>&nbsp;<a href="#I:D">D</a>&nbsp;<a href="#I:E">E</a>&nbsp;<a href="#I:F">F</a>&nbsp;<a href="#I:G">G</a>&nbsp;<a href="#I:I">I</a>&nbsp;<a href="#I:M">M</a>&nbsp;<a href="#I:N">N</a>&nbsp;<a href="#I:O">O</a>&nbsp;<a href="#I:P">P</a>&nbsp;<a href="#I:R">R</a>&nbsp;<a href="#I:S">S</a>&nbsp;<a href="#I:T">T</a>&nbsp;<a href="#I:U">U</a>&nbsp;<a href="#I:V">V</a>&nbsp;<a name="I:A">
 <!--   -->
 </a>
 <h2 class="title">A</h2>
@@ -1032,7 +1032,7 @@
 </a>
 <h2 class="title">G</h2>
 <dl>
-<dt><span class="memberNameLink"><a href="com/obdobion/algebrain/Equ.html#gatherVariables-java.util.Collection-">gatherVariables(Collection&lt;EquPart&gt;)</a></span> - Static method in class com.obdobion.algebrain.<a href="com/obdobion/algebrain/Equ.html" title="class in com.obdobion.algebrain">Equ</a></dt>
+<dt><span class="memberNameLink"><a href="com/obdobion/algebrain/Equ.html#gatherVariables-java.util.List-">gatherVariables(List&lt;EquPart&gt;)</a></span> - Static method in class com.obdobion.algebrain.<a href="com/obdobion/algebrain/Equ.html" title="class in com.obdobion.algebrain">Equ</a></dt>
 <dd>
 <div class="block">
  gatherVariables.</div>
@@ -1189,11 +1189,16 @@
 <div class="block">
  morph.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="com/obdobion/algebrain/Equ.html#multiplize-java.util.Collection-">multiplize(Collection&lt;EquPart&gt;)</a></span> - Method in class com.obdobion.algebrain.<a href="com/obdobion/algebrain/Equ.html" title="class in com.obdobion.algebrain">Equ</a></dt>
+<dt><span class="memberNameLink"><a href="com/obdobion/algebrain/Equ.html#multiplize-java.util.List-">multiplize(List&lt;EquPart&gt;)</a></span> - Method in class com.obdobion.algebrain.<a href="com/obdobion/algebrain/Equ.html" title="class in com.obdobion.algebrain">Equ</a></dt>
 <dd>
 <div class="block">put implied multipliers into the equation</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/obdobion/algebrain/EquPart.html#multiplize-com.obdobion.algebrain.EquPart-">multiplize(EquPart)</a></span> - Method in class com.obdobion.algebrain.<a href="com/obdobion/algebrain/EquPart.html" title="class in com.obdobion.algebrain">EquPart</a></dt>
+<dd>
+<div class="block">
+ multiplize.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="com/obdobion/algebrain/operator/OpFactorial.html#multiplize-com.obdobion.algebrain.EquPart-">multiplize(EquPart)</a></span> - Method in class com.obdobion.algebrain.operator.<a href="com/obdobion/algebrain/operator/OpFactorial.html" title="class in com.obdobion.algebrain.operator">OpFactorial</a></dt>
 <dd>
 <div class="block">
  multiplize.</div>
@@ -1207,6 +1212,39 @@
 <dd>
 <div class="block">
  multiplize.</div>
+</dd>
+</dl>
+<a name="I:N">
+<!--   -->
+</a>
+<h2 class="title">N</h2>
+<dl>
+<dt><span class="memberNameLink"><a href="com/obdobion/algebrain/Equ.html#negatize-java.util.List-">negatize(List&lt;EquPart&gt;)</a></span> - Method in class com.obdobion.algebrain.<a href="com/obdobion/algebrain/Equ.html" title="class in com.obdobion.algebrain">Equ</a></dt>
+<dd>
+<div class="block">change subtractions to negations if necessary</div>
+</dd>
+<dt><span class="memberNameLink"><a href="com/obdobion/algebrain/EquPart.html#negatize-com.obdobion.algebrain.EquPart-">negatize(EquPart)</a></span> - Method in class com.obdobion.algebrain.<a href="com/obdobion/algebrain/EquPart.html" title="class in com.obdobion.algebrain">EquPart</a></dt>
+<dd>
+<div class="block">
+ negatize.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="com/obdobion/algebrain/Operator.html#negatize-com.obdobion.algebrain.EquPart-">negatize(EquPart)</a></span> - Method in class com.obdobion.algebrain.<a href="com/obdobion/algebrain/Operator.html" title="class in com.obdobion.algebrain">Operator</a></dt>
+<dd>
+<div class="block">An operator followed by a minus sign is always a negate rather than a
+ subtraction</div>
+</dd>
+<dt><span class="memberNameLink"><a href="com/obdobion/algebrain/operator/OpChain.html#negatize-com.obdobion.algebrain.EquPart-">negatize(EquPart)</a></span> - Method in class com.obdobion.algebrain.operator.<a href="com/obdobion/algebrain/operator/OpChain.html" title="class in com.obdobion.algebrain.operator">OpChain</a></dt>
+<dd>
+<div class="block">This is just to the left of a subtraction meaning that the minus sign is
+ the first thing in an equation.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="com/obdobion/algebrain/operator/OpFactorial.html#negatize-com.obdobion.algebrain.EquPart-">negatize(EquPart)</a></span> - Method in class com.obdobion.algebrain.operator.<a href="com/obdobion/algebrain/operator/OpFactorial.html" title="class in com.obdobion.algebrain.operator">OpFactorial</a></dt>
+<dd>
+<div class="block">factorial followed by a minus sign is always subtraction.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="com/obdobion/algebrain/operator/OpRightParen.html#negatize-com.obdobion.algebrain.EquPart-">negatize(EquPart)</a></span> - Method in class com.obdobion.algebrain.operator.<a href="com/obdobion/algebrain/operator/OpRightParen.html" title="class in com.obdobion.algebrain.operator">OpRightParen</a></dt>
+<dd>
+<div class="block">A close parent followed by a minus sign is always subtraction</div>
 </dd>
 </dl>
 <a name="I:O">
@@ -1514,6 +1552,21 @@
 <div class="block">
  Constructor for OpNand.</div>
 </dd>
+<dt><a href="com/obdobion/algebrain/operator/OpNegate.html" title="class in com.obdobion.algebrain.operator"><span class="typeNameLink">OpNegate</span></a> - Class in <a href="com/obdobion/algebrain/operator/package-summary.html">com.obdobion.algebrain.operator</a></dt>
+<dd>
+<div class="block">
+ OpNegate class.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="com/obdobion/algebrain/operator/OpNegate.html#OpNegate--">OpNegate()</a></span> - Constructor for class com.obdobion.algebrain.operator.<a href="com/obdobion/algebrain/operator/OpNegate.html" title="class in com.obdobion.algebrain.operator">OpNegate</a></dt>
+<dd>
+<div class="block">
+ Constructor for OpNegate.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="com/obdobion/algebrain/operator/OpNegate.html#OpNegate-com.obdobion.algebrain.EquPart-">OpNegate(EquPart)</a></span> - Constructor for class com.obdobion.algebrain.operator.<a href="com/obdobion/algebrain/operator/OpNegate.html" title="class in com.obdobion.algebrain.operator">OpNegate</a></dt>
+<dd>
+<div class="block">
+ Constructor for OpNegate.</div>
+</dd>
 <dt><a href="com/obdobion/algebrain/operator/OpNor.html" title="class in com.obdobion.algebrain.operator"><span class="typeNameLink">OpNor</span></a> - Class in <a href="com/obdobion/algebrain/operator/package-summary.html">com.obdobion.algebrain.operator</a></dt>
 <dd>
 <div class="block">
@@ -1745,6 +1798,11 @@
  precedence.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/obdobion/algebrain/operator/OpNand.html#precedence--">precedence()</a></span> - Method in class com.obdobion.algebrain.operator.<a href="com/obdobion/algebrain/operator/OpNand.html" title="class in com.obdobion.algebrain.operator">OpNand</a></dt>
+<dd>
+<div class="block">
+ precedence.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="com/obdobion/algebrain/operator/OpNegate.html#precedence--">precedence()</a></span> - Method in class com.obdobion.algebrain.operator.<a href="com/obdobion/algebrain/operator/OpNegate.html" title="class in com.obdobion.algebrain.operator">OpNegate</a></dt>
 <dd>
 <div class="block">
  precedence.</div>
@@ -2171,6 +2229,11 @@
 <div class="block">
  resolve.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="com/obdobion/algebrain/operator/OpNegate.html#resolve-com.obdobion.algebrain.ValueStack-">resolve(ValueStack)</a></span> - Method in class com.obdobion.algebrain.operator.<a href="com/obdobion/algebrain/operator/OpNegate.html" title="class in com.obdobion.algebrain.operator">OpNegate</a></dt>
+<dd>
+<div class="block">
+ resolve.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="com/obdobion/algebrain/operator/OpNor.html#resolve-com.obdobion.algebrain.ValueStack-">resolve(ValueStack)</a></span> - Method in class com.obdobion.algebrain.operator.<a href="com/obdobion/algebrain/operator/OpNor.html" title="class in com.obdobion.algebrain.operator">OpNor</a></dt>
 <dd>
 <div class="block">
@@ -2271,7 +2334,7 @@
 <div class="block">
  resolveVariable.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="com/obdobion/algebrain/Equ.html#rpnize-java.util.Collection-">rpnize(Collection&lt;EquPart&gt;)</a></span> - Method in class com.obdobion.algebrain.<a href="com/obdobion/algebrain/Equ.html" title="class in com.obdobion.algebrain">Equ</a></dt>
+<dt><span class="memberNameLink"><a href="com/obdobion/algebrain/Equ.html#rpnize-java.util.List-">rpnize(List&lt;EquPart&gt;)</a></span> - Method in class com.obdobion.algebrain.<a href="com/obdobion/algebrain/Equ.html" title="class in com.obdobion.algebrain">Equ</a></dt>
 <dd>
 <div class="block">Create a reverse Polish notation form of the equation</div>
 </dd>
@@ -2469,6 +2532,7 @@
 <dt><span class="memberNameLink"><a href="com/obdobion/algebrain/operator/OpMod.html#toString--">toString()</a></span> - Method in class com.obdobion.algebrain.operator.<a href="com/obdobion/algebrain/operator/OpMod.html" title="class in com.obdobion.algebrain.operator">OpMod</a></dt>
 <dt><span class="memberNameLink"><a href="com/obdobion/algebrain/operator/OpMultiply.html#toString--">toString()</a></span> - Method in class com.obdobion.algebrain.operator.<a href="com/obdobion/algebrain/operator/OpMultiply.html" title="class in com.obdobion.algebrain.operator">OpMultiply</a></dt>
 <dt><span class="memberNameLink"><a href="com/obdobion/algebrain/operator/OpNand.html#toString--">toString()</a></span> - Method in class com.obdobion.algebrain.operator.<a href="com/obdobion/algebrain/operator/OpNand.html" title="class in com.obdobion.algebrain.operator">OpNand</a></dt>
+<dt><span class="memberNameLink"><a href="com/obdobion/algebrain/operator/OpNegate.html#toString--">toString()</a></span> - Method in class com.obdobion.algebrain.operator.<a href="com/obdobion/algebrain/operator/OpNegate.html" title="class in com.obdobion.algebrain.operator">OpNegate</a></dt>
 <dt><span class="memberNameLink"><a href="com/obdobion/algebrain/operator/OpNor.html#toString--">toString()</a></span> - Method in class com.obdobion.algebrain.operator.<a href="com/obdobion/algebrain/operator/OpNor.html" title="class in com.obdobion.algebrain.operator">OpNor</a></dt>
 <dt><span class="memberNameLink"><a href="com/obdobion/algebrain/operator/OpOr.html#toString--">toString()</a></span> - Method in class com.obdobion.algebrain.operator.<a href="com/obdobion/algebrain/operator/OpOr.html" title="class in com.obdobion.algebrain.operator">OpOr</a></dt>
 <dt><span class="memberNameLink"><a href="com/obdobion/algebrain/operator/OpPower.html#toString--">toString()</a></span> - Method in class com.obdobion.algebrain.operator.<a href="com/obdobion/algebrain/operator/OpPower.html" title="class in com.obdobion.algebrain.operator">OpPower</a></dt>
@@ -2516,7 +2580,7 @@
 <dt><span class="memberNameLink"><a href="com/obdobion/algebrain/ValueStack.html#ValueStack--">ValueStack()</a></span> - Constructor for class com.obdobion.algebrain.<a href="com/obdobion/algebrain/ValueStack.html" title="class in com.obdobion.algebrain">ValueStack</a></dt>
 <dd>&nbsp;</dd>
 </dl>
-<a href="#I:A">A</a>&nbsp;<a href="#I:B">B</a>&nbsp;<a href="#I:C">C</a>&nbsp;<a href="#I:D">D</a>&nbsp;<a href="#I:E">E</a>&nbsp;<a href="#I:F">F</a>&nbsp;<a href="#I:G">G</a>&nbsp;<a href="#I:I">I</a>&nbsp;<a href="#I:M">M</a>&nbsp;<a href="#I:O">O</a>&nbsp;<a href="#I:P">P</a>&nbsp;<a href="#I:R">R</a>&nbsp;<a href="#I:S">S</a>&nbsp;<a href="#I:T">T</a>&nbsp;<a href="#I:U">U</a>&nbsp;<a href="#I:V">V</a>&nbsp;</div>
+<a href="#I:A">A</a>&nbsp;<a href="#I:B">B</a>&nbsp;<a href="#I:C">C</a>&nbsp;<a href="#I:D">D</a>&nbsp;<a href="#I:E">E</a>&nbsp;<a href="#I:F">F</a>&nbsp;<a href="#I:G">G</a>&nbsp;<a href="#I:I">I</a>&nbsp;<a href="#I:M">M</a>&nbsp;<a href="#I:N">N</a>&nbsp;<a href="#I:O">O</a>&nbsp;<a href="#I:P">P</a>&nbsp;<a href="#I:R">R</a>&nbsp;<a href="#I:S">S</a>&nbsp;<a href="#I:T">T</a>&nbsp;<a href="#I:U">U</a>&nbsp;<a href="#I:V">V</a>&nbsp;</div>
 <!-- ======= START OF BOTTOM NAVBAR ====== -->
 <div class="bottomNav"><a name="navbar.bottom">
 <!--   -->

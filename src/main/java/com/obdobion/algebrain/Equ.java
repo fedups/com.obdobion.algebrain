@@ -2,7 +2,6 @@ package com.obdobion.algebrain;
 
 import java.lang.reflect.Constructor;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.HashSet;
 import java.util.Hashtable;
 import java.util.Iterator;
@@ -78,6 +77,7 @@ import com.obdobion.algebrain.operator.OpLeftParen;
 import com.obdobion.algebrain.operator.OpMod;
 import com.obdobion.algebrain.operator.OpMultiply;
 import com.obdobion.algebrain.operator.OpNand;
+import com.obdobion.algebrain.operator.OpNegate;
 import com.obdobion.algebrain.operator.OpNor;
 import com.obdobion.algebrain.operator.OpOr;
 import com.obdobion.algebrain.operator.OpPower;
@@ -123,7 +123,7 @@ public class Equ
      * @param tokens a {@link java.util.Collection} object.
      * @return a {@link java.util.Set} object.
      */
-    static public Set<String> gatherVariables(final Collection<EquPart> tokens)
+    static public Set<String> gatherVariables(final List<EquPart> tokens)
     {
         final Set<String> vars = new HashSet<>();
         for (final EquPart token : tokens)
@@ -176,7 +176,7 @@ public class Equ
     private EquationSupport             support;
     private String                      equ;
 
-    private Collection<EquPart>         rpn;
+    private List<EquPart>               rpn;
     List<String>                        variablesThatExistedBeforePreviousEvaluation;
 
     private Metaphone                   cachedMetaphone;
@@ -203,7 +203,8 @@ public class Equ
     public Set<String> compile(final String _equ) throws Exception
     {
         equ = _equ;
-        Collection<EquPart> tokens = tokenize();
+        List<EquPart> tokens = tokenize();
+        tokens = negatize(tokens);
         tokens = multiplize(tokens);
         countParameters(tokens);
         rpn = rpnize(tokens);
@@ -211,7 +212,7 @@ public class Equ
         return gatherVariables(tokens);
     }
 
-    void countParameters(final Collection<EquPart> oldTokens)
+    void countParameters(final List<EquPart> oldTokens)
     {
         final EquPart[] equParts = oldTokens.toArray(new EquPart[0]);
         /*
@@ -256,6 +257,9 @@ public class Equ
             part.setEqu(this);
             part.resolve(values);
         }
+
+        if (values.isEmpty())
+            return null;
 
         final Object result = values.firstElement();
         values.clear();
@@ -462,7 +466,7 @@ public class Equ
      * @param oldTokens a {@link java.util.Collection} object.
      * @return a {@link java.util.Collection} object.
      */
-    protected Collection<EquPart> multiplize(final Collection<EquPart> oldTokens)
+    protected List<EquPart> multiplize(final List<EquPart> oldTokens)
     {
         final EquPart[] equParts = oldTokens.toArray(new EquPart[0]);
         final EquPart[] fixed = new EquPart[equParts.length * 2];
@@ -488,13 +492,38 @@ public class Equ
             fixed[left] = equParts[right];
         }
 
-        final Collection<EquPart> tokens = new ArrayList<>();
+        final List<EquPart> tokens = new ArrayList<>();
 
         for (int i = 0; i < fixed.length; i++)
             if (fixed[i] != null)
                 tokens.add(fixed[i]);
 
         return tokens;
+    }
+
+    /**
+     * change subtractions to negations if necessary
+     *
+     * @param equParts a {@link java.util.List} object.
+     * @return a {@link java.util.Collection} object.
+     */
+    protected List<EquPart> negatize(final List<EquPart> equParts)
+    {
+        int left = 0;
+
+        for (int right = 1; right < equParts.size(); right++)
+        {
+            left = right - 1;
+            if (equParts.get(left) instanceof OpSubtract)
+                if (left == 0)
+                    equParts.set(left, new OpNegate(equParts.get(left)));
+                else
+                {
+                    if (equParts.get(left - 1).negatize(equParts.get(right)))
+                        equParts.set(left, new OpNegate(equParts.get(left)));
+                }
+        }
+        return equParts;
     }
 
     /**
@@ -579,9 +608,9 @@ public class Equ
      * @param oldTokens a {@link java.util.Collection} object.
      * @return a {@link java.util.Collection} object.
      */
-    protected Collection<EquPart> rpnize(final Collection<EquPart> oldTokens)
+    protected List<EquPart> rpnize(final List<EquPart> oldTokens)
     {
-        final Collection<EquPart> _rpn = new Stack<>();
+        final List<EquPart> _rpn = new Stack<>();
         final Stack<EquPart> ops = new Stack<>();
         Operation leftOp;
         Operation rightOp;
@@ -712,13 +741,13 @@ public class Equ
      * @return a {@link java.util.Collection} object.
      * @throws java.lang.Exception if any.
      */
-    protected Collection<EquPart> tokenize() throws Exception
+    protected List<EquPart> tokenize() throws Exception
     {
         /*
          * break apart obvious tokens, realizing that some may need further
          * breakage and some may need to be merged back again
          */
-        final Collection<EquPart> tokens = new ArrayList<>();
+        final List<EquPart> tokens = new ArrayList<>();
         Token token = null;
         char c;
         int level = 0;

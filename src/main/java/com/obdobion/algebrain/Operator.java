@@ -32,6 +32,16 @@ public abstract class Operator extends Operation
         setLevel(opTok.getLevel());
     }
 
+    /**
+     * An operator followed by a minus sign is always a negate rather than a
+     * subtraction
+     */
+    @Override
+    public boolean negatize(final EquPart rightSide)
+    {
+        return true;
+    }
+
     /** {@inheritDoc} */
     @Override
     protected int precedence()

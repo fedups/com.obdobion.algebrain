@@ -145,19 +145,25 @@
 </tr>
 <tbody>
 <tr class="altColor">
-<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../com/obdobion/algebrain/EquPart.html" title="class in com.obdobion.algebrain">EquPart</a>&gt;</code></td>
-<td class="colLast"><span class="typeNameLabel">Equ.</span><code><span class="memberNameLink"><a href="../../../../com/obdobion/algebrain/Equ.html#multiplize-java.util.Collection-">multiplize</a></span>(<a href="http://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../com/obdobion/algebrain/EquPart.html" title="class in com.obdobion.algebrain">EquPart</a>&gt;&nbsp;oldTokens)</code>
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../com/obdobion/algebrain/EquPart.html" title="class in com.obdobion.algebrain">EquPart</a>&gt;</code></td>
+<td class="colLast"><span class="typeNameLabel">Equ.</span><code><span class="memberNameLink"><a href="../../../../com/obdobion/algebrain/Equ.html#multiplize-java.util.List-">multiplize</a></span>(<a href="http://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../com/obdobion/algebrain/EquPart.html" title="class in com.obdobion.algebrain">EquPart</a>&gt;&nbsp;oldTokens)</code>
 <div class="block">put implied multipliers into the equation</div>
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../com/obdobion/algebrain/EquPart.html" title="class in com.obdobion.algebrain">EquPart</a>&gt;</code></td>
-<td class="colLast"><span class="typeNameLabel">Equ.</span><code><span class="memberNameLink"><a href="../../../../com/obdobion/algebrain/Equ.html#rpnize-java.util.Collection-">rpnize</a></span>(<a href="http://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../com/obdobion/algebrain/EquPart.html" title="class in com.obdobion.algebrain">EquPart</a>&gt;&nbsp;oldTokens)</code>
-<div class="block">Create a reverse Polish notation form of the equation</div>
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../com/obdobion/algebrain/EquPart.html" title="class in com.obdobion.algebrain">EquPart</a>&gt;</code></td>
+<td class="colLast"><span class="typeNameLabel">Equ.</span><code><span class="memberNameLink"><a href="../../../../com/obdobion/algebrain/Equ.html#negatize-java.util.List-">negatize</a></span>(<a href="http://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../com/obdobion/algebrain/EquPart.html" title="class in com.obdobion.algebrain">EquPart</a>&gt;&nbsp;equParts)</code>
+<div class="block">change subtractions to negations if necessary</div>
 </td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../com/obdobion/algebrain/EquPart.html" title="class in com.obdobion.algebrain">EquPart</a>&gt;</code></td>
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../com/obdobion/algebrain/EquPart.html" title="class in com.obdobion.algebrain">EquPart</a>&gt;</code></td>
+<td class="colLast"><span class="typeNameLabel">Equ.</span><code><span class="memberNameLink"><a href="../../../../com/obdobion/algebrain/Equ.html#rpnize-java.util.List-">rpnize</a></span>(<a href="http://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../com/obdobion/algebrain/EquPart.html" title="class in com.obdobion.algebrain">EquPart</a>&gt;&nbsp;oldTokens)</code>
+<div class="block">Create a reverse Polish notation form of the equation</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../com/obdobion/algebrain/EquPart.html" title="class in com.obdobion.algebrain">EquPart</a>&gt;</code></td>
 <td class="colLast"><span class="typeNameLabel">Equ.</span><code><span class="memberNameLink"><a href="../../../../com/obdobion/algebrain/Equ.html#tokenize--">tokenize</a></span>()</code>
 <div class="block">
  tokenize.</div>
@@ -180,6 +186,20 @@
 </td>
 </tr>
 <tr class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><span class="typeNameLabel">Operator.</span><code><span class="memberNameLink"><a href="../../../../com/obdobion/algebrain/Operator.html#negatize-com.obdobion.algebrain.EquPart-">negatize</a></span>(<a href="../../../../com/obdobion/algebrain/EquPart.html" title="class in com.obdobion.algebrain">EquPart</a>&nbsp;rightSide)</code>
+<div class="block">An operator followed by a minus sign is always a negate rather than a
+ subtraction</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><span class="typeNameLabel">EquPart.</span><code><span class="memberNameLink"><a href="../../../../com/obdobion/algebrain/EquPart.html#negatize-com.obdobion.algebrain.EquPart-">negatize</a></span>(<a href="../../../../com/obdobion/algebrain/EquPart.html" title="class in com.obdobion.algebrain">EquPart</a>&nbsp;rightSide)</code>
+<div class="block">
+ negatize.</div>
+</td>
+</tr>
+<tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><span class="typeNameLabel">Function.</span><code><span class="memberNameLink"><a href="../../../../com/obdobion/algebrain/Function.html#updateParameterCount-com.obdobion.algebrain.EquPart:A-int-">updateParameterCount</a></span>(<a href="../../../../com/obdobion/algebrain/EquPart.html" title="class in com.obdobion.algebrain">EquPart</a>[]&nbsp;equParts,
                     int&nbsp;myLocInArray)</code>
@@ -198,20 +218,26 @@
 <tbody>
 <tr class="altColor">
 <td class="colFirst"><code>static <a href="http://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;</code></td>
-<td class="colLast"><span class="typeNameLabel">Equ.</span><code><span class="memberNameLink"><a href="../../../../com/obdobion/algebrain/Equ.html#gatherVariables-java.util.Collection-">gatherVariables</a></span>(<a href="http://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../com/obdobion/algebrain/EquPart.html" title="class in com.obdobion.algebrain">EquPart</a>&gt;&nbsp;tokens)</code>
+<td class="colLast"><span class="typeNameLabel">Equ.</span><code><span class="memberNameLink"><a href="../../../../com/obdobion/algebrain/Equ.html#gatherVariables-java.util.List-">gatherVariables</a></span>(<a href="http://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../com/obdobion/algebrain/EquPart.html" title="class in com.obdobion.algebrain">EquPart</a>&gt;&nbsp;tokens)</code>
 <div class="block">
  gatherVariables.</div>
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../com/obdobion/algebrain/EquPart.html" title="class in com.obdobion.algebrain">EquPart</a>&gt;</code></td>
-<td class="colLast"><span class="typeNameLabel">Equ.</span><code><span class="memberNameLink"><a href="../../../../com/obdobion/algebrain/Equ.html#multiplize-java.util.Collection-">multiplize</a></span>(<a href="http://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../com/obdobion/algebrain/EquPart.html" title="class in com.obdobion.algebrain">EquPart</a>&gt;&nbsp;oldTokens)</code>
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../com/obdobion/algebrain/EquPart.html" title="class in com.obdobion.algebrain">EquPart</a>&gt;</code></td>
+<td class="colLast"><span class="typeNameLabel">Equ.</span><code><span class="memberNameLink"><a href="../../../../com/obdobion/algebrain/Equ.html#multiplize-java.util.List-">multiplize</a></span>(<a href="http://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../com/obdobion/algebrain/EquPart.html" title="class in com.obdobion.algebrain">EquPart</a>&gt;&nbsp;oldTokens)</code>
 <div class="block">put implied multipliers into the equation</div>
 </td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../com/obdobion/algebrain/EquPart.html" title="class in com.obdobion.algebrain">EquPart</a>&gt;</code></td>
-<td class="colLast"><span class="typeNameLabel">Equ.</span><code><span class="memberNameLink"><a href="../../../../com/obdobion/algebrain/Equ.html#rpnize-java.util.Collection-">rpnize</a></span>(<a href="http://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../com/obdobion/algebrain/EquPart.html" title="class in com.obdobion.algebrain">EquPart</a>&gt;&nbsp;oldTokens)</code>
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../com/obdobion/algebrain/EquPart.html" title="class in com.obdobion.algebrain">EquPart</a>&gt;</code></td>
+<td class="colLast"><span class="typeNameLabel">Equ.</span><code><span class="memberNameLink"><a href="../../../../com/obdobion/algebrain/Equ.html#negatize-java.util.List-">negatize</a></span>(<a href="http://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../com/obdobion/algebrain/EquPart.html" title="class in com.obdobion.algebrain">EquPart</a>&gt;&nbsp;equParts)</code>
+<div class="block">change subtractions to negations if necessary</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../com/obdobion/algebrain/EquPart.html" title="class in com.obdobion.algebrain">EquPart</a>&gt;</code></td>
+<td class="colLast"><span class="typeNameLabel">Equ.</span><code><span class="memberNameLink"><a href="../../../../com/obdobion/algebrain/Equ.html#rpnize-java.util.List-">rpnize</a></span>(<a href="http://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../com/obdobion/algebrain/EquPart.html" title="class in com.obdobion.algebrain">EquPart</a>&gt;&nbsp;oldTokens)</code>
 <div class="block">Create a reverse Polish notation form of the equation</div>
 </td>
 </tr>
@@ -721,47 +747,54 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>class&nbsp;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/obdobion/algebrain/operator/OpNegate.html" title="class in com.obdobion.algebrain.operator">OpNegate</a></span></code>
+<div class="block">
+ OpNegate class.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>class&nbsp;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/obdobion/algebrain/operator/OpNor.html" title="class in com.obdobion.algebrain.operator">OpNor</a></span></code>
 <div class="block">
  OpOr class.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>class&nbsp;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/obdobion/algebrain/operator/OpOr.html" title="class in com.obdobion.algebrain.operator">OpOr</a></span></code>
 <div class="block">
  OpOr class.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>class&nbsp;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/obdobion/algebrain/operator/OpPower.html" title="class in com.obdobion.algebrain.operator">OpPower</a></span></code>
 <div class="block">
  OpPower class.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>class&nbsp;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/obdobion/algebrain/operator/OpRightParen.html" title="class in com.obdobion.algebrain.operator">OpRightParen</a></span></code>
 <div class="block">
  OpRightParen class.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>class&nbsp;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/obdobion/algebrain/operator/OpSubtract.html" title="class in com.obdobion.algebrain.operator">OpSubtract</a></span></code>
 <div class="block">
  OpSubtract class.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>class&nbsp;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/obdobion/algebrain/operator/OpXnor.html" title="class in com.obdobion.algebrain.operator">OpXnor</a></span></code>
 <div class="block">
  OpOr class.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>class&nbsp;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/obdobion/algebrain/operator/OpXor.html" title="class in com.obdobion.algebrain.operator">OpXor</a></span></code>
 <div class="block">
@@ -782,6 +815,32 @@
 <td class="colLast"><span class="typeNameLabel">OpRightParen.</span><code><span class="memberNameLink"><a href="../../../../com/obdobion/algebrain/operator/OpRightParen.html#multiplize-com.obdobion.algebrain.EquPart-">multiplize</a></span>(<a href="../../../../com/obdobion/algebrain/EquPart.html" title="class in com.obdobion.algebrain">EquPart</a>&nbsp;rightSide)</code>
 <div class="block">
  multiplize.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><span class="typeNameLabel">OpFactorial.</span><code><span class="memberNameLink"><a href="../../../../com/obdobion/algebrain/operator/OpFactorial.html#multiplize-com.obdobion.algebrain.EquPart-">multiplize</a></span>(<a href="../../../../com/obdobion/algebrain/EquPart.html" title="class in com.obdobion.algebrain">EquPart</a>&nbsp;rightSide)</code>
+<div class="block">
+ multiplize.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><span class="typeNameLabel">OpRightParen.</span><code><span class="memberNameLink"><a href="../../../../com/obdobion/algebrain/operator/OpRightParen.html#negatize-com.obdobion.algebrain.EquPart-">negatize</a></span>(<a href="../../../../com/obdobion/algebrain/EquPart.html" title="class in com.obdobion.algebrain">EquPart</a>&nbsp;rightSide)</code>
+<div class="block">A close parent followed by a minus sign is always subtraction</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><span class="typeNameLabel">OpFactorial.</span><code><span class="memberNameLink"><a href="../../../../com/obdobion/algebrain/operator/OpFactorial.html#negatize-com.obdobion.algebrain.EquPart-">negatize</a></span>(<a href="../../../../com/obdobion/algebrain/EquPart.html" title="class in com.obdobion.algebrain">EquPart</a>&nbsp;rightSide)</code>
+<div class="block">factorial followed by a minus sign is always subtraction.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><span class="typeNameLabel">OpChain.</span><code><span class="memberNameLink"><a href="../../../../com/obdobion/algebrain/operator/OpChain.html#negatize-com.obdobion.algebrain.EquPart-">negatize</a></span>(<a href="../../../../com/obdobion/algebrain/EquPart.html" title="class in com.obdobion.algebrain">EquPart</a>&nbsp;rightSide)</code>
+<div class="block">This is just to the left of a subtraction meaning that the minus sign is
+ the first thing in an equation.</div>
 </td>
 </tr>
 </tbody>
@@ -901,42 +960,48 @@
 </td>
 </tr>
 <tr class="altColor">
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/obdobion/algebrain/operator/OpNegate.html#OpNegate-com.obdobion.algebrain.EquPart-">OpNegate</a></span>(<a href="../../../../com/obdobion/algebrain/EquPart.html" title="class in com.obdobion.algebrain">EquPart</a>&nbsp;opTok)</code>
+<div class="block">
+ Constructor for OpNegate.</div>
+</td>
+</tr>
+<tr class="rowColor">
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/obdobion/algebrain/operator/OpNor.html#OpNor-com.obdobion.algebrain.EquPart-">OpNor</a></span>(<a href="../../../../com/obdobion/algebrain/EquPart.html" title="class in com.obdobion.algebrain">EquPart</a>&nbsp;opTok)</code>
 <div class="block">
  Constructor for OpOr.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/obdobion/algebrain/operator/OpOr.html#OpOr-com.obdobion.algebrain.EquPart-">OpOr</a></span>(<a href="../../../../com/obdobion/algebrain/EquPart.html" title="class in com.obdobion.algebrain">EquPart</a>&nbsp;opTok)</code>
 <div class="block">
  Constructor for OpOr.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/obdobion/algebrain/operator/OpPower.html#OpPower-com.obdobion.algebrain.EquPart-">OpPower</a></span>(<a href="../../../../com/obdobion/algebrain/EquPart.html" title="class in com.obdobion.algebrain">EquPart</a>&nbsp;opTok)</code>
 <div class="block">
  Constructor for OpPower.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/obdobion/algebrain/operator/OpRightParen.html#OpRightParen-com.obdobion.algebrain.EquPart-">OpRightParen</a></span>(<a href="../../../../com/obdobion/algebrain/EquPart.html" title="class in com.obdobion.algebrain">EquPart</a>&nbsp;opTok)</code>
 <div class="block">
  Constructor for OpRightParen.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/obdobion/algebrain/operator/OpSubtract.html#OpSubtract-com.obdobion.algebrain.EquPart-">OpSubtract</a></span>(<a href="../../../../com/obdobion/algebrain/EquPart.html" title="class in com.obdobion.algebrain">EquPart</a>&nbsp;opTok)</code>
 <div class="block">
  Constructor for OpSubtract.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/obdobion/algebrain/operator/OpXnor.html#OpXnor-com.obdobion.algebrain.EquPart-">OpXnor</a></span>(<a href="../../../../com/obdobion/algebrain/EquPart.html" title="class in com.obdobion.algebrain">EquPart</a>&nbsp;opTok)</code>
 <div class="block">
  Constructor for OpOr.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/obdobion/algebrain/operator/OpXor.html#OpXor-com.obdobion.algebrain.EquPart-">OpXor</a></span>(<a href="../../../../com/obdobion/algebrain/EquPart.html" title="class in com.obdobion.algebrain">EquPart</a>&nbsp;opTok)</code>
 <div class="block">
  Constructor for OpOr.</div>

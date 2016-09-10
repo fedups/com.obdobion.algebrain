@@ -61,6 +61,19 @@ public abstract class EquPart extends Object
 
     /**
      * <p>
+     * negatize.
+     * </p>
+     *
+     * @param rightSide is not used
+     * @return a boolean.
+     */
+    public boolean negatize(final EquPart rightSide)
+    {
+        return false;
+    }
+
+    /**
+     * <p>
      * resolve.
      * </p>
      *
