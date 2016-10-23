@@ -27,6 +27,12 @@
 			<organizationUrl>http://www.github.com/fedups</organizationUrl>
 		</developer>
 	</developers>
+	
+	<scm>
+		<connection>scm:git:git@github.com:fedups/com.obdobion.algebrain.git</connection>
+		<developerConnection>scm:git:git@github.com:fedups/algebrain.git</developerConnection>
+		<url>git@github.com:fedups/com.obdobion.algebrain.git</url>
+	</scm>
 
 	<issueManagement>
 		<system>GitHub</system>
