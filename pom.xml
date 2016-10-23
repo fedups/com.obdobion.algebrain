@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
@@ -5,7 +6,7 @@
 	<artifactId>algebrain</artifactId>
 	<description>Equation processing for Java</description>
 	<packaging>jar</packaging>
-	<version>2.2.1</version>
+	<version>2.2.2</version>
 	<name>${project.groupId}.${project.artifactId}</name>
 	<url>https://github.com/fedups/com.obdobion.algebrain</url>
 	<organization>
@@ -26,11 +27,11 @@
 			<organizationUrl>http://www.github.com/fedups</organizationUrl>
 		</developer>
 	</developers>
-	<scm>
-		<connection>scm:git:git@github.com:fedups/com.obdobion.algebrain.git</connection>
-		<developerConnection>scm:git:git@github.com:fedups/algebrain.git</developerConnection>
-		<url>git@github.com:fedups/com.obdobion.algebrain.git</url>
-	</scm>
+
+	<issueManagement>
+		<system>GitHub</system>
+		<url>https://github.com/fedups/com.obdobion.algebrain/issues</url>
+	</issueManagement>
 
 	<properties>
 		<java.target.version>1.8</java.target.version>
@@ -38,7 +39,7 @@
 		<junit.version>4.8.1</junit.version>
 		<slf4j.version>1.7.13</slf4j.version>
 		<project.build.sourceEncoding>Cp1252</project.build.sourceEncoding>
-		<calendar.version>2.2.0</calendar.version>
+		<calendar.version>2.2.1</calendar.version>
 		<commons-codec.version>1.9</commons-codec.version>
 	</properties>
 
@@ -191,4 +192,8 @@
 			<version>${commons-codec.version}</version>
 		</dependency>
 	</dependencies>
+	<ciManagement>
+		<system>Travis</system>
+		<url>https://travis-ci.org/</url>
+	</ciManagement>
 </project>
